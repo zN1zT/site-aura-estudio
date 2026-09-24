@@ -185,21 +185,61 @@ section{padding-block:var(--pad);position:relative}
 
 /* simulador */
 .sim{background:var(--bg-2)}
-.sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,90px);align-items:start}
-.sim h2{font-size:var(--t-h2);margin:18px 0 20px}
-.sim-box{border-radius:var(--r);padding:clamp(24px,3vw,40px)}
-.opt-g{margin-bottom:28px}
-.opt-g>p{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.price-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end}
+.sim h2{font-size:var(--t-h2);margin-top:18px}
+.incl{margin-top:clamp(40px,5vw,64px);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,2.4vw,30px)}
+.incl>p,.opt-g>p,.sum-k{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:16px}
+.incl ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px 24px;font-size:.9rem;color:var(--ink-2)}
+.incl li{position:relative;padding-left:22px}.incl li::before{content:'✓';position:absolute;left:0;color:var(--accent)}
+.incl b{color:var(--ink);font-weight:500}
+.plans{border:0;padding:0;margin:clamp(28px,3vw,40px) 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.plan{position:relative;display:flex;flex-direction:column;gap:14px;padding:clamp(22px,2.4vw,32px);border-radius:var(--r);border:1px solid var(--line);background:var(--surface);cursor:pointer;transition:border-color .3s,transform .4s cubic-bezier(.16,1,.3,1),box-shadow .3s}
+.plan:hover{transform:translateY(-4px);border-color:rgba(var(--glow),.25)}
+.plan input{position:absolute;opacity:0;pointer-events:none}
+.plan:has(input:checked){border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 30px 80px rgba(0,0,0,.5),0 0 60px rgba(var(--glow),.08)}
+.plan:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:3px}
+.plan-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-right:28px}
+.plan-top b{font-size:1.45rem;font-weight:500;letter-spacing:-.03em}.plan-top small{color:var(--mute);font-size:.8rem}
+.plan::after{content:'';position:absolute;top:clamp(24px,2.6vw,34px);right:clamp(22px,2.4vw,32px);width:18px;height:18px;border-radius:50%;border:1.5px solid var(--mute);transition:all .25s}
+.plan:has(input:checked)::after{border:5px solid var(--accent);background:var(--bg)}
+.plan-for{color:var(--ink-2);font-size:.9rem;min-height:4.2em}
+.plan-price{font-size:clamp(2.6rem,2rem + 1.6vw,3.4rem);letter-spacing:-.05em;line-height:1}
+.plan-price small{font-size:.38em;color:var(--mute);letter-spacing:0;margin-right:6px;vertical-align:.9em}
+.plan-time{font-size:.85rem;color:var(--ink-2);padding-bottom:14px;border-bottom:1px solid var(--line)}.plan-time b{color:var(--ink);font-weight:500}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:.9rem;color:var(--ink-2)}
+.plan li{display:flex;gap:10px}.plan li::before{content:'✓';color:var(--accent);flex:none}
+.plan li b{color:var(--ink);font-weight:500}
+.plan li.no{color:var(--mute)}.plan li.no::before{content:'–';color:var(--mute)}
+.plan-badge{position:absolute;top:-12px;left:clamp(22px,2.4vw,32px);background:var(--accent);color:var(--bg);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.sim-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:clamp(24px,4vw,56px);align-items:start;margin-top:clamp(40px,5vw,64px)}
+.opt-g{margin-bottom:34px}
+.opt-g>p span{text-transform:none;letter-spacing:0;margin-left:8px;color:var(--mute);opacity:.8}
 .opts{display:grid;gap:8px}
-.opt{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;border-radius:14px;border:1px solid var(--line);cursor:pointer;transition:border-color .2s,background .2s;min-height:52px}
-.opt:hover{border-color:rgba(238,242,238,.25)}
-.opt input{accent-color:var(--accent);width:18px;height:18px;margin:0 12px 0 0;flex:none}
-.opt-l{display:flex;align-items:center;flex:1}
-.opt small{color:var(--mute);font-size:.8rem;white-space:nowrap}
+.opt{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;border-radius:14px;border:1px solid var(--line);cursor:pointer;transition:border-color .2s,background .2s}
+.opt:hover{border-color:rgba(var(--glow),.25)}
+.opt input{accent-color:var(--accent);width:18px;height:18px;margin:3px 0 0;flex:none}
+.opt-l{display:flex;flex-direction:column;gap:4px;flex:1}
+.opt-l b{font-weight:500}.opt-l span{font-size:.86rem;color:var(--ink-2);line-height:1.5}
+.opt small{color:var(--ink);font-size:.85rem;white-space:nowrap;padding-top:2px;font-variant-numeric:tabular-nums}
 .opt:has(input:checked){border-color:var(--accent);background:rgba(var(--glow),.06)}
-.total{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid var(--line);padding-top:22px;margin-top:6px}
-.total b{font-size:clamp(2.2rem,1.6rem + 2vw,3.4rem);font-weight:400;letter-spacing:-.04em}
+.opt.is-incl{cursor:default;opacity:.75}.opt.is-incl small{color:var(--bg);background:var(--accent);padding:2px 10px;border-radius:999px;font-size:.72rem;font-weight:600}
+.sum-box{position:sticky;top:96px;border-radius:var(--r);padding:clamp(22px,2.6vw,34px)}
+.sum-plan{display:flex;flex-direction:column;gap:2px;padding-bottom:16px}.sum-plan b{font-size:1.4rem;font-weight:500;letter-spacing:-.03em}.sum-plan span{color:var(--ink-2);font-size:.88rem}
+.sum-list{list-style:none;margin:0;padding:14px 0;border-top:1px solid var(--line);display:grid;gap:8px;font-size:.88rem;color:var(--ink-2)}
+.sum-list li{display:flex;justify-content:space-between;gap:12px}.sum-list li span:last-child{color:var(--ink);font-variant-numeric:tabular-nums}
+.sum-list li.inc span:last-child{color:var(--mute);font-size:.8rem}
+.sum-box>.sum-row{padding:10px 0 0;border-top:1px solid var(--line);font-size:.9rem;color:var(--ink-2)}
+.sum-box>.sum-row+.sum-row{border:0;padding-top:6px}
+.total{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid var(--line);padding-top:18px;margin-top:14px}
+.total b{font-size:clamp(2.2rem,1.6rem + 2vw,3.2rem);font-weight:400;letter-spacing:-.04em}
 .total span{color:var(--mute);font-size:.85rem}
+.sum-pay{font-size:.82rem;color:var(--ink-2);margin-top:14px}.sum-pay b{color:var(--ink);font-weight:500}
+.sum-box .btn{width:100%;justify-content:center;margin-top:18px}
+.sim-note{font-size:.78rem;color:var(--mute);margin-top:12px}
+@media(max-width:1000px){.incl ul{grid-template-columns:1fr 1fr}.plans{grid-template-columns:1fr}.plan-for{min-height:0}.sim-grid{grid-template-columns:1fr}.sum-box{position:static}}
+@media(max-width:860px){.price-head{grid-template-columns:1fr}}
+@media(max-width:520px){.incl ul{grid-template-columns:1fr}.sum-box .btn{font-size:.92rem;padding:0 18px;gap:8px}.opt{padding:14px}}
 .sum{display:grid;gap:8px;padding:16px 0 18px;border-top:1px solid var(--line);font-size:.9rem;color:var(--ink-2)}
 .sum-row{display:flex;justify-content:space-between;gap:12px}.sum-row span:last-child{color:var(--ink);font-variant-numeric:tabular-nums}
 .sum-row[hidden]{display:none}
@@ -213,7 +253,6 @@ section{padding-block:var(--pad);position:relative}
 .device{transition:transform .6s cubic-bezier(.16,1,.3,1);transform:perspective(1200px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg))}
 @media(prefers-reduced-motion:reduce){.cursor-glow{display:none}.device{transform:none}}
 .sim-box .btn{width:100%;justify-content:center;margin-top:22px}
-@media(max-width:480px){.sim-box .btn{font-size:.92rem;padding:0 18px;gap:8px}}
 .sim-note{font-size:.8rem;color:var(--mute);margin-top:12px}
 @media(max-width:860px){.sim-grid{grid-template-columns:1fr}}
 
@@ -282,7 +321,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
         <a class="btn btn--ghost" href="#trabalhos">Ver trabalhos</a>
       </div>
       <div class="hero-meta" data-reveal style="--d:.5s">
-        <span>No ar em <b>7 a 10 dias</b></span>
+        <span>No ar em <b>5 a 7 dias</b></span>
         <span>Revisado em <b>celular e computador</b></span>
         <span>Nenhum site <b>igual ao outro</b></span>
       </div>
@@ -392,12 +431,12 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
     <div class="fx-hsticky"><div class="fx-htrack">
       <div class="proc-intro"><p class="kick">Processo</p><h2 id="proc-t">Da primeira conversa ao <em>site no ar.</em></h2>
         <p class="lead">Você fala do seu negócio por 20 minutos. O resto é com a gente.</p><p class="fx-hint">Arraste para o lado</p></div>
-      <article class="step"><b>01</b><div><h3>Conversa</h3><p>Entendemos o que você vende, para quem e o que faz um cliente escolher você.</p><small>20 minutos</small></div></article>
-      <article class="step"><b>02</b><div><h3>Direção de arte</h3><p>Cor, tipografia e um elemento visual tirado do seu próprio negócio. Nada de template.</p><small>Dia 1 e 2</small></div></article>
-      <article class="step"><b>03</b><div><h3>Texto e fotos</h3><p>Escrevemos os textos e escolhemos fotos que fazem sentido, com o mesmo tratamento de cor.</p><small>Dia 2 a 4</small></div></article>
-      <article class="step"><b>04</b><div><h3>Construção</h3><p>Efeitos, módulos úteis e WhatsApp em todos os pontos certos.</p><small>Dia 4 a 7</small></div></article>
-      <article class="step"><b>05</b><div><h3>Revisão</h3><p>Testamos em celular e computador, página inteira. Você aprova e pede ajustes.</p><small>Dia 7 a 9</small></div></article>
-      <article class="step"><b>06</b><div><h3>No ar</h3><p>Domínio configurado, Google avisado e o site trabalhando por você.</p><small>Dia 10</small></div></article>
+      <article class="step"><b>01</b><div><h3>Conversa</h3><p>Entendemos o que você vende, para quem e o que faz um cliente escolher você.</p><small>Dia 1 · 20 minutos</small></div></article>
+      <article class="step"><b>02</b><div><h3>Direção de arte</h3><p>Cor, tipografia e um elemento visual tirado do seu próprio negócio. Nada de template.</p><small>Dia 1</small></div></article>
+      <article class="step"><b>03</b><div><h3>Texto e fotos</h3><p>Escrevemos os textos e escolhemos fotos que fazem sentido, com o mesmo tratamento de cor.</p><small>Dia 2</small></div></article>
+      <article class="step"><b>04</b><div><h3>Construção</h3><p>Efeitos, módulos úteis e WhatsApp em todos os pontos certos.</p><small>Dia 3 e 4</small></div></article>
+      <article class="step"><b>05</b><div><h3>Revisão</h3><p>Testamos em celular e computador, página inteira. Você aprova e pede ajustes.</p><small>Dia 5 e 6</small></div></article>
+      <article class="step"><b>06</b><div><h3>No ar</h3><p>Domínio configurado, Google avisado e o site trabalhando por você.</p><small>Dia 7</small></div></article>
     </div></div>
   </section>
 
@@ -418,30 +457,121 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
   </section>
 
   <section class="sim" id="investimento">
-    <div class="wrap sim-grid">
-      <div><p class="kick" data-reveal>Investimento</p>
-        <h2 data-split>Monte o seu site e veja <em>o valor na hora.</em></h2>
-        <p class="lead" data-reveal>Escolha o formato e os extras. O valor aparece ao lado e você manda o pedido pelo WhatsApp com tudo preenchido.</p></div>
-      <form class="sim-box glass" id="sim" data-reveal="scale">
-        <div class="opt-g"><p>Formato</p><div class="opts">
-          <label class="opt"><span class="opt-l"><input type="radio" name="tipo" value="Página única (landing page)" data-v="1500" checked>Página única</span><small>1 página, até 8 seções</small></label>
-          <label class="opt"><span class="opt-l"><input type="radio" name="tipo" value="Site institucional" data-v="2800">Site institucional</span><small>até 5 páginas</small></label>
-          <label class="opt"><span class="opt-l"><input type="radio" name="tipo" value="Site com catálogo ou portfólio" data-v="4200">Catálogo ou portfólio</span><small>itens com filtro</small></label>
-        </div></div>
-        <div class="opt-g"><p>Extras</p><div class="opts">
-          <label class="opt"><span class="opt-l"><input type="checkbox" name="extra" value="Textos escritos por nós" data-v="400">Textos escritos por nós</span><small>+ R$ 400</small></label>
-          <label class="opt"><span class="opt-l"><input type="checkbox" name="extra" value="Domínio e hospedagem por 1 ano" data-v="350">Domínio e hospedagem, 1 ano</span><small>+ R$ 350</small></label>
-          <label class="opt"><span class="opt-l"><input type="checkbox" name="extra" value="Google Meu Negócio" data-v="300">Perfil no Google Meu Negócio</span><small>+ R$ 300</small></label>
-          <label class="opt"><span class="opt-l"><input type="checkbox" name="extra" value="Manutenção mensal" data-v="250">Manutenção mensal</span><small>+ R$ 250/mês</small></label>
-        </div></div>
-        <div class="sum" aria-live="polite">
-          <div class="sum-row"><span>Projeto (pagamento único)</span><span id="sim-once">R$ 0</span></div>
-          <div class="sum-row" id="sim-mrow" hidden><span>Manutenção mensal</span><span id="sim-month">R$ 0/mês</span></div>
+    <div class="wrap">
+      <div class="price-head">
+        <div><p class="kick" data-reveal>Investimento</p>
+          <h2 data-split>Preço claro, <em>sem letra miúda.</em></h2></div>
+        <p class="lead" data-reveal>Escolha o plano, marque os extras e veja o valor na hora. Domínio, hospedagem e segurança do 1º ano já vêm em todos os planos. Você não paga nada à parte para o site ir ao ar.</p>
+      </div>
+
+      <div class="incl" data-reveal>
+        <p>Incluso em todos os planos</p>
+        <ul>
+          <li><b>Domínio .com.br</b> por 1 ano, registrado em seu nome</li>
+          <li><b>Hospedagem rápida</b> por 1 ano</li>
+          <li><b>Cadeado de segurança</b> (SSL / https)</li>
+          <li><b>Versão para celular</b> revisada tela a tela</li>
+          <li><b>WhatsApp</b> com mensagem pronta</li>
+          <li><b>Google</b>: título, descrição e mapa do site</li>
+          <li><b>30 dias de ajustes</b> sem custo após a entrega</li>
+          <li><b>Todos os arquivos</b> do site são seus</li>
+        </ul>
+      </div>
+
+      <form id="sim" class="sim-form">
+        <fieldset class="plans" data-stagger="0.08" aria-label="Escolha o plano">
+          <label class="plan">
+            <input type="radio" name="tipo" value="Página única" data-v="1500" data-prazo="5 a 7 dias" data-lvl="1" checked>
+            <span class="plan-top"><b>Página única</b><small>Landing page</small></span>
+            <span class="plan-for">Para quem precisa de uma presença forte e rápida: profissional liberal, lançamento, campanha.</span>
+            <span class="plan-price"><small>R$</small>1.500</span>
+            <span class="plan-time">No ar em <b>5 a 7 dias</b></span>
+            <ul>
+              <li>1 página com até 8 seções</li>
+              <li>Direção de arte própria</li>
+              <li>Fotos de banco tratadas na sua paleta</li>
+              <li>Formulário e botão de WhatsApp</li>
+              <li>2 rodadas de revisão</li>
+              <li class="no">Redação profissional (extra)</li>
+              <li class="no">Google Meu Negócio (extra)</li>
+            </ul>
+          </label>
+          <label class="plan plan--hot">
+            <input type="radio" name="tipo" value="Site institucional" data-v="2800" data-prazo="10 a 12 dias" data-lvl="2">
+            <span class="plan-badge">Mais escolhido</span>
+            <span class="plan-top"><b>Institucional</b><small>Até 5 páginas</small></span>
+            <span class="plan-for">Para consultores, clínicas e escritórios que precisam explicar serviços e passar autoridade.</span>
+            <span class="plan-price"><small>R$</small>2.800</span>
+            <span class="plan-time">No ar em <b>10 a 12 dias</b></span>
+            <ul>
+              <li>Tudo da Página única</li>
+              <li>Até 5 páginas (ex.: início, sobre, serviços, blog, contato)</li>
+              <li><b>Redação profissional inclusa</b></li>
+              <li><b>Google Meu Negócio incluso</b></li>
+              <li><b>E-mail profissional incluso</b></li>
+              <li>SEO básico em cada página</li>
+              <li>3 rodadas de revisão</li>
+            </ul>
+          </label>
+          <label class="plan">
+            <input type="radio" name="tipo" value="Catálogo ou portfólio" data-v="4200" data-prazo="12 a 15 dias" data-lvl="3">
+            <span class="plan-top"><b>Catálogo</b><small>Portfólio ou produtos</small></span>
+            <span class="plan-for">Para arquitetos, indústrias, lojas e restaurantes que vendem mostrando muitos itens ou projetos.</span>
+            <span class="plan-price"><small>R$</small>4.200</span>
+            <span class="plan-time">No ar em <b>12 a 15 dias</b></span>
+            <ul>
+              <li>Tudo do Institucional</li>
+              <li>Até 10 páginas</li>
+              <li>Catálogo com até 40 itens e filtro</li>
+              <li>Página própria para cada projeto ou produto</li>
+              <li>Relatório de visitas (Google Analytics)</li>
+              <li>60 dias de ajustes sem custo</li>
+            </ul>
+          </label>
+        </fieldset>
+
+        <div class="sim-grid">
+          <div>
+            <div class="opt-g"><p>Extras <span>marque o que fizer sentido para você</span></p><div class="opts">
+              <label class="opt" data-lvl-incl="2"><input type="checkbox" name="extra" value="Redação profissional" data-v="400">
+                <span class="opt-l"><b>Redação profissional dos textos</b><span>Não sabe o que escrever? Fazemos uma entrevista de 30 min com você e escrevemos todos os textos do site do zero: apresentação, serviços e chamadas para o WhatsApp, com as palavras que seu cliente procura no Google.</span></span><small>+ R$ 400</small></label>
+              <label class="opt" data-lvl-incl="2"><input type="checkbox" name="extra" value="Google Meu Negócio" data-v="300">
+                <span class="opt-l"><b>Perfil no Google Meu Negócio</b><span>Criamos ou arrumamos seu perfil no Google Maps: fotos, horário, categorias e link para o site. É o que aparece quando alguém busca "consultoria perto de mim".</span></span><small>+ R$ 300</small></label>
+              <label class="opt" data-lvl-incl="2"><input type="checkbox" name="extra" value="E-mail profissional" data-v="150">
+                <span class="opt-l"><b>E-mail profissional</b><span>Um endereço com o seu domínio (ex.: contato@seunegocio.com.br) configurado no celular e no computador. Passa muito mais confiança que um @gmail.</span></span><small>+ R$ 150</small></label>
+              <label class="opt"><input type="checkbox" name="extra" value="Página extra" data-v="350">
+                <span class="opt-l"><b>Página adicional</b><span>Uma página a mais além do limite do plano, por exemplo uma página só para um serviço importante ou uma campanha.</span></span><small>+ R$ 350</small></label>
+              <label class="opt"><input type="checkbox" name="extra" value="Blog com 3 artigos" data-v="600">
+                <span class="opt-l"><b>Blog com 3 artigos</b><span>Área de artigos e 3 textos escritos por nós sobre dúvidas do seu cliente. Ajuda a aparecer no Google e mostra que você entende do assunto.</span></span><small>+ R$ 600</small></label>
+              <label class="opt"><input type="checkbox" name="extra" value="Logo e identidade visual" data-v="450">
+                <span class="opt-l"><b>Logo e identidade visual</b><span>Não tem logo ou ele está datado? Criamos um logo simples, a paleta de cores e as fontes, com os arquivos para usar no Instagram e em cartões.</span></span><small>+ R$ 450</small></label>
+              <label class="opt"><input type="checkbox" name="extra" value="Versão em inglês" data-v="600">
+                <span class="opt-l"><b>Versão em inglês</b><span>O site inteiro traduzido, com botão para trocar o idioma. Para quem atende clientes ou empresas de fora.</span></span><small>+ R$ 600</small></label>
+            </div></div>
+
+            <div class="opt-g"><p>Manutenção <span>depois dos dias de ajuste grátis</span></p><div class="opts">
+              <label class="opt"><input type="radio" name="manut" value="Sem manutenção" data-m="0" checked>
+                <span class="opt-l"><b>Sem manutenção</b><span>O site é seu e fica no ar. Alterações pontuais custam a partir de R$ 80 cada. A partir do 2º ano, a renovação de domínio e hospedagem é R$ 390/ano.</span></span><small>R$ 0</small></label>
+              <label class="opt"><input type="radio" name="manut" value="Manutenção Essencial" data-m="150">
+                <span class="opt-l"><b>Essencial</b><span>Domínio e hospedagem renovados sem você se preocupar, backup semanal, monitoramento de segurança e até 2 alterações por mês (trocar foto, texto, preço, horário).</span></span><small>R$ 150/mês</small></label>
+              <label class="opt"><input type="radio" name="manut" value="Manutenção Completa" data-m="290">
+                <span class="opt-l"><b>Completa</b><span>Tudo do Essencial, alterações sem limite de quantidade (até 4h por mês), 1 artigo novo no blog por mês e relatório mensal de visitas e cliques no WhatsApp.</span></span><small>R$ 290/mês</small></label>
+            </div></div>
+          </div>
+
+          <aside class="sum-box glass" aria-live="polite">
+            <p class="sum-k">Seu orçamento</p>
+            <div class="sum-plan"><b id="s-plan">Página única</b><span id="s-prazo">No ar em 5 a 7 dias</span></div>
+            <ul class="sum-list" id="s-list"></ul>
+            <div class="sum-row"><span>Projeto (pagamento único)</span><span id="sim-once">R$ 0</span></div>
+            <div class="sum-row" id="sim-mrow" hidden><span id="s-mname">Manutenção</span><span id="sim-month">R$ 0/mês</span></div>
+            <div class="total"><span id="sim-lbl">Total</span><b id="sim-total">R$ 0</b></div>
+            <p class="sum-pay">Pagamento em 2 partes: <b>50% para começar</b> e <b>50% na entrega</b>. Pix ou cartão.</p>
+            <button class="btn" type="submit">Enviar pedido no WhatsApp
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <p class="sim-note">Valor de referência. O orçamento final é confirmado na conversa, sem surpresa.</p>
+          </aside>
         </div>
-        <div class="total"><span id="sim-lbl">Total estimado</span><b id="sim-total">R$ 0</b></div>
-        <button class="btn" type="submit">Enviar este pedido no WhatsApp
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-        <p class="sim-note">Valor de referência. O orçamento final sai depois da conversa.</p>
       </form>
     </div>
   </section>
@@ -451,13 +581,15 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
       <div><p class="kick" data-reveal>Dúvidas</p><h2 data-split>Antes de <em>começar.</em></h2></div>
       <div data-accordion>
         <div class="fx-acc-item is-open"><button class="fx-acc-q">Em quanto tempo o site fica pronto?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
-          <div class="fx-acc-a"><p>Uma página única fica pronta em 7 a 10 dias a partir da conversa inicial. Sites maiores levam de 2 a 3 semanas. O prazo depende de você mandar logo e informações a tempo.</p></div></div>
+          <div class="fx-acc-a"><p>Uma página única fica pronta em 5 a 7 dias a partir da conversa inicial. O site institucional leva de 10 a 12 dias e o catálogo de 12 a 15 dias. O prazo depende de você mandar logo e informações a tempo.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">Preciso ter fotos e textos prontos?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>Não. Se você tiver fotos reais do seu trabalho, elas entram primeiro. O restante escolhemos em bancos de imagem com licença livre e tratamos com a mesma cor. Os textos podemos escrever a partir da conversa.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">O site funciona bem no celular?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>Sim. Cada site passa por uma revisão automática e visual em tela de computador e de celular antes da entrega, seção por seção.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">Consigo alterar depois?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
-          <div class="fx-acc-a"><p>Pequenos ajustes nos primeiros 30 dias estão incluídos. Depois, você pode contratar a manutenção mensal ou pedir alterações avulsas.</p></div></div>
+          <div class="fx-acc-a"><p>Pequenos ajustes nos primeiros 30 dias estão incluídos. Depois, você escolhe: manutenção mensal (a partir de R$ 150) ou alterações avulsas a partir de R$ 80.</p></div></div>
+        <div class="fx-acc-item"><button class="fx-acc-q">Domínio e hospedagem já estão no preço?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
+          <div class="fx-acc-a"><p>Sim. Todos os planos incluem o domínio .com.br e a hospedagem pelo 1º ano, com cadeado de segurança. Do 2º ano em diante, a renovação sai por R$ 390/ano, ou fica inclusa se você tiver manutenção mensal.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">O site fica em meu nome?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>Sim. O domínio é registrado em seu nome e você recebe todos os arquivos do site.</p></div></div>
       </div>
@@ -494,30 +626,73 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
 <script src="assets/shader-bg.js"></script>
 <script>shaderBG('#bg',{preset:'aurora',colors:['#050505','#3a3c42','#020202','#e8e8ea'],speed:.05});</script>
 <script>
-/* simulador: os valores ficam em data-v (troque pelos seus). Monta o total e a mensagem do WhatsApp. */
+/* simulador: valores em data-v (projeto) e data-m (mensal). Extras com data-lvl-incl ficam inclusos a partir daquele plano. */
 (function(){
   const f=document.getElementById('sim'), out=document.getElementById('sim-total');
-  const num=el=>parseFloat((el.dataset.v||'0').replace(/[^\d.]/g,''))||0;
+  const $=id=>document.getElementById(id);
+  const num=(el,k)=>parseFloat(el.dataset[k]||'0')||0;
   const brl=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
-  const onceEl=document.getElementById('sim-once'), mEl=document.getElementById('sim-month'), mRow=document.getElementById('sim-mrow'), lbl=document.getElementById('sim-lbl');
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   let shown=0,raf;
   function animate(to){cancelAnimationFrame(raf);const from=shown,t0=performance.now(),dur=reduced?0:600;
     out.classList.add('bump');
     (function step(now){const k=dur?Math.min(1,(now-t0)/dur):1,e=1-Math.pow(1-k,3);shown=Math.round(from+(to-from)*e);out.textContent=brl(shown);
       if(k<1)raf=requestAnimationFrame(step);else out.classList.remove('bump');})(t0);}
-  /* manutenção mensal soma no total (1º mês) e aparece separada no resumo */
-  function calc(){let once=0,month=0;
-    f.querySelectorAll('input:checked').forEach(i=>{/mensal/i.test(i.value)?month+=num(i):once+=num(i)});
-    onceEl.textContent=brl(once);mEl.textContent=brl(month)+'/mês';mRow.hidden=!month;
-    lbl.textContent=month?'Total com o 1º mês':'Total estimado';
-    const total=once+month;animate(total);return {once,month,total};}
+  function calc(){
+    const plan=f.querySelector('input[name=tipo]:checked'), lvl=+plan.dataset.lvl;
+    const man=f.querySelector('input[name=manut]:checked'), month=num(man,'m');
+    let once=num(plan,'v'); const items=[], incl=[];
+    f.querySelectorAll('[data-lvl-incl]').forEach(l=>{const on=lvl>=+l.dataset.lvlIncl,i=l.querySelector('input');
+      l.classList.toggle('is-incl',on);i.disabled=on;l.querySelector('small').textContent=on?'Incluso':'+ '+brl(num(i,'v'));});
+    f.querySelectorAll('input[name=extra]').forEach(i=>{
+      if(i.disabled)incl.push(i.value);else if(i.checked){once+=num(i,'v');items.push([i.value,num(i,'v')]);}});
+    $('s-plan').textContent=plan.value; $('s-prazo').textContent='No ar em '+plan.dataset.prazo;
+    $('s-list').innerHTML=[[plan.value,num(plan,'v')]].concat(items).map(([n,v])=>`<li><span>${n}</span><span>${brl(v)}</span></li>`).join('')
+      +incl.map(n=>`<li class="inc"><span>${n}</span><span>incluso</span></li>`).join('');
+    $('sim-once').textContent=brl(once);
+    $('sim-month').textContent=brl(month)+'/mês'; $('s-mname').textContent=man.value; $('sim-mrow').hidden=!month;
+    $('sim-lbl').textContent=month?'Total com o 1º mês':'Total';
+    animate(once+month);
+    return {plan,once,month,total:once+month,items,incl,man};}
   f.addEventListener('change',calc);calc();
-  f.addEventListener('submit',e=>{e.preventDefault();
-    const tipo=f.querySelector('input[name=tipo]:checked').value;
-    const ex=[...f.querySelectorAll('input[name=extra]:checked')].map(i=>i.value);
-    const msg=['Olá! Montei meu site no simulador da Aura.','Formato: '+tipo,'Extras: '+(ex.join(', ')||'nenhum'),...(r=>['Projeto: '+brl(r.once)].concat(r.month?['Manutenção: '+brl(r.month)+'/mês','Total com o 1º mês: '+brl(r.total)]:['Total estimado: '+brl(r.total)]))(calc())].join('\n');
+  f.addEventListener('submit',e=>{e.preventDefault();const r=calc();
+    const msg=['Olá! Montei meu site no simulador da Aura.','Plano: '+r.plan.value+' ('+brl(num(r.plan,'v'))+')',
+      'Extras: '+(r.items.map(x=>x[0]).join(', ')||'nenhum'),
+      r.incl.length?'Inclusos no plano: '+r.incl.join(', '):null,
+      'Manutenção: '+r.man.value+(r.month?' ('+brl(r.month)+'/mês)':''),
+      'Projeto: '+brl(r.once), r.month?'Total com o 1º mês: '+brl(r.total):null,
+      'Prazo: '+r.plan.dataset.prazo].filter(Boolean).join('\n');
     window.open('https://wa.me/5511989187347?text='+encodeURIComponent(msg),'_blank','noopener');});
+})();
+/* portfólio: cada gesto de rolagem avança só uma cena, mesmo rolando rápido */
+(function(){
+  const sec=document.querySelector('[data-scenes]'); if(!sec)return;
+  const n=sec.querySelectorAll('.fx-scene').length, reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let lastStep=0,lastEv=0,busy=false,ty=null,stepped=false,wasIn=false;
+  const geo=()=>{const top=sec.getBoundingClientRect().top+scrollY,range=sec.offsetHeight-innerHeight;return {top,range}};
+  const idx=()=>{const {top,range}=geo();return Math.max(0,Math.min(n-1,Math.floor((scrollY-top)/range*n*0.999)))};
+  const inside=()=>{const r=sec.getBoundingClientRect();return r.top<=2&&r.bottom>=innerHeight-2};
+  function go(i){const {top,range}=geo();busy=true;stepped=true;lastStep=performance.now();
+    scrollTo({top:Math.round(top+range*(i+.5)/n),behavior:reduced?'auto':'smooth'});setTimeout(()=>busy=false,700);}
+  /* um gesto = sequência de eventos sem pausa de 250 ms (inclui a inércia do trackpad).
+     Cada gesto avança no máximo uma cena; true = gesto tratado aqui, false = a página rola normal. */
+  function intent(dir){
+    const now=performance.now(),fresh=now-lastEv>250;lastEv=now;
+    if(fresh||now-lastStep>2500)stepped=false;
+    const isIn=inside(),entering=isIn&&!wasIn;wasIn=isIn;
+    if(!isIn)return false;
+    if(entering){go(idx());return true;}          /* chegou na seção: alinha a cena atual */
+    if(stepped||busy)return true;                  /* resto do mesmo gesto: segura */
+    const next=idx()+dir;if(next<0||next>=n)return false;
+    go(next);return true;}
+  addEventListener('wheel',e=>{if(Math.abs(e.deltaY)<2)return;if(intent(Math.sign(e.deltaY)))e.preventDefault();},{passive:false});
+  addEventListener('keydown',e=>{const k={ArrowDown:1,PageDown:1,' ':1,ArrowUp:-1,PageUp:-1}[e.key];
+    if(k&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)){lastEv=0;if(intent(k))e.preventDefault();}});
+  addEventListener('touchstart',e=>{ty=e.touches[0].clientY},{passive:true});
+  addEventListener('touchmove',e=>{if(ty==null||!inside())return;const dy=ty-e.touches[0].clientY,next=idx()+Math.sign(dy);
+    if(next>=0&&next<n)e.preventDefault();},{passive:false});
+  addEventListener('touchend',e=>{if(ty==null)return;const dy=ty-e.changedTouches[0].clientY;ty=null;
+    if(Math.abs(dy)>30&&inside()){const next=idx()+Math.sign(dy);if(next>=0&&next<n&&!busy)go(next);}});
 })();
 </script>
 <script>
