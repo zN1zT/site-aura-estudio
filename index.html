@@ -199,7 +199,7 @@ section{padding-block:var(--pad);position:relative}
 .plan-price small{font-size:.38em;color:var(--mute);letter-spacing:0;margin-right:6px;vertical-align:.9em}
 .plan-time{font-size:.85rem;color:var(--ink-2);padding-bottom:14px;border-bottom:1px solid var(--line)}.plan-time b{color:var(--ink);font-weight:500}
 .plan ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:.9rem;color:var(--ink-2)}
-.plan li{display:flex;gap:10px}.plan li::before{content:'✓';color:var(--accent);flex:none}
+.plan li{display:flex;gap:10px;line-height:1.45}.plan li::before{content:'✓';color:var(--accent);flex:none}
 .plan li b{color:var(--ink);font-weight:500}
 .plan li.no{color:var(--mute)}.plan li.no::before{content:'–';color:var(--mute)}
 .plan-badge{position:absolute;top:-12px;left:clamp(22px,2.4vw,32px);background:var(--accent);color:var(--bg);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
@@ -225,7 +225,7 @@ section{padding-block:var(--pad);position:relative}
 .total{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid var(--line);padding-top:18px;margin-top:14px}
 .total b{font-size:clamp(2.2rem,1.6rem + 2vw,3.2rem);font-weight:400;letter-spacing:-.04em}
 .total span{color:var(--mute);font-size:.85rem}
-.sum-pay{font-size:.82rem;color:var(--ink-2);margin-top:14px}.sum-pay b{color:var(--ink);font-weight:500}
+.sum-calc{margin-top:14px;padding:14px 16px;border-radius:12px;background:rgba(var(--glow),.04);border:1px solid var(--line);font-size:.84rem;color:var(--ink-2);display:grid;gap:6px}.sum-calc div{display:flex;justify-content:space-between;gap:10px}.sum-calc b{color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
 .sum-box .btn{width:100%;justify-content:center;margin-top:18px}
 .sim-note{font-size:.78rem;color:var(--mute);margin-top:12px}
 @media(max-width:1000px){.incl ul{grid-template-columns:1fr 1fr}.plans{grid-template-columns:1fr}.plan-for{min-height:0}.sim-grid{grid-template-columns:1fr}.sum-box{position:static}}
@@ -452,42 +452,49 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
         <p class="lead" data-reveal>Escolha o plano, marque os extras e veja o valor na hora.</p>
       </div>
 
-      <p class="incl" data-reveal><b>Todos os planos incluem:</b> domínio e hospedagem no 1º ano · https · versão celular · WhatsApp · 30 dias de ajustes</p>
+      <p class="incl" data-reveal><b>Em todos os planos você recebe:</b> domínio .com.br e hospedagem pagos no 1º ano · cadeado de segurança (https) · site pronto para celular · botão de WhatsApp · 30 dias de ajustes grátis · site registrado em seu nome</p>
 
       <form id="sim" class="sim-form">
         <fieldset class="plans" data-stagger="0.08" aria-label="Escolha o plano">
           <label class="plan">
-            <input type="radio" name="tipo" value="Página única" data-v="1500" data-prazo="5 a 7 dias" data-lvl="1" checked>
+            <input type="radio" name="tipo" value="Página única" data-v="1500" data-m="90" data-prazo="5 a 7 dias" data-lvl="1" checked>
             <span class="plan-top"><b>Página única</b><small>Landing page</small></span>
+            <span class="plan-for">Ideal para quem está começando ou quer um cartão de visitas forte na internet.</span>
             <span class="plan-price"><small>R$</small>1.500</span>
-            <span class="plan-time">No ar em <b>5 a 7 dias</b></span>
+            <span class="plan-time">No ar em <b>5 a 7 dias</b> · manutenção R$ 90/mês</span>
             <ul>
-              <li>1 página com até 8 seções</li>
-              <li>Formulário e WhatsApp</li>
-              <li>2 rodadas de revisão</li>
+              <li><span><b>1 página completa</b> com até 8 seções: quem é você, serviços, depoimentos e contato</span></li>
+              <li><span><b>Design exclusivo</b> com as cores e o estilo do seu negócio</span></li>
+              <li><span><b>Cliente chama no WhatsApp</b> com a mensagem já escrita</span></li>
+              <li><span><b>2 rodadas de revisão</b> para ajustar até ficar do seu jeito</span></li>
             </ul>
           </label>
           <label class="plan plan--hot">
-            <input type="radio" name="tipo" value="Site institucional" data-v="2800" data-prazo="10 a 12 dias" data-lvl="2">
+            <input type="radio" name="tipo" value="Site institucional" data-v="2800" data-m="150" data-prazo="10 a 12 dias" data-lvl="2">
             <span class="plan-badge">Mais escolhido</span>
             <span class="plan-top"><b>Institucional</b><small>Até 5 páginas</small></span>
+            <span class="plan-for">Para consultores, clínicas e escritórios que precisam passar autoridade e explicar cada serviço.</span>
             <span class="plan-price"><small>R$</small>2.800</span>
-            <span class="plan-time">No ar em <b>10 a 12 dias</b></span>
+            <span class="plan-time">No ar em <b>10 a 12 dias</b> · manutenção R$ 150/mês</span>
             <ul>
-              <li>Até 5 páginas</li>
-              <li><b>Textos, Google e e-mail inclusos</b></li>
-              <li>3 rodadas de revisão</li>
+              <li><span><b>Até 5 páginas</b>: início, sobre, serviços, depoimentos e contato</span></li>
+              <li><span><b>Textos escritos por nós</b> a partir de uma conversa de 20 min</span></li>
+              <li><span><b>Google Meu Negócio</b>: você aparece no Google Maps da sua cidade</span></li>
+              <li><span><b>E-mail profissional</b> com o nome do seu negócio</span></li>
+              <li><span><b>3 rodadas de revisão</b></span></li>
             </ul>
           </label>
           <label class="plan">
-            <input type="radio" name="tipo" value="Catálogo ou portfólio" data-v="4200" data-prazo="12 a 15 dias" data-lvl="3">
+            <input type="radio" name="tipo" value="Catálogo ou portfólio" data-v="4200" data-m="220" data-prazo="12 a 15 dias" data-lvl="3">
             <span class="plan-top"><b>Catálogo</b><small>Portfólio ou produtos</small></span>
+            <span class="plan-for">Para arquitetos, indústrias, lojas e restaurantes que vendem mostrando muitos projetos ou itens.</span>
             <span class="plan-price"><small>R$</small>4.200</span>
-            <span class="plan-time">No ar em <b>12 a 15 dias</b></span>
+            <span class="plan-time">No ar em <b>12 a 15 dias</b> · manutenção R$ 220/mês</span>
             <ul>
-              <li>Até 10 páginas + catálogo com filtro</li>
-              <li>Tudo do Institucional</li>
-              <li>60 dias de ajustes</li>
+              <li><span><b>Tudo do Institucional</b>, com até 10 páginas</span></li>
+              <li><span><b>Catálogo com filtro</b>: até 40 projetos ou produtos, cada um com página própria</span></li>
+              <li><span><b>Relatório de visitas</b> para saber de onde vêm seus clientes</span></li>
+              <li><span><b>60 dias de ajustes grátis</b> (o dobro dos outros planos)</span></li>
             </ul>
           </label>
         </fieldset>
@@ -509,11 +516,11 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
                 <span class="opt-l"><b>Versão em inglês</b><span>Botão para trocar o idioma do site.</span></span><small>+ R$ 300</small></label>
             </div></div>
 
-            <div class="opt-g"><p>Manutenção</p><div class="opts">
-              <label class="opt"><input type="radio" name="manut" value="Sem manutenção" data-m="0" checked>
-                <span class="opt-l"><b>Sem manutenção</b><span>Alterações avulsas a partir de R$ 50. Renovação no 2º ano: R$ 300/ano.</span></span><small>R$ 0</small></label>
-              <label class="opt"><input type="radio" name="manut" value="Manutenção mensal" data-m="120">
-                <span class="opt-l"><b>Manutenção mensal</b><span>Até 3 alterações por mês, backup e renovação de domínio e hospedagem inclusos.</span></span><small>R$ 120/mês</small></label>
+            <div class="opt-g"><p>Manutenção <span>opcional, começa depois da entrega</span></p><div class="opts">
+              <label class="opt"><input type="radio" name="manut" value="Sem manutenção" data-mode="0" checked>
+                <span class="opt-l"><b>Sem manutenção</b><span>O site é seu e fica no ar. Cada alteração custa a partir de R$ 50. No 2º ano, você renova domínio e hospedagem por R$ 300/ano.</span></span><small>R$ 0</small></label>
+              <label class="opt"><input type="radio" name="manut" value="Manutenção mensal" data-mode="1">
+                <span class="opt-l"><b>Manutenção mensal</b><span id="m-desc">Você não se preocupa com nada: alterações de texto, foto e preço, backup semanal, segurança e renovação de domínio e hospedagem inclusos.</span></span><small id="m-price">R$ 90/mês</small></label>
             </div></div>
           </div>
 
@@ -521,10 +528,10 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
             <p class="sum-k">Seu orçamento</p>
             <div class="sum-plan"><b id="s-plan">Página única</b><span id="s-prazo">No ar em 5 a 7 dias</span></div>
             <ul class="sum-list" id="s-list"></ul>
-            <div class="sum-row"><span>Projeto (pagamento único)</span><span id="sim-once">R$ 0</span></div>
-            <div class="sum-row" id="sim-mrow" hidden><span id="s-mname">Manutenção</span><span id="sim-month">R$ 0/mês</span></div>
-            <div class="total"><span id="sim-lbl">Total</span><b id="sim-total">R$ 0</b></div>
-            <p class="sum-pay"><b>50%</b> para começar, <b>50%</b> na entrega.</p>
+            <div class="sum-row"><span>Projeto (pago uma vez)</span><span id="sim-once">R$ 0</span></div>
+            <div class="sum-row" id="sim-mrow" hidden><span>Manutenção</span><span id="sim-month">R$ 0/mês</span></div>
+            <div class="total"><span id="sim-lbl">Total para começar</span><b id="sim-total">R$ 0</b></div>
+            <div class="sum-calc" id="s-calc"></div>
             <button class="btn" type="submit">Enviar pedido no WhatsApp
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             
@@ -545,7 +552,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
         <div class="fx-acc-item"><button class="fx-acc-q">O site funciona bem no celular?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>Sim. Cada site passa por uma revisão automática e visual em tela de computador e de celular antes da entrega, seção por seção.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">Consigo alterar depois?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
-          <div class="fx-acc-a"><p>Pequenos ajustes nos primeiros 30 dias estão incluídos. Depois, você escolhe: manutenção mensal (R$ 120) ou alterações avulsas a partir de R$ 50.</p></div></div>
+          <div class="fx-acc-a"><p>Pequenos ajustes nos primeiros 30 dias estão incluídos. Depois, você escolhe: manutenção mensal (de R$ 90 a R$ 220, conforme o plano) ou alterações avulsas a partir de R$ 50.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">Domínio e hospedagem já estão no preço?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>Sim. Todos os planos incluem o domínio .com.br e a hospedagem pelo 1º ano, com cadeado de segurança. Do 2º ano em diante, a renovação sai por R$ 300/ano, ou fica inclusa se você tiver manutenção mensal.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">O site fica em meu nome?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
@@ -598,7 +605,8 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
       if(k<1)raf=requestAnimationFrame(step);else out.classList.remove('bump');})(t0);}
   function calc(){
     const plan=f.querySelector('input[name=tipo]:checked'), lvl=+plan.dataset.lvl;
-    const man=f.querySelector('input[name=manut]:checked'), month=num(man,'m');
+    const man=f.querySelector('input[name=manut]:checked'), mplan=num(plan,'m'), month=man.dataset.mode==='1'?mplan:0;
+    $('m-price').textContent=brl(mplan)+'/mês';
     let once=num(plan,'v'); const items=[], incl=[];
     f.querySelectorAll('[data-lvl-incl]').forEach(l=>{const on=lvl>=+l.dataset.lvlIncl,i=l.querySelector('input');
       l.classList.toggle('is-incl',on);i.disabled=on;l.querySelector('small').textContent=on?'Incluso':'+ '+brl(num(i,'v'));});
@@ -608,8 +616,11 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
     $('s-list').innerHTML=[[plan.value,num(plan,'v')]].concat(items).map(([n,v])=>`<li><span>${n}</span><span>${brl(v)}</span></li>`).join('')
       +incl.map(n=>`<li class="inc"><span>${n}</span><span>incluso</span></li>`).join('');
     $('sim-once').textContent=brl(once);
-    $('sim-month').textContent=brl(month)+'/mês'; $('s-mname').textContent=man.value; $('sim-mrow').hidden=!month;
-    $('sim-lbl').textContent=month?'Total com o 1º mês':'Total';
+    $('sim-month').textContent=brl(month)+'/mês'; $('sim-mrow').hidden=!month;
+    $('sim-lbl').textContent=month?'Para começar (projeto + 1º mês)':'Total para começar';
+    $('s-calc').innerHTML=month
+      ? `<div><span>Do 2º mês em diante</span><b>${brl(month)}/mês</b></div><div><span>Total do 1º ano (projeto + 12 meses)</span><b>${brl(once+month*12)}</b></div><div><span>Domínio e hospedagem nos anos seguintes</span><b>inclusos</b></div>`
+      : `<div><span>Durante o 1º ano</span><b>R$ 0 a mais</b></div><div><span>A partir do 2º ano (domínio + hospedagem)</span><b>R$ 300/ano</b></div><div><span>Alterações depois dos dias grátis</span><b>a partir de R$ 50</b></div>`;
     animate(once+month);
     return {plan,once,month,total:once+month,items,incl,man};}
   f.addEventListener('change',calc);calc();
@@ -617,8 +628,8 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
     const msg=['Olá! Montei meu site no simulador da Aura.','Plano: '+r.plan.value+' ('+brl(num(r.plan,'v'))+')',
       'Extras: '+(r.items.map(x=>x[0]).join(', ')||'nenhum'),
       r.incl.length?'Inclusos no plano: '+r.incl.join(', '):null,
-      'Manutenção: '+r.man.value+(r.month?' ('+brl(r.month)+'/mês)':''),
-      'Projeto: '+brl(r.once), r.month?'Total com o 1º mês: '+brl(r.total):null,
+      'Manutenção: '+(r.month?brl(r.month)+'/mês':'não'),
+      'Projeto: '+brl(r.once), 'Para começar: '+brl(r.total), r.month?'Total do 1º ano: '+brl(r.once+r.month*12):null,
       'Prazo: '+r.plan.dataset.prazo].filter(Boolean).join('\n');
     window.open('https://wa.me/5511989187347?text='+encodeURIComponent(msg),'_blank','noopener');});
 })();
