@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Aura — sites para consultores e negócios que vendem confiança</title>
 <meta name="description" content="Estúdio de sites para consultores, clínicas, escritórios e negócios locais. Direção de arte própria, efeitos, fotos tratadas e WhatsApp integrado. No ar em poucos dias.">
-<meta name="theme-color" content="#05070a">
+<meta name="theme-color" content="#050505">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Aura — sites que fazem você ser escolhido antes da primeira conversa">
 <meta property="og:description" content="Sites únicos para consultores, clínicas, escritórios e negócios locais.">
 <meta property="og:image" content="img/og.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2305070a'/%3E%3Ccircle cx='32' cy='32' r='15' fill='none' stroke='%237df2c3' stroke-width='5'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-10 -10 120 120'%3E%3Crect x='-10' y='-10' width='120' height='120' rx='28' fill='%23050505'/%3E%3Cpath fill='%23f4f4f2' fill-rule='evenodd' d='M49.4 6.2 L71.5 45.5 L84.7 45.5 L76.2 52.3 L99.1 93.4 L79.1 93.4 L62.6 64.5 L15.5 93.4 L0.9 93.4 Z M49.4 40.2 L56.2 52.6 L35.7 67.5 Z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/fx.css">
 <style>
 :root{
-  --bg:#05070a; --bg-2:#0a0e12; --surface:#0f1419; --ink:#eef2ee; --ink-2:#a9b3ad; --mute:#6d7872; --line:rgba(238,242,238,.1);
-  --accent:#7df2c3; --accent-2:#3fd4a0; --deep:#0e5c4a;
+  --bg:#050505; --bg-2:#0b0b0c; --surface:#121214; --ink:#f4f4f2; --ink-2:#a8a9ad; --mute:#6e6f74; --line:rgba(238,242,238,.1);
+  --accent:#f4f4f2; --accent-2:#c9ccd1; --deep:#2a2d33; --glow:255,255,255;
   --f:'Geist',system-ui,sans-serif; --serif:'Instrument Serif',Georgia,serif;
   --t-hero:clamp(2.8rem,1.1rem + 5.6vw,6.4rem); --t-h2:clamp(2.1rem,1.2rem + 3.2vw,4.4rem);
   --r:22px; --pad:clamp(96px,12vw,180px); --wrap:1280px; --gut:clamp(18px,4vw,44px);
@@ -41,8 +41,8 @@ section{padding-block:var(--pad);position:relative}
 .kick::before{content:'';width:18px;height:1px;background:var(--accent)}
 .lead{color:var(--ink-2);max-width:56ch;font-size:clamp(1.02rem,.95rem + .3vw,1.2rem)}
 
-.btn{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 26px;border-radius:999px;border:1px solid transparent;background:var(--accent);color:#04120d;font-weight:600;cursor:pointer;transition:box-shadow .3s,background .3s}
-.btn:hover{box-shadow:0 0 0 6px rgba(125,242,195,.14),0 10px 40px rgba(125,242,195,.25)}
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 26px;border-radius:999px;border:1px solid transparent;background:var(--accent);color:#050505;font-weight:600;cursor:pointer;transition:box-shadow .3s,background .3s}
+.btn:hover{box-shadow:0 0 0 6px rgba(var(--glow),.14),0 10px 40px rgba(var(--glow),.25)}
 .btn:active{transform:scale(.97);transition:transform .1s}
 .btn svg{width:18px;height:18px;transition:transform .25s}
 .btn:hover svg{transform:translateX(4px)}
@@ -56,7 +56,8 @@ section{padding-block:var(--pad);position:relative}
 .nav.is-scrolled{background:rgba(10,14,18,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
 .nav.is-open{backdrop-filter:none;-webkit-backdrop-filter:none;transform:none;background:transparent;border-color:transparent}
 .logo{display:flex;align-items:center;gap:10px;min-height:44px;font-weight:600;letter-spacing:-.02em;font-size:1.2rem;position:relative;z-index:2}
-.logo i{width:22px;height:22px;border-radius:50%;border:3px solid var(--accent);box-shadow:0 0 18px rgba(125,242,195,.5)}
+.logo svg{width:26px;height:26px;filter:drop-shadow(0 0 10px rgba(var(--glow),.45));transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.logo:hover svg{transform:rotate(-8deg) scale(1.08)}
 .nav-links{display:flex;gap:30px;font-size:.92rem;color:var(--ink-2)}
 .nav-links a:hover{color:var(--ink)}
 .nav-right{display:flex;align-items:center;gap:10px}
@@ -112,12 +113,12 @@ section{padding-block:var(--pad);position:relative}
 .sc-txt li{display:flex;gap:12px;color:var(--ink-2)}
 .sc-txt li::before{content:'';flex:none;width:14px;height:1px;background:var(--accent);margin-top:.8em}
 .device{position:relative}
-.browser{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#11161b;box-shadow:0 40px 100px rgba(0,0,0,.55),0 0 0 1px rgba(125,242,195,.06)}
+.browser{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#111113;box-shadow:0 40px 100px rgba(0,0,0,.55),0 0 0 1px rgba(var(--glow),.06)}
 .browser-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line)}
-.browser-bar i{width:10px;height:10px;border-radius:50%;background:#2a3238}
-.browser-bar span{margin-left:12px;flex:1;max-width:320px;height:24px;border-radius:6px;background:#1a2127;font-size:.75rem;color:var(--mute);display:flex;align-items:center;padding-inline:10px}
+.browser-bar i{width:10px;height:10px;border-radius:50%;background:#2e2e33}
+.browser-bar span{margin-left:12px;flex:1;max-width:320px;height:24px;border-radius:6px;background:#1c1c1f;font-size:.75rem;color:var(--mute);display:flex;align-items:center;padding-inline:10px}
 .browser img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
-.phone{position:absolute;right:-3%;bottom:-8%;width:26%;border-radius:26px;overflow:hidden;border:5px solid #1a2127;box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.phone{position:absolute;right:-3%;bottom:-8%;width:26%;border-radius:26px;overflow:hidden;border:5px solid #1c1c1f;box-shadow:0 30px 60px rgba(0,0,0,.6)}
 .phone img{width:100%;aspect-ratio:390/844;object-fit:cover;object-position:top}
 .work .fx-scenes-count{position:absolute;left:var(--gut);bottom:28px;font-size:.85rem;letter-spacing:.2em;color:var(--mute);font-variant-numeric:tabular-nums}
 .work .bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--line)}
@@ -129,7 +130,7 @@ section{padding-block:var(--pad);position:relative}
 .cmp-grid h2{font-size:var(--t-h2);margin-top:18px}
 .cmp{border-radius:14px;aspect-ratio:16/10;border:1px solid var(--line);box-shadow:0 40px 100px rgba(0,0,0,.5)}
 .cmp .lbl{position:absolute;top:14px;padding:6px 12px;border-radius:999px;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;pointer-events:none;z-index:2}
-.cmp .l1{left:14px;background:rgba(0,0,0,.6);color:#fff}.cmp .l2{right:14px;background:var(--accent);color:#04120d}
+.cmp .l1{left:14px;background:rgba(0,0,0,.6);color:#fff}.cmp .l2{right:14px;background:var(--accent);color:#050505}
 .cmp .fx-handle svg{width:20px;height:20px;color:#05070a}
 @media(max-width:860px){.cmp-grid{grid-template-columns:1fr}}
 
@@ -166,7 +167,7 @@ section{padding-block:var(--pad);position:relative}
 /* bento */
 .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:clamp(40px,5vw,64px)}
 .tile{border-radius:var(--r);padding:clamp(22px,2.4vw,32px);background:var(--surface);border:1px solid var(--line);position:relative;overflow:hidden;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end}
-.tile::before{content:'';position:absolute;inset:0;background:radial-gradient(400px circle at var(--gx,50%) var(--gy,50%),rgba(125,242,195,.1),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.tile::before{content:'';position:absolute;inset:0;background:radial-gradient(400px circle at var(--gx,50%) var(--gy,50%),rgba(var(--glow),.1),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
 .tile:hover::before{opacity:1}
 .tile h3{font-size:1.35rem;letter-spacing:-.03em;margin-bottom:8px}
 .tile p{color:var(--ink-2);font-size:.93rem}
@@ -175,8 +176,8 @@ section{padding-block:var(--pad);position:relative}
 .tile .big small{font-size:.4em;color:var(--accent)}
 .mini-ui{margin-bottom:auto;display:flex;gap:10px;flex-wrap:wrap}
 .mini-ui span{padding:8px 14px;border-radius:999px;border:1px solid var(--line);font-size:.8rem;color:var(--ink-2)}
-.mini-ui span.on{background:var(--accent);color:#04120d;border-color:var(--accent)}
-.wa-demo{margin-bottom:auto;background:#0b1410;border:1px solid rgba(125,242,195,.2);border-radius:14px;padding:12px 14px;font-size:.82rem;color:#bfe9d6;max-width:280px}
+.mini-ui span.on{background:var(--accent);color:#050505;border-color:var(--accent)}
+.wa-demo{margin-bottom:auto;background:#101012;border:1px solid rgba(var(--glow),.2);border-radius:14px;padding:12px 14px;font-size:.82rem;color:#e4e4e6;max-width:280px}
 @media(max-width:900px){.bento{grid-template-columns:1fr 1fr}.t1,.t6{grid-column:span 2}.t2,.t3,.t4,.t5{grid-column:span 1}}
 @media(max-width:560px){.bento{grid-template-columns:1fr}.t1,.t2,.t3,.t4,.t5,.t6{grid-column:span 1}}
 
@@ -193,10 +194,22 @@ section{padding-block:var(--pad);position:relative}
 .opt input{accent-color:var(--accent);width:18px;height:18px;margin:0 12px 0 0;flex:none}
 .opt-l{display:flex;align-items:center;flex:1}
 .opt small{color:var(--mute);font-size:.8rem;white-space:nowrap}
-.opt:has(input:checked){border-color:var(--accent);background:rgba(125,242,195,.06)}
+.opt:has(input:checked){border-color:var(--accent);background:rgba(var(--glow),.06)}
 .total{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid var(--line);padding-top:22px;margin-top:6px}
 .total b{font-size:clamp(2.2rem,1.6rem + 2vw,3.4rem);font-weight:400;letter-spacing:-.04em}
 .total span{color:var(--mute);font-size:.85rem}
+.sum{display:grid;gap:8px;padding:16px 0 18px;border-top:1px solid var(--line);font-size:.9rem;color:var(--ink-2)}
+.sum-row{display:flex;justify-content:space-between;gap:12px}.sum-row span:last-child{color:var(--ink);font-variant-numeric:tabular-nums}
+.sum-row[hidden]{display:none}
+.total b{font-variant-numeric:tabular-nums;transition:text-shadow .4s}.total b.bump{text-shadow:0 0 28px rgba(var(--glow),.55)}
+/* fotos em preto e branco, cor ao passar o mouse (combina com o logo) */
+.niche img,.end-bg img{filter:grayscale(1) contrast(1.08) brightness(.9);transition:filter .8s,transform 1.2s cubic-bezier(.16,1,.3,1)}
+.niche figure:hover img{filter:grayscale(.15) contrast(1.05);transform:scale(1.04)}
+/* luz que segue o cursor */
+.cursor-glow{position:fixed;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(var(--glow),.07),transparent 65%);mix-blend-mode:screen;transition:opacity .4s;opacity:0}
+@media(hover:hover){.cursor-glow.on{opacity:1}}
+.device{transition:transform .6s cubic-bezier(.16,1,.3,1);transform:perspective(1200px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg))}
+@media(prefers-reduced-motion:reduce){.cursor-glow{display:none}.device{transform:none}}
 .sim-box .btn{width:100%;justify-content:center;margin-top:22px}
 .sim-note{font-size:.8rem;color:var(--mute);margin-top:12px}
 @media(max-width:860px){.sim-grid{grid-template-columns:1fr}}
@@ -241,7 +254,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
 <div data-progress></div>
 
 <nav class="nav" data-nav="hide" aria-label="Principal">
-  <a href="#topo" class="logo" aria-label="Aura, voltar ao início"><i aria-hidden="true"></i>Aura</a>
+  <a href="#topo" class="logo" aria-label="Aura, voltar ao início"><svg viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M49.4 6.2 L71.5 45.5 L84.7 45.5 L76.2 52.3 L99.1 93.4 L79.1 93.4 L62.6 64.5 L15.5 93.4 L0.9 93.4 Z M49.4 40.2 L56.2 52.6 L35.7 67.5 Z"/></svg>Aura</a>
   <div class="nav-links" id="menu">
     <a href="#trabalhos">Trabalhos</a><a href="#para-quem">Para quem</a><a href="#processo">Processo</a><a href="#investimento">Investimento</a><a href="#contato">Contato</a>
   </div>
@@ -303,7 +316,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
           <div class="sc-txt"><span class="tag">Consultoria · Segurança de alimentos</span><h3>Eduardo Stephano</h3>
             <p>Auditor líder com 39 anos na cadeia de alimentos. O site traduz a autoridade técnica em linguagem de diretor: trajetória, credenciais e palestras.</p>
             <ul><li>Linha do tempo interativa de 1989 até hoje</li><li>Carteira de 40 clientes por segmento</li><li>Galeria de palestras e WhatsApp para convites</li></ul></div>
-          <div class="device"><div class="browser"><div class="browser-bar"><i></i><i></i><i></i><span>eduardostephano.com.br</span></div><img src="img/w_eduardo_d.jpg" width="1440" height="900" loading="lazy" alt="Página inicial do site do consultor Eduardo Stephano"></div>
+          <div class="device"><div class="browser"><div class="browser-bar"><i></i><i></i><i></i><span>esconsultoria.com</span></div><img src="img/w_eduardo_d.jpg" width="1440" height="900" loading="lazy" alt="Página inicial do site do consultor Eduardo Stephano"></div>
             <div class="phone"><img src="img/w_eduardo_m.jpg" width="500" height="1083" loading="lazy" alt="O mesmo site no celular"></div></div>
         </article>
         <article class="fx-scene">
@@ -418,7 +431,11 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
           <label class="opt"><span class="opt-l"><input type="checkbox" name="extra" value="Google Meu Negócio" data-v="[300]">Perfil no Google Meu Negócio</span><small>+ [R$ 300]</small></label>
           <label class="opt"><span class="opt-l"><input type="checkbox" name="extra" value="Manutenção mensal" data-v="[250]">Manutenção mensal</span><small>+ [R$ 250]/mês</small></label>
         </div></div>
-        <div class="total"><span>Estimativa</span><b id="sim-total">R$ 0</b></div>
+        <div class="sum" aria-live="polite">
+          <div class="sum-row"><span>Projeto (pagamento único)</span><span id="sim-once">R$ 0</span></div>
+          <div class="sum-row" id="sim-mrow" hidden><span>Manutenção mensal</span><span id="sim-month">R$ 0/mês</span></div>
+        </div>
+        <div class="total"><span id="sim-lbl">Total estimado</span><b id="sim-total">R$ 0</b></div>
         <button class="btn" type="submit">Enviar este pedido no WhatsApp
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         <p class="sim-note">Valor de referência. O orçamento final sai depois da conversa.</p>
@@ -472,20 +489,45 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
   <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.3 1.3-1.9 1.3-.5 0-1.1.2-3.6-.8-3-1.2-5-4.3-5.1-4.5-.2-.2-1.3-1.7-1.3-3.2S6.5 6.8 6.8 6.5c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.5c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.2.1.8-.1 1.4z"/></svg></a>
 
 <script src="assets/shader-bg.js"></script>
-<script>shaderBG('#bg',{preset:'aurora',colors:['#03060a','#0e6b55','#020306','#7df2c3'],speed:.05});</script>
+<script>shaderBG('#bg',{preset:'aurora',colors:['#050505','#3a3c42','#020202','#e8e8ea'],speed:.05});</script>
 <script>
 /* simulador: os valores ficam em data-v (troque pelos seus). Monta o total e a mensagem do WhatsApp. */
 (function(){
   const f=document.getElementById('sim'), out=document.getElementById('sim-total');
   const num=el=>parseFloat((el.dataset.v||'0').replace(/[^\d.]/g,''))||0;
   const brl=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
-  function calc(){let t=0;f.querySelectorAll('input:checked').forEach(i=>{if(!/mensal/i.test(i.value))t+=num(i)});out.textContent=brl(t);return t;}
+  const onceEl=document.getElementById('sim-once'), mEl=document.getElementById('sim-month'), mRow=document.getElementById('sim-mrow'), lbl=document.getElementById('sim-lbl');
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let shown=0,raf;
+  function animate(to){cancelAnimationFrame(raf);const from=shown,t0=performance.now(),dur=reduced?0:600;
+    out.classList.add('bump');
+    (function step(now){const k=dur?Math.min(1,(now-t0)/dur):1,e=1-Math.pow(1-k,3);shown=Math.round(from+(to-from)*e);out.textContent=brl(shown);
+      if(k<1)raf=requestAnimationFrame(step);else out.classList.remove('bump');})(t0);}
+  /* manutenção mensal soma no total (1º mês) e aparece separada no resumo */
+  function calc(){let once=0,month=0;
+    f.querySelectorAll('input:checked').forEach(i=>{/mensal/i.test(i.value)?month+=num(i):once+=num(i)});
+    onceEl.textContent=brl(once);mEl.textContent=brl(month)+'/mês';mRow.hidden=!month;
+    lbl.textContent=month?'Total com o 1º mês':'Total estimado';
+    const total=once+month;animate(total);return {once,month,total};}
   f.addEventListener('change',calc);calc();
   f.addEventListener('submit',e=>{e.preventDefault();
     const tipo=f.querySelector('input[name=tipo]:checked').value;
     const ex=[...f.querySelectorAll('input[name=extra]:checked')].map(i=>i.value);
-    const msg=['Olá! Montei meu site no simulador da Aura.','Formato: '+tipo,'Extras: '+(ex.join(', ')||'nenhum'),'Estimativa: '+brl(calc())].join('\n');
+    const msg=['Olá! Montei meu site no simulador da Aura.','Formato: '+tipo,'Extras: '+(ex.join(', ')||'nenhum'),...(r=>['Projeto: '+brl(r.once)].concat(r.month?['Manutenção: '+brl(r.month)+'/mês','Total com o 1º mês: '+brl(r.total)]:['Total estimado: '+brl(r.total)]))(calc())].join('\n');
     window.open('https://wa.me/55[DDD][NUMERO]?text='+encodeURIComponent(msg),'_blank','noopener');});
+})();
+</script>
+<script>
+/* luz do cursor + inclinação 3D das telas do portfólio */
+(function(){if(matchMedia('(prefers-reduced-motion: reduce)').matches||!matchMedia('(hover:hover)').matches)return;
+  const g=document.createElement('div');g.className='cursor-glow';document.body.appendChild(g);
+  let x=0,y=0,cx=0,cy=0;addEventListener('pointermove',e=>{x=e.clientX;y=e.clientY;g.classList.add('on')},{passive:true});
+  document.addEventListener('pointerleave',()=>g.classList.remove('on'));
+  (function loop(){cx+=(x-cx)*.12;cy+=(y-cy)*.12;g.style.transform=`translate(${cx}px,${cy}px)`;requestAnimationFrame(loop)})();
+  document.querySelectorAll('.device').forEach(d=>{
+    d.addEventListener('pointermove',e=>{const r=d.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+      d.style.setProperty('--ry',(px*8)+'deg');d.style.setProperty('--rx',(-py*6)+'deg')});
+    d.addEventListener('pointerleave',()=>{d.style.setProperty('--ry','0deg');d.style.setProperty('--rx','0deg')});});
 })();
 </script>
 <script src="assets/fx.js" defer></script>
