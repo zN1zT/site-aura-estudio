@@ -166,29 +166,20 @@ section{padding-block:var(--pad);position:relative}
 .step p{color:var(--ink-2);font-size:.95rem}
 .step small{display:block;margin-top:18px;color:var(--mute);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
 
-/* bento */
-.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:clamp(40px,5vw,64px)}
-.tile{border-radius:var(--r);padding:clamp(22px,2.4vw,32px);background:var(--surface);border:1px solid var(--line);position:relative;overflow:hidden;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end}
-.tile::before{content:'';position:absolute;inset:0;background:radial-gradient(400px circle at var(--gx,50%) var(--gy,50%),rgba(var(--glow),.1),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
-.tile:hover::before{opacity:1}
-.tile h3{font-size:1.35rem;letter-spacing:-.03em;margin-bottom:8px}
-.tile p{color:var(--ink-2);font-size:.93rem}
-.t1{grid-column:span 4;min-height:300px}.t2{grid-column:span 2}.t3{grid-column:span 2}.t4{grid-column:span 2}.t5{grid-column:span 2}.t6{grid-column:span 6;min-height:0;flex-direction:row;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.tile .big{font-size:clamp(3rem,2rem + 3vw,5rem);letter-spacing:-.05em;line-height:1;margin-bottom:auto}
-.tile .big small{font-size:.4em;color:var(--accent)}
-.mini-ui{margin-bottom:auto;display:flex;gap:10px;flex-wrap:wrap}
-.mini-ui span{padding:8px 14px;border-radius:999px;border:1px solid var(--line);font-size:.8rem;color:var(--ink-2)}
-.mini-ui span.on{background:var(--accent);color:#050505;border-color:var(--accent)}
-.wa-demo{margin-bottom:auto;background:#101012;border:1px solid rgba(var(--glow),.2);border-radius:14px;padding:12px 14px;font-size:.82rem;color:#e4e4e6;max-width:280px}
-@media(max-width:900px){.bento{grid-template-columns:1fr 1fr}.t1,.t6{grid-column:span 2}.t2,.t3,.t4,.t5{grid-column:span 1}}
-@media(max-width:560px){.bento{grid-template-columns:1fr}.t1,.t2,.t3,.t4,.t5,.t6{grid-column:span 1}}
+/* o que mandar */
+.need-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:clamp(36px,5vw,56px)}
+.need-i{border:1px solid var(--line);border-radius:var(--r);padding:26px;background:var(--surface);transition:border-color .3s,transform .4s cubic-bezier(.16,1,.3,1)}
+.need-i:hover{border-color:rgba(var(--glow),.3);transform:translateY(-4px)}
+.need-i b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.6rem;color:var(--accent)}
+.need-i h3{font-size:1.25rem;letter-spacing:-.02em;margin:10px 0 6px}.need-i p{color:var(--ink-2);font-size:.92rem}
+@media(max-width:860px){.need-grid{grid-template-columns:1fr 1fr}}@media(max-width:520px){.need-grid{grid-template-columns:1fr}}
 
 /* simulador */
 .sim{background:var(--bg-2)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .price-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end}
 .sim h2{font-size:var(--t-h2);margin-top:18px}
-.incl{margin-top:clamp(40px,5vw,64px);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,2.4vw,30px)}
+.incl{margin-top:28px;color:var(--ink-2);font-size:.92rem}.incl b{color:var(--ink);font-weight:500}
 .incl>p,.opt-g>p,.sum-k{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:16px}
 .incl ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px 24px;font-size:.9rem;color:var(--ink-2)}
 .incl li{position:relative;padding-left:22px}.incl li::before{content:'✓';position:absolute;left:0;color:var(--accent)}
@@ -244,9 +235,7 @@ section{padding-block:var(--pad);position:relative}
 .sum-row{display:flex;justify-content:space-between;gap:12px}.sum-row span:last-child{color:var(--ink);font-variant-numeric:tabular-nums}
 .sum-row[hidden]{display:none}
 .total b{font-variant-numeric:tabular-nums;transition:text-shadow .4s}.total b.bump{text-shadow:0 0 28px rgba(var(--glow),.55)}
-/* fotos em preto e branco, cor ao passar o mouse (combina com o logo) */
-.niche img,.end-bg img{filter:grayscale(1) contrast(1.08) brightness(.9);transition:filter .8s,transform 1.2s cubic-bezier(.16,1,.3,1)}
-.niche figure:hover img{filter:grayscale(.15) contrast(1.05);transform:scale(1.04)}
+.niche img{transition:transform 1.2s cubic-bezier(.16,1,.3,1)}.niche figure:hover img{transform:scale(1.04)}
 /* luz que segue o cursor */
 .cursor-glow{position:fixed;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(var(--glow),.07),transparent 65%);mix-blend-mode:screen;transition:opacity .4s;opacity:0}
 @media(hover:hover){.cursor-glow.on{opacity:1}}
@@ -440,18 +429,17 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
     </div></div>
   </section>
 
-  <section>
+  <section class="need">
     <div class="wrap">
-      <p class="kick" data-reveal>O que vem no seu site</p>
-      <h2 data-split style="font-size:var(--t-h2);margin-top:18px;max-width:12em">Bonito é o mínimo. <em>Útil</em> é o que vende.</h2>
-      <div class="bento" data-stagger="0.07">
-        <div class="tile t1" data-tilt="4"><p class="big">1<small> de 1</small></p><h3>Direção de arte própria</h3><p>Paleta tirada da sua foto, tipografia escolhida para o seu segmento e um elemento visual do seu negócio. Ninguém vai ter um site igual.</p></div>
-        <div class="tile t2" data-tilt="4"><div class="wa-demo">Olá! Vim pelo site.<br>Nome: Ana<br>Serviço: Consultoria</div><h3>WhatsApp inteligente</h3><p>A mensagem já chega preenchida com o que o cliente escolheu.</p></div>
-        <div class="tile t3" data-tilt="4"><div class="mini-ui"><span class="on">Todos</span><span>Serviços</span><span>Planos</span></div><h3>Módulos úteis</h3><p>Filtros, simuladores, horário de funcionamento, antes e depois.</p></div>
-        <div class="tile t4" data-tilt="4"><p class="big"><span data-count="100">0</span><small>%</small></p><h3>Pensado para celular</h3><p>Cada seção revisada numa tela de 390 px, não só encolhida.</p></div>
-        <div class="tile t5" data-tilt="4"><p class="big">G</p><h3>Pronto para o Google</h3><p>Título, descrição e imagem de compartilhamento configurados.</p></div>
-        <div class="tile t6"><div><h3>Efeitos com critério</h3><p>Títulos que entram linha a linha, cenas que trocam com a rolagem, números que contam. Só onde ajuda a entender.</p></div>
-          <a class="btn btn--ghost" href="#trabalhos">Ver nos trabalhos</a></div>
+      <p class="kick" data-reveal>Para começar</p>
+      <h2 data-split style="font-size:var(--t-h2);margin-top:18px;max-width:12em">O que você <em>precisa mandar.</em></h2>
+      <div class="need-grid" data-stagger="0.06">
+        <div class="need-i"><b>01</b><h3>Logo</h3><p>Em PNG ou PDF. Não tem? Criamos um.</p></div>
+        <div class="need-i"><b>02</b><h3>Fotos</h3><p>Suas, do espaço ou do trabalho. Pode ser do celular. Faltou, usamos banco de imagem.</p></div>
+        <div class="need-i"><b>03</b><h3>Contatos</h3><p>WhatsApp, e-mail, Instagram e endereço, se atender no local.</p></div>
+        <div class="need-i"><b>04</b><h3>Referências</h3><p>2 ou 3 sites que você gosta. Ajuda a acertar o estilo.</p></div>
+        <div class="need-i"><b>05</b><h3>Informações</h3><p>Serviços, diferenciais e sua história. Um áudio no WhatsApp já serve.</p></div>
+        <div class="need-i"><b>06</b><h3>Domínio</h3><p>Já tem um? Mande o acesso. Não tem? Registramos em seu nome.</p></div>
       </div>
     </div>
   </section>
@@ -461,101 +449,71 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
       <div class="price-head">
         <div><p class="kick" data-reveal>Investimento</p>
           <h2 data-split>Preço claro, <em>sem letra miúda.</em></h2></div>
-        <p class="lead" data-reveal>Escolha o plano, marque os extras e veja o valor na hora. Domínio, hospedagem e segurança do 1º ano já vêm em todos os planos. Você não paga nada à parte para o site ir ao ar.</p>
+        <p class="lead" data-reveal>Escolha o plano, marque os extras e veja o valor na hora.</p>
       </div>
 
-      <div class="incl" data-reveal>
-        <p>Incluso em todos os planos</p>
-        <ul>
-          <li><b>Domínio .com.br</b> por 1 ano, registrado em seu nome</li>
-          <li><b>Hospedagem rápida</b> por 1 ano</li>
-          <li><b>Cadeado de segurança</b> (SSL / https)</li>
-          <li><b>Versão para celular</b> revisada tela a tela</li>
-          <li><b>WhatsApp</b> com mensagem pronta</li>
-          <li><b>Google</b>: título, descrição e mapa do site</li>
-          <li><b>30 dias de ajustes</b> sem custo após a entrega</li>
-          <li><b>Todos os arquivos</b> do site são seus</li>
-        </ul>
-      </div>
+      <p class="incl" data-reveal><b>Todos os planos incluem:</b> domínio e hospedagem no 1º ano · https · versão celular · WhatsApp · 30 dias de ajustes</p>
 
       <form id="sim" class="sim-form">
         <fieldset class="plans" data-stagger="0.08" aria-label="Escolha o plano">
           <label class="plan">
             <input type="radio" name="tipo" value="Página única" data-v="1500" data-prazo="5 a 7 dias" data-lvl="1" checked>
             <span class="plan-top"><b>Página única</b><small>Landing page</small></span>
-            <span class="plan-for">Para quem precisa de uma presença forte e rápida: profissional liberal, lançamento, campanha.</span>
             <span class="plan-price"><small>R$</small>1.500</span>
             <span class="plan-time">No ar em <b>5 a 7 dias</b></span>
             <ul>
               <li>1 página com até 8 seções</li>
-              <li>Direção de arte própria</li>
-              <li>Fotos de banco tratadas na sua paleta</li>
-              <li>Formulário e botão de WhatsApp</li>
+              <li>Formulário e WhatsApp</li>
               <li>2 rodadas de revisão</li>
-              <li class="no">Redação profissional (extra)</li>
-              <li class="no">Google Meu Negócio (extra)</li>
             </ul>
           </label>
           <label class="plan plan--hot">
             <input type="radio" name="tipo" value="Site institucional" data-v="2800" data-prazo="10 a 12 dias" data-lvl="2">
             <span class="plan-badge">Mais escolhido</span>
             <span class="plan-top"><b>Institucional</b><small>Até 5 páginas</small></span>
-            <span class="plan-for">Para consultores, clínicas e escritórios que precisam explicar serviços e passar autoridade.</span>
             <span class="plan-price"><small>R$</small>2.800</span>
             <span class="plan-time">No ar em <b>10 a 12 dias</b></span>
             <ul>
-              <li>Tudo da Página única</li>
-              <li>Até 5 páginas (ex.: início, sobre, serviços, blog, contato)</li>
-              <li><b>Redação profissional inclusa</b></li>
-              <li><b>Google Meu Negócio incluso</b></li>
-              <li><b>E-mail profissional incluso</b></li>
-              <li>SEO básico em cada página</li>
+              <li>Até 5 páginas</li>
+              <li><b>Textos, Google e e-mail inclusos</b></li>
               <li>3 rodadas de revisão</li>
             </ul>
           </label>
           <label class="plan">
             <input type="radio" name="tipo" value="Catálogo ou portfólio" data-v="4200" data-prazo="12 a 15 dias" data-lvl="3">
             <span class="plan-top"><b>Catálogo</b><small>Portfólio ou produtos</small></span>
-            <span class="plan-for">Para arquitetos, indústrias, lojas e restaurantes que vendem mostrando muitos itens ou projetos.</span>
             <span class="plan-price"><small>R$</small>4.200</span>
             <span class="plan-time">No ar em <b>12 a 15 dias</b></span>
             <ul>
+              <li>Até 10 páginas + catálogo com filtro</li>
               <li>Tudo do Institucional</li>
-              <li>Até 10 páginas</li>
-              <li>Catálogo com até 40 itens e filtro</li>
-              <li>Página própria para cada projeto ou produto</li>
-              <li>Relatório de visitas (Google Analytics)</li>
-              <li>60 dias de ajustes sem custo</li>
+              <li>60 dias de ajustes</li>
             </ul>
           </label>
         </fieldset>
 
         <div class="sim-grid">
           <div>
-            <div class="opt-g"><p>Extras <span>marque o que fizer sentido para você</span></p><div class="opts">
-              <label class="opt" data-lvl-incl="2"><input type="checkbox" name="extra" value="Redação profissional" data-v="400">
-                <span class="opt-l"><b>Redação profissional dos textos</b><span>Não sabe o que escrever? Fazemos uma entrevista de 30 min com você e escrevemos todos os textos do site do zero: apresentação, serviços e chamadas para o WhatsApp, com as palavras que seu cliente procura no Google.</span></span><small>+ R$ 400</small></label>
-              <label class="opt" data-lvl-incl="2"><input type="checkbox" name="extra" value="Google Meu Negócio" data-v="300">
-                <span class="opt-l"><b>Perfil no Google Meu Negócio</b><span>Criamos ou arrumamos seu perfil no Google Maps: fotos, horário, categorias e link para o site. É o que aparece quando alguém busca "consultoria perto de mim".</span></span><small>+ R$ 300</small></label>
-              <label class="opt" data-lvl-incl="2"><input type="checkbox" name="extra" value="E-mail profissional" data-v="150">
-                <span class="opt-l"><b>E-mail profissional</b><span>Um endereço com o seu domínio (ex.: contato@seunegocio.com.br) configurado no celular e no computador. Passa muito mais confiança que um @gmail.</span></span><small>+ R$ 150</small></label>
-              <label class="opt"><input type="checkbox" name="extra" value="Página extra" data-v="350">
-                <span class="opt-l"><b>Página adicional</b><span>Uma página a mais além do limite do plano, por exemplo uma página só para um serviço importante ou uma campanha.</span></span><small>+ R$ 350</small></label>
-              <label class="opt"><input type="checkbox" name="extra" value="Blog com 3 artigos" data-v="600">
-                <span class="opt-l"><b>Blog com 3 artigos</b><span>Área de artigos e 3 textos escritos por nós sobre dúvidas do seu cliente. Ajuda a aparecer no Google e mostra que você entende do assunto.</span></span><small>+ R$ 600</small></label>
-              <label class="opt"><input type="checkbox" name="extra" value="Logo e identidade visual" data-v="450">
-                <span class="opt-l"><b>Logo e identidade visual</b><span>Não tem logo ou ele está datado? Criamos um logo simples, a paleta de cores e as fontes, com os arquivos para usar no Instagram e em cartões.</span></span><small>+ R$ 450</small></label>
-              <label class="opt"><input type="checkbox" name="extra" value="Versão em inglês" data-v="600">
-                <span class="opt-l"><b>Versão em inglês</b><span>O site inteiro traduzido, com botão para trocar o idioma. Para quem atende clientes ou empresas de fora.</span></span><small>+ R$ 600</small></label>
+            <div class="opt-g"><p>Extras</p><div class="opts">
+              <label class="opt" data-lvl-incl="2"><input type="checkbox" name="extra" value="Textos do site" data-v="250">
+                <span class="opt-l"><b>Textos do site</b><span>Conversamos 20 min e escrevemos tudo para você.</span></span><small>+ R$ 250</small></label>
+              <label class="opt" data-lvl-incl="2"><input type="checkbox" name="extra" value="Google Meu Negócio" data-v="150">
+                <span class="opt-l"><b>Google Meu Negócio</b><span>Seu negócio aparecendo no Google Maps.</span></span><small>+ R$ 150</small></label>
+              <label class="opt" data-lvl-incl="2"><input type="checkbox" name="extra" value="E-mail profissional" data-v="100">
+                <span class="opt-l"><b>E-mail profissional</b><span>contato@seunegocio.com.br no seu celular.</span></span><small>+ R$ 100</small></label>
+              <label class="opt"><input type="checkbox" name="extra" value="Logo" data-v="300">
+                <span class="opt-l"><b>Criação de logo</b><span>Logo simples com cores e fontes da marca.</span></span><small>+ R$ 300</small></label>
+              <label class="opt"><input type="checkbox" name="extra" value="Página extra" data-v="200">
+                <span class="opt-l"><b>Página a mais</b><span>Além do limite do plano.</span></span><small>+ R$ 200</small></label>
+              <label class="opt"><input type="checkbox" name="extra" value="Versão em inglês" data-v="300">
+                <span class="opt-l"><b>Versão em inglês</b><span>Botão para trocar o idioma do site.</span></span><small>+ R$ 300</small></label>
             </div></div>
 
-            <div class="opt-g"><p>Manutenção <span>depois dos dias de ajuste grátis</span></p><div class="opts">
+            <div class="opt-g"><p>Manutenção</p><div class="opts">
               <label class="opt"><input type="radio" name="manut" value="Sem manutenção" data-m="0" checked>
-                <span class="opt-l"><b>Sem manutenção</b><span>O site é seu e fica no ar. Alterações pontuais custam a partir de R$ 80 cada. A partir do 2º ano, a renovação de domínio e hospedagem é R$ 390/ano.</span></span><small>R$ 0</small></label>
-              <label class="opt"><input type="radio" name="manut" value="Manutenção Essencial" data-m="150">
-                <span class="opt-l"><b>Essencial</b><span>Domínio e hospedagem renovados sem você se preocupar, backup semanal, monitoramento de segurança e até 2 alterações por mês (trocar foto, texto, preço, horário).</span></span><small>R$ 150/mês</small></label>
-              <label class="opt"><input type="radio" name="manut" value="Manutenção Completa" data-m="290">
-                <span class="opt-l"><b>Completa</b><span>Tudo do Essencial, alterações sem limite de quantidade (até 4h por mês), 1 artigo novo no blog por mês e relatório mensal de visitas e cliques no WhatsApp.</span></span><small>R$ 290/mês</small></label>
+                <span class="opt-l"><b>Sem manutenção</b><span>Alterações avulsas a partir de R$ 50. Renovação no 2º ano: R$ 300/ano.</span></span><small>R$ 0</small></label>
+              <label class="opt"><input type="radio" name="manut" value="Manutenção mensal" data-m="120">
+                <span class="opt-l"><b>Manutenção mensal</b><span>Até 3 alterações por mês, backup e renovação de domínio e hospedagem inclusos.</span></span><small>R$ 120/mês</small></label>
             </div></div>
           </div>
 
@@ -566,10 +524,10 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
             <div class="sum-row"><span>Projeto (pagamento único)</span><span id="sim-once">R$ 0</span></div>
             <div class="sum-row" id="sim-mrow" hidden><span id="s-mname">Manutenção</span><span id="sim-month">R$ 0/mês</span></div>
             <div class="total"><span id="sim-lbl">Total</span><b id="sim-total">R$ 0</b></div>
-            <p class="sum-pay">Pagamento em 2 partes: <b>50% para começar</b> e <b>50% na entrega</b>. Pix ou cartão.</p>
+            <p class="sum-pay"><b>50%</b> para começar, <b>50%</b> na entrega.</p>
             <button class="btn" type="submit">Enviar pedido no WhatsApp
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-            <p class="sim-note">Valor de referência. O orçamento final é confirmado na conversa, sem surpresa.</p>
+            
           </aside>
         </div>
       </form>
@@ -587,9 +545,9 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
         <div class="fx-acc-item"><button class="fx-acc-q">O site funciona bem no celular?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>Sim. Cada site passa por uma revisão automática e visual em tela de computador e de celular antes da entrega, seção por seção.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">Consigo alterar depois?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
-          <div class="fx-acc-a"><p>Pequenos ajustes nos primeiros 30 dias estão incluídos. Depois, você escolhe: manutenção mensal (a partir de R$ 150) ou alterações avulsas a partir de R$ 80.</p></div></div>
+          <div class="fx-acc-a"><p>Pequenos ajustes nos primeiros 30 dias estão incluídos. Depois, você escolhe: manutenção mensal (R$ 120) ou alterações avulsas a partir de R$ 50.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">Domínio e hospedagem já estão no preço?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
-          <div class="fx-acc-a"><p>Sim. Todos os planos incluem o domínio .com.br e a hospedagem pelo 1º ano, com cadeado de segurança. Do 2º ano em diante, a renovação sai por R$ 390/ano, ou fica inclusa se você tiver manutenção mensal.</p></div></div>
+          <div class="fx-acc-a"><p>Sim. Todos os planos incluem o domínio .com.br e a hospedagem pelo 1º ano, com cadeado de segurança. Do 2º ano em diante, a renovação sai por R$ 300/ano, ou fica inclusa se você tiver manutenção mensal.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">O site fica em meu nome?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>Sim. O domínio é registrado em seu nome e você recebe todos os arquivos do site.</p></div></div>
       </div>
