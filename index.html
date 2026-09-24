@@ -106,6 +106,8 @@ section{padding-block:var(--pad);position:relative}
 .work-head h2{font-size:var(--t-h2);margin-top:18px;max-width:14em}
 .fx-scene{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,4vw,60px);align-items:center;padding:clamp(90px,10vh,120px) var(--gut) 40px;max-width:var(--wrap);margin-inline:auto;transform:translateY(24px) scale(1)}
 .fx-scene.is-active{transform:none}.fx-scene.is-past{transform:translateY(-24px)}
+.fx-scene:not(.is-active){transition:opacity .3s,transform 1.4s cubic-bezier(.16,1,.3,1)}
+.fx-scene.is-active{transition:opacity .7s cubic-bezier(.16,1,.3,1) .25s,transform 1.4s cubic-bezier(.16,1,.3,1)}
 .sc-txt .tag{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
 .sc-txt h3{font-size:clamp(2rem,1.2rem + 2.6vw,3.6rem);margin:14px 0 18px}
 .sc-txt p{color:var(--ink-2)}
@@ -211,6 +213,7 @@ section{padding-block:var(--pad);position:relative}
 .device{transition:transform .6s cubic-bezier(.16,1,.3,1);transform:perspective(1200px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg))}
 @media(prefers-reduced-motion:reduce){.cursor-glow{display:none}.device{transform:none}}
 .sim-box .btn{width:100%;justify-content:center;margin-top:22px}
+@media(max-width:480px){.sim-box .btn{font-size:.92rem;padding:0 18px;gap:8px}}
 .sim-note{font-size:.8rem;color:var(--mute);margin-top:12px}
 @media(max-width:860px){.sim-grid{grid-template-columns:1fr}}
 
@@ -279,7 +282,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
         <a class="btn btn--ghost" href="#trabalhos">Ver trabalhos</a>
       </div>
       <div class="hero-meta" data-reveal style="--d:.5s">
-        <span>No ar em <b>[7 a 10] dias</b></span>
+        <span>No ar em <b>7 a 10 dias</b></span>
         <span>Revisado em <b>celular e computador</b></span>
         <span>Nenhum site <b>igual ao outro</b></span>
       </div>
@@ -394,7 +397,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
       <article class="step"><b>03</b><div><h3>Texto e fotos</h3><p>Escrevemos os textos e escolhemos fotos que fazem sentido, com o mesmo tratamento de cor.</p><small>Dia 2 a 4</small></div></article>
       <article class="step"><b>04</b><div><h3>Construção</h3><p>Efeitos, módulos úteis e WhatsApp em todos os pontos certos.</p><small>Dia 4 a 7</small></div></article>
       <article class="step"><b>05</b><div><h3>Revisão</h3><p>Testamos em celular e computador, página inteira. Você aprova e pede ajustes.</p><small>Dia 7 a 9</small></div></article>
-      <article class="step"><b>06</b><div><h3>No ar</h3><p>Domínio configurado, Google avisado e o site trabalhando por você.</p><small>Dia [10]</small></div></article>
+      <article class="step"><b>06</b><div><h3>No ar</h3><p>Domínio configurado, Google avisado e o site trabalhando por você.</p><small>Dia 10</small></div></article>
     </div></div>
   </section>
 
@@ -421,15 +424,15 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
         <p class="lead" data-reveal>Escolha o formato e os extras. O valor aparece ao lado e você manda o pedido pelo WhatsApp com tudo preenchido.</p></div>
       <form class="sim-box glass" id="sim" data-reveal="scale">
         <div class="opt-g"><p>Formato</p><div class="opts">
-          <label class="opt"><span class="opt-l"><input type="radio" name="tipo" value="Página única (landing page)" data-v="[1500]" checked>Página única</span><small>1 página, até 8 seções</small></label>
-          <label class="opt"><span class="opt-l"><input type="radio" name="tipo" value="Site institucional" data-v="[2800]">Site institucional</span><small>até 5 páginas</small></label>
-          <label class="opt"><span class="opt-l"><input type="radio" name="tipo" value="Site com catálogo ou portfólio" data-v="[4200]">Catálogo ou portfólio</span><small>itens com filtro</small></label>
+          <label class="opt"><span class="opt-l"><input type="radio" name="tipo" value="Página única (landing page)" data-v="1500" checked>Página única</span><small>1 página, até 8 seções</small></label>
+          <label class="opt"><span class="opt-l"><input type="radio" name="tipo" value="Site institucional" data-v="2800">Site institucional</span><small>até 5 páginas</small></label>
+          <label class="opt"><span class="opt-l"><input type="radio" name="tipo" value="Site com catálogo ou portfólio" data-v="4200">Catálogo ou portfólio</span><small>itens com filtro</small></label>
         </div></div>
         <div class="opt-g"><p>Extras</p><div class="opts">
-          <label class="opt"><span class="opt-l"><input type="checkbox" name="extra" value="Textos escritos por nós" data-v="[400]">Textos escritos por nós</span><small>+ [R$ 400]</small></label>
-          <label class="opt"><span class="opt-l"><input type="checkbox" name="extra" value="Domínio e hospedagem por 1 ano" data-v="[350]">Domínio e hospedagem, 1 ano</span><small>+ [R$ 350]</small></label>
-          <label class="opt"><span class="opt-l"><input type="checkbox" name="extra" value="Google Meu Negócio" data-v="[300]">Perfil no Google Meu Negócio</span><small>+ [R$ 300]</small></label>
-          <label class="opt"><span class="opt-l"><input type="checkbox" name="extra" value="Manutenção mensal" data-v="[250]">Manutenção mensal</span><small>+ [R$ 250]/mês</small></label>
+          <label class="opt"><span class="opt-l"><input type="checkbox" name="extra" value="Textos escritos por nós" data-v="400">Textos escritos por nós</span><small>+ R$ 400</small></label>
+          <label class="opt"><span class="opt-l"><input type="checkbox" name="extra" value="Domínio e hospedagem por 1 ano" data-v="350">Domínio e hospedagem, 1 ano</span><small>+ R$ 350</small></label>
+          <label class="opt"><span class="opt-l"><input type="checkbox" name="extra" value="Google Meu Negócio" data-v="300">Perfil no Google Meu Negócio</span><small>+ R$ 300</small></label>
+          <label class="opt"><span class="opt-l"><input type="checkbox" name="extra" value="Manutenção mensal" data-v="250">Manutenção mensal</span><small>+ R$ 250/mês</small></label>
         </div></div>
         <div class="sum" aria-live="polite">
           <div class="sum-row"><span>Projeto (pagamento único)</span><span id="sim-once">R$ 0</span></div>
@@ -448,13 +451,13 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
       <div><p class="kick" data-reveal>Dúvidas</p><h2 data-split>Antes de <em>começar.</em></h2></div>
       <div data-accordion>
         <div class="fx-acc-item is-open"><button class="fx-acc-q">Em quanto tempo o site fica pronto?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
-          <div class="fx-acc-a"><p>Uma página única fica pronta em [7 a 10] dias a partir da conversa inicial. Sites maiores levam de [2 a 3] semanas. O prazo depende de você mandar logo e informações a tempo.</p></div></div>
+          <div class="fx-acc-a"><p>Uma página única fica pronta em 7 a 10 dias a partir da conversa inicial. Sites maiores levam de 2 a 3 semanas. O prazo depende de você mandar logo e informações a tempo.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">Preciso ter fotos e textos prontos?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>Não. Se você tiver fotos reais do seu trabalho, elas entram primeiro. O restante escolhemos em bancos de imagem com licença livre e tratamos com a mesma cor. Os textos podemos escrever a partir da conversa.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">O site funciona bem no celular?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>Sim. Cada site passa por uma revisão automática e visual em tela de computador e de celular antes da entrega, seção por seção.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">Consigo alterar depois?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
-          <div class="fx-acc-a"><p>Pequenos ajustes nos primeiros [30] dias estão incluídos. Depois, você pode contratar a manutenção mensal ou pedir alterações avulsas.</p></div></div>
+          <div class="fx-acc-a"><p>Pequenos ajustes nos primeiros 30 dias estão incluídos. Depois, você pode contratar a manutenção mensal ou pedir alterações avulsas.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">O site fica em meu nome?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>Sim. O domínio é registrado em seu nome e você recebe todos os arquivos do site.</p></div></div>
       </div>
@@ -465,7 +468,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
     <div class="end-bg"><img src="img/fim.jpg" width="2000" height="1125" loading="lazy" alt="Notebook aberto num ambiente escuro, com a tela iluminando a mesa"></div>
     <div class="wrap end-grid">
       <div><p class="kick" data-reveal>Vamos conversar</p><h2 data-split style="margin-top:18px">O seu próximo cliente <em>já está pesquisando.</em></h2></div>
-      <form class="form glass" data-wa="55[DDD][NUMERO]" data-wa-intro="Olá! Vim pelo site da Aura e quero um site." data-reveal="scale">
+      <form class="form glass" data-wa="5511989187347" data-wa-intro="Olá! Vim pelo site da Aura e quero um site." data-reveal="scale">
         <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" data-label="Nome" required autocomplete="name"></div>
         <div class="field"><label for="f-neg">Seu negócio</label><input id="f-neg" name="negocio" data-label="Negócio" required placeholder="Ex.: consultoria em qualidade"></div>
         <div class="field"><label for="f-tem">Já tem site?</label><select id="f-tem" name="site" data-label="Já tem site"><option>Não tenho</option><option>Tenho, mas quero refazer</option><option>Tenho e quero melhorar</option></select></div>
@@ -480,12 +483,12 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
 <footer>
   <div class="wrap">
     <div class="foot"><p class="foot-word" aria-hidden="true">Aura</p>
-      <nav aria-label="Rodapé"><a href="https://wa.me/55[DDD][NUMERO]" target="_blank" rel="noopener">WhatsApp</a><a href="https://instagram.com/[INSTAGRAM]" target="_blank" rel="noopener">Instagram</a><a href="mailto:[EMAIL]">[EMAIL]</a></nav></div>
-    <div class="foot-bottom"><span>© <span data-year></span> Aura Tecnologia · [Cidade]</span><span>Sites únicos para negócios que vendem confiança</span></div>
+      <nav aria-label="Rodapé"><a href="https://wa.me/5511989187347" target="_blank" rel="noopener">WhatsApp</a><a href="https://instagram.com/dgt.aura" target="_blank" rel="noopener">Instagram</a><a href="mailto:auratecnologiaia@gmail.com">auratecnologiaia@gmail.com</a></nav></div>
+    <div class="foot-bottom"><span>© <span data-year></span> Aura Tecnologia · Cotia · SP</span><span>Sites únicos para negócios que vendem confiança</span></div>
   </div>
 </footer>
 
-<a class="wa" href="https://wa.me/55[DDD][NUMERO]?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Aura." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+<a class="wa" href="https://wa.me/5511989187347?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Aura." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
   <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.3 1.3-1.9 1.3-.5 0-1.1.2-3.6-.8-3-1.2-5-4.3-5.1-4.5-.2-.2-1.3-1.7-1.3-3.2S6.5 6.8 6.8 6.5c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.5c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.2.1.8-.1 1.4z"/></svg></a>
 
 <script src="assets/shader-bg.js"></script>
@@ -514,7 +517,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
     const tipo=f.querySelector('input[name=tipo]:checked').value;
     const ex=[...f.querySelectorAll('input[name=extra]:checked')].map(i=>i.value);
     const msg=['Olá! Montei meu site no simulador da Aura.','Formato: '+tipo,'Extras: '+(ex.join(', ')||'nenhum'),...(r=>['Projeto: '+brl(r.once)].concat(r.month?['Manutenção: '+brl(r.month)+'/mês','Total com o 1º mês: '+brl(r.total)]:['Total estimado: '+brl(r.total)]))(calc())].join('\n');
-    window.open('https://wa.me/55[DDD][NUMERO]?text='+encodeURIComponent(msg),'_blank','noopener');});
+    window.open('https://wa.me/5511989187347?text='+encodeURIComponent(msg),'_blank','noopener');});
 })();
 </script>
 <script>
