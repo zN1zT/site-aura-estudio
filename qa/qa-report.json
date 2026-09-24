@@ -1,0 +1,226 @@
+{
+ "url": "file:///Users/znizt/Desktop/Site%20Aura%20-%20estudio/index.html",
+ "when": "2026-09-24T01:15:53.051Z",
+ "desktop": {
+  "audit": {
+   "emoji": [],
+   "overflowX": 0,
+   "fonts": {
+    "Geist": 273,
+    "Instrument Serif": 51
+   },
+   "genericFonts": [],
+   "images": 16,
+   "imgNoAlt": [],
+   "imgBroken": [],
+   "imgHuge": [],
+   "lorem": false,
+   "placeholders": [
+    "[7 a 10]",
+    "[10]",
+    "[R$ 400]",
+    "[R$ 350]",
+    "[R$ 300]",
+    "[R$ 250]",
+    "[2 a 3]",
+    "[30]",
+    "[EMAIL]",
+    "[Cidade]"
+   ],
+   "hiddenPlaceholders": [
+    "[DDD]",
+    "[NUMERO]",
+    "[INSTAGRAM]",
+    "[EMAIL]"
+   ],
+   "waLinks": 3,
+   "waFloat": true,
+   "h1": 1,
+   "headingSkips": 0,
+   "revealStuck": 0,
+   "noName": 0,
+   "meta": {
+    "lang": "pt-BR",
+    "title": "Aura — sites para consultores e negócios que vendem confiança",
+    "titleLen": 61,
+    "description": true,
+    "ogImage": true,
+    "viewport": true,
+    "favicon": true
+   },
+   "interactive": [
+    "[data-tabs]",
+    "[data-compare]",
+    "[data-accordion]",
+    "form[data-wa]",
+    "[data-hscroll]",
+    "canvas"
+   ],
+   "tracking": [],
+   "sections": 9,
+   "scripts": [
+    "file:///Users/znizt/Desktop/Site%20Aura%20-%20estudio/assets/shader-bg",
+    "file:///Users/znizt/Desktop/Site%20Aura%20-%20estudio/assets/fx.js"
+   ],
+   "weightKB": 926
+  },
+  "errors": [],
+  "failed": [],
+  "thirdParty": [],
+  "height": 13826,
+  "shots": 16
+ },
+ "mobile": {
+  "audit": {
+   "emoji": [],
+   "overflowX": 0,
+   "fonts": {
+    "Geist": 273,
+    "Instrument Serif": 51
+   },
+   "genericFonts": [],
+   "images": 16,
+   "imgNoAlt": [],
+   "imgBroken": [],
+   "imgHuge": [],
+   "lorem": false,
+   "placeholders": [
+    "[7 a 10]",
+    "[10]",
+    "[R$ 400]",
+    "[R$ 350]",
+    "[R$ 300]",
+    "[R$ 250]",
+    "[2 a 3]",
+    "[30]",
+    "[EMAIL]",
+    "[Cidade]"
+   ],
+   "hiddenPlaceholders": [
+    "[DDD]",
+    "[NUMERO]",
+    "[INSTAGRAM]",
+    "[EMAIL]"
+   ],
+   "waLinks": 3,
+   "waFloat": true,
+   "h1": 1,
+   "headingSkips": 0,
+   "revealStuck": 0,
+   "noName": 0,
+   "meta": {
+    "lang": "pt-BR",
+    "title": "Aura — sites para consultores e negócios que vendem confiança",
+    "titleLen": 61,
+    "description": true,
+    "ogImage": true,
+    "viewport": true,
+    "favicon": true
+   },
+   "interactive": [
+    "[data-tabs]",
+    "[data-compare]",
+    "[data-accordion]",
+    "form[data-wa]",
+    "[data-hscroll]",
+    "canvas"
+   ],
+   "tracking": [],
+   "sections": 9,
+   "scripts": [
+    "file:///Users/znizt/Desktop/Site%20Aura%20-%20estudio/assets/shader-bg",
+    "file:///Users/znizt/Desktop/Site%20Aura%20-%20estudio/assets/fx.js"
+   ],
+   "weightKB": 1,
+   "smallTargets": 0,
+   "tinyText": 0
+  },
+  "errors": [],
+  "failed": [],
+  "thirdParty": [],
+  "height": 12512,
+  "shots": 16
+ },
+ "result": [
+  [
+   "OK   ",
+   "emoji: nenhum"
+  ],
+  [
+   "OK   ",
+   "estouro horizontal: desktop 0px, mobile 0px"
+  ],
+  [
+   "OK   ",
+   "fontes genéricas em texto: nenhuma  | usadas: Geist, Instrument Serif"
+  ],
+  [
+   "OK   ",
+   "imagens quebradas: 0 "
+  ],
+  [
+   "OK   ",
+   "imagens sem alt: 0"
+  ],
+  [
+   "OK   ",
+   "imagens pesadas demais p/ o tamanho exibido: nenhuma"
+  ],
+  [
+   "OK   ",
+   "lorem ipsum: não"
+  ],
+  [
+   "OK   ",
+   "erros de JS: nenhum"
+  ],
+  [
+   "OK   ",
+   "requisições falhas: nenhuma"
+  ],
+  [
+   "OK   ",
+   "animações de entrada travadas: desktop 0, mobile 0"
+  ],
+  [
+   "OK   ",
+   "h1 na página: 1"
+  ],
+  [
+   "OK   ",
+   "pulos de nível de título: 0"
+  ],
+  [
+   "OK   ",
+   "links/botões sem nome acessível: 0"
+  ],
+  [
+   "OK   ",
+   "WhatsApp: 3 pontos de contato, flutuante sim"
+  ],
+  [
+   "OK   ",
+   "módulos interativos: [data-tabs], [data-compare], [data-accordion], form[data-wa], [data-hscroll], canvas"
+  ],
+  [
+   "OK   ",
+   "meta: lang=pt-BR desc=true og=true favicon=true título=61 car."
+  ],
+  [
+   "OK   ",
+   "alvos de toque pequenos no mobile: 0"
+  ],
+  [
+   "OK   ",
+   "textos menores que 11,5px no mobile: 0"
+  ],
+  [
+   "OK   ",
+   "títulos grandes com espaçamento entre letras positivo (devia ser negativo): nenhum"
+  ],
+  [
+   "OK   ",
+   "peso carregado (desktop, rolando tudo): 926 KB"
+  ]
+ ]
+}

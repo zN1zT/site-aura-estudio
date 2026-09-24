@@ -1,0 +1,111 @@
+/* fx.css — estilos base dos efeitos de fx.js. Cole dentro do <style> do site.
+   Variáveis que o site pode sobrescrever: --fx-ease, --fx-dur, --fx-accent */
+:root{--fx-ease:cubic-bezier(.16,1,.3,1);--fx-dur:.85s;--fx-accent:currentColor}
+
+/* reveal — só esconde quando o JS rodou (.fx no <html>) */
+.fx [data-reveal]:not(.is-in){opacity:0;transform:translateY(28px)}
+.fx [data-reveal="left"]:not(.is-in){transform:translateX(-40px)}
+.fx [data-reveal="right"]:not(.is-in){transform:translateX(40px)}
+.fx [data-reveal="scale"]:not(.is-in){transform:scale(.94)}
+.fx [data-reveal="fade"]:not(.is-in){transform:none}
+/* clip: o recorte vai nos filhos — o observador do navegador ignora elemento 100% recortado */
+.fx [data-reveal="clip"]:not(.is-in){opacity:1;transform:none}
+[data-reveal="clip"]>*{clip-path:inset(0 0 0 0);transition:clip-path 1.1s var(--fx-ease) var(--d,0s),transform 1.4s var(--fx-ease) var(--d,0s)}
+.fx [data-reveal="clip"]:not(.is-in)>*{clip-path:inset(0 0 100% 0)}
+[data-reveal]{transition:opacity var(--fx-dur) var(--fx-ease) var(--d,0s),transform var(--fx-dur) var(--fx-ease) var(--d,0s)}
+
+/* split — linhas mascaradas */
+.fx [data-split]:not(.fx-split-ready){visibility:hidden}
+.fx-line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.fx-line-in{display:block;white-space:nowrap;transform:translateY(108%);transition:transform 1s var(--fx-ease);transition-delay:calc(var(--i,0)*.09s + var(--d,0s))}
+.is-in .fx-line-in,.is-in.fx-split-ready .fx-line-in{transform:none}
+.fx-w{display:inline}
+
+/* nav */
+[data-nav]{transition:transform .45s var(--fx-ease),background-color .3s,box-shadow .3s,backdrop-filter .3s}
+[data-nav].is-hidden{transform:translateY(-130%)}
+.fx-lock{overflow:hidden}
+
+/* barra de progresso */
+[data-progress]{position:fixed;left:0;top:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--fx-accent);z-index:9999;pointer-events:none}
+
+/* parallax */
+[data-parallax]{will-change:transform}
+
+/* marquee */
+[data-marquee]{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.fx-marquee-in{display:flex;width:max-content;animation:fx-marquee var(--fx-marquee-dur,30s) linear infinite}
+[data-marquee]:hover .fx-marquee-in{animation-play-state:paused}
+@keyframes fx-marquee{to{transform:translateX(-50%)}}
+
+/* tilt */
+[data-tilt]{transform:perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .5s var(--fx-ease);transform-style:preserve-3d}
+[data-tilt]:hover{transition:transform .12s linear}
+
+/* magnetic */
+[data-magnetic]{transition:transform .35s var(--fx-ease)}
+
+/* cursor reveal: .fx-reveal-top é a camada revelada */
+[data-cursor-reveal]{position:relative;cursor:crosshair}
+.fx-reveal-top{position:absolute;inset:0;clip-path:circle(var(--r,0px) at var(--x,50%) var(--y,50%));transition:clip-path .35s var(--fx-ease)}
+[data-cursor-reveal]:hover .fx-reveal-top{transition:clip-path .08s linear}
+
+/* seção horizontal */
+[data-hscroll]{position:relative}
+[data-hscroll] .fx-hsticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;align-items:center}
+.fx-htrack{display:flex;will-change:transform}
+[data-hscroll].is-native .fx-hsticky{position:static;height:auto;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:12px}
+[data-hscroll].is-native .fx-htrack>*{scroll-snap-align:start}
+.fx-hint{display:none}
+[data-hscroll].is-native .fx-hint{display:flex;align-items:center;gap:10px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-top:18px}
+[data-hscroll].is-native .fx-hint::after{content:'';width:40px;height:1px;background:currentColor;animation:fx-nudge 1.6s ease-in-out infinite}
+@keyframes fx-nudge{50%{transform:translateX(8px)}}
+.fx-keep{white-space:nowrap}
+
+/* cenas no scroll: a seção tem N telas de altura, o palco fica preso */
+[data-scenes]{position:relative;height:calc(var(--n,3) * 100svh)}
+.fx-scenes-stage{position:sticky;top:0;height:100svh;overflow:hidden}
+.fx-scene{position:absolute;inset:0;opacity:0;transition:opacity .8s var(--fx-ease),transform 1.4s var(--fx-ease);transform:scale(1.06)}
+.fx-scene.is-active{opacity:1;transform:none}
+.fx-scene.is-past{transform:scale(.97)}
+.fx-scene img{width:100%;height:100%;object-fit:cover}
+
+/* antes/depois */
+[data-compare]{position:relative;overflow:hidden;--pos:50%;touch-action:pan-y}
+[data-compare] img{display:block;width:100%;height:100%;object-fit:cover}
+[data-compare] .fx-after{position:absolute;inset:0;clip-path:inset(0 0 0 var(--pos))}
+[data-compare] input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+[data-compare]::after{content:'';position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.15);pointer-events:none}
+[data-compare] .fx-handle{position:absolute;top:50%;left:var(--pos);width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:#fff;display:grid;place-items:center;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+
+/* selo circular */
+[data-stamp]{position:relative;display:inline-grid;place-items:center;width:var(--stamp,128px);aspect-ratio:1}
+[data-stamp] svg{position:absolute;inset:0;width:100%;height:100%;animation:fx-spin 18s linear infinite;overflow:visible}
+[data-stamp] text{font-size:15px;letter-spacing:.18em;text-transform:uppercase;fill:currentColor;font-weight:600}
+@keyframes fx-spin{to{transform:rotate(360deg)}}
+
+/* acordeão */
+.fx-acc-q{display:flex;width:100%;align-items:center;justify-content:space-between;gap:20px;background:none;border:0;cursor:pointer;font:inherit;color:inherit;text-align:left;padding:22px 0}
+.fx-acc-a{overflow:hidden;max-height:0;transition:max-height .45s var(--fx-ease)}
+.fx-acc-plus{flex:none;transition:transform .35s var(--fx-ease)}
+.fx-acc-item.is-open .fx-acc-plus{transform:rotate(45deg)}
+
+/* tabs — [hidden] precisa vencer display:grid/flex do site */
+[data-tab-item][hidden]{display:none!important}
+.fx-pop{animation:fx-pop .5s var(--fx-ease)}
+@keyframes fx-pop{from{opacity:0;transform:translateY(10px)}}
+
+/* lightbox */
+.fx-lb{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100vw;height:100vh;height:100svh;display:none;place-items:center}
+.fx-lb[open]{display:grid}
+.fx-lb::backdrop{background:rgba(8,8,10,.9)}
+.fx-lb img{max-width:min(92vw,1400px);max-height:82vh;object-fit:contain;border-radius:6px}
+.fx-lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:48px;border-radius:50%;font-size:26px;line-height:1;cursor:pointer}
+.fx-lb-x{top:18px;right:18px}.fx-lb-prev{left:18px;top:50%}.fx-lb-next{right:18px;top:50%}
+.fx-lb-cap{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:rgba(255,255,255,.8);font-size:.9rem;margin:0}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  .fx [data-reveal]:not(.is-in),.fx [data-reveal]:not(.is-in)>*{opacity:1;transform:none;clip-path:none}
+  .fx-line-in{transform:none}
+}
