@@ -226,6 +226,8 @@ section{padding-block:var(--pad);position:relative}
 .opt-l b{font-weight:500}.opt-l span{font-size:.86rem;color:var(--ink-2);line-height:1.5}
 .opt small{color:var(--ink);font-size:.85rem;white-space:nowrap;padding-top:2px;font-variant-numeric:tabular-nums}
 .opt:has(input:checked){border-color:var(--accent);background:rgba(var(--glow),.06)}
+.opt small s{color:var(--mute);margin-right:4px}.opt small em{font-style:normal;font-size:.7rem;font-weight:600;background:var(--accent);color:var(--bg);padding:2px 7px;border-radius:999px;margin-left:4px}
+.plan li.deal{color:var(--ink)}.plan li.deal::before{content:'%'}
 .opt.is-incl{cursor:default;opacity:.75}.opt.is-incl small{color:var(--bg);background:var(--accent);padding:2px 10px;border-radius:999px;font-size:.72rem;font-weight:600}
 .sum-box{position:sticky;top:96px;border-radius:var(--r);padding:clamp(22px,2.6vw,34px)}
 .sum-plan{display:flex;flex-direction:column;gap:2px;padding-bottom:16px}.sum-plan b{font-size:1.4rem;font-weight:500;letter-spacing:-.03em}.sum-plan span{color:var(--ink-2);font-size:.88rem}
@@ -242,7 +244,7 @@ section{padding-block:var(--pad);position:relative}
 .sim-note{font-size:.78rem;color:var(--mute);margin-top:12px}
 @media(max-width:1000px){.incl ul{grid-template-columns:1fr 1fr}.plans{grid-template-columns:1fr}.plan-for{min-height:0}.sim-grid{grid-template-columns:1fr}.sum-box{position:static}}
 @media(max-width:860px){.price-head{grid-template-columns:1fr}}
-@media(max-width:520px){.incl ul{grid-template-columns:1fr}.sum-box .btn{font-size:.92rem;padding:0 18px;gap:8px}.opt{padding:14px}}
+@media(max-width:520px){.opt{flex-wrap:wrap}.opt small{order:3;flex-basis:100%;padding-left:32px}.opt.is-incl{flex-wrap:nowrap}.opt.is-incl small{order:0;flex-basis:auto}.incl ul{grid-template-columns:1fr}.sum-box .btn{font-size:.92rem;padding:0 18px;gap:8px}.opt{padding:14px}}
 .sum{display:grid;gap:8px;padding:16px 0 18px;border-top:1px solid var(--line);font-size:.9rem;color:var(--ink-2)}
 .sum-row{display:flex;justify-content:space-between;gap:12px}.sum-row span:last-child{color:var(--ink);font-variant-numeric:tabular-nums}
 .sum-row[hidden]{display:none}
@@ -503,7 +505,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
             </ul>
           </label>
           <label class="plan plan--hot">
-            <input type="radio" name="tipo" value="Site institucional" data-v="2800" data-m="150" data-prazo="10 a 12 dias" data-lvl="2">
+            <input type="radio" name="tipo" value="Site institucional" data-v="2800" data-m="150" data-disc="20" data-prazo="10 a 12 dias" data-lvl="2">
             <span class="plan-badge">Mais escolhido</span>
             <span class="plan-top"><b>Institucional</b><small>Até 5 páginas</small></span>
             <span class="plan-for">Para consultores, clínicas e escritórios que precisam passar autoridade e explicar cada serviço.</span>
@@ -515,10 +517,11 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
               <li><span><b>Google Meu Negócio</b>: você aparece no Google Maps da sua cidade</span></li>
               <li><span><b>E-mail profissional</b> com o nome do seu negócio</span></li>
               <li><span><b>3 rodadas de revisão</b></span></li>
+              <li class="deal"><span><b>20% de desconto</b> em logo, versão em inglês e página a mais</span></li>
             </ul>
           </label>
           <label class="plan">
-            <input type="radio" name="tipo" value="Catálogo ou portfólio" data-v="4200" data-m="220" data-prazo="12 a 15 dias" data-lvl="3">
+            <input type="radio" name="tipo" value="Catálogo ou portfólio" data-v="4200" data-m="220" data-disc="30" data-prazo="12 a 15 dias" data-lvl="3">
             <span class="plan-top"><b>Catálogo</b><small>Portfólio ou produtos</small></span>
             <span class="plan-for">Para arquitetos, indústrias, lojas e restaurantes que vendem mostrando muitos projetos ou itens.</span>
             <span class="plan-price"><small>R$</small>4.200</span>
@@ -528,6 +531,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
               <li><span><b>Catálogo com filtro</b>: até 40 projetos ou produtos, cada um com página própria</span></li>
               <li><span><b>Relatório de visitas</b> para saber de onde vêm seus clientes</span></li>
               <li><span><b>60 dias de ajustes grátis</b> (o dobro dos outros planos)</span></li>
+              <li class="deal"><span><b>30% de desconto</b> em logo, versão em inglês e página a mais</span></li>
             </ul>
           </label>
         </fieldset>
@@ -541,11 +545,11 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
                 <span class="opt-l"><b>Google Meu Negócio</b><span>Seu negócio aparecendo no Google Maps.</span></span><small>+ R$ 150</small></label>
               <label class="opt" data-lvl-incl="2"><input type="checkbox" name="extra" value="E-mail profissional" data-v="100">
                 <span class="opt-l"><b>E-mail profissional</b><span>contato@seunegocio.com.br no seu celular.</span></span><small>+ R$ 100</small></label>
-              <label class="opt"><input type="checkbox" name="extra" value="Logo" data-v="300">
+              <label class="opt" data-discable><input type="checkbox" name="extra" value="Logo" data-v="300">
                 <span class="opt-l"><b>Criação de logo</b><span>Logo simples com cores e fontes da marca.</span></span><small>+ R$ 300</small></label>
-              <label class="opt"><input type="checkbox" name="extra" value="Página extra" data-v="200">
+              <label class="opt" data-discable><input type="checkbox" name="extra" value="Página extra" data-v="200">
                 <span class="opt-l"><b>Página a mais</b><span>Além do limite do plano.</span></span><small>+ R$ 200</small></label>
-              <label class="opt"><input type="checkbox" name="extra" value="Versão em inglês" data-v="300">
+              <label class="opt" data-discable><input type="checkbox" name="extra" value="Versão em inglês" data-v="300">
                 <span class="opt-l"><b>Versão em inglês</b><span>Botão para trocar o idioma do site.</span></span><small>+ R$ 300</small></label>
             </div></div>
 
@@ -645,8 +649,11 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
     let once=num(plan,'v'); const items=[], incl=[];
     f.querySelectorAll('[data-lvl-incl]').forEach(l=>{const on=lvl>=+l.dataset.lvlIncl,i=l.querySelector('input');
       l.classList.toggle('is-incl',on);i.disabled=on;l.querySelector('small').textContent=on?'Incluso':'+ '+brl(num(i,'v'));});
+    const disc=num(plan,'disc'), price=i=>i.closest('[data-discable]')&&disc?Math.round(num(i,'v')*(1-disc/100)):num(i,'v');
+    f.querySelectorAll('[data-discable]').forEach(l=>{const i=l.querySelector('input'),full=num(i,'v');
+      l.querySelector('small').innerHTML=disc?`<s>${brl(full)}</s> + ${brl(price(i))} <em>-${disc}%</em>`:'+ '+brl(full);});
     f.querySelectorAll('input[name=extra]').forEach(i=>{
-      if(i.disabled)incl.push(i.value);else if(i.checked){once+=num(i,'v');items.push([i.value,num(i,'v')]);}});
+      if(i.disabled)incl.push(i.value);else if(i.checked){once+=price(i);items.push([i.value+(disc&&i.closest('[data-discable]')?' (-'+disc+'%)':''),price(i)]);}});
     $('s-plan').textContent=plan.value; $('s-prazo').textContent='No ar em '+plan.dataset.prazo;
     $('s-list').innerHTML=[[plan.value,num(plan,'v')]].concat(items).map(([n,v])=>`<li><span>${n}</span><span>${brl(v)}</span></li>`).join('')
       +incl.map(n=>`<li class="inc"><span>${n}</span><span>incluso</span></li>`).join('');
@@ -661,7 +668,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
   f.addEventListener('change',calc);calc();
   f.addEventListener('submit',e=>{e.preventDefault();const r=calc();
     const msg=['Olá! Montei meu site no simulador da Aura.','Plano: '+r.plan.value+' ('+brl(num(r.plan,'v'))+')',
-      'Extras: '+(r.items.map(x=>x[0]).join(', ')||'nenhum'),
+      'Extras: '+(r.items.map(x=>x[0]+' '+brl(x[1])).join(', ')||'nenhum'),
       r.incl.length?'Inclusos no plano: '+r.incl.join(', '):null,
       'Manutenção: '+(r.month?brl(r.month)+'/mês':'não'),
       'Projeto: '+brl(r.once), 'Para começar: '+brl(r.total), r.month?'Total do 1º ano: '+brl(r.once+r.month*12):null,
