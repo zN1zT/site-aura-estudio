@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Aura — sites para consultores e negócios que vendem confiança</title>
-<meta name="description" content="Estúdio de sites para consultores, clínicas, escritórios e negócios locais. Direção de arte própria, efeitos, fotos tratadas e WhatsApp integrado. No ar em poucos dias.">
+<meta name="description" content="Criamos, melhoramos ou refazemos o site do seu negócio. Design exclusivo, textos que vendem, WhatsApp integrado e domínio incluso. No ar em 5 a 7 dias.">
 <meta name="theme-color" content="#050505">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Aura — sites que fazem você ser escolhido antes da primeira conversa">
@@ -88,6 +88,18 @@ section{padding-block:var(--pad);position:relative}
 .niches{border-block:1px solid var(--line);padding-block:22px}
 .fx-marquee-in span{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,1rem + 2vw,2.8rem);color:var(--ink-2);padding-inline:28px;display:inline-flex;align-items:center;gap:56px;white-space:nowrap}
 .fx-marquee-in span::after{content:'';width:10px;height:10px;border-radius:50%;border:2px solid var(--accent)}
+
+/* situações */
+.sit{padding-bottom:clamp(60px,8vw,110px)}
+.sit h2{font-size:var(--t-h2);margin-top:18px;max-width:15em}
+.sit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:clamp(36px,5vw,56px)}
+.sit-c{position:relative;display:flex;flex-direction:column;gap:12px;padding:clamp(24px,2.6vw,34px);border-radius:var(--r);border:1px solid var(--line);background:var(--surface);overflow:hidden;transition:border-color .3s,transform .4s cubic-bezier(.16,1,.3,1)}
+.sit-c::before{content:'';position:absolute;inset:0;background:radial-gradient(420px circle at var(--gx,50%) var(--gy,0%),rgba(var(--glow),.09),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.sit-c:hover{border-color:rgba(var(--glow),.35);transform:translateY(-6px)}.sit-c:hover::before{opacity:1}
+.sit-n{font-family:var(--serif);font-style:italic;font-size:2.4rem;line-height:1;color:var(--accent)}
+.sit-c h3{font-size:1.45rem;letter-spacing:-.03em}.sit-c p{color:var(--ink-2);font-size:.95rem;flex:1}
+.sit-go{font-weight:500;font-size:.92rem;transition:transform .3s}.sit-c:hover .sit-go{transform:translateX(6px)}
+@media(max-width:860px){.sit-grid{grid-template-columns:1fr}}
 
 /* manifesto */
 .mani-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,6vw,100px);align-items:end}
@@ -303,19 +315,40 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
     <div class="wrap">
       <p class="kick" data-reveal>Estúdio de sites · Brasil</p>
       <h1 data-split>Sites que fazem você ser escolhido <em><span class="fx-keep">antes da</span> primeira conversa.</em></h1>
-      <p class="lead" data-reveal style="--d:.3s">Para consultores, clínicas, escritórios e negócios que vendem confiança. Cada site tem direção de arte própria, fotos tratadas, efeitos e o WhatsApp no centro de tudo.</p>
+      <p class="lead" data-reveal style="--d:.3s">Ainda não tem site, tem um que não convence ou quer começar do zero? A Aura cria, melhora ou refaz o seu site com design exclusivo, textos que vendem e o WhatsApp a um toque do seu cliente.</p>
       <div class="hero-cta" data-reveal style="--d:.4s">
         <a class="btn" href="#investimento" data-magnetic>Simular meu site
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn--ghost" href="#trabalhos">Ver trabalhos</a>
+        <a class="btn btn--ghost" href="#situacao">Qual é o seu caso?</a>
       </div>
       <div class="hero-meta" data-reveal style="--d:.5s">
         <span>No ar em <b>5 a 7 dias</b></span>
-        <span>Revisado em <b>celular e computador</b></span>
+        <span>Domínio <b>incluso no 1º ano</b></span>
         <span>Nenhum site <b>igual ao outro</b></span>
       </div>
     </div>
   </header>
+
+  <section class="sit" id="situacao">
+    <div class="wrap">
+      <p class="kick" data-reveal>Qual é o seu caso?</p>
+      <h2 data-split>Seja qual for o ponto de partida, <em>a gente resolve.</em></h2>
+      <div class="sit-grid" data-stagger="0.08">
+        <a class="sit-c" href="#contato" data-sit="Não tenho">
+          <span class="sit-n">01</span><h3>Ainda não tenho site</h3>
+          <p>Seus clientes pesquisam seu nome e não acham nada, ou só um Instagram. Criamos do zero: domínio, textos, design e WhatsApp. Você só conta como é o seu negócio.</p>
+          <span class="sit-go">Quero meu primeiro site →</span></a>
+        <a class="sit-c" href="#contato" data-sit="Tenho e quero melhorar">
+          <span class="sit-n">02</span><h3>Tenho, mas quero melhorar</h3>
+          <p>O site existe, mas está lento, desatualizado ou não traz contato. Analisamos o que funciona, mantemos seu domínio e melhoramos visual, textos e botões de conversão.</p>
+          <span class="sit-go">Quero melhorar o meu →</span></a>
+        <a class="sit-c" href="#contato" data-sit="Tenho, mas quero refazer">
+          <span class="sit-n">03</span><h3>Quero refazer do zero</h3>
+          <p>Seu site não representa mais o tamanho do seu negócio. Refazemos tudo com nova identidade, sem perder o domínio nem a posição que você já tem no Google.</p>
+          <span class="sit-go">Quero refazer o meu →</span></a>
+      </div>
+    </div>
+  </section>
 
   <div class="niches" data-marquee="40" aria-label="Segmentos atendidos">
     <div class="fx-marquee-in"><span>Consultoria</span><span>Advocacia</span><span>Odontologia</span><span>Arquitetura</span><span>Restaurantes</span><span>Indústria</span><span>Terapia</span><span>Imobiliárias</span></div>
@@ -326,12 +359,12 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
       <div class="mani-grid">
         <div><p class="kick" data-reveal>Por que isso importa</p>
           <h2 data-split style="margin-top:18px">Seu cliente decide se confia em você <em>antes de ler</em> a primeira linha.</h2></div>
-        <p class="lead" data-reveal style="--d:.15s">Indicação traz a pessoa até você. O que ela encontra quando pesquisa seu nome decide se ela chama no WhatsApp ou fecha a aba. Um site genérico diz "mais um". Um site pensado para o seu negócio diz "é esse".</p>
+        <p class="lead" data-reveal style="--d:.15s">Indicação traz a pessoa até você. O que ela encontra quando pesquisa seu nome decide se ela chama no WhatsApp ou fecha a aba. Sem site, você some. Com um site genérico, você é "mais um". Com um site pensado para o seu negócio, você é "esse aí".</p>
       </div>
       <div class="stats" data-stagger="0.1">
         <div><b><span data-count="50">0</span><small>ms</small></b><span>milissegundos é o tempo que uma pessoa leva para formar a primeira impressão de um site.</span><cite>Lindgaard et al., 2006</cite></div>
         <div><b><span data-count="75">0</span><small>%</small></b><span>das pessoas julgam a credibilidade de uma empresa pelo design do site.</span><cite>Stanford Web Credibility Research</cite></div>
-        <div><b><span data-count="3">0</span><small>+</small></b><span>pontos de contato com o WhatsApp em cada página. Visitante interessado não precisa procurar.</span><cite>Padrão Aura</cite></div>
+        <div><b><span data-count="5">0</span><small>dias</small></b><span>é o prazo para uma página única ficar no ar, do primeiro contato à publicação.</span><cite>Prazo Aura</cite></div>
       </div>
     </div>
   </section>
@@ -419,7 +452,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
   <section class="proc" id="processo" data-hscroll aria-labelledby="proc-t">
     <div class="fx-hsticky"><div class="fx-htrack">
       <div class="proc-intro"><p class="kick">Processo</p><h2 id="proc-t">Da primeira conversa ao <em>site no ar.</em></h2>
-        <p class="lead">Você fala do seu negócio por 20 minutos. O resto é com a gente.</p><p class="fx-hint">Arraste para o lado</p></div>
+        <p class="lead">Você fala do seu negócio por 20 minutos. Texto, design, fotos, domínio e publicação ficam com a gente.</p><p class="fx-hint">Arraste para o lado</p></div>
       <article class="step"><b>01</b><div><h3>Conversa</h3><p>Entendemos o que você vende, para quem e o que faz um cliente escolher você.</p><small>Dia 1 · 20 minutos</small></div></article>
       <article class="step"><b>02</b><div><h3>Direção de arte</h3><p>Cor, tipografia e um elemento visual tirado do seu próprio negócio. Nada de template.</p><small>Dia 1</small></div></article>
       <article class="step"><b>03</b><div><h3>Texto e fotos</h3><p>Escrevemos os textos e escolhemos fotos que fazem sentido, com o mesmo tratamento de cor.</p><small>Dia 2</small></div></article>
@@ -449,7 +482,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
       <div class="price-head">
         <div><p class="kick" data-reveal>Investimento</p>
           <h2 data-split>Preço claro, <em>sem letra miúda.</em></h2></div>
-        <p class="lead" data-reveal>Escolha o plano, marque os extras e veja o valor na hora.</p>
+        <p class="lead" data-reveal>Escolha o plano, marque o que precisa e veja na hora quanto custa para começar e quanto fica o 1º ano inteiro. Sem taxa escondida.</p>
       </div>
 
       <p class="incl" data-reveal><b>Em todos os planos você recebe:</b> domínio .com.br e hospedagem pagos no 1º ano · cadeado de segurança (https) · site pronto para celular · botão de WhatsApp · 30 dias de ajustes grátis · site registrado em seu nome</p>
@@ -547,6 +580,8 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
       <div data-accordion>
         <div class="fx-acc-item is-open"><button class="fx-acc-q">Em quanto tempo o site fica pronto?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>Uma página única fica pronta em 5 a 7 dias a partir da conversa inicial. O site institucional leva de 10 a 12 dias e o catálogo de 12 a 15 dias. O prazo depende de você mandar logo e informações a tempo.</p></div></div>
+        <div class="fx-acc-item"><button class="fx-acc-q">Já tenho site. Vocês aproveitam o que existe?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
+          <div class="fx-acc-a"><p>Sim. Mantemos seu domínio, aproveitamos textos e fotos que funcionam e fazemos o redirecionamento das páginas antigas para você não perder visitas nem a posição no Google.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">Preciso ter fotos e textos prontos?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>Não. Se você tiver fotos reais do seu trabalho, elas entram primeiro. O restante escolhemos em bancos de imagem com licença livre e tratamos com a mesma cor. Os textos podemos escrever a partir da conversa.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">O site funciona bem no celular?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
@@ -565,7 +600,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
     <div class="end-bg"><img src="img/fim.jpg" width="2000" height="1125" loading="lazy" alt="Notebook aberto num ambiente escuro, com a tela iluminando a mesa"></div>
     <div class="wrap end-grid">
       <div><p class="kick" data-reveal>Vamos conversar</p><h2 data-split style="margin-top:18px">O seu próximo cliente <em>já está pesquisando.</em></h2></div>
-      <form class="form glass" data-wa="5511989187347" data-wa-intro="Olá! Vim pelo site da Aura e quero um site." data-reveal="scale">
+      <form class="form glass" data-wa="5511989187347" data-wa-intro="Olá! Vim pelo site da Aura." data-reveal="scale">
         <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" data-label="Nome" required autocomplete="name"></div>
         <div class="field"><label for="f-neg">Seu negócio</label><input id="f-neg" name="negocio" data-label="Negócio" required placeholder="Ex.: consultoria em qualidade"></div>
         <div class="field"><label for="f-tem">Já tem site?</label><select id="f-tem" name="site" data-label="Já tem site"><option>Não tenho</option><option>Tenho, mas quero refazer</option><option>Tenho e quero melhorar</option></select></div>
@@ -580,7 +615,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
 <footer>
   <div class="wrap">
     <div class="foot"><p class="foot-word" aria-hidden="true">Aura</p>
-      <nav aria-label="Rodapé"><a href="https://wa.me/5511989187347" target="_blank" rel="noopener">WhatsApp</a><a href="https://instagram.com/dgt.aura" target="_blank" rel="noopener">Instagram</a><a href="mailto:auratecnologiaia@gmail.com">auratecnologiaia@gmail.com</a></nav></div>
+      <nav aria-label="Rodapé"><a href="https://wa.me/5511989187347" target="_blank" rel="noopener">WhatsApp</a><a href="https://instagram.com/dgt.aura" target="_blank" rel="noopener">Instagram</a><a href="mailto:auratecnologiaia@gmail.com?subject=Quero%20um%20site%20-%20vim%20pelo%20site%20da%20Aura">E-mail</a></nav></div>
     <div class="foot-bottom"><span>© <span data-year></span> Aura Tecnologia · Cotia · SP</span><span>Sites únicos para negócios que vendem confiança</span></div>
   </div>
 </footer>
@@ -676,6 +711,14 @@ footer{border-top:1px solid var(--line);padding-block:56px 36px}
       d.style.setProperty('--ry',(px*8)+'deg');d.style.setProperty('--rx',(-py*6)+'deg')});
     d.addEventListener('pointerleave',()=>{d.style.setProperty('--ry','0deg');d.style.setProperty('--rx','0deg')});});
 })();
+</script>
+<script>
+/* situações: o cartão já marca "Já tem site?" no formulário */
+document.querySelectorAll('[data-sit]').forEach(c=>{
+  c.addEventListener('click',()=>{const sel=document.getElementById('f-tem');[...sel.options].forEach((o,i)=>{if(o.text.startsWith(c.dataset.sit))sel.selectedIndex=i});
+    setTimeout(()=>document.getElementById('f-nome').focus({preventScroll:true}),700)});
+  c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--gx',e.clientX-r.left+'px');c.style.setProperty('--gy',e.clientY-r.top+'px')});
+});
 </script>
 <script src="assets/fx.js" defer></script>
 </body>
