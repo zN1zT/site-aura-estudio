@@ -1,39 +1,23 @@
 {
- "url": "file:///Users/znizt/Desktop/Site%20Aura%20-%20estudio/index.html",
- "when": "2026-09-24T01:15:53.051Z",
+ "url": "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%20:%20Sites/index.html",
+ "when": "2026-10-01T17:18:46.501Z",
  "desktop": {
   "audit": {
    "emoji": [],
    "overflowX": 0,
    "fonts": {
-    "Geist": 273,
-    "Instrument Serif": 51
+    "Schibsted Grotesk": 282,
+    "Geist Mono": 80
    },
    "genericFonts": [],
-   "images": 16,
+   "images": 10,
    "imgNoAlt": [],
    "imgBroken": [],
    "imgHuge": [],
    "lorem": false,
-   "placeholders": [
-    "[7 a 10]",
-    "[10]",
-    "[R$ 400]",
-    "[R$ 350]",
-    "[R$ 300]",
-    "[R$ 250]",
-    "[2 a 3]",
-    "[30]",
-    "[EMAIL]",
-    "[Cidade]"
-   ],
-   "hiddenPlaceholders": [
-    "[DDD]",
-    "[NUMERO]",
-    "[INSTAGRAM]",
-    "[EMAIL]"
-   ],
-   "waLinks": 3,
+   "placeholders": [],
+   "hiddenPlaceholders": [],
+   "waLinks": 5,
    "waFloat": true,
    "h1": 1,
    "headingSkips": 0,
@@ -49,25 +33,21 @@
     "favicon": true
    },
    "interactive": [
-    "[data-tabs]",
     "[data-compare]",
     "[data-accordion]",
-    "form[data-wa]",
-    "[data-hscroll]",
-    "canvas"
+    "form[data-wa]"
    ],
    "tracking": [],
    "sections": 9,
    "scripts": [
-    "file:///Users/znizt/Desktop/Site%20Aura%20-%20estudio/assets/shader-bg",
-    "file:///Users/znizt/Desktop/Site%20Aura%20-%20estudio/assets/fx.js"
+    "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%2"
    ],
-   "weightKB": 926
+   "weightKB": 959
   },
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 13826,
+  "height": 14721,
   "shots": 16
  },
  "mobile": {
@@ -75,34 +55,23 @@
    "emoji": [],
    "overflowX": 0,
    "fonts": {
-    "Geist": 273,
-    "Instrument Serif": 51
+    "Schibsted Grotesk": 282,
+    "Geist Mono": 80
    },
    "genericFonts": [],
-   "images": 16,
+   "images": 10,
    "imgNoAlt": [],
    "imgBroken": [],
-   "imgHuge": [],
+   "imgHuge": [
+    "w_eduardo_d.jpg 1440px p/ 274px",
+    "w_lf_old.jpg 1440px p/ 274px",
+    "w_lf_d.jpg 1440px p/ 274px",
+    "w_forno_d.jpg 1440px p/ 274px"
+   ],
    "lorem": false,
-   "placeholders": [
-    "[7 a 10]",
-    "[10]",
-    "[R$ 400]",
-    "[R$ 350]",
-    "[R$ 300]",
-    "[R$ 250]",
-    "[2 a 3]",
-    "[30]",
-    "[EMAIL]",
-    "[Cidade]"
-   ],
-   "hiddenPlaceholders": [
-    "[DDD]",
-    "[NUMERO]",
-    "[INSTAGRAM]",
-    "[EMAIL]"
-   ],
-   "waLinks": 3,
+   "placeholders": [],
+   "hiddenPlaceholders": [],
+   "waLinks": 5,
    "waFloat": true,
    "h1": 1,
    "headingSkips": 0,
@@ -118,18 +87,14 @@
     "favicon": true
    },
    "interactive": [
-    "[data-tabs]",
     "[data-compare]",
     "[data-accordion]",
-    "form[data-wa]",
-    "[data-hscroll]",
-    "canvas"
+    "form[data-wa]"
    ],
    "tracking": [],
    "sections": 9,
    "scripts": [
-    "file:///Users/znizt/Desktop/Site%20Aura%20-%20estudio/assets/shader-bg",
-    "file:///Users/znizt/Desktop/Site%20Aura%20-%20estudio/assets/fx.js"
+    "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%2"
    ],
    "weightKB": 1,
    "smallTargets": 0,
@@ -138,7 +103,7 @@
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 12512,
+  "height": 17183,
   "shots": 16
  },
  "result": [
@@ -152,7 +117,7 @@
   ],
   [
    "OK   ",
-   "fontes genéricas em texto: nenhuma  | usadas: Geist, Instrument Serif"
+   "fontes genéricas em texto: nenhuma  | usadas: Schibsted Grotesk, Geist Mono"
   ],
   [
    "OK   ",
@@ -196,11 +161,11 @@
   ],
   [
    "OK   ",
-   "WhatsApp: 3 pontos de contato, flutuante sim"
+   "WhatsApp: 5 pontos de contato, flutuante sim"
   ],
   [
    "OK   ",
-   "módulos interativos: [data-tabs], [data-compare], [data-accordion], form[data-wa], [data-hscroll], canvas"
+   "módulos interativos: [data-compare], [data-accordion], form[data-wa]"
   ],
   [
    "OK   ",
@@ -220,7 +185,7 @@
   ],
   [
    "OK   ",
-   "peso carregado (desktop, rolando tudo): 926 KB"
+   "peso carregado (desktop, rolando tudo): 959 KB"
   ]
  ]
 }
