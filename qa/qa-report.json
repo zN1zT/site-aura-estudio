@@ -1,6 +1,6 @@
 {
  "url": "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%20:%20Sites/index.html",
- "when": "2026-10-01T14:59:43.577Z",
+ "when": "2026-10-01T15:07:14.098Z",
  "desktop": {
   "audit": {
    "emoji": [],
@@ -46,7 +46,7 @@
    "scripts": [
     "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%2"
    ],
-   "weightKB": 958
+   "weightKB": 959
   },
   "errors": [],
   "failed": [],
@@ -193,7 +193,7 @@
   ],
   [
    "OK   ",
-   "peso carregado (desktop, rolando tudo): 958 KB"
+   "peso carregado (desktop, rolando tudo): 959 KB"
   ]
  ]
 }

@@ -3,8 +3,9 @@ Nicho: estúdio de sites para consultores, clínicas, escritórios e negócios l
 Cliente final: profissional liberal/dono de negócio que vive de indicação e precisa parecer tão bom quanto é.
 Objetivo: pedido de orçamento pelo WhatsApp (simulador + formulário). Objeção: "site é tudo igual / é caro".
 Prova: trabalhos reais (Eduardo Stephano, LF Esquadrias com antes/depois, Forno Vivo conceito) + depoimentos (a preencher).
-Direção (out/2026): 7 · Suíço, adaptada. Hero escuro com foto (notebook aceso = a "aura" da tela). Papel #f3f3f1, tinta #0c0c0c, sinal cobalto #2f5bff (
-aspas dos depoimentos, plano escolhido, barra de progresso, hover). Fontes: Schibsted Grotesk (400/500/700/800) + Geist Mono.
+Direção (out/2026, v3): escura do começo ao fim, no preto da foto do topo (#04070c). Texto off-white #ecebe6,
+fios finos, sinal cobalto #5b7cff e uma luz azul no contato (a "aura"). Plano escolhido vira cartão claro. Fontes: Schibsted Grotesk + Geist Mono.
+Referências escuras (Mobbin): basement.studio, Superpower, Oryzo/Lusion, Linear, Sana, Coda.
 Raio 0; pílula só em botão. Profundidade só por fio fino. Seções numeradas com fio preto no topo.
 Referências (Mobbin): OFF+BRAND, Framer e Webflow (trabalho no hero); Fiasco, Instrument, MOUTHWASH (portfólio);
 Duna, Patch, Daydream (depoimentos); TinyWins, incident.io, Kalstore (fundador); Craft Agency, United Carriers (processo);
