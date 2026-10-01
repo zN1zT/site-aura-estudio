@@ -1,13 +1,13 @@
 {
  "url": "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%20:%20Sites/index.html",
- "when": "2026-10-01T15:07:14.098Z",
+ "when": "2026-10-01T17:18:46.501Z",
  "desktop": {
   "audit": {
    "emoji": [],
    "overflowX": 0,
    "fonts": {
-    "Schibsted Grotesk": 297,
-    "Geist Mono": 90
+    "Schibsted Grotesk": 282,
+    "Geist Mono": 80
    },
    "genericFonts": [],
    "images": 10,
@@ -15,13 +15,9 @@
    "imgBroken": [],
    "imgHuge": [],
    "lorem": false,
-   "placeholders": [
-    "[NOME DO RESPONSÁVEL]",
-    "[SUA FOTO]",
-    "[SEU NOME]"
-   ],
+   "placeholders": [],
    "hiddenPlaceholders": [],
-   "waLinks": 6,
+   "waLinks": 5,
    "waFloat": true,
    "h1": 1,
    "headingSkips": 0,
@@ -42,7 +38,7 @@
     "form[data-wa]"
    ],
    "tracking": [],
-   "sections": 11,
+   "sections": 9,
    "scripts": [
     "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%2"
    ],
@@ -51,7 +47,7 @@
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 16676,
+  "height": 14721,
   "shots": 16
  },
  "mobile": {
@@ -59,8 +55,8 @@
    "emoji": [],
    "overflowX": 0,
    "fonts": {
-    "Schibsted Grotesk": 297,
-    "Geist Mono": 90
+    "Schibsted Grotesk": 282,
+    "Geist Mono": 80
    },
    "genericFonts": [],
    "images": 10,
@@ -73,13 +69,9 @@
     "w_forno_d.jpg 1440px p/ 274px"
    ],
    "lorem": false,
-   "placeholders": [
-    "[NOME DO RESPONSÁVEL]",
-    "[SUA FOTO]",
-    "[SEU NOME]"
-   ],
+   "placeholders": [],
    "hiddenPlaceholders": [],
-   "waLinks": 6,
+   "waLinks": 5,
    "waFloat": true,
    "h1": 1,
    "headingSkips": 0,
@@ -100,7 +92,7 @@
     "form[data-wa]"
    ],
    "tracking": [],
-   "sections": 11,
+   "sections": 9,
    "scripts": [
     "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%2"
    ],
@@ -111,7 +103,7 @@
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 19172,
+  "height": 17183,
   "shots": 16
  },
  "result": [
@@ -169,7 +161,7 @@
   ],
   [
    "OK   ",
-   "WhatsApp: 6 pontos de contato, flutuante sim"
+   "WhatsApp: 5 pontos de contato, flutuante sim"
   ],
   [
    "OK   ",
