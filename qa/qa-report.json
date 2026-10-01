@@ -1,16 +1,16 @@
 {
  "url": "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%20:%20Sites/index.html",
- "when": "2026-10-01T14:53:17.849Z",
+ "when": "2026-10-01T14:59:43.577Z",
  "desktop": {
   "audit": {
    "emoji": [],
    "overflowX": 0,
    "fonts": {
     "Schibsted Grotesk": 297,
-    "Geist Mono": 88
+    "Geist Mono": 90
    },
    "genericFonts": [],
-   "images": 9,
+   "images": 10,
    "imgNoAlt": [],
    "imgBroken": [],
    "imgHuge": [],
@@ -42,16 +42,16 @@
     "form[data-wa]"
    ],
    "tracking": [],
-   "sections": 10,
+   "sections": 11,
    "scripts": [
     "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%2"
    ],
-   "weightKB": 925
+   "weightKB": 958
   },
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 16242,
+  "height": 16676,
   "shots": 16
  },
  "mobile": {
@@ -60,10 +60,10 @@
    "overflowX": 0,
    "fonts": {
     "Schibsted Grotesk": 297,
-    "Geist Mono": 88
+    "Geist Mono": 90
    },
    "genericFonts": [],
-   "images": 9,
+   "images": 10,
    "imgNoAlt": [],
    "imgBroken": [],
    "imgHuge": [
@@ -100,7 +100,7 @@
     "form[data-wa]"
    ],
    "tracking": [],
-   "sections": 10,
+   "sections": 11,
    "scripts": [
     "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%2"
    ],
@@ -111,7 +111,7 @@
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 18931,
+  "height": 19172,
   "shots": 16
  },
  "result": [
@@ -193,7 +193,7 @@
   ],
   [
    "OK   ",
-   "peso carregado (desktop, rolando tudo): 925 KB"
+   "peso carregado (desktop, rolando tudo): 958 KB"
   ]
  ]
 }
