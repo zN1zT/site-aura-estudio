@@ -1,23 +1,23 @@
 {
  "url": "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%20:%20Sites/index.html",
- "when": "2026-10-01T17:47:38.925Z",
+ "when": "2026-10-02T15:16:13.934Z",
  "desktop": {
   "audit": {
    "emoji": [],
    "overflowX": 0,
    "fonts": {
-    "Schibsted Grotesk": 197,
-    "Geist Mono": 9
+    "Geist": 238,
+    "Fraunces": 91
    },
    "genericFonts": [],
-   "images": 4,
+   "images": 8,
    "imgNoAlt": [],
    "imgBroken": [],
    "imgHuge": [],
    "lorem": false,
    "placeholders": [],
    "hiddenPlaceholders": [],
-   "waLinks": 5,
+   "waLinks": 4,
    "waFloat": true,
    "h1": 1,
    "headingSkips": 0,
@@ -33,39 +33,42 @@
     "favicon": true
    },
    "interactive": [
+    "[data-compare]",
     "[data-accordion]",
     "form[data-wa]"
    ],
    "tracking": [],
-   "sections": 5,
+   "sections": 9,
    "scripts": [
     "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%2"
    ],
-   "weightKB": 332
+   "weightKB": 733
   },
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 5693,
-  "shots": 7
+  "height": 8489,
+  "shots": 11
  },
  "mobile": {
   "audit": {
    "emoji": [],
    "overflowX": 0,
    "fonts": {
-    "Schibsted Grotesk": 197,
-    "Geist Mono": 9
+    "Geist": 233,
+    "Fraunces": 96
    },
    "genericFonts": [],
-   "images": 4,
+   "images": 8,
    "imgNoAlt": [],
    "imgBroken": [],
-   "imgHuge": [],
+   "imgHuge": [
+    "q_hero2.jpg 2400px p/ 390px"
+   ],
    "lorem": false,
    "placeholders": [],
    "hiddenPlaceholders": [],
-   "waLinks": 5,
+   "waLinks": 4,
    "waFloat": true,
    "h1": 1,
    "headingSkips": 0,
@@ -81,23 +84,24 @@
     "favicon": true
    },
    "interactive": [
+    "[data-compare]",
     "[data-accordion]",
     "form[data-wa]"
    ],
    "tracking": [],
-   "sections": 5,
+   "sections": 9,
    "scripts": [
     "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%2"
    ],
    "weightKB": 1,
-   "smallTargets": 1,
+   "smallTargets": 2,
    "tinyText": 0
   },
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 7669,
-  "shots": 10
+  "height": 12989,
+  "shots": 16
  },
  "result": [
   [
@@ -110,7 +114,7 @@
   ],
   [
    "OK   ",
-   "fontes genéricas em texto: nenhuma  | usadas: Schibsted Grotesk, Geist Mono"
+   "fontes genéricas em texto: nenhuma  | usadas: Geist, Fraunces"
   ],
   [
    "OK   ",
@@ -154,11 +158,11 @@
   ],
   [
    "OK   ",
-   "WhatsApp: 5 pontos de contato, flutuante sim"
+   "WhatsApp: 4 pontos de contato, flutuante sim"
   ],
   [
    "OK   ",
-   "módulos interativos: [data-accordion], form[data-wa]"
+   "módulos interativos: [data-compare], [data-accordion], form[data-wa]"
   ],
   [
    "OK   ",
@@ -166,7 +170,7 @@
   ],
   [
    "OK   ",
-   "alvos de toque pequenos no mobile: 1"
+   "alvos de toque pequenos no mobile: 2"
   ],
   [
    "OK   ",
@@ -178,7 +182,7 @@
   ],
   [
    "OK   ",
-   "peso carregado (desktop, rolando tudo): 332 KB"
+   "peso carregado (desktop, rolando tudo): 733 KB"
   ]
  ]
 }

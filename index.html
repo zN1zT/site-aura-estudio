@@ -5,216 +5,287 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Aura — sites para consultores e negócios que vendem confiança</title>
 <meta name="description" content="Criamos, melhoramos ou refazemos o site do seu negócio. Design exclusivo, textos que vendem, WhatsApp integrado e domínio incluso. No ar em 5 a 7 dias.">
-<meta name="theme-color" content="#04070c">
+<meta name="theme-color" content="#15120e">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Aura — sites que fazem você ser escolhido antes da primeira conversa">
 <meta property="og:description" content="Sites únicos para consultores, clínicas, escritórios e negócios locais.">
 <meta property="og:image" content="img/og.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-10 -10 120 120'%3E%3Crect x='-10' y='-10' width='120' height='120' rx='28' fill='%2304070c'/%3E%3Cpath fill='%23ecebe6' fill-rule='evenodd' d='M49.4 6.2 L71.5 45.5 L84.7 45.5 L76.2 52.3 L99.1 93.4 L79.1 93.4 L62.6 64.5 L15.5 93.4 L0.9 93.4 Z M49.4 40.2 L56.2 52.6 L35.7 67.5 Z'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-10 -10 120 120'%3E%3Crect x='-10' y='-10' width='120' height='120' rx='28' fill='%2315120e'/%3E%3Cpath fill='%23f3efe4' fill-rule='evenodd' d='M49.4 6.2 L71.5 45.5 L84.7 45.5 L76.2 52.3 L99.1 93.4 L79.1 93.4 L62.6 64.5 L15.5 93.4 L0.9 93.4 Z M49.4 40.2 L56.2 52.6 L35.7 67.5 Z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/fx.css">
-<link rel="preload" as="image" href="img/fim.webp" type="image/webp">
+<link rel="preload" as="image" href="img/q_hero2.webp" type="image/webp">
 <style>
-/* Versão simples: uma ideia por seção, pouca letra, foto de fundo no topo.
-   Escuro no preto da foto, texto off-white, um azul de sinal. Raio 14px em tudo; pílula só em botão. */
+/* Mesmo sistema visual do agenciaaura.online: escuro quente + papel, bronze/dourado,
+   Fraunces nos títulos (uma palavra em itálico dourado) e Geist no texto. */
 :root{
-  --bg:#04070c; --bg-2:#0a0e15; --card:#0e131b; --ink:#ecebe6; --ink-2:#a3a6ad; --mute:#6c7079; --line:rgba(236,235,230,.1);
-  --accent:#5b7cff;
-  --f:'Schibsted Grotesk',Georgia,serif; --mono:'Geist Mono',ui-monospace,monospace;
-  --t-hero:clamp(2.5rem,1.4rem + 3.6vw,4.9rem); --t-h2:clamp(2rem,1.3rem + 2.2vw,3.3rem);
-  --r:14px; --pad:clamp(84px,10vw,140px); --wrap:1200px; --gut:clamp(18px,4vw,40px);
-  --fx-accent:var(--accent);
+  --paper:#f7f4ee; --paper2:#efe9dc; --white:#fffdf9; --ink:#171310; --ink2:#4c463b; --ink3:#8c8677; --line:rgba(23,19,16,.11); --line2:rgba(23,19,16,.2);
+  --bronze:#8a6a3f; --gold:#cba86a; --gold-light:#e4cd9d;
+  --dark:#15120e; --dark2:#1e1a15; --on-dark:#f3efe4; --on-dark2:#b8b0a0; --on-dark-line:rgba(243,239,228,.12);
+  --green:#3f7a52; --red:#b3413c;
+  --serif:'Fraunces',Georgia,serif; --sans:'Geist',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --r-sm:10px; --r-md:16px; --r-lg:22px; --wrap:1240px; --gut:clamp(18px,4vw,40px); --pad:clamp(80px,9vw,128px);
+  --fx-accent:var(--gold);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:clamp(1rem,.97rem + .15vw,1.08rem);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:clamp(1rem,.97rem + .15vw,1.06rem);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img,svg{display:block;max-width:100%}
 img{height:auto}
 a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit;color:inherit}
-h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.02;margin:0;text-wrap:balance}
-h1 em,h2 em{font-style:normal;color:var(--ink-2)}
+h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;line-height:1.06;margin:0;text-wrap:balance;font-optical-sizing:auto}
+h1 em,h2 em{font-style:italic;color:var(--bronze)}
+.dark h1 em,.dark h2 em{color:var(--gold-light)}
+h3{font-weight:600;font-size:1.05rem;letter-spacing:-.01em;line-height:1.3;margin:0}
 p{margin:0;text-wrap:pretty}
 .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
 section{padding-block:var(--pad);position:relative}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.label{font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
-.head{max-width:40rem}
-.head h2{font-size:var(--t-h2);margin-top:14px}
-.head p:not(.label){color:var(--ink-2);margin-top:16px;font-size:1.08rem}
+.dark{background:var(--dark);color:var(--on-dark)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;border:1px solid var(--line2);font-size:.82rem;color:var(--ink2)}
+.pill::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--bronze)}
+.dark .pill{border-color:var(--on-dark-line);color:var(--on-dark2);background:rgba(21,18,14,.4)}
+.dark .pill::before{background:var(--gold)}
+.h2{font-size:clamp(2rem,1.3rem + 2.4vw,3.2rem);margin-top:20px}
+.lead{color:var(--ink2);font-size:1.08rem;max-width:36rem;margin-top:18px}
+.dark .lead{color:var(--on-dark2)}
+.head-row{display:grid;grid-template-columns:1.1fr .9fr;gap:24px 60px;align-items:end}
+@media(max-width:860px){.head-row{grid-template-columns:1fr}}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);font-weight:500;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
-.btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
-.btn:active{transform:scale(.97);transition:transform .1s}
-.btn svg{width:18px;height:18px;transition:transform .25s}
-.btn:hover svg{transform:translateX(3px)}
-.btn--ghost{background:rgba(4,7,12,.3);color:var(--ink);border-color:rgba(236,235,230,.35);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-.btn--ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-weight:500;font-size:.95rem;cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .1s}
+.btn:hover{background:var(--bronze);border-color:var(--bronze)}
+.btn:active{transform:scale(.97)}
+.btn svg{width:17px;height:17px;transition:transform .25s}.btn:hover svg{transform:translateX(3px)}
+.dark .btn{background:var(--on-dark);color:var(--ink);border-color:var(--on-dark)}
+.dark .btn:hover{background:var(--gold-light);border-color:var(--gold-light)}
+.btn--ghost,.dark .btn--ghost{background:transparent;color:inherit;border-color:var(--line2)}
+.dark .btn--ghost{border-color:rgba(243,239,228,.3);background:rgba(21,18,14,.35)}
+.btn--ghost:hover,.dark .btn--ghost:hover{background:transparent;border-color:currentColor;color:inherit}
+.btn--wa{background:var(--wa,#25d366);border-color:#25d366;color:#0b2414}.btn--wa:hover{background:#1fb457;border-color:#1fb457}
 
 /* nav */
-.nav{position:fixed;inset:0 0 auto;z-index:50;border-bottom:1px solid transparent;transition:transform .45s cubic-bezier(.16,1,.3,1),background-color .3s,border-color .3s}
-.nav.is-scrolled{background:rgba(4,7,12,.8);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-color:var(--line)}
+.nav{position:fixed;inset:0 0 auto;z-index:50;color:var(--on-dark);transition:transform .45s cubic-bezier(.16,1,.3,1),background-color .3s,color .3s,box-shadow .3s}
+.nav.is-scrolled{background:rgba(247,244,238,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.nav.is-open{color:var(--ink);transform:none}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:70px}
-.logo{display:flex;align-items:center;gap:10px;min-height:44px;font-weight:700;letter-spacing:-.03em;font-size:1.3rem;position:relative;z-index:2}
-.logo svg{width:22px;height:22px}
-.nav-links{display:flex;gap:32px;font-size:.95rem;color:var(--ink-2)}
-.nav-links a{padding-block:10px;transition:color .2s}.nav-links a:hover{color:var(--ink)}
+.logo{display:flex;align-items:center;gap:10px;min-height:44px;font-family:var(--serif);font-size:1.35rem;position:relative;z-index:2}
+.logo span{display:grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--ink);color:var(--paper)}
+.nav:not(.is-scrolled):not(.is-open) .logo span{background:var(--on-dark);color:var(--ink)}
+.logo svg{width:16px;height:16px}
+.nav-links{display:flex;gap:30px;font-size:.93rem;opacity:.85}
+.nav-links a{padding-block:10px}.nav-links a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
 .nav-right{display:flex;align-items:center;gap:10px}
-.nav .btn{min-height:44px;padding:0 20px;font-size:.92rem}
-.nav-toggle{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:transparent;cursor:pointer;place-items:center;position:relative;z-index:2}
+.nav .btn{min-height:44px;padding:0 20px;font-size:.9rem}
+.nav:not(.is-scrolled):not(.is-open) .btn{background:var(--on-dark);color:var(--ink);border-color:var(--on-dark)}
+.nav-toggle{display:none;width:46px;height:46px;border-radius:50%;border:1px solid currentColor;background:transparent;cursor:pointer;place-items:center;position:relative;z-index:2;opacity:.8}
 .nav-toggle path{transition:transform .35s cubic-bezier(.16,1,.3,1);transform-origin:12px 12px}
 .nav.is-open .nav-toggle .l1{transform:translateY(3px) rotate(45deg)}
 .nav.is-open .nav-toggle .l2{transform:translateY(-3px) rotate(-45deg)}
-.nav.is-open{transform:none}
 @media(max-width:900px){
-  .nav-links{position:fixed;inset:0;height:100vh;height:100svh;flex-direction:column;justify-content:center;padding-inline:var(--gut);gap:8px;font-size:2.2rem;font-weight:600;color:var(--ink);background:var(--bg);opacity:0;pointer-events:none;transition:opacity .35s}
+  .nav-links{position:fixed;inset:0;height:100vh;height:100svh;flex-direction:column;justify-content:center;padding-inline:var(--gut);gap:6px;font-family:var(--serif);font-size:2.4rem;background:var(--paper);color:var(--ink);opacity:0;pointer-events:none;transition:opacity .35s}
   .nav.is-open .nav-links{opacity:1;pointer-events:auto}
   .nav-toggle{display:grid}.nav-right .btn{display:none}
 }
 
-/* hero: a foto é o fundo; o degradê escurece o lado do texto */
-.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:120px 0 72px;isolation:isolate;overflow:hidden}
+/* hero */
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:130px 0 0;overflow:hidden;isolation:isolate}
 .hero-bg{position:absolute;inset:0;z-index:-1;margin:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:62% 70%;animation:hero-in 2.2s cubic-bezier(.16,1,.3,1) both}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,7,12,.94) 0%,rgba(4,7,12,.78) 38%,rgba(4,7,12,.2) 75%,rgba(4,7,12,.1) 100%),linear-gradient(0deg,var(--bg) 0%,rgba(4,7,12,0) 26%)}
-@keyframes hero-in{from{opacity:0;transform:scale(1.08)}}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:100% 50%;animation:hero-in 2.2s cubic-bezier(.16,1,.3,1) both}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(21,18,14,.96) 0%,rgba(21,18,14,.82) 38%,rgba(21,18,14,.1) 70%),linear-gradient(0deg,rgba(21,18,14,.9) 0%,rgba(21,18,14,0) 30%)}
+@keyframes hero-in{from{opacity:0;transform:scale(1.07)}}
 .hero>.wrap{width:100%}
-.hero-txt{max-width:44rem}
-.hero h1{font-size:var(--t-hero);margin:18px 0 22px}
-.hero .sub{color:#c4c6cb;font-size:clamp(1.05rem,1rem + .3vw,1.22rem);max-width:32rem}
-.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
-.trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:40px;font-size:.92rem;color:var(--ink-2)}
-.trust span{display:flex;align-items:center;gap:8px}
-.trust span::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
-@media(max-width:700px){.hero{align-items:flex-end}.hero-bg img{object-position:58% 50%}.hero-bg::after{background:linear-gradient(180deg,rgba(4,7,12,.25) 0%,rgba(4,7,12,.75) 42%,rgba(4,7,12,.96) 100%)}}
+.hero h1{font-size:clamp(2.6rem,1.5rem + 4vw,5.2rem);max-width:12em;margin:24px 0 22px;font-weight:300}
+.hero .lead{color:#d4cdbf;max-width:34rem;font-size:clamp(1.05rem,1rem + .3vw,1.2rem)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.checks{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:clamp(48px,7vh,80px);padding:20px 0 26px;border-top:1px solid var(--on-dark-line);font-size:.9rem;color:var(--on-dark2)}
+.checks span{display:flex;align-items:center;gap:8px}
+.checks svg{width:15px;height:15px;color:var(--gold)}
+@media(max-width:700px){.hero{justify-content:flex-end}.hero-bg img{object-position:86% 0%;height:62%}.hero-bg::after{background:linear-gradient(180deg,rgba(21,18,14,.35) 0%,rgba(21,18,14,.9) 34%,rgba(21,18,14,.97) 100%)}}
+
+/* números */
+.nums{padding-block:0;border-bottom:1px solid var(--line)}
+.nums-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.num{padding:34px 26px 30px 0}
+.num+.num{padding-left:26px;border-left:1px solid var(--line)}
+.num b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,1.8rem + 1.8vw,3.4rem);line-height:1;letter-spacing:-.03em}
+.num b small{font-size:.42em;margin-left:4px;letter-spacing:0}
+.num span{display:block;margin-top:10px;color:var(--ink2);font-size:.92rem;max-width:22ch}
+@media(max-width:860px){.nums-grid{grid-template-columns:1fr 1fr}.num:nth-child(3){padding-left:0;border-left:0}.num:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* problema x solução */
+.prob-top{display:grid;grid-template-columns:1fr 1fr;gap:40px 64px;align-items:center}
+.prob-pic{position:relative;margin:0;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3.4;box-shadow:0 30px 60px -30px rgba(23,19,16,.35)}
+.prob-pic img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.prob-pic figcaption{position:absolute;left:16px;bottom:16px;max-width:22rem;padding:12px 16px;border-radius:var(--r-sm);background:rgba(21,18,14,.62);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--on-dark);font-size:.86rem;line-height:1.5}
+.pairs{margin-top:clamp(48px,6vw,72px);border-radius:var(--r-lg);background:var(--white);box-shadow:0 0 0 1px var(--line),0 30px 60px -40px rgba(23,19,16,.25);overflow:hidden}
+.pair{display:grid;grid-template-columns:1fr 1fr}
+.pair+.pair{border-top:1px solid var(--line)}
+.pair>div{display:flex;gap:14px;padding:22px 28px}
+.pair>div+div{border-left:1px solid var(--line);background:rgba(239,233,220,.35)}
+.pair i{flex:none;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;margin-top:1px;font-style:normal;font-size:.72rem;font-weight:700}
+.pair .no i{background:rgba(179,65,60,.1);color:var(--red)}
+.pair .yes i{background:rgba(63,122,82,.12);color:var(--green)}
+.pair p{color:var(--ink2);font-size:.9rem;margin-top:4px}
+.pair .no h3{color:var(--ink2);font-weight:500}
+@media(max-width:860px){.prob-top{grid-template-columns:1fr}.pair{grid-template-columns:1fr}.pair>div+div{border-left:0;border-top:1px dashed var(--line)}.pair>div{padding:18px 20px}}
+
+/* antes e depois */
+.cmp-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px 64px;align-items:center}
+.cmp{border-radius:var(--r-md);aspect-ratio:16/10;box-shadow:0 0 0 1px var(--on-dark-line),0 40px 80px -30px rgba(0,0,0,.7)}
+.cmp .lbl{position:absolute;top:14px;padding:5px 12px;border-radius:999px;font-size:.75rem;font-weight:500;pointer-events:none;z-index:2}
+.cmp .l1{left:14px;background:rgba(21,18,14,.75);color:var(--on-dark)}.cmp .l2{right:14px;background:var(--gold-light);color:var(--ink)}
+.cmp .fx-handle svg{width:20px;height:20px;color:var(--ink)}
+.cmp-note{margin-top:14px;font-size:.86rem;color:var(--on-dark2)}
+.cmp-list{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:12px}
+.cmp-list li{display:flex;gap:12px;color:var(--on-dark2)}
+.cmp-list svg{flex:none;width:18px;height:18px;margin-top:3px;color:var(--gold)}
+@media(max-width:860px){.cmp-grid{grid-template-columns:1fr}}
 
 /* trabalhos */
-.works{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
-.work{display:flex;flex-direction:column;gap:14px}
-.work figure{margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:16/10;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
-.work img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1s cubic-bezier(.16,1,.3,1)}
-.work:hover img{transform:scale(1.04)}
-.work h3{font-size:1.25rem;letter-spacing:-.02em}
-.work p{color:var(--ink-2);font-size:.95rem;margin-top:4px}
-.work-go{font-size:.9rem;font-weight:500;color:var(--ink);margin-top:2px}
-.work-go::after{content:' →';transition:margin .2s}.work:hover .work-go::after{margin-left:4px}
-@media(max-width:860px){.works{grid-template-columns:1fr;gap:36px}}
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:clamp(40px,5vw,60px)}
+.work{display:flex;flex-direction:column;border-radius:var(--r-lg);background:var(--white);box-shadow:0 0 0 1px var(--line);overflow:hidden;transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .3s}
+.work:hover{transform:translateY(-4px);box-shadow:0 0 0 1px var(--line2),0 30px 50px -30px rgba(23,19,16,.35)}
+.work figure{margin:0;aspect-ratio:16/10;overflow:hidden;background:var(--paper2)}
+.work img{width:100%;height:100%;object-fit:cover;object-position:top}
+.work-t{padding:20px 22px 22px;display:flex;flex-direction:column;gap:4px;flex:1}
+.work-t p{color:var(--ink3);font-size:.88rem}
+.work-go{margin-top:12px;font-size:.88rem;font-weight:500;color:var(--bronze)}
+@media(max-width:860px){.works{grid-template-columns:1fr}}
 
-/* como funciona */
-.how{background:var(--bg-2)}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;counter-reset:s}
-.step{padding:28px;border-radius:var(--r);background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
-.step b{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:rgba(91,124,255,.14);color:#aebcff;font-family:var(--mono);font-size:.85rem;font-weight:500}
-.step h3{font-size:1.35rem;margin:22px 0 8px}
-.step p{color:var(--ink-2);font-size:.97rem}
-.how-note{margin-top:28px;color:var(--ink-2);font-size:.95rem}
-.how-note b{color:var(--ink);font-weight:500}
-@media(max-width:860px){.steps{grid-template-columns:1fr}}
+/* segmentos */
+.segs{text-align:center;overflow:hidden;isolation:isolate}
+.segs::before{content:'';position:absolute;z-index:-1;left:50%;top:50%;width:min(1100px,160vw);aspect-ratio:1.8;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(203,168,106,.16),transparent);pointer-events:none}
+.segs .h2{max-width:16em;margin-inline:auto}
+.segs .lead{margin-inline:auto}
+.seg-list{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:52rem;margin:36px auto 0}
+.seg-list span{padding:10px 18px;border-radius:999px;border:1px solid var(--on-dark-line);color:var(--on-dark);font-size:.95rem;background:rgba(243,239,228,.03)}
+
+/* método */
+.method{background:var(--paper2)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:clamp(40px,5vw,60px)}
+.step{padding:26px 24px 28px;border-radius:var(--r-lg);background:var(--white);box-shadow:0 0 0 1px var(--line)}
+.step-n{display:flex;align-items:center;justify-content:space-between;font-size:.8rem;color:var(--ink3)}
+.step-n b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--paper);font-family:var(--serif);font-weight:400;font-size:1rem}
+.step h3{font-size:1.15rem;margin:22px 0 8px}
+.step p{color:var(--ink2);font-size:.92rem}
+.method-note{text-align:center;margin-top:30px;color:var(--ink2);font-size:.95rem}
+.method-note b{color:var(--ink);font-weight:600}
+@media(max-width:1000px){.steps{grid-template-columns:1fr 1fr}}@media(max-width:560px){.steps{grid-template-columns:1fr}}
 
 /* preços */
-.plans{border:0;padding:0;margin:48px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.plan{position:relative;display:flex;flex-direction:column;gap:14px;padding:28px;border-radius:var(--r);background:var(--card);box-shadow:inset 0 0 0 1px var(--line);cursor:pointer;transition:box-shadow .25s,transform .4s cubic-bezier(.16,1,.3,1)}
+.plans{border:0;padding:0;margin:clamp(40px,5vw,60px) 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.plan{position:relative;display:flex;flex-direction:column;gap:14px;padding:28px;border-radius:var(--r-lg);background:var(--white);box-shadow:0 0 0 1px var(--line);cursor:pointer;transition:box-shadow .25s,transform .4s cubic-bezier(.16,1,.3,1)}
 .plan:hover{transform:translateY(-3px)}
 .plan input{position:absolute;opacity:0;pointer-events:none}
-.plan:has(input:checked){box-shadow:inset 0 0 0 2px var(--accent);background:linear-gradient(180deg,rgba(91,124,255,.1),var(--card) 55%)}
-.plan:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:3px}
+.plan:has(input:checked){background:var(--dark);color:var(--on-dark);box-shadow:0 30px 60px -30px rgba(23,19,16,.5)}
+.plan:has(input:checked) .plan-for,.plan:has(input:checked) .plan-time,.plan:has(input:checked) li,.plan:has(input:checked) .plan-top small,.plan:has(input:checked) .plan-price small{color:var(--on-dark2)}
+.plan:has(input:checked) b{color:var(--on-dark)}
+.plan:has(input:checked) .plan-time{border-color:var(--on-dark-line)}
+.plan:has(input:focus-visible){outline:2px solid var(--gold);outline-offset:3px}
 .plan-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-right:28px}
-.plan-top b{font-size:1.3rem;font-weight:600;letter-spacing:-.025em}.plan-top small{font-size:.82rem;color:var(--mute)}
-.plan::after{content:'';position:absolute;top:30px;right:28px;width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--mute);transition:all .2s}
-.plan:has(input:checked)::after{box-shadow:inset 0 0 0 5px var(--accent);background:var(--ink)}
-.plan-for{color:var(--ink-2);font-size:.92rem}
-.plan-price{font-size:clamp(2.4rem,2rem + 1.2vw,3.1rem);font-weight:600;letter-spacing:-.035em;line-height:1}
-.plan-price small{font-size:.36em;font-weight:500;letter-spacing:0;margin-right:6px;vertical-align:1em;color:var(--ink-2)}
-.plan-time{font-size:.86rem;color:var(--ink-2);padding-bottom:14px;border-bottom:1px solid var(--line)}.plan-time b{color:var(--ink);font-weight:500}
-.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:.9rem;color:var(--ink-2)}
-.plan li{display:flex;gap:10px;line-height:1.45}.plan li::before{content:'';flex:none;width:6px;height:6px;margin-top:.55em;border-radius:50%;background:var(--accent)}
-.plan li b{color:var(--ink);font-weight:500}
-.plan-badge{position:absolute;top:-11px;left:28px;background:var(--accent);color:#fff;font-size:.74rem;font-weight:600;padding:3px 10px;border-radius:999px}
-.price-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;margin-top:20px;padding:22px 28px;border-radius:var(--r);background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
-.price-bar p{color:var(--ink-2);font-size:.92rem;max-width:34rem}
-.price-bar p b{color:var(--ink);font-weight:500}
+.plan-top b{font-family:var(--serif);font-size:1.45rem;font-weight:400}.plan-top small{font-size:.8rem;color:var(--ink3)}
+.plan::after{content:'';position:absolute;top:32px;right:28px;width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--ink3);transition:all .2s}
+.plan:has(input:checked)::after{box-shadow:inset 0 0 0 5px var(--gold);background:var(--dark)}
+.plan-for{color:var(--ink2);font-size:.9rem}
+.plan-price{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,2.1rem + 1.4vw,3.4rem);letter-spacing:-.03em;line-height:1}
+.plan-price small{font-family:var(--sans);font-size:.32em;font-weight:500;letter-spacing:0;margin-right:6px;vertical-align:1.1em;color:var(--ink2)}
+.plan-time{font-size:.85rem;color:var(--ink2);padding-bottom:14px;border-bottom:1px solid var(--line)}.plan-time b{font-weight:600}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:.88rem;color:var(--ink2)}
+.plan li{display:flex;gap:10px;line-height:1.45}.plan li::before{content:'✓';flex:none;color:var(--green);font-weight:700}
+.plan:has(input:checked) li::before{color:var(--gold)}
+.plan li b{font-weight:600;color:var(--ink)}
+.plan-badge{position:absolute;top:-12px;left:28px;background:var(--gold);color:var(--ink);font-size:.74rem;font-weight:600;padding:4px 12px;border-radius:999px}
+.price-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;margin-top:18px;padding:22px 28px;border-radius:var(--r-lg);background:var(--white);box-shadow:0 0 0 1px var(--line)}
+.price-bar p{color:var(--ink2);font-size:.9rem;max-width:34rem}.price-bar p b{color:var(--ink);font-weight:600}
 .price-go{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
 .total{display:flex;flex-direction:column;line-height:1.1}
-.total span{font-size:.8rem;color:var(--ink-2)}
-.total b{font-size:1.9rem;font-weight:600;letter-spacing:-.03em;transition:color .4s}
-.total b.bump{color:#aebcff}
-.more{margin-top:14px;border-radius:var(--r);box-shadow:inset 0 0 0 1px var(--line)}
-.more summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;padding:0 28px;font-weight:500}
+.total span{font-size:.8rem;color:var(--ink3)}
+.total b{font-family:var(--serif);font-weight:400;font-size:2rem;letter-spacing:-.02em;transition:color .4s}
+.total b.bump{color:var(--bronze)}
+.more{margin-top:12px;border-radius:var(--r-lg);background:var(--white);box-shadow:0 0 0 1px var(--line)}
+.more summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;min-height:60px;padding:0 28px;font-weight:500}
 .more summary::-webkit-details-marker{display:none}
-.more summary span{color:var(--mute);font-weight:400;font-size:.9rem;margin:0 auto 0 -6px}
-.more summary i{flex:none;width:28px;height:28px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line);display:grid;place-items:center;font-style:normal;transition:transform .3s}
+.more summary span{color:var(--ink3);font-weight:400;font-size:.88rem;margin-right:auto}
+.more summary i{flex:none;width:28px;height:28px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line2);display:grid;place-items:center;font-style:normal;transition:transform .3s}
 .more[open] summary i{transform:rotate(45deg)}
 .more-in{display:grid;grid-template-columns:1.3fr .9fr;gap:32px;padding:6px 28px 28px}
-.opt-g{margin-bottom:26px}.opt-g>p{font-size:.85rem;color:var(--ink-2);margin-bottom:10px}
-.opt-g>p span{margin-left:6px;color:var(--mute)}
+.opt-g{margin-bottom:24px}.opt-g>p{font-size:.85rem;color:var(--ink3);margin-bottom:10px}.opt-g>p span{margin-left:6px}
 .opts{display:grid;gap:8px}
-.opt{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border-radius:10px;box-shadow:inset 0 0 0 1px var(--line);cursor:pointer;transition:background .2s}
-.opt:hover{background:rgba(236,235,230,.03)}
-.opt input{accent-color:var(--accent);width:18px;height:18px;margin:3px 0 0;flex:none}
+.opt{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border-radius:var(--r-sm);box-shadow:inset 0 0 0 1px var(--line);cursor:pointer;transition:background .2s}
+.opt:hover{background:var(--paper)}
+.opt input{accent-color:var(--bronze);width:18px;height:18px;margin:3px 0 0;flex:none}
 .opt-l{display:flex;flex-direction:column;gap:2px;flex:1}
-.opt-l b{font-weight:500}.opt-l span{font-size:.86rem;color:var(--ink-2);line-height:1.5}
-.opt small{font-size:.86rem;white-space:nowrap;padding-top:2px;font-variant-numeric:tabular-nums}
-.opt:has(input:checked){background:rgba(91,124,255,.08);box-shadow:inset 0 0 0 1px rgba(91,124,255,.5)}
-.opt small s{color:var(--mute);margin-right:4px}.opt small em{font-style:normal;font-size:.7rem;font-weight:600;background:var(--accent);color:#fff;padding:2px 7px;border-radius:999px;margin-left:4px}
-.opt.is-incl{cursor:default;opacity:.65}.opt.is-incl small{background:rgba(236,235,230,.1);padding:2px 10px;border-radius:999px;font-size:.74rem}
-.sum{align-self:start;position:sticky;top:96px;padding:22px;border-radius:12px;background:var(--bg)}
-.sum-plan{display:flex;flex-direction:column;padding-bottom:12px}.sum-plan b{font-size:1.15rem;font-weight:600}.sum-plan span{color:var(--ink-2);font-size:.86rem}
-.sum-list{list-style:none;margin:0;padding:12px 0;border-top:1px solid var(--line);display:grid;gap:6px;font-size:.86rem;color:var(--ink-2)}
+.opt-l b{font-weight:600}.opt-l span{font-size:.85rem;color:var(--ink2);line-height:1.5}
+.opt small{font-size:.86rem;white-space:nowrap;padding-top:2px}
+.opt:has(input:checked){background:rgba(203,168,106,.1);box-shadow:inset 0 0 0 1px rgba(138,106,63,.45)}
+.opt small s{color:var(--ink3);margin-right:4px}.opt small em{font-style:normal;font-size:.7rem;font-weight:600;background:var(--gold);color:var(--ink);padding:2px 7px;border-radius:999px;margin-left:4px}
+.opt.is-incl{cursor:default;opacity:.6}.opt.is-incl small{background:var(--paper2);padding:2px 10px;border-radius:999px;font-size:.74rem}
+.sum{align-self:start;position:sticky;top:96px;padding:22px;border-radius:var(--r-md);background:var(--paper)}
+.sum-plan{display:flex;flex-direction:column;padding-bottom:12px}.sum-plan b{font-family:var(--serif);font-size:1.25rem;font-weight:400}.sum-plan span{color:var(--ink2);font-size:.86rem}
+.sum-list{list-style:none;margin:0;padding:12px 0;border-top:1px solid var(--line);display:grid;gap:6px;font-size:.86rem;color:var(--ink2)}
 .sum-list li,.sum-row,.sum-calc div{display:flex;justify-content:space-between;gap:12px}
-.sum-list li span:last-child,.sum-row span:last-child,.sum-calc b{color:var(--ink);font-weight:500;white-space:nowrap}
-.sum-list li.inc span:last-child{color:var(--mute);font-weight:400}
-.sum-row{padding-top:10px;border-top:1px solid var(--line);font-size:.9rem;color:var(--ink-2)}
+.sum-list li span:last-child,.sum-row span:last-child,.sum-calc b{color:var(--ink);font-weight:600;white-space:nowrap}
+.sum-list li.inc span:last-child{color:var(--ink3);font-weight:400}
+.sum-row{padding-top:10px;border-top:1px solid var(--line);font-size:.9rem;color:var(--ink2)}
 .sum-row[hidden]{display:none}
-.sum-calc{margin-top:12px;display:grid;gap:6px;font-size:.84rem;color:var(--ink-2)}
+.sum-calc{margin-top:12px;display:grid;gap:6px;font-size:.84rem;color:var(--ink2)}
 @media(max-width:1000px){.plans{grid-template-columns:1fr}.more-in{grid-template-columns:1fr}.sum{position:static}}
-@media(max-width:520px){.price-bar,.more summary{padding-inline:20px}.more-in{padding-inline:20px}.opt{flex-wrap:wrap}.opt small{order:3;flex-basis:100%;padding-left:32px}.opt.is-incl{flex-wrap:nowrap}.opt.is-incl small{order:0;flex-basis:auto}.price-go,.price-go .btn{width:100%}}
+@media(max-width:520px){.price-bar,.more summary,.more-in{padding-inline:20px}.opt{flex-wrap:wrap}.opt small{order:3;flex-basis:100%;padding-left:32px}.opt.is-incl{flex-wrap:nowrap}.opt.is-incl small{order:0;flex-basis:auto}.price-go,.price-go .btn{width:100%}}
 
 /* faq */
-.faq{background:var(--bg-2)}
-.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px clamp(32px,6vw,90px)}
-.faq-side .btn{margin-top:28px}
+.faq{border-top:1px solid var(--line)}
+.faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px clamp(32px,6vw,90px);align-items:start}
+.ask{margin-top:32px;padding:22px;border-radius:var(--r-md);background:var(--white);box-shadow:0 0 0 1px var(--line);max-width:24rem}
+.ask b{display:block;font-weight:600}.ask p{color:var(--ink2);font-size:.9rem;margin:4px 0 16px}
 .fx-acc-item{border-bottom:1px solid var(--line)}.fx-acc-item:first-child{border-top:1px solid var(--line)}
-.fx-acc-q{font-size:1.1rem;font-weight:500;min-height:64px}
-.fx-acc-plus{width:28px;height:28px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line);display:grid;place-items:center}
-.fx-acc-a p{padding-bottom:22px;color:var(--ink-2);max-width:60ch}
+.fx-acc-q{font-size:1.05rem;font-weight:500;min-height:66px}
+.fx-acc-plus{width:28px;height:28px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line2);display:grid;place-items:center;color:var(--bronze)}
+.fx-acc-a p{padding-bottom:22px;color:var(--ink2);max-width:60ch}
 @media(max-width:860px){.faq-grid{grid-template-columns:1fr}}
 
 /* contato */
 .end{overflow:hidden;isolation:isolate}
-.end::before{content:'';position:absolute;z-index:-1;left:50%;top:-35%;width:min(1000px,150vw);aspect-ratio:1.5;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(91,124,255,.2),rgba(91,124,255,.05) 60%,transparent);pointer-events:none}
-.end-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px clamp(32px,6vw,90px);align-items:start}
-.end h2{font-size:clamp(2.2rem,1.4rem + 2.8vw,3.9rem)}
-.contacts{display:grid;gap:2px;margin-top:32px}
-.contacts a{display:flex;align-items:center;gap:12px;min-height:46px;color:var(--ink-2);transition:color .2s}
-.contacts a:hover{color:var(--ink)}
-.contacts svg{width:18px;height:18px;flex:none}
-.form{display:grid;gap:18px;padding:clamp(24px,3vw,36px);border-radius:var(--r);background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
-.field{display:flex;flex-direction:column;gap:8px;border:0;padding:0;margin:0;min-width:0}
-.field label,.field legend{font-size:.86rem;color:var(--ink-2);padding:0}
-.field input{background:var(--bg);border:0;border-radius:10px;box-shadow:inset 0 0 0 1px var(--line);padding:0 14px;min-height:50px;outline:0;color-scheme:dark;transition:box-shadow .2s}
-.field input:focus{box-shadow:inset 0 0 0 1px var(--accent)}
-.field ::placeholder{color:var(--mute)}
+.end-bg{position:absolute;inset:0;z-index:-1;margin:0}
+.end-bg img{position:absolute;right:0;top:0;width:58%;height:100%;object-fit:cover;object-position:50% 40%}
+.end-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--dark) 42%,rgba(21,18,14,.7) 62%,rgba(21,18,14,.35) 100%)}
+.end-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px clamp(32px,6vw,90px);align-items:center}
+.end h2{font-size:clamp(2.2rem,1.4rem + 2.8vw,3.8rem)}
+.end-checks{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:12px;color:var(--on-dark2)}
+.end-checks li{display:flex;gap:12px}
+.end-checks svg{flex:none;width:20px;height:20px;padding:3px;border-radius:50%;background:var(--gold);color:var(--ink);margin-top:2px}
+.form{display:grid;gap:16px;padding:clamp(24px,3vw,36px);border-radius:var(--r-lg);background:var(--white);color:var(--ink);box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.form h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;line-height:1.2}
+.form>p{color:var(--ink3);font-size:.88rem;margin-top:-8px}
+.field{display:flex;flex-direction:column;gap:6px;border:0;padding:0;margin:0;min-width:0}
+.field label,.field legend{font-size:.84rem;color:var(--ink2);padding:0;margin-bottom:2px}
+.field input{background:var(--paper);border:0;border-radius:var(--r-sm);box-shadow:inset 0 0 0 1px var(--line);padding:0 14px;min-height:50px;outline:0;transition:box-shadow .2s}
+.field input:focus{box-shadow:inset 0 0 0 1.5px var(--bronze)}
+.field ::placeholder{color:var(--ink3)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips label{position:relative;cursor:pointer;color:var(--ink);font-size:.92rem}
+.chips label{position:relative;cursor:pointer;font-size:.9rem}
 .chips input{position:absolute;opacity:0;width:1px;height:1px}
-.chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);transition:all .2s}
-.chips label:hover span{box-shadow:inset 0 0 0 1px var(--ink-2)}
-.chips input:checked+span{background:var(--ink);color:var(--bg);box-shadow:none}
-.chips input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
-.form .btn{margin-top:4px}
-.form-note{font-size:.84rem;color:var(--mute)}
-@media(max-width:860px){.end-grid{grid-template-columns:1fr}}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line2);transition:all .2s}
+.chips label:hover span{box-shadow:inset 0 0 0 1px var(--ink2)}
+.chips input:checked+span{background:var(--ink);color:var(--paper);box-shadow:none}
+.chips input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.form .btn{margin-top:6px;background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.form-note{font-size:.8rem;color:var(--ink3);text-align:center}
+@media(max-width:860px){.end-grid{grid-template-columns:1fr}.end-bg img{width:100%;opacity:.35}.end-bg::after{background:linear-gradient(180deg,rgba(21,18,14,.6),var(--dark) 70%)}}
 
-footer{padding-block:0 96px;overflow:hidden}
-footer .wrap{border-top:1px solid var(--line)}
-.foot-word{font-size:min(36vw,30rem);font-weight:700;letter-spacing:-.07em;line-height:.76;margin:clamp(32px,5vw,64px) 0 0 -.04em;color:#121722}
-.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;margin-top:28px;font-size:.86rem;color:var(--mute)}
-.foot-bottom nav{display:flex;gap:20px}
-.foot-bottom a{display:inline-flex;align-items:center;min-height:44px}.foot-bottom a:hover{color:var(--ink)}
+footer{background:var(--dark);color:var(--on-dark2);padding-block:64px 100px;font-size:.9rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;padding-bottom:40px;border-bottom:1px solid var(--on-dark-line)}
+.foot-grid .logo{color:var(--on-dark);margin-bottom:12px}
+.foot-grid .logo span{background:var(--on-dark);color:var(--ink)}
+.foot-grid p{max-width:24rem}
+.foot-grid h4{margin:0 0 10px;font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.foot-grid nav{display:flex;flex-direction:column}
+.foot-grid nav a{display:inline-flex;align-items:center;min-height:40px}.foot-grid nav a:hover{color:var(--on-dark)}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding-top:24px;font-size:.82rem}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr}}
 
-.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.35)}
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.3)}
 .wa svg{width:30px;height:30px}
 </style>
 </head>
@@ -223,12 +294,12 @@ footer .wrap{border-top:1px solid var(--line)}
 
 <nav class="nav" data-nav="hide" aria-label="Principal">
   <div class="wrap nav-in">
-    <a href="#topo" class="logo" aria-label="Aura, voltar ao início"><svg viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M49.4 6.2 L71.5 45.5 L84.7 45.5 L76.2 52.3 L99.1 93.4 L79.1 93.4 L62.6 64.5 L15.5 93.4 L0.9 93.4 Z M49.4 40.2 L56.2 52.6 L35.7 67.5 Z"/></svg>Aura</a>
+    <a href="#topo" class="logo" aria-label="Aura, voltar ao início"><span><svg viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M49.4 6.2 L71.5 45.5 L84.7 45.5 L76.2 52.3 L99.1 93.4 L79.1 93.4 L62.6 64.5 L15.5 93.4 L0.9 93.4 Z M49.4 40.2 L56.2 52.6 L35.7 67.5 Z"/></svg></span>Aura</a>
     <div class="nav-links" id="menu">
-      <a href="#trabalhos">Trabalhos</a><a href="#como-funciona">Como funciona</a><a href="#investimento">Preços</a><a href="#duvidas">Dúvidas</a>
+      <a href="#por-que">Por que a Aura</a><a href="#trabalhos">Trabalhos</a><a href="#metodo">Método</a><a href="#investimento">Preços</a><a href="#faq">FAQ</a>
     </div>
     <div class="nav-right">
-      <a class="btn" href="#contato">Pedir orçamento</a>
+      <a class="btn" href="#contato">Quero meu site</a>
       <button class="nav-toggle" data-nav-toggle aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path class="l1" d="M4 9h16"/><path class="l2" d="M4 15h16"/></svg></button>
     </div>
@@ -236,65 +307,142 @@ footer .wrap{border-top:1px solid var(--line)}
 </nav>
 
 <main id="topo">
-  <header class="hero">
-    <picture class="hero-bg" aria-hidden="true"><source srcset="img/fim.webp" type="image/webp"><img src="img/fim.jpg" width="2000" height="1125" alt="" fetchpriority="high"></picture>
+  <header class="hero dark">
+    <picture class="hero-bg" aria-hidden="true"><source srcset="img/q_hero2.webp" type="image/webp"><img src="img/q_hero2.jpg" width="2400" height="1350" alt="" fetchpriority="high"></picture>
     <div class="wrap">
-      <div class="hero-txt">
-        <p class="label" data-reveal>Estúdio de sites · Cotia, SP</p>
-        <h1 data-split>Sites que fazem você ser escolhido <em>antes da primeira conversa.</em></h1>
-        <p class="sub" data-reveal style="--d:.3s">Criamos, melhoramos ou refazemos o site do seu negócio, com design exclusivo e o WhatsApp a um toque do seu cliente.</p>
-        <div class="hero-cta" data-reveal style="--d:.4s">
-          <a class="btn" href="#contato">Pedir orçamento
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn btn--ghost" href="#trabalhos">Ver trabalhos</a>
-        </div>
-        <div class="trust" data-reveal style="--d:.5s"><span>No ar em 5 a 7 dias</span><span>Domínio incluso</span><span>A partir de R$ 1.500</span></div>
+      <span class="pill" data-reveal>Sites para consultores, clínicas, escritórios e negócios locais</span>
+      <h1 data-split>Sites que fazem você ser escolhido <em>antes da primeira conversa.</em></h1>
+      <p class="lead" data-reveal style="--d:.3s">Design exclusivo, textos que vendem e o WhatsApp a um toque: o seu cliente pesquisa o seu nome e encontra um negócio à altura do trabalho que você entrega.</p>
+      <div class="hero-cta" data-reveal style="--d:.4s">
+        <a class="btn" href="#contato">Quero meu site
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="#trabalhos">Ver trabalhos</a>
+      </div>
+      <div class="checks" data-reveal style="--d:.5s">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>No ar em 5 a 7 dias</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Domínio e hospedagem no 1º ano</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Site e domínio em seu nome</span>
       </div>
     </div>
   </header>
 
-  <section id="trabalhos">
+  <section class="nums" aria-label="Em números">
+    <div class="wrap nums-grid" data-stagger="0.08">
+      <div class="num"><b>5<small>a 7 dias</small></b><span>para a página única ir ao ar, da conversa à publicação</span></div>
+      <div class="num"><b><small style="margin:0 4px 0 0">R$</small>1.500</b><span>para começar, com preço claro e sem taxa escondida</span></div>
+      <div class="num"><b>1<small>º ano</small></b><span>de domínio e hospedagem já incluso em todo plano</span></div>
+      <div class="num"><b>30<small>dias</small></b><span>de ajustes grátis depois que o site vai ao ar</span></div>
+    </div>
+  </section>
+
+  <section id="por-que">
     <div class="wrap">
-      <div class="head">
-        <p class="label" data-reveal>Trabalhos</p>
-        <h2 data-split>Três negócios, <em>três sites diferentes.</em></h2>
+      <div class="prob-top">
+        <div>
+          <span class="pill" data-reveal>Por que a Aura</span>
+          <h2 class="h2" data-split>O problema não é o seu trabalho. <em>É como ele aparece na internet.</em></h2>
+          <p class="lead" data-reveal>Seis situações que quase todo profissional que vive de indicação já viveu, e o que muda com um site feito para o seu negócio.</p>
+        </div>
+        <figure class="prob-pic" data-reveal="scale">
+          <picture><source srcset="img/q_arq.webp" type="image/webp"><img src="img/q_arq.jpg" width="900" height="1125" loading="lazy" alt="Profissional trabalhando em sua prancheta, com luz quente de luminária"></picture>
+          <figcaption>Quem é indicado até você pesquisa o seu nome antes de chamar, e decide em poucos segundos.</figcaption>
+        </figure>
       </div>
-      <div class="works" data-stagger="0.1">
-        <a class="work" href="https://esconsultoria.com" target="_blank" rel="noopener">
-          <figure><img src="img/w_eduardo_s.jpg" width="820" height="512" loading="lazy" alt="Site do consultor Eduardo Stephano"></figure>
-          <div><h3>Eduardo Stephano</h3><p>Consultoria em segurança de alimentos</p></div>
-          <span class="work-go">Ver site</span></a>
-        <a class="work" href="https://lfesquadriasferroeaco.online" target="_blank" rel="noopener">
-          <figure><img src="img/w_lf_s.jpg" width="820" height="512" loading="lazy" alt="Site da LF Esquadrias"></figure>
-          <div><h3>LF Esquadrias</h3><p>Esquadrias e vidros em Uberlândia</p></div>
-          <span class="work-go">Ver site</span></a>
-        <div class="work">
-          <figure><img src="img/w_forno_s.jpg" width="820" height="512" loading="lazy" alt="Site conceito da pizzaria Forno Vivo"></figure>
-          <div><h3>Forno Vivo</h3><p>Pizzaria napolitana · projeto conceito</p></div></div>
+      <div class="pairs" data-reveal>
+        <div class="pair"><div class="no"><i>✕</i><div><h3>Pesquisam seu nome e não acham nada</h3><p>Ou só um Instagram parado. A indicação esfria ali.</p></div></div>
+          <div class="yes"><i>✓</i><div><h3>Seu site aparece quando procuram por você</h3><p>Com seus serviços, sua história e um jeito fácil de falar com você.</p></div></div></div>
+        <div class="pair"><div class="no"><i>✕</i><div><h3>Site antigo que não passa confiança</h3><p>Lento, desatualizado, quebrado no celular.</p></div></div>
+          <div class="yes"><i>✓</i><div><h3>Design à altura do seu trabalho</h3><p>Rápido, bonito no celular e pensado para o seu segmento.</p></div></div></div>
+        <div class="pair"><div class="no"><i>✕</i><div><h3>Template igual ao do concorrente</h3><p>Mais um site que ninguém lembra.</p></div></div>
+          <div class="yes"><i>✓</i><div><h3>Direção de arte própria</h3><p>Cor, tipografia e fotos escolhidas para o seu negócio.</p></div></div></div>
+        <div class="pair"><div class="no"><i>✕</i><div><h3>Visitante não sabe como falar com você</h3><p>Telefone escondido, formulário que ninguém responde.</p></div></div>
+          <div class="yes"><i>✓</i><div><h3>WhatsApp a um toque, com a mensagem pronta</h3><p>Em todas as telas, do primeiro ao último clique.</p></div></div></div>
+        <div class="pair"><div class="no"><i>✕</i><div><h3>Medo de pagar caro e ficar sem nada</h3><p>Orçamento confuso, domínio no nome de outra pessoa.</p></div></div>
+          <div class="yes"><i>✓</i><div><h3>Preço claro e tudo em seu nome</h3><p>Domínio registrado para você e todos os arquivos entregues.</p></div></div></div>
       </div>
     </div>
   </section>
 
-  <section class="how" id="como-funciona">
+  <section class="dark">
+    <div class="wrap cmp-grid">
+      <div>
+        <span class="pill" data-reveal>Antes e depois</span>
+        <h2 class="h2" data-split>Mesma empresa. <em>Outra impressão.</em></h2>
+        <p class="lead" data-reveal>O site antigo da LF Esquadrias, de Uberlândia, e o site que entregamos. Arraste a linha para comparar.</p>
+        <ul class="cmp-list" data-stagger="0.08">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Foto de projeto real no lugar de ilustração genérica</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Serviços organizados por tipo de obra</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Orçamento pelo WhatsApp em qualquer tela</li>
+        </ul>
+      </div>
+      <div data-reveal="scale">
+        <div class="cmp" data-compare>
+          <img src="img/w_lf_old.jpg" width="1440" height="900" loading="lazy" alt="Site antigo da LF Esquadrias, com fundo claro e ilustração genérica">
+          <img class="fx-after" src="img/w_lf_d.jpg" width="1440" height="900" loading="lazy" alt="Site novo da LF Esquadrias, escuro, com foto de projeto real">
+          <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar o site antigo com o novo">
+          <span class="fx-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+          <span class="lbl l1">Antes</span><span class="lbl l2">Depois</span>
+        </div>
+        <p class="cmp-note">Veja o site no ar: <a href="https://lfesquadriasferroeaco.online" target="_blank" rel="noopener" style="color:var(--gold-light);text-decoration:underline;text-underline-offset:4px">lfesquadriasferroeaco.online</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="trabalhos">
     <div class="wrap">
-      <div class="head">
-        <p class="label" data-reveal>Como funciona</p>
-        <h2 data-split>Simples para você, <em>do começo ao fim.</em></h2>
+      <div class="head-row">
+        <div><span class="pill" data-reveal>Trabalhos</span>
+          <h2 class="h2" data-split>Três negócios. <em>Três sites que não se parecem.</em></h2></div>
+        <p class="lead" data-reveal>Cada projeto começa do zero, a partir do que faz o cliente daquele negócio decidir.</p>
       </div>
-      <div class="steps" data-stagger="0.1">
-        <div class="step"><b>1</b><h3>Conversa</h3><p>Você conta sobre o seu negócio em 20 minutos, pelo WhatsApp.</p></div>
-        <div class="step"><b>2</b><h3>Criação</h3><p>Fazemos textos, design e fotos. Você revisa e pede ajustes.</p></div>
-        <div class="step"><b>3</b><h3>No ar</h3><p>Em 5 a 7 dias, com domínio, WhatsApp e tudo funcionando.</p></div>
+      <div class="works" data-stagger="0.1">
+        <a class="work" href="https://esconsultoria.com" target="_blank" rel="noopener">
+          <figure><img src="img/w_eduardo_s.jpg" width="820" height="512" loading="lazy" alt="Site do consultor Eduardo Stephano"></figure>
+          <div class="work-t"><h3>Eduardo Stephano</h3><p>Consultoria em segurança de alimentos</p><span class="work-go">Ver site no ar →</span></div></a>
+        <a class="work" href="https://lfesquadriasferroeaco.online" target="_blank" rel="noopener">
+          <figure><img src="img/w_lf_s.jpg" width="820" height="512" loading="lazy" alt="Site da LF Esquadrias"></figure>
+          <div class="work-t"><h3>LF Esquadrias</h3><p>Esquadrias e vidros · Uberlândia</p><span class="work-go">Ver site no ar →</span></div></a>
+        <div class="work">
+          <figure><img src="img/w_forno_s.jpg" width="820" height="512" loading="lazy" alt="Site conceito da pizzaria Forno Vivo"></figure>
+          <div class="work-t"><h3>Forno Vivo</h3><p>Pizzaria napolitana · projeto conceito</p></div></div>
       </div>
-      <p class="how-note" data-reveal><b>Você só manda:</b> logo, fotos (se tiver) e seus contatos. O resto é com a gente.</p>
+    </div>
+  </section>
+
+  <section class="dark segs">
+    <div class="wrap">
+      <span class="pill" data-reveal>Para quem</span>
+      <h2 class="h2" data-split>Falamos a língua de quem <em>vende confiança.</em></h2>
+      <p class="lead" data-reveal>O site de uma clínica não se parece com o de uma indústria. Começamos pelo que faz o seu cliente decidir.</p>
+      <div class="seg-list" data-stagger="0.04">
+        <span>Consultores</span><span>Clínicas e consultórios</span><span>Advocacia</span><span>Arquitetura e interiores</span><span>Psicólogos e terapeutas</span><span>Restaurantes</span><span>Indústria e serviços técnicos</span><span>Esquadrias e obras</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="method" id="metodo">
+    <div class="wrap">
+      <div class="head-row">
+        <div><span class="pill" data-reveal>Como funciona</span>
+          <h2 class="h2" data-split>Da primeira conversa <em>ao site no ar.</em></h2></div>
+        <p class="lead" data-reveal>Você fala do seu negócio por 20 minutos. Texto, design, fotos, domínio e publicação ficam com a gente.</p>
+      </div>
+      <div class="steps" data-stagger="0.08">
+        <div class="step"><div class="step-n"><b>1</b>Dia 1</div><h3>Conversa</h3><p>Entendemos o que você vende, para quem e o que faz um cliente escolher você.</p></div>
+        <div class="step"><div class="step-n"><b>2</b>Dias 1 e 2</div><h3>Direção de arte e textos</h3><p>Cor, tipografia, fotos e textos pensados para o seu negócio. Nada de template.</p></div>
+        <div class="step"><div class="step-n"><b>3</b>Dias 3 a 6</div><h3>Construção e revisão</h3><p>Montamos o site e você revisa no celular e no computador. Ajustamos até ficar do seu jeito.</p></div>
+        <div class="step"><div class="step-n"><b>4</b>Dia 7</div><h3>No ar</h3><p>Domínio configurado, Google avisado e o site trabalhando por você.</p></div>
+      </div>
+      <p class="method-note" data-reveal><b>Você só manda:</b> logo, fotos (se tiver) e seus contatos. Prazos da página única.</p>
     </div>
   </section>
 
   <section id="investimento">
     <div class="wrap">
-      <div class="head">
-        <p class="label" data-reveal>Preços</p>
-        <h2 data-split>Preço claro, <em>sem letra miúda.</em></h2>
+      <div class="head-row">
+        <div><span class="pill" data-reveal>Investimento</span>
+          <h2 class="h2" data-split>Preço claro, <em>sem letra miúda.</em></h2></div>
+        <p class="lead" data-reveal>Escolha o plano e veja na hora quanto custa para começar. Extras e manutenção são opcionais.</p>
       </div>
       <form id="sim" class="sim-form">
         <fieldset class="plans" aria-label="Escolha o plano">
@@ -388,40 +536,47 @@ footer .wrap{border-top:1px solid var(--line)}
     </div>
   </section>
 
-  <section class="faq" id="duvidas">
+  <section class="faq" id="faq">
     <div class="wrap faq-grid">
-      <div class="faq-side">
-        <div class="head"><p class="label" data-reveal>Dúvidas</p><h2 data-split>Perguntas <em>frequentes.</em></h2></div>
-        <a class="btn btn--ghost" href="https://wa.me/5511989187347?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20site." target="_blank" rel="noopener">Perguntar no WhatsApp</a>
+      <div>
+        <span class="pill" data-reveal>Perguntas frequentes</span>
+        <h2 class="h2" data-split>Dúvidas que todo <em>dono de negócio</em> tem.</h2>
+        <div class="ask" data-reveal><b>Não achou sua dúvida?</b><p>Fale direto com a Aura pelo WhatsApp.</p>
+          <a class="btn btn--wa" href="https://wa.me/5511989187347?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20site." target="_blank" rel="noopener">Falar no WhatsApp</a></div>
       </div>
       <div data-accordion>
         <div class="fx-acc-item is-open"><button class="fx-acc-q">Em quanto tempo o site fica pronto?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
-          <div class="fx-acc-a"><p>A página única fica pronta em 5 a 7 dias depois da conversa. O institucional leva de 10 a 12 dias e o catálogo de 12 a 15.</p></div></div>
-        <div class="fx-acc-item"><button class="fx-acc-q">Já tenho site. Vocês aproveitam?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
-          <div class="fx-acc-a"><p>Sim. Mantemos seu domínio, aproveitamos o que funciona e redirecionamos as páginas antigas para você não perder visitas nem a posição no Google.</p></div></div>
+          <div class="fx-acc-a"><p>A página única fica pronta em 5 a 7 dias depois da conversa. O institucional leva de 10 a 12 dias e o catálogo de 12 a 15. O prazo depende de você mandar logo e informações a tempo.</p></div></div>
+        <div class="fx-acc-item"><button class="fx-acc-q">Já tenho site. Vocês aproveitam o que existe?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
+          <div class="fx-acc-a"><p>Sim. Mantemos seu domínio, aproveitamos textos e fotos que funcionam e redirecionamos as páginas antigas para você não perder visitas nem a posição no Google.</p></div></div>
+        <div class="fx-acc-item"><button class="fx-acc-q">Preciso ter fotos e textos prontos?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
+          <div class="fx-acc-a"><p>Não. Se você tiver fotos reais do seu trabalho, elas entram primeiro. O restante escolhemos em bancos de imagem com licença livre e tratamos com a mesma cor. Os textos escrevemos a partir da conversa.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">E se eu não gostar do resultado?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
-          <div class="fx-acc-a"><p>Você revisa tudo antes de ir ao ar, com 2 a 3 rodadas de ajustes conforme o plano. Depois da entrega ainda tem 30 dias de ajustes grátis.</p></div></div>
+          <div class="fx-acc-a"><p>Você revisa tudo antes de ir ao ar, com 2 a 3 rodadas de ajustes conforme o plano. Depois da entrega ainda tem 30 dias de ajustes grátis (60 no Catálogo).</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">Consigo alterar depois?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
-          <div class="fx-acc-a"><p>Sim. Com a manutenção mensal (de R$ 90 a R$ 220) as alterações estão inclusas. Sem ela, cada alteração sai a partir de R$ 50.</p></div></div>
+          <div class="fx-acc-a"><p>Sim. Com a manutenção mensal (de R$ 90 a R$ 220, conforme o plano) as alterações estão inclusas. Sem ela, cada alteração sai a partir de R$ 50.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">O site fica em meu nome?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
-          <div class="fx-acc-a"><p>Sim. O domínio é registrado em seu nome e você recebe todos os arquivos.</p></div></div>
+          <div class="fx-acc-a"><p>Sim. O domínio é registrado em seu nome e você recebe todos os arquivos do site.</p></div></div>
       </div>
     </div>
   </section>
 
-  <section class="end" id="contato">
+  <section class="dark end" id="contato">
+    <picture class="end-bg" aria-hidden="true"><source srcset="img/q_terap.webp" type="image/webp"><img src="img/q_terap.jpg" width="900" height="1125" loading="lazy" alt=""></picture>
     <div class="wrap end-grid">
       <div>
-        <div class="head"><p class="label" data-reveal>Contato</p><h2 data-split>Vamos fazer <em>o seu site?</em></h2>
-          <p data-reveal>Conte rapidinho sobre o seu negócio. A conversa continua no WhatsApp.</p></div>
-        <div class="contacts" data-reveal>
-          <a href="https://wa.me/5511989187347?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Aura." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 19L4 20z"/></svg>(11) 98918-7347</a>
-          <a href="mailto:auratecnologiaia@gmail.com?subject=Quero%20um%20site%20-%20vim%20pelo%20site%20da%20Aura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>auratecnologiaia@gmail.com</a>
-          <a href="https://instagram.com/dgt.aura" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>@dgt.aura</a>
-        </div>
+        <span class="pill" data-reveal>Vamos conversar</span>
+        <h2 class="h2" data-split>O seu próximo cliente <em>já está pesquisando.</em></h2>
+        <ul class="end-checks" data-stagger="0.08">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Uma conversa de 20 minutos para entender o seu negócio</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Preço claro antes de começar, sem taxa escondida</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Site e domínio registrados em seu nome</li>
+        </ul>
       </div>
-      <form class="form" data-wa="5511989187347" data-wa-intro="Olá! Vim pelo site da Aura." data-reveal>
-        <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" data-label="Nome" required autocomplete="name"></div>
+      <form class="form" data-wa="5511989187347" data-wa-intro="Olá! Vim pelo site da Aura." data-reveal="scale">
+        <h3>Conte rapidinho sobre o seu negócio</h3>
+        <p>Leva menos de 1 minuto. A conversa continua no WhatsApp.</p>
+        <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" data-label="Nome" required autocomplete="name" placeholder="Como prefere ser chamado"></div>
         <div class="field"><label for="f-neg">Seu negócio</label><input id="f-neg" name="negocio" data-label="Negócio" required placeholder="Ex.: clínica odontológica"></div>
         <fieldset class="field"><legend>Já tem site?</legend>
           <div class="chips">
@@ -429,7 +584,7 @@ footer .wrap{border-top:1px solid var(--line)}
             <label><input type="radio" name="site" value="Tenho e quero melhorar" data-label="Já tem site"><span>Quero melhorar</span></label>
             <label><input type="radio" name="site" value="Tenho, mas quero refazer" data-label="Já tem site"><span>Quero refazer</span></label>
           </div></fieldset>
-        <button class="btn" type="submit">Chamar no WhatsApp
+        <button class="btn" type="submit">Continuar no WhatsApp
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         <p class="form-note">Abre o WhatsApp com a mensagem pronta.</p>
       </form>
@@ -439,11 +594,13 @@ footer .wrap{border-top:1px solid var(--line)}
 
 <footer>
   <div class="wrap">
-    <p class="foot-word" aria-hidden="true">Aura</p>
-    <div class="foot-bottom">
-      <span>© <span data-year></span> Aura Tecnologia · Cotia, SP</span>
-      <nav aria-label="Rodapé"><a href="https://wa.me/5511989187347" target="_blank" rel="noopener">WhatsApp</a><a href="https://instagram.com/dgt.aura" target="_blank" rel="noopener">Instagram</a><a href="mailto:auratecnologiaia@gmail.com?subject=Quero%20um%20site%20-%20vim%20pelo%20site%20da%20Aura">E-mail</a></nav>
+    <div class="foot-grid">
+      <div><a href="#topo" class="logo"><span><svg viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M49.4 6.2 L71.5 45.5 L84.7 45.5 L76.2 52.3 L99.1 93.4 L79.1 93.4 L62.6 64.5 L15.5 93.4 L0.9 93.4 Z M49.4 40.2 L56.2 52.6 L35.7 67.5 Z"/></svg></span>Aura</a>
+        <p>Estúdio de sites para consultores, clínicas, escritórios e negócios locais que vendem confiança.</p></div>
+      <div><h4>Site</h4><nav aria-label="Rodapé"><a href="#por-que">Por que a Aura</a><a href="#trabalhos">Trabalhos</a><a href="#metodo">Método</a><a href="#investimento">Preços</a></nav></div>
+      <div><h4>Contato</h4><nav aria-label="Contato"><a href="https://wa.me/5511989187347" target="_blank" rel="noopener">(11) 98918-7347</a><a href="https://instagram.com/dgt.aura" target="_blank" rel="noopener">@dgt.aura</a><a href="mailto:auratecnologiaia@gmail.com?subject=Quero%20um%20site%20-%20vim%20pelo%20site%20da%20Aura">auratecnologiaia@gmail.com</a></nav></div>
     </div>
+    <div class="foot-bottom"><span>© <span data-year></span> Aura Tecnologia. Todos os direitos reservados.</span><span>Cotia, SP</span></div>
   </div>
 </footer>
 
