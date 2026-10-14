@@ -728,16 +728,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }catch(e){return url}
   };
   const abrir=window.open.bind(window);
-  window.open=function(url){const a=Array.prototype.slice.call(arguments);a[0]=comOrigem(url);return abrir.apply(window,a)};
+  const toque=matchMedia('(pointer:coarse)').matches;   // celular/tablet: abrir o WhatsApp tira o navegador da tela
+  const irWa=url=>setTimeout(()=>{location.href=url},400);   // 0,4 s para o Lead chegar ao Meta antes do app abrir
+  window.open=function(url){const a=Array.prototype.slice.call(arguments);a[0]=comOrigem(url);
+    if(toque&&/^https:\/\/wa\.me\//.test(a[0])){irWa(a[0]);return null;}
+    return abrir.apply(window,a)};
 
   /* eventos: captura delegada, sem tocar na lógica dos formulários nem do fx.js */
-  const lead=nome=>{track('Lead',{content_name:nome});dl('lead',{lead_tipo:nome});};
+  /* no celular o WhatsApp só abre 0,4 s depois do toque (irWa), tempo para o Lead sair; o mesmo contato não conta duas vezes */
+  let ultimo=0;
+  const lead=nome=>{const ag=Date.now();if(ag-ultimo<1500)return;ultimo=ag;
+    track('Lead',{content_name:nome});dl('lead',{lead_tipo:nome});};
   document.addEventListener('click',e=>{
     const t=e.target&&e.target.closest?e.target.closest('[data-lead],#sv-go,a[href*="wa.me"]'):null;
     if(!t)return;
     if(t.hasAttribute('data-lead'))return lead(t.getAttribute('data-lead'));
     if(t.id==='sv-go')return dl('ver_valores');
     t.href=comOrigem(t.href); lead('Botao WhatsApp');
+    if(toque){e.preventDefault();irWa(t.href);}
   },true);
   document.addEventListener('submit',e=>{
     const f=e.target;
