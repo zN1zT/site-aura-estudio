@@ -1,6 +1,6 @@
 {
  "url": "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%20:%20Sites/index.html",
- "when": "2026-10-14T01:52:40.226Z",
+ "when": "2026-10-14T02:00:40.067Z",
  "desktop": {
   "audit": {
    "emoji": [],
@@ -47,7 +47,7 @@
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 9896,
+  "height": 9918,
   "shots": 12
  },
  "mobile": {
@@ -100,7 +100,7 @@
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 15125,
+  "height": 15151,
   "shots": 16
  },
  "result": [
