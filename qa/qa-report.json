@@ -1,12 +1,12 @@
 {
  "url": "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%20:%20Sites/index.html",
- "when": "2026-10-14T02:42:59.988Z",
+ "when": "2026-10-14T02:50:10.385Z",
  "desktop": {
   "audit": {
    "emoji": [],
    "overflowX": 0,
    "fonts": {
-    "Geist": 197,
+    "Geist": 196,
     "Fraunces": 73
    },
    "genericFonts": [],
@@ -44,7 +44,7 @@
     "www.googletagmanager.com/gtm.js?id=GTM-THT3FH7R",
     "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%2"
    ],
-   "weightKB": 711
+   "weightKB": 765
   },
   "errors": [],
   "failed": [],
@@ -57,7 +57,7 @@
    "emoji": [],
    "overflowX": 0,
    "fonts": {
-    "Geist": 197,
+    "Geist": 196,
     "Fraunces": 73
    },
    "genericFonts": [],
@@ -97,7 +97,7 @@
     "www.googletagmanager.com/gtm.js?id=GTM-THT3FH7R",
     "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%2"
    ],
-   "weightKB": 203,
+   "weightKB": 257,
    "smallTargets": 1,
    "tinyText": 0
   },
@@ -186,7 +186,7 @@
   ],
   [
    "OK   ",
-   "peso carregado (desktop, rolando tudo): 711 KB"
+   "peso carregado (desktop, rolando tudo): 765 KB"
   ]
  ]
 }
