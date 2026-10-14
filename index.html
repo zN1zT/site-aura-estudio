@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-THT3FH7R');</script>
+<!-- End Google Tag Manager -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Aura — sites para consultores e negócios que vendem confiança</title>
@@ -234,6 +241,14 @@ section{padding-block:var(--pad);position:relative}
 @media(max-width:1000px){.plans{grid-template-columns:1fr}.more-in{grid-template-columns:1fr}.sum{position:static}}
 @media(max-width:520px){.price-bar,.more summary,.more-in{padding-inline:20px}.opt{flex-wrap:wrap}.opt small{order:3;flex-basis:100%;padding-left:32px}.opt.is-incl{flex-wrap:nowrap}.opt.is-incl small{order:0;flex-basis:auto}.price-go,.price-go .btn{width:100%}}
 
+/* preço de lançamento */
+.launch{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:clamp(28px,4vw,40px);padding:16px 22px;border-radius:var(--r-lg);background:var(--dark);color:var(--on-dark)}
+.launch p{flex:1;min-width:16rem;font-size:.92rem;color:var(--on-dark2)}.launch p b{color:var(--on-dark);font-weight:600}
+.launch-tag{padding:5px 12px;border-radius:999px;background:var(--gold);color:var(--ink);font-size:.78rem;font-weight:600}
+.launch-count{font-family:var(--serif);font-size:1.15rem;color:var(--gold-light);white-space:nowrap}
+.launch+.sim-form .plans{margin-top:18px}
+.plan-launch{margin-top:-6px;font-size:.8rem;color:var(--bronze);font-weight:500}
+.plan:has(input:checked) .plan-launch{color:var(--gold-light)}
 /* faq */
 .faq{border-top:1px solid var(--line)}
 .faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px clamp(32px,6vw,90px);align-items:start}
@@ -409,6 +424,10 @@ footer{background:var(--dark);color:var(--on-dark2);padding-block:64px 100px;fon
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THT3FH7R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div data-progress></div>
 
 <nav class="nav" data-nav="hide" aria-label="Principal">
@@ -448,7 +467,7 @@ footer{background:var(--dark);color:var(--on-dark2);padding-block:64px 100px;fon
   <section class="nums" aria-label="Em números">
     <div class="wrap nums-grid" data-stagger="0.08">
       <div class="num"><b>3<small>dias úteis</small></b><span>para a página única ir ao ar, da conversa à publicação</span></div>
-      <div class="num"><b><small style="margin:0 4px 0 0">R$</small>1.500</b><span>para começar, com preço claro e sem taxa escondida</span></div>
+      <div class="num"><b><small style="margin:0 4px 0 0">R$</small><span id="num-preco">1.500</span></b><span><span data-launch>preço de lançamento até 31/10, </span>para começar, sem taxa escondida</span></div>
       <div class="num"><b>1<small>º ano</small></b><span>de domínio e hospedagem já incluso em todo plano</span></div>
       <div class="num"><b>30<small>dias</small></b><span>de ajustes grátis depois que o site vai ao ar</span></div>
     </div>
@@ -654,13 +673,19 @@ footer{background:var(--dark);color:var(--on-dark2);padding-block:64px 100px;fon
           <h2 class="h2" data-split>Preço claro, <em>sem letra miúda.</em></h2></div>
         <p class="lead" data-reveal>Escolha o plano e veja na hora quanto custa para começar. Extras e manutenção são opcionais.</p>
       </div>
+      <div class="launch" data-launch data-reveal>
+        <span class="launch-tag">Preço de lançamento</span>
+        <p>Valores válidos até <b>31/10</b>. Depois, os planos passam a <b>R$ 1.900</b>, <b>R$ 3.400</b> e <b>R$ 4.900</b>.</p>
+        <span class="launch-count" id="launch-count" aria-live="polite"></span>
+      </div>
       <form id="sim" class="sim-form">
         <fieldset class="plans" aria-label="Escolha o plano">
           <label class="plan">
-            <input type="radio" name="tipo" value="Página única" data-v="1500" data-m="90" data-prazo="3 dias úteis" data-lvl="1" checked>
+            <input type="radio" name="tipo" value="Página única" data-v="1500" data-v-depois="1900" data-m="90" data-prazo="3 dias úteis" data-lvl="1" checked>
             <span class="plan-top"><b>Página única</b><small>Landing page</small></span>
             <span class="plan-for">Ideal para quem está começando ou quer um cartão de visitas forte na internet.</span>
             <span class="plan-price"><small>R$</small>1.500</span>
+            <span class="plan-launch" data-launch>Preço de lançamento até 31/10 · depois R$ 1.900</span>
             <span class="plan-time">No ar em <b>3 dias úteis</b> · manutenção R$ 90/mês</span>
             <ul>
               <li><span><b>1 página completa</b> com até 8 seções: quem é você, serviços, depoimentos e contato</span></li>
@@ -670,11 +695,12 @@ footer{background:var(--dark);color:var(--on-dark2);padding-block:64px 100px;fon
             </ul>
           </label>
           <label class="plan plan--hot">
-            <input type="radio" name="tipo" value="Site institucional" data-v="2800" data-m="150" data-disc="20" data-prazo="5 a 7 dias úteis" data-lvl="2">
+            <input type="radio" name="tipo" value="Site institucional" data-v="2800" data-v-depois="3400" data-m="150" data-disc="20" data-prazo="5 a 7 dias úteis" data-lvl="2">
             <span class="plan-badge">Mais escolhido</span>
             <span class="plan-top"><b>Institucional</b><small>Até 5 páginas</small></span>
             <span class="plan-for">Para consultores, clínicas e escritórios que precisam passar autoridade e explicar cada serviço.</span>
             <span class="plan-price"><small>R$</small>2.800</span>
+            <span class="plan-launch" data-launch>Preço de lançamento até 31/10 · depois R$ 3.400</span>
             <span class="plan-time">No ar em <b>5 a 7 dias úteis</b> · manutenção R$ 150/mês</span>
             <ul>
               <li><span><b>Até 5 páginas</b>: início, sobre, serviços, depoimentos e contato</span></li>
@@ -686,10 +712,11 @@ footer{background:var(--dark);color:var(--on-dark2);padding-block:64px 100px;fon
             </ul>
           </label>
           <label class="plan">
-            <input type="radio" name="tipo" value="Catálogo ou portfólio" data-v="4200" data-m="220" data-disc="30" data-prazo="7 a 10 dias úteis" data-lvl="3">
+            <input type="radio" name="tipo" value="Catálogo ou portfólio" data-v="4200" data-v-depois="4900" data-m="220" data-disc="30" data-prazo="7 a 10 dias úteis" data-lvl="3">
             <span class="plan-top"><b>Catálogo</b><small>Portfólio ou produtos</small></span>
             <span class="plan-for">Para arquitetos, indústrias, lojas e restaurantes que vendem mostrando muitos projetos ou itens.</span>
             <span class="plan-price"><small>R$</small>4.200</span>
+            <span class="plan-launch" data-launch>Preço de lançamento até 31/10 · depois R$ 4.900</span>
             <span class="plan-time">No ar em <b>7 a 10 dias úteis</b> · manutenção R$ 220/mês</span>
             <ul>
               <li><span><b>Tudo do Institucional</b>, com até 10 páginas</span></li>
@@ -818,6 +845,32 @@ footer{background:var(--dark);color:var(--on-dark2);padding-block:64px 100px;fon
   <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.3 1.3-1.9 1.3-.5 0-1.1.2-3.6-.8-3-1.2-5-4.3-5.1-4.5-.2-.2-1.3-1.7-1.3-3.2S6.5 6.8 6.8 6.5c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.5c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.2.1.8-.1 1.4z"/></svg></a>
 
 <script>
+/* preço de lançamento: até 31/10/2026 23:59 (Brasília). Depois disso o site sobe os preços sozinho
+   (data-v recebe data-v-depois, que o simulador usa) e esconde tudo que tem data-launch. */
+(function(){
+  const FIM=new Date('2026-10-31T23:59:59-03:00');
+  const brl=n=>n.toLocaleString('pt-BR');
+  const els=()=>document.querySelectorAll('[data-launch]');
+  if(Date.now()>FIM){
+    document.querySelectorAll('input[data-v-depois]').forEach(i=>{
+      i.dataset.v=i.dataset.vDepois;
+      const pr=i.closest('.plan')&&i.closest('.plan').querySelector('.plan-price');
+      if(pr)pr.innerHTML='<small>R$</small>'+brl(+i.dataset.v);
+    });
+    const n=document.getElementById('num-preco');if(n)n.textContent=brl(+document.querySelector('input[data-v-depois]').dataset.v);
+    els().forEach(e=>e.remove());
+    return;
+  }
+  const out=document.getElementById('launch-count');
+  function tick(){
+    const ms=FIM-Date.now(); if(ms<=0){location.reload();return;}
+    const d=Math.floor(ms/864e5), h=Math.floor(ms%864e5/36e5);
+    if(out)out.textContent=d>0?('Faltam '+d+(d===1?' dia':' dias')+' e '+h+'h'):('Últimas '+Math.max(1,h)+'h');
+  }
+  tick(); setInterval(tick,60000);
+})();
+</script>
+<script>
 /* simulador: valores em data-v (projeto) e data-m (mensal). Extras com data-lvl-incl ficam inclusos a partir daquele plano. */
 (function(){
   const f=document.getElementById('sim'), out=document.getElementById('sim-total');
@@ -877,6 +930,9 @@ footer{background:var(--dark);color:var(--on-dark2);padding-block:64px 100px;fon
   } else if(!window.fbq){ window.fbq=function(){}; }   // sem ID: chamadas viram no-op e nada quebra
   const track=(ev,data)=>{try{fbq('track',ev,data)}catch(e){}};
   track('PageView');
+  /* GTM: os mesmos eventos vão para o dataLayer (gatilhos "Evento personalizado": lead, simulador_interacao, ver_valores) */
+  window.dataLayer=window.dataLayer||[];
+  const dl=(event,extra)=>{try{window.dataLayer.push(Object.assign({event:event,origem_lead:origem||'direto'},extra||{}))}catch(e){}};
 
   /* origem do clique: UTM e fbclid ficam na sessão e entram como última linha das mensagens de WhatsApp */
   const KEYS=['utm_source','utm_medium','utm_campaign','utm_content','fbclid'];
@@ -902,11 +958,12 @@ footer{background:var(--dark);color:var(--on-dark2);padding-block:64px 100px;fon
   window.open=function(url){const a=Array.prototype.slice.call(arguments);a[0]=comOrigem(url);return abrir.apply(window,a)};
 
   /* eventos: captura delegada, sem tocar na lógica dos formulários nem do fx.js */
-  const lead=nome=>track('Lead',{content_name:nome});
+  const lead=nome=>{track('Lead',{content_name:nome});dl('lead',{lead_tipo:nome});};
   document.addEventListener('click',e=>{
-    const t=e.target&&e.target.closest?e.target.closest('[data-lead],a[href*="wa.me"]'):null;
+    const t=e.target&&e.target.closest?e.target.closest('[data-lead],#sv-go,a[href*="wa.me"]'):null;
     if(!t)return;
     if(t.hasAttribute('data-lead'))return lead(t.getAttribute('data-lead'));
+    if(t.id==='sv-go')return dl('ver_valores');
     t.href=comOrigem(t.href); lead('Botao WhatsApp');
   },true);
   document.addEventListener('submit',e=>{
@@ -915,7 +972,7 @@ footer{background:var(--dark);color:var(--on-dark2);padding-block:64px 100px;fon
     else if(f&&f.matches&&f.matches('form[data-wa]'))lead('Formulario contato');
   },true);
   const sec=document.getElementById('simular');
-  if(sec){let visto=false;const vc=()=>{if(visto)return;visto=true;track('ViewContent',{content_name:'Simulador'});};
+  if(sec){let visto=false;const vc=()=>{if(visto)return;visto=true;track('ViewContent',{content_name:'Simulador'});dl('simulador_interacao');};
     ['input','change','click'].forEach(ev=>sec.addEventListener(ev,vc,true));}
 })();
 </script>
