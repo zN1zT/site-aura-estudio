@@ -1,13 +1,13 @@
 {
  "url": "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%20:%20Sites/index.html",
- "when": "2026-10-02T15:16:13.934Z",
+ "when": "2026-10-14T02:27:49.943Z",
  "desktop": {
   "audit": {
    "emoji": [],
    "overflowX": 0,
    "fonts": {
-    "Geist": 238,
-    "Fraunces": 91
+    "Geist": 303,
+    "Fraunces": 109
    },
    "genericFonts": [],
    "images": 8,
@@ -38,25 +38,26 @@
     "form[data-wa]"
    ],
    "tracking": [],
-   "sections": 9,
+   "sections": 10,
    "scripts": [
+    "www.googletagmanager.com/gtm.js?id=GTM-THT3FH7R",
     "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%2"
    ],
-   "weightKB": 733
+   "weightKB": 843
   },
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 8489,
-  "shots": 11
+  "height": 10055,
+  "shots": 13
  },
  "mobile": {
   "audit": {
    "emoji": [],
    "overflowX": 0,
    "fonts": {
-    "Geist": 233,
-    "Fraunces": 96
+    "Geist": 297,
+    "Fraunces": 115
    },
    "genericFonts": [],
    "images": 8,
@@ -89,8 +90,9 @@
     "form[data-wa]"
    ],
    "tracking": [],
-   "sections": 9,
+   "sections": 10,
    "scripts": [
+    "www.googletagmanager.com/gtm.js?id=GTM-THT3FH7R",
     "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%2"
    ],
    "weightKB": 1,
@@ -100,7 +102,7 @@
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 12989,
+  "height": 15472,
   "shots": 16
  },
  "result": [
@@ -182,7 +184,7 @@
   ],
   [
    "OK   ",
-   "peso carregado (desktop, rolando tudo): 733 KB"
+   "peso carregado (desktop, rolando tudo): 843 KB"
   ]
  ]
 }
