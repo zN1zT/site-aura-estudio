@@ -8,6 +8,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-THT3FH7R');</script>
 <!-- End Google Tag Manager -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1435927114558830');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1435927114558830&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Aura — sites para consultores e negócios que vendem confiança</title>
@@ -327,11 +344,6 @@ footer{background:var(--dark);color:var(--on-dark2);padding-block:34px 96px;font
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THT3FH7R"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<!-- Meta Pixel (noscript) -->
-<noscript><img height="1" width="1" style="display:none" alt=""
-src="https://www.facebook.com/tr?id=1435927114558830&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel (noscript) -->
 <div data-progress></div>
 
 <nav class="nav" data-nav="hide" aria-label="Principal">
@@ -686,18 +698,11 @@ src="https://www.facebook.com/tr?id=1435927114558830&ev=PageView&noscript=1"
 })();
 </script>
 <script>
-/* Medição de anúncios (Meta Ads). Um único bloco: Pixel, eventos e origem (UTM).
-   PIXEL: cole abaixo o ID do Pixel do Meta (Gerenciador de Eventos > Fontes de dados > seu Pixel > ID, só números),
-   por exemplo const META_PIXEL_ID = '1234567890123456'; Enquanto estiver vazio nada é carregado e nada é enviado. */
+/* Medição de anúncios (Meta Ads). O Pixel oficial (1435927114558830) está no <head> e já envia o PageView;
+   este bloco só manda os eventos da página (ViewContent e Lead), a origem (UTM) e o dataLayer do GTM. */
 (function(){
-  const META_PIXEL_ID = '1435927114558830';
-
-  if(META_PIXEL_ID){
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init',META_PIXEL_ID);
-  } else if(!window.fbq){ window.fbq=function(){}; }   // sem ID: chamadas viram no-op e nada quebra
+  if(!window.fbq){ window.fbq=function(){}; }   // se o Pixel do <head> for removido, as chamadas viram no-op
   const track=(ev,data)=>{try{fbq('track',ev,data)}catch(e){}};
-  track('PageView');
   /* GTM: os mesmos eventos vão para o dataLayer (gatilhos "Evento personalizado": lead, simulador_interacao, ver_valores) */
   window.dataLayer=window.dataLayer||[];
   const dl=(event,extra)=>{try{window.dataLayer.push(Object.assign({event:event,origem_lead:origem||'direto'},extra||{}))}catch(e){}};
