@@ -1,23 +1,23 @@
 {
  "url": "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%20:%20Sites/index.html",
- "when": "2026-10-14T02:27:49.943Z",
+ "when": "2026-10-14T02:42:59.988Z",
  "desktop": {
   "audit": {
    "emoji": [],
    "overflowX": 0,
    "fonts": {
-    "Geist": 303,
-    "Fraunces": 109
+    "Geist": 197,
+    "Fraunces": 73
    },
    "genericFonts": [],
-   "images": 8,
+   "images": 5,
    "imgNoAlt": [],
    "imgBroken": [],
    "imgHuge": [],
    "lorem": false,
    "placeholders": [],
    "hiddenPlaceholders": [],
-   "waLinks": 4,
+   "waLinks": 3,
    "waFloat": true,
    "h1": 1,
    "headingSkips": 0,
@@ -33,34 +33,35 @@
     "favicon": true
    },
    "interactive": [
-    "[data-compare]",
     "[data-accordion]",
-    "form[data-wa]"
+    "[data-calc]"
    ],
    "tracking": [],
-   "sections": 10,
+   "sections": 6,
    "scripts": [
+    "connect.facebook.net/signals/config/1435927114558830?v=2.9.419&r=stabl",
+    "connect.facebook.net/en_US/fbevents.js",
     "www.googletagmanager.com/gtm.js?id=GTM-THT3FH7R",
     "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%2"
    ],
-   "weightKB": 843
+   "weightKB": 711
   },
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 10055,
-  "shots": 13
+  "height": 5960,
+  "shots": 8
  },
  "mobile": {
   "audit": {
    "emoji": [],
    "overflowX": 0,
    "fonts": {
-    "Geist": 297,
-    "Fraunces": 115
+    "Geist": 197,
+    "Fraunces": 73
    },
    "genericFonts": [],
-   "images": 8,
+   "images": 5,
    "imgNoAlt": [],
    "imgBroken": [],
    "imgHuge": [
@@ -69,7 +70,7 @@
    "lorem": false,
    "placeholders": [],
    "hiddenPlaceholders": [],
-   "waLinks": 4,
+   "waLinks": 3,
    "waFloat": true,
    "h1": 1,
    "headingSkips": 0,
@@ -85,25 +86,26 @@
     "favicon": true
    },
    "interactive": [
-    "[data-compare]",
     "[data-accordion]",
-    "form[data-wa]"
+    "[data-calc]"
    ],
    "tracking": [],
-   "sections": 10,
+   "sections": 6,
    "scripts": [
+    "connect.facebook.net/signals/config/1435927114558830?v=2.9.419&r=stabl",
+    "connect.facebook.net/en_US/fbevents.js",
     "www.googletagmanager.com/gtm.js?id=GTM-THT3FH7R",
     "file:///Users/znizt/Documents/Aura%20IA/04%20Site%20Aura/Site%20Aura%2"
    ],
-   "weightKB": 1,
-   "smallTargets": 2,
+   "weightKB": 203,
+   "smallTargets": 1,
    "tinyText": 0
   },
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 15472,
-  "shots": 16
+  "height": 8814,
+  "shots": 12
  },
  "result": [
   [
@@ -160,11 +162,11 @@
   ],
   [
    "OK   ",
-   "WhatsApp: 4 pontos de contato, flutuante sim"
+   "WhatsApp: 3 pontos de contato, flutuante sim"
   ],
   [
    "OK   ",
-   "módulos interativos: [data-compare], [data-accordion], form[data-wa]"
+   "módulos interativos: [data-accordion], [data-calc]"
   ],
   [
    "OK   ",
@@ -172,7 +174,7 @@
   ],
   [
    "OK   ",
-   "alvos de toque pequenos no mobile: 2"
+   "alvos de toque pequenos no mobile: 1"
   ],
   [
    "OK   ",
@@ -184,7 +186,7 @@
   ],
   [
    "OK   ",
-   "peso carregado (desktop, rolando tudo): 843 KB"
+   "peso carregado (desktop, rolando tudo): 711 KB"
   ]
  ]
 }
