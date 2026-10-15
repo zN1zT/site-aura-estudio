@@ -5,6 +5,8 @@ index.html (branch ciclo2/fase-g)
   #1 78 | FCP 3.0 s | LCP 4.5 s | TBT 70 ms | CLS 0
   #2 75 | FCP 2.0 s | LCP 6.4 s | TBT 40 ms | CLS 0
   #3 78 | FCP 2.1 s | LCP 5.3 s | TBT 30 ms | CLS 0
+index.html depois do rebase em main (fx.js da revisão do #15)
+  #1 75 | #2 76  (LCP 6,2 a 6,4 s simulado)
 index.html de origin/main (antes desta fase, mesma máquina e mesma hora)
   #1 61 | #2 70 | #3 69  (CLS 0,043)
 
@@ -15,6 +17,7 @@ Mostruário
   estudio-lumiar              93 e 91
   otica-claridade             93 e 93
   pelucia-spa-pet             92 e 92
+  (depois do rebase: otica-claridade 94, pizzaria-dona-zelia 87; a nota oscila de 5 a 9 pontos entre execuções)
 
 O que segura o index abaixo de 90 (não é da fase G): Meta Pixel e GTM mandam cerca de 380 KB de script de terceiros que a medição de anúncios exige;
 o CSS do Google Fonts bloqueia a primeira pintura; o elemento do LCP é a imagem do hero, que entra com animação.
