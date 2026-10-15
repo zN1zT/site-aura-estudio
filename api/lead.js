@@ -1,6 +1,7 @@
 /* /api/lead — função serverless (Node) do sitecomaura.com.
    POST  grava o lead no Vercel Blob (privado) e repete o evento Lead pela API de Conversões do Meta.
-   GET   ?token=…&desde=<ISO> lista os leads (o painel busca por aqui). Sem token válido: 401.
+   GET   ?desde=<ISO> com o cabeçalho "Authorization: Bearer <SITE_LEADS_TOKEN>" lista os leads (o painel busca por aqui).
+         Sem Bearer válido: 401. O token não é aceito na URL (iria para o log da Vercel).
    Variáveis: BLOB_READ_WRITE_TOKEN (Blob), SITE_LEADS_TOKEN (listagem), META_CAPI_TOKEN (opcional),
    META_CAPI_TEST_CODE (opcional, só para o "Testar eventos"), LEADS_BLOB_ACCESS (padrão "private"). */
 import { randomBytes } from 'node:crypto';
@@ -17,13 +18,16 @@ const json = (res, status, corpo) => {
   res.status(status).json(corpo);
 };
 
-/* só aceita pedido vindo do próprio site (navegador manda Origin); curl/servidor não manda e passa */
+/* só aceita pedido vindo do próprio site (navegador manda Origin); curl/servidor não manda e passa.
+   localhost só vale fora de produção (vercel dev e preview). */
+const EM_PRODUCAO = process.env.VERCEL_ENV === 'production';
 function origemPermitida(req) {
   const o = req.headers.origin;
   if (!o) return true;
   try {
     const host = new URL(o).host;
-    return host === req.headers.host || /(^|\.)sitecomaura\.com$/.test(host) || /^(localhost|127\.0\.0\.1)(:\d+)?$/.test(host);
+    if (host === req.headers.host || /(^|\.)sitecomaura\.com$/.test(host)) return true;
+    return !EM_PRODUCAO && /^(localhost|127\.0\.0\.1)(:\d+)?$/.test(host);
   } catch { return false; }
 }
 
@@ -61,8 +65,9 @@ async function criar(req, res) {
     return json(res, 503, { ok: false, erro: 'armazenamento' });
   }
 
+  /* o lead já está gravado: a API de Conversões não pode segurar a resposta além de 1,5 s */
   const capi = await enviarCapi(montarEventoCapi(lead, agora), {
-    token: process.env.META_CAPI_TOKEN, testCode: process.env.META_CAPI_TEST_CODE,
+    token: process.env.META_CAPI_TOKEN, testCode: process.env.META_CAPI_TEST_CODE, timeoutMs: 1500,
   });
   if (capi === 'falhou') console.error('capi falhou', id);
   return json(res, 200, { ok: true, id, event_id: lead.event_id, capi });
@@ -80,8 +85,9 @@ async function lerBlob(pathname) {
 }
 
 async function listar(req, res) {
+  /* só Authorization: Bearer. Token em query string vai para o log de requisições da Vercel. */
   const cab = String(req.headers.authorization || '');
-  const dado = (/^Bearer (.+)$/i.exec(cab) || [])[1] || (req.query && req.query.token) || '';
+  const dado = (/^Bearer (\S+)$/i.exec(cab) || [])[1] || '';
   if (!tokensIguais(process.env.SITE_LEADS_TOKEN, dado)) return json(res, 401, { ok: false, erro: 'nao autorizado' });
 
   let desde = 0;

@@ -146,7 +146,7 @@ export function montarEventoCapi(lead, agora = Date.now()) {
 
 /* envia pela API de Conversões. Nunca lança: devolve 'enviado', 'sem token' ou 'falhou'.
    O token vai no corpo (não na URL) para não aparecer em log de requisição. */
-export async function enviarCapi(evento, { token, testCode, fetchImpl = fetch, timeoutMs = 3500 } = {}) {
+export async function enviarCapi(evento, { token, testCode, fetchImpl = fetch, timeoutMs = 1500 } = {}) {
   if (!token) return 'sem token';
   const corpo = { data: [evento], access_token: token };
   if (testCode) corpo.test_event_code = testCode;

@@ -9,6 +9,6 @@
     "test": "node --test tests/"
   },
   "dependencies": {
-    "@vercel/blob": "^2.8.2"
+    "@vercel/blob": "2.8.2"
   }
 }

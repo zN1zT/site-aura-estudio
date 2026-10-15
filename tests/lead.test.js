@@ -125,3 +125,10 @@ test('pasta do dia usa o horário de Brasília', () => {
   assert.equal(diaBrasilia(Date.parse('2026-10-15T02:30:00Z')), '2026-10-14');
   assert.equal(diaBrasilia(Date.parse('2026-10-15T03:00:00Z')), '2026-10-15');
 });
+
+test('API de Conversões lenta não segura a resposta: aborta no limite e devolve "falhou"', async () => {
+  const lento = (url, init) => new Promise((_, rej) => { init.signal.addEventListener('abort', () => rej(new Error('abortado'))); });
+  const t0 = Date.now();
+  assert.equal(await enviarCapi({}, { token: 'x', fetchImpl: lento, timeoutMs: 60 }), 'falhou');
+  assert.ok(Date.now() - t0 < 500);
+});

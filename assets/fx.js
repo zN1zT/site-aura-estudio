@@ -99,16 +99,16 @@
     var t; function later(ms) { clearTimeout(t); t = setTimeout(run, ms); }
     if (!d.fonts || !d.fonts.load) { run(); return; }
     /* fonts.ready pode resolver antes de a fonte começar a baixar: pede cada fonte usada nos
-       títulos (normal e itálico) e só então mede as linhas. Timeout de 2,5 s para não travar:
-       se estourar, o título é medido com a fonte reserva e refeito quando a fonte chegar. */
+       títulos (normal e itálico) e só então mede as linhas. Espera no máximo 800 ms (sem fonts.ready,
+       que podia segurar o título): se estourar, o título é medido com a fonte reserva e refeito
+       quando a fonte chegar (o loaded.then abaixo religa o run). */
     var wants = [];
     els.forEach(function (el) {
       var cs = getComputedStyle(el), f = cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
       wants.push(d.fonts.load(f, el.textContent), d.fonts.load('italic ' + f, el.textContent));
     });
     var loaded = Promise.all(wants).catch(function () {}).then(function () { fontsReady = true; later(60); });
-    Promise.race([loaded, new Promise(function (r) { setTimeout(r, 2500); })])
-      .then(function () { return d.fonts.ready; }).then(run);
+    Promise.race([loaded, new Promise(function (r) { setTimeout(r, 800); })]).then(run);
     d.fonts.addEventListener && d.fonts.addEventListener('loadingdone', function () { later(60); });
     addEventListener('resize', function () { later(200); });
   }
