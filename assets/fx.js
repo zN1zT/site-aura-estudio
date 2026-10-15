@@ -48,7 +48,15 @@
     })(el, []);
     return out;
   }
-  function buildSplit(el) {
+  var fontsReady = !(d.fonts && d.fonts.load);   /* fontes dos títulos carregadas (ou nada a esperar) */
+  function buildSplit(el, force) {
+    var w = Math.round(el.getBoundingClientRect().width);
+    /* título que já entrou, medido com as fontes certas e na mesma largura, não é reconstruído:
+       refazer as linhas reinicia a animação (no celular, a barra do navegador some e dispara resize).
+       O is-in fica no próprio título e nunca é removido aqui. */
+    if (!force && el.__fxSrc && el.__fxF && el.__fxW === w &&
+        el.classList.contains('fx-split-ready') && el.classList.contains('is-in')) return;
+    el.__fxW = w; el.__fxF = fontsReady;
     if (!el.__fxSrc) el.__fxSrc = el.innerHTML; else el.innerHTML = el.__fxSrc;
     var parts = splitWords(el);
     el.innerHTML = '';
@@ -87,20 +95,55 @@
   function initSplit() {
     var els = $$('[data-split]');
     if (!els.length) return;
-    var run = function () { els.forEach(buildSplit); };
+    var run = function () { els.forEach(function (el) { buildSplit(el); }); showFirstScreen(); };
     var t; function later(ms) { clearTimeout(t); t = setTimeout(run, ms); }
     if (!d.fonts || !d.fonts.load) { run(); return; }
     /* fonts.ready pode resolver antes de a fonte começar a baixar: pede cada fonte usada nos
-       títulos (normal e itálico) e só então mede as linhas. Timeout de 2,5 s para não travar. */
+       títulos (normal e itálico) e só então mede as linhas. Espera no máximo 800 ms (sem fonts.ready,
+       que podia segurar o título): se estourar, o título é medido com a fonte reserva e refeito
+       quando a fonte chegar (o loaded.then abaixo religa o run). */
     var wants = [];
     els.forEach(function (el) {
       var cs = getComputedStyle(el), f = cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
       wants.push(d.fonts.load(f, el.textContent), d.fonts.load('italic ' + f, el.textContent));
     });
-    Promise.race([Promise.all(wants).catch(function () {}), new Promise(function (r) { setTimeout(r, 2500); })])
-      .then(function () { return d.fonts.ready; }).then(run);
+    var loaded = Promise.all(wants).catch(function () {}).then(function () { fontsReady = true; later(60); });
+    Promise.race([loaded, new Promise(function (r) { setTimeout(r, 800); })]).then(run);
     d.fonts.addEventListener && d.fonts.addEventListener('loadingdone', function () { later(60); });
     addEventListener('resize', function () { later(200); });
+  }
+
+  /* ---------- primeira tela: não depende só do IntersectionObserver ---------- */
+  /* O is-in normalmente vem do IntersectionObserver (initReveal). No celular ele pode atrasar ou nem
+     chegar (navegador embutido do Instagram, aba em segundo plano, Safari), e o título ficava cortado
+     em translateY. Por isso o que já está na primeira tela ganha is-in logo depois do buildSplit
+     (run) e, como rede de segurança, 1,5 s depois do load. */
+  var revealIO = null;
+  function inView(e) {
+    var r = e.getBoundingClientRect();
+    return (r.width || r.height) && r.bottom > 0 && r.top < innerHeight * 0.94;
+  }
+  function enter(e) {
+    if (e.classList.contains('is-in')) return;
+    e.classList.add('is-in');
+    if (e.hasAttribute('data-count')) count(e);
+    if (revealIO) revealIO.unobserve(e);
+  }
+  function showFirstScreen() {
+    $$('[data-reveal],[data-split],[data-count]').forEach(function (e) {
+      if (e.hasAttribute('data-split') && !e.classList.contains('fx-split-ready')) return;   /* ainda não construído */
+      if (inView(e)) enter(e);
+    });
+  }
+  function initSafetyNet() {
+    function net() {
+      /* título visível que ainda não foi construído (fonte lenta): constrói agora com a fonte reserva;
+         o initSplit refaz quando a fonte chegar */
+      $$('[data-split]').forEach(function (e) { if (!e.classList.contains('fx-split-ready') && inView(e)) buildSplit(e); });
+      showFirstScreen();
+    }
+    if (d.readyState === 'complete') setTimeout(net, 1500);
+    else addEventListener('load', function () { setTimeout(net, 1500); });
   }
 
   /* ---------- data-reveal / data-stagger ---------- */
@@ -114,7 +157,7 @@
     });
     var els = $$('[data-reveal],[data-split],[data-count]');
     if (REDUCED || !('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('is-in'); if (e.hasAttribute('data-count')) count(e, true); }); return; }
-    var io = new IntersectionObserver(function (es) {
+    var io = revealIO = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
         if (!e.isIntersecting) return;
         e.target.classList.add('is-in');
@@ -452,7 +495,7 @@
   function initYear() { $$('[data-year]').forEach(function (e) { e.textContent = new Date().getFullYear(); }); }
 
   function boot() {
-    initSplit(); initReveal(); initNav(); initProgress(); initParallax(); initScrub(); initHScroll(); initScenes();
+    initSplit(); initReveal(); initSafetyNet(); initNav(); initProgress(); initParallax(); initScrub(); initHScroll(); initScenes();
     initMarquee(); initMagnetic(); initTilt(); initCursorReveal(); initCompare(); initStamp();
     initAccordion(); initTabs(); initHours(); initWaForm(); initLightbox(); initYear();
     runScroll();

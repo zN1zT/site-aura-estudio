@@ -1,0 +1,47 @@
+Prova ponta a ponta da função /api/lead no preview da Vercel
+Preview: https://site-aura-estudio-p6e0d38xb-nicolas-projects-cfafad13.vercel.app (commit 827fbff)
+Feito em: 2026-10-15T05:54:00Z com 'vercel curl' (o preview exige login da Vercel)
+Número de teste: (11) 90000-0000. Token e IP não aparecem neste arquivo.
+
+### 1. POST válido (deve gravar o lead e responder 200)
+$ POST /api/lead  {nome:Teste Aura Prova, whatsapp:(11) 90000-0000, tipo:Teste, plano:Página única, aceite:true, ...}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+{"ok":true,"id":"e46d859b5c","event_id":"lead_prova-preview-0001","capi":"sem token"}
+[HTTP 200]
+
+### 2. POST com celular fixo (deve dar 400)
+$ POST /api/lead  {whatsapp:(11) 3333-3333, ...}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+{"ok":false,"erros":{"whatsapp":"Informe um celular brasileiro com DDD, ex.: (11) 99999-9999."}}
+[HTTP 400]
+
+### 3. POST com plano fora da lista (deve dar 400)
+$ POST /api/lead  {plano:Plano Inventado, ...}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+{"ok":false,"erros":{"plano":"Escolha um plano da lista."}}
+[HTTP 400]
+
+### 4. GET sem Authorization (deve dar 401)
+$ GET /api/lead?desde=2026-10-15T00:00:00Z
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+{"ok":false,"erro":"nao autorizado"}
+[HTTP 401]
+
+### 5. GET com o token certo na URL (?token=) (deve dar 401: forma removida)
+$ GET /api/lead?token=[oculto]&desde=2026-10-15T00:00:00Z
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+{"ok":false,"erro":"nao autorizado"}
+[HTTP 401]
+
+### 6. GET com Authorization: Bearer certo (deve devolver o lead do passo 1)
+$ GET /api/lead?desde=2026-10-15T00:00:00Z  -H 'Authorization: Bearer [oculto]'
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+{"ok":true,"total":1,"truncado":false,"leads":[{"id":"e46d859b5c","nome":"Teste Aura Prova","whatsapp":"5511900000000","whatsapp_fmt":"(11) 90000-0000","tipo":"Teste","plano":"Página única","fonte":"Contato","valor_plano":1200,"origem":"prova preview","utm":{"utm_source":"prova"},"fbclid":"","fbp":"","fbc":"","event_id":"lead_prova-preview-0001","pagina":"https://sitecomaura.com/","user_agent":"curl/8.7.1","aceite_lgpd":true,"criado_em":"2026-10-15T05:54:02.382Z"}]}
+[HTTP 200]
+
+### 7. Lead de teste apagado do Blob (vercel blob / SDK del) e GET de novo (deve vir vazio)
+$ GET /api/lead?desde=2026-10-15T00:00:00Z  -H 'Authorization: Bearer [oculto]'
+
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+{"ok":true,"total":0,"truncado":false,"leads":[]}
+[HTTP 200]

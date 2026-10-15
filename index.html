@@ -337,6 +337,46 @@ footer{background:var(--dark);color:var(--on-dark2);padding-block:34px 96px;font
 
 .wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.3)}
 .wa svg{width:30px;height:30px}
+
+/* formulário de lead: abre antes do WhatsApp (cartão claro sobre fundo escuro, mesmo sistema do site) */
+.lf{border:0;padding:0;margin:auto;background:transparent;color:var(--ink);width:min(460px,calc(100vw - 24px));max-width:none;max-height:none;overflow:visible}
+.lf::backdrop{background:rgba(21,18,14,.82);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.lf[open]{animation:lf-in .35s cubic-bezier(.16,1,.3,1)}
+@keyframes lf-in{from{opacity:0;transform:translateY(14px)}}
+.lf-card{position:relative;max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);overflow-y:auto;overscroll-behavior:contain;padding:clamp(24px,5vw,34px);border-radius:var(--r-lg);background:var(--white);box-shadow:0 0 0 1px rgba(203,168,106,.4),0 40px 80px -30px rgba(0,0,0,.75)}
+.lf-x{position:absolute;top:10px;right:10px;display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:transparent;color:var(--ink2);font-size:1.7rem;line-height:1;cursor:pointer;transition:background .2s}
+.lf-x:hover{background:var(--paper2)}
+.lf h2{font-size:clamp(1.65rem,1.3rem + 1.5vw,2.1rem);margin:14px 44px 8px 0}
+.lf h2:focus{outline:0}
+.lf-sub{color:var(--ink2);font-size:.92rem;max-width:34ch}
+.lf-form{display:grid;gap:14px;margin-top:20px}
+.lf .field input,.lf .field select{background:var(--paper)}
+.lf-err{display:block;min-height:0;font-size:.8rem;line-height:1.35;color:var(--red)}
+.lf-err:empty{display:none}
+.lf .field input[aria-invalid=true],.lf .field select[aria-invalid=true]{box-shadow:inset 0 0 0 1.5px var(--red)}
+.lf-ok{display:flex;gap:12px;align-items:flex-start;font-size:.82rem;line-height:1.5;color:var(--ink2);cursor:pointer}
+.lf-ok input{flex:none;width:20px;height:20px;margin:1px 0 0;accent-color:var(--bronze);cursor:pointer}
+.lf-ok a{color:var(--bronze);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.lf-ok a:hover{color:var(--ink)}
+.lf-go{width:100%;min-height:56px;margin-top:2px;border-color:var(--gold);background:var(--gold);color:var(--ink);font-weight:600;font-size:1rem}
+.lf-go:hover{border-color:var(--gold-light);background:var(--gold-light)}
+.lf-go[disabled]{opacity:.7;cursor:progress}
+.lf-bot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.lf-done{text-align:center;padding:10px 0 4px}
+.lf-done .lf-tick{display:grid;place-items:center;width:56px;height:56px;margin:0 auto 14px;border-radius:50%;background:rgba(203,168,106,.2);color:var(--bronze)}
+.lf-done .lf-tick svg{width:26px;height:26px}
+.lf-done h2{margin:0 0 8px}
+.lf-done p{color:var(--ink2);font-size:.95rem}
+.lf-spin{display:inline-block;width:14px;height:14px;margin-right:8px;vertical-align:-2px;border:2px solid var(--line2);border-top-color:var(--bronze);border-radius:50%;animation:lf-spin .8s linear infinite}
+@keyframes lf-spin{to{transform:rotate(360deg)}}
+.lf-fb{margin-top:20px;padding:18px;border-radius:var(--r-md);background:var(--paper);text-align:left}
+.lf-fb p{font-size:.88rem}
+.lf-fone{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 14px;margin:10px 0 14px}
+.lf-fone b{font-family:var(--serif);font-weight:400;font-size:1.5rem;letter-spacing:-.01em}
+.lf-copy{min-height:44px;padding:0 18px;border:0;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line2);background:transparent;font-weight:500;font-size:.88rem;cursor:pointer;transition:background .2s}
+.lf-copy:hover{background:var(--paper2)}
+.lf-fb .btn{width:100%;min-height:50px}
+@media(prefers-reduced-motion:reduce){.lf[open]{animation:none}.lf-spin{animation-duration:2.4s}}
 </style>
 </head>
 <body>
@@ -607,7 +647,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="pill" data-reveal>Vamos conversar</span>
       <h2 class="h2" data-split>O seu próximo cliente <em>já está pesquisando.</em></h2>
       <p class="lead" data-reveal>Conte em uma mensagem o que o seu negócio faz. Você recebe o preço e o prazo na mesma conversa.</p>
-      <a class="btn end-go" href="https://wa.me/5511989187347?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Aura.%20Quero%20um%20site." target="_blank" rel="noopener" data-reveal style="--d:.2s">
+      <a class="btn end-go" href="https://wa.me/5511989187347?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Aura.%20Quero%20um%20site." target="_blank" rel="noopener" data-lead-fonte="Contato" data-reveal style="--d:.2s">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.3 1.3-1.9 1.3-.5 0-1.1.2-3.6-.8-3-1.2-5-4.3-5.1-4.5-.2-.2-1.3-1.7-1.3-3.2S6.5 6.8 6.8 6.5c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.5c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.2.1.8-.1 1.4z"/></svg>Falar no WhatsApp</a>
     </div>
   </section>
@@ -617,12 +657,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap foot-in">
     <a href="#topo" class="logo"><span><svg viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M49.4 6.2 L71.5 45.5 L84.7 45.5 L76.2 52.3 L99.1 93.4 L79.1 93.4 L62.6 64.5 L15.5 93.4 L0.9 93.4 Z M49.4 40.2 L56.2 52.6 L35.7 67.5 Z"/></svg></span>Aura</a>
     <p>© <span data-year></span> Aura Tecnologia · Cotia, SP</p>
-    <div class="foot-links"><a href="https://wa.me/5511989187347" target="_blank" rel="noopener">(11) 98918-7347</a><a href="https://instagram.com/dgt.aura" target="_blank" rel="noopener">@dgt.aura</a></div>
+    <div class="foot-links"><a href="https://wa.me/5511989187347" target="_blank" rel="noopener">(11) 98918-7347</a><a href="https://instagram.com/dgt.aura" target="_blank" rel="noopener">@dgt.aura</a><a href="privacidade.html">Privacidade</a></div>
   </div>
 </footer>
 
-<a class="wa" href="https://wa.me/5511989187347?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Aura." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+<a class="wa" href="https://wa.me/5511989187347?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Aura." target="_blank" rel="noopener" data-lead-fonte="Botao flutuante" aria-label="Conversar no WhatsApp">
   <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.3 1.3-1.9 1.3-.5 0-1.1.2-3.6-.8-3-1.2-5-4.3-5.1-4.5-.2-.2-1.3-1.7-1.3-3.2S6.5 6.8 6.8 6.5c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.5c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.2.1.8-.1 1.4z"/></svg></a>
+
+<dialog class="lf" id="lf" aria-labelledby="lf-t" aria-describedby="lf-d">
+  <div class="lf-card">
+    <div id="lf-v-form">
+      <span class="pill">Antes de abrir o WhatsApp</span>
+      <h2 id="lf-t" tabindex="-1">Conte rapidamente <em>quem é você.</em></h2>
+      <p class="lf-sub" id="lf-d">A conversa já começa com o seu nome, o seu negócio e o plano que você tem em mente.</p>
+      <form class="lf-form" id="lf-form" novalidate>
+        <div class="field"><label for="lf-nome">Seu nome</label>
+          <input id="lf-nome" name="nome" type="text" autocomplete="name" maxlength="80" required aria-describedby="lf-e-nome">
+          <span class="lf-err" id="lf-e-nome" role="alert"></span></div>
+        <div class="field"><label for="lf-fone">Seu WhatsApp</label>
+          <input id="lf-fone" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="15" placeholder="(11) 99999-9999" required aria-describedby="lf-e-fone">
+          <span class="lf-err" id="lf-e-fone" role="alert"></span></div>
+        <div class="field"><label for="lf-tipo">Tipo de negócio</label>
+          <input id="lf-tipo" name="tipo" type="text" list="lf-tipos" autocomplete="off" maxlength="60" placeholder="Ex.: clínica, escritório, restaurante" required aria-describedby="lf-e-tipo">
+          <datalist id="lf-tipos"><option value="Consultoria"><option value="Clínica / odonto"><option value="Advocacia"><option value="Restaurante"><option value="Arquitetura"><option value="Obras / esquadrias"><option value="Terapia"><option value="Indústria"></datalist>
+          <span class="lf-err" id="lf-e-tipo" role="alert"></span></div>
+        <div class="field"><label for="lf-plano">Plano de interesse</label>
+          <select id="lf-plano" name="plano">
+            <option value="Ainda não sei">Ainda não sei</option>
+            <option value="Página única">Página única</option>
+            <option value="Site institucional">Institucional</option>
+            <option value="Catálogo ou portfólio">Catálogo</option>
+          </select></div>
+        <div class="lf-bot" aria-hidden="true"><label>Não preencha <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div>
+          <label class="lf-ok"><input type="checkbox" id="lf-aceite" name="aceite" required aria-describedby="lf-e-aceite"><span>Aceito que a Aura me chame no WhatsApp e trate meus dados, conforme a <a href="privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</span></label>
+          <span class="lf-err" id="lf-e-aceite" role="alert"></span>
+        </div>
+        <span class="lf-err" id="lf-e-geral" role="alert"></span>
+        <button class="btn lf-go" type="submit" id="lf-go"><span id="lf-go-t">Continuar no WhatsApp</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+    </div>
+    <div id="lf-v-ok" class="lf-done" hidden>
+      <span class="lf-tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-10"/></svg></span>
+      <h2 id="lf-ok-t" tabindex="-1">Recebemos!</h2>
+      <p role="status" id="lf-ok-p"><span class="lf-spin" aria-hidden="true"></span>Abrindo o WhatsApp…</p>
+      <div class="lf-fb" id="lf-fb" hidden>
+        <p><b>O WhatsApp não abriu?</b> Chame pelo número abaixo ou use o botão.</p>
+        <div class="lf-fone"><b id="lf-num">(11) 98918-7347</b><button type="button" class="lf-copy" id="lf-copy">Copiar número</button></div>
+        <a class="btn" id="lf-api" href="https://api.whatsapp.com/send?phone=5511989187347" target="_blank" rel="noopener">Abrir no WhatsApp</a>
+      </div>
+    </div>
+    <button type="button" class="lf-x" id="lf-x" aria-label="Fechar">&times;</button>
+  </div>
+</dialog>
 
 <script>
 /* preço de lançamento: até 31/10/2026 23:59 (Brasília). Depois disso o site sobe os preços sozinho
@@ -688,22 +776,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return {plan,once,month,total:once+month,items,incl,man};}
   f.addEventListener('change',calc);calc();
   f.addEventListener('submit',e=>{e.preventDefault();const r=calc();
-    const msg=['Olá! Montei meu site no simulador da Aura.','Plano: '+r.plan.value+' ('+brl(num(r.plan,'v'))+')',
+    const intro='Olá! Montei meu site no simulador da Aura.';
+    const linhas=['Plano: '+r.plan.value+' ('+brl(num(r.plan,'v'))+')',
       'Extras: '+(r.items.map(x=>x[0]+' '+brl(x[1])).join(', ')||'nenhum'),
       r.incl.length?'Inclusos no plano: '+r.incl.join(', '):null,
       'Manutenção: '+(r.month?brl(r.month)+'/mês':'não'),
       'Projeto: '+brl(r.once), 'Para começar: '+brl(r.total), r.month?'Total do 1º ano: '+brl(r.once+r.month*12):null,
-      'Prazo: '+r.plan.dataset.prazo].concat(window.__svPrevia||[]).filter(Boolean).join('\n');
-    window.open('https://wa.me/5511989187347?text='+encodeURIComponent(msg),'_blank','noopener');});
+      'Prazo: '+r.plan.dataset.prazo].concat(window.__svPrevia||[]).filter(Boolean);
+    /* o pedido do simulador passa pelo formulário de lead (nome e WhatsApp) antes de abrir o WhatsApp */
+    if(window.AuraLead)return window.AuraLead.abrir({fonte:'Simulador de preco',plano:r.plan.value,intro:intro,linhas:linhas,tipo:window.__svSeg||''});
+    window.open('https://wa.me/5511989187347?text='+encodeURIComponent([intro].concat(linhas).join('\n')),'_blank','noopener');});
 })();
 </script>
 <script>
-/* Medição de anúncios (Meta Ads). O Pixel oficial (1435927114558830) está no <head> e já envia o PageView;
-   este bloco só manda os eventos da página (ViewContent e Lead), a origem (UTM) e o dataLayer do GTM. */
+/* Medição de anúncios (Meta Ads). O Pixel oficial (1435927114558830) está no <head> e já envia o PageView.
+   Este bloco manda: ViewContent (simulador e investimento), Contact (clique no WhatsApp), a origem (UTM)
+   e o dataLayer do GTM. O evento Lead NÃO sai daqui por clique: só depois que o /api/lead aceita o
+   formulário (bloco "Lead", mais abaixo), com eventID igual ao da API de Conversões (deduplicação). */
 (function(){
   if(!window.fbq){ window.fbq=function(){}; }   // se o Pixel do <head> for removido, as chamadas viram no-op
-  const track=(ev,data)=>{try{fbq('track',ev,data)}catch(e){}};
-  /* GTM: os mesmos eventos vão para o dataLayer (gatilhos "Evento personalizado": lead, simulador_interacao, ver_valores) */
+  const track=(ev,data,opts)=>{try{opts?fbq('track',ev,data,opts):fbq('track',ev,data)}catch(e){}};
+  /* GTM: os mesmos eventos vão para o dataLayer (gatilhos "Evento personalizado": lead, contato_whatsapp, simulador_interacao, investimento_visto, ver_valores) */
   window.dataLayer=window.dataLayer||[];
   const dl=(event,extra)=>{try{window.dataLayer.push(Object.assign({event:event,origem_lead:origem||'direto'},extra||{}))}catch(e){}};
 
@@ -714,6 +807,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   try{const q=new URLSearchParams(location.search),got={};
     KEYS.forEach(k=>{const v=(q.get(k)||'').replace(/[\u0000-\u001f]/g,' ').trim().slice(0,60);if(v)got[k]=v;});
     if(Object.keys(got).length){ref=got;try{sessionStorage.setItem('aura_ref',JSON.stringify(got))}catch(e){}}}catch(e){}
+  /* fbclid inteiro (a linha de origem usa só 60 caracteres): serve para montar o fbc da API de Conversões */
+  let fbclid='';
+  try{fbclid=(new URLSearchParams(location.search).get('fbclid')||'').replace(/[^\w.-]/g,'').slice(0,300);
+    if(fbclid)sessionStorage.setItem('aura_fbclid',fbclid);else fbclid=sessionStorage.getItem('aura_fbclid')||'';}catch(e){}
   const origem=(()=>{
     const p=[ref.utm_source,ref.utm_campaign,ref.utm_content].filter(Boolean);
     if(p.length)return p.join(' / ');
@@ -727,34 +824,212 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       return u.origin+u.pathname+'?text='+encodeURIComponent(txt+'\nOrigem: '+origem);
     }catch(e){return url}
   };
+  const textoComOrigem=txt=>(origem&&txt.indexOf('Origem:')<0)?txt+'\nOrigem: '+origem:txt;
   const abrir=window.open.bind(window);
   const toque=matchMedia('(pointer:coarse)').matches;   // celular/tablet: abrir o WhatsApp tira o navegador da tela
-  const irWa=url=>setTimeout(()=>{location.href=url},400);   // 0,4 s para o Lead chegar ao Meta antes do app abrir
+  const irWa=url=>setTimeout(()=>{location.href=url},400);   // 0,4 s para o evento chegar ao Meta antes do app abrir
   window.open=function(url){const a=Array.prototype.slice.call(arguments);a[0]=comOrigem(url);
     if(toque&&/^https:\/\/wa\.me\//.test(a[0])){irWa(a[0]);return null;}
     return abrir.apply(window,a)};
 
-  /* eventos: captura delegada, sem tocar na lógica dos formulários nem do fx.js */
-  /* no celular o WhatsApp só abre 0,4 s depois do toque (irWa), tempo para o Lead sair; o mesmo contato não conta duas vezes */
+  /* Contact = a pessoa clicou para falar no WhatsApp (link wa.me ou botão flutuante). Não é lead.
+     O mesmo clique não conta duas vezes. */
   let ultimo=0;
-  const lead=nome=>{const ag=Date.now();if(ag-ultimo<1500)return;ultimo=ag;
-    track('Lead',{content_name:nome});dl('lead',{lead_tipo:nome});};
+  const contato=nome=>{const ag=Date.now();if(ag-ultimo<1500)return;ultimo=ag;
+    track('Contact',{content_name:nome});dl('contato_whatsapp',{contato_tipo:nome});};
+  /* Lead = o /api/lead aceitou o formulário. eventID igual ao event_id enviado pela API de Conversões. */
+  const lead=(eventId,nome,valor)=>{
+    track('Lead',{content_name:nome,value:valor||0,currency:'BRL'},{eventID:eventId});
+    dl('lead',{lead_tipo:nome,event_id:eventId});};
+  const cookie=n=>{try{const m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):''}catch(e){return ''}};
+  window.AuraMedicao={origem,comOrigem,textoComOrigem,abrirOriginal:abrir,toque,lead,contato,dl,
+    utm:()=>({utm_source:ref.utm_source,utm_medium:ref.utm_medium,utm_campaign:ref.utm_campaign,utm_content:ref.utm_content}),
+    fbclid:()=>fbclid,fbp:()=>cookie('_fbp'),
+    fbc:()=>cookie('_fbc')||(fbclid?'fb.1.'+Date.now()+'.'+fbclid:'')};
+
+  /* eventos: captura delegada, sem tocar na lógica dos formulários nem do fx.js */
   document.addEventListener('click',e=>{
-    const t=e.target&&e.target.closest?e.target.closest('[data-lead],#sv-go,a[href*="wa.me"]'):null;
+    const t=e.target&&e.target.closest?e.target.closest('#sv-go,a[href*="wa.me"]'):null;
     if(!t)return;
-    if(t.hasAttribute('data-lead'))return lead(t.getAttribute('data-lead'));
     if(t.id==='sv-go')return dl('ver_valores');
-    t.href=comOrigem(t.href); lead('Botao WhatsApp');
+    const gate=t.getAttribute('data-lead-fonte');    // CTAs principais abrem o formulário antes do WhatsApp
+    contato(gate||'Link WhatsApp');
+    if(gate&&window.AuraLead){e.preventDefault();window.AuraLead.abrir({fonte:gate});return;}
+    t.href=comOrigem(t.href);
     if(toque){e.preventDefault();irWa(t.href);}
   },true);
   document.addEventListener('submit',e=>{
     const f=e.target;
-    if(f&&f.id==='sim')lead('Simulador de preco');
-    else if(f&&f.matches&&f.matches('form[data-wa]'))lead('Formulario contato');
+    if(f&&f.matches&&f.matches('form[data-wa]'))contato('Formulario contato');   // abre o WhatsApp direto: é contato, não lead
   },true);
   const sec=document.getElementById('simular');
   if(sec){let visto=false;const vc=()=>{if(visto)return;visto=true;track('ViewContent',{content_name:'Simulador'});dl('simulador_interacao');};
     ['input','change','click'].forEach(ev=>sec.addEventListener(ev,vc,true));}
+  /* ViewContent ao chegar na seção de preços (quando o topo dela passa de 65% da altura da tela) */
+  const inv=document.getElementById('investimento');
+  if(inv&&'IntersectionObserver'in window){
+    const io=new IntersectionObserver(es=>{if(es.some(x=>x.isIntersecting)){io.disconnect();
+      track('ViewContent',{content_name:'Investimento'});dl('investimento_visto');}},{rootMargin:'0px 0px -35% 0px'});
+    io.observe(inv);}
+})();
+</script>
+<script>
+/* Lead: formulário curto antes do WhatsApp (CTA do contato, botão flutuante e pedido do simulador).
+   Ao enviar: POST /api/lead (grava o lead e repete o Lead na API de Conversões) -> "Recebemos!" -> abre o WhatsApp.
+   Se o app não abrir em 2 s (navegador do Instagram/Facebook, computador sem WhatsApp), mostra o número,
+   "copiar" e o link api.whatsapp.com. O lead já foi gravado antes de o WhatsApp abrir, mesmo que a pessoa
+   não mande a mensagem. Sem segredo no navegador: o token da API de Conversões fica só na Vercel. */
+(function(){
+  const M=window.AuraMedicao, dlg=document.getElementById('lf'); if(!M||!dlg||typeof dlg.close!=='function')return;
+  const $=id=>document.getElementById(id);
+  const NUM='5511989187347', FONE='(11) 98918-7347';
+  const PLANOS=['Ainda não sei','Página única','Site institucional','Catálogo ou portfólio'];
+  const DDDS=new Set([11,12,13,14,15,16,17,18,19,21,22,24,27,28,31,32,33,34,35,37,38,41,42,43,44,45,46,47,48,49,51,53,54,55,
+    61,62,63,64,65,66,67,68,69,71,73,74,75,77,79,81,82,83,84,85,86,87,88,89,91,92,93,94,95,96,97,98,99]);
+  const LETRAS=(()=>{try{return new RegExp('\\p{L}.*\\p{L}','u')}catch(e){return /[A-Za-zÀ-ÿ].*[A-Za-zÀ-ÿ]/}})();
+  const form=$('lf-form'), vForm=$('lf-v-form'), vOk=$('lf-v-ok'), go=$('lf-go'), goT=$('lf-go-t'), okP=$('lf-ok-p');
+  const f={nome:$('lf-nome'),fone:$('lf-fone'),tipo:$('lf-tipo'),plano:$('lf-plano'),aceite:$('lf-aceite'),bot:form.elements.website};
+  const OK_P=okP.innerHTML, GO_T=goT.textContent;
+  const emApp=/Instagram|FBAN|FBAV|FB_IAB|FBIOS/i.test(navigator.userAgent);   // navegador embutido: abrir o app costuma falhar
+  const MSG_FONE='Informe um celular com DDD, ex.: (11) 99999-9999.';
+  let ctx={}, enviando=false, recebido=false, pre=null, saiu=false, timerFb=0, planoSim='';
+
+  const limpa=v=>(v||'').replace(/[\u0000-\u001f<>]/g,' ').replace(/\s+/g,' ').trim();
+  const nacional=v=>{let d=String(v||'').replace(/\D/g,'');if(d.length>11&&d.indexOf('55')===0)d=d.slice(2);return d.slice(0,11);};
+  const mascara=v=>{const d=nacional(v);if(!d)return '';
+    if(d.length<3)return '('+d;
+    if(d.length<8)return '('+d.slice(0,2)+') '+d.slice(2);
+    return '('+d.slice(0,2)+') '+d.slice(2,7)+'-'+d.slice(7);};
+  const celularOk=v=>{const d=nacional(v);return d.length===11&&DDDS.has(+d.slice(0,2))&&d.charAt(2)==='9';};
+  const erro=(k,msg)=>{const el=$('lf-e-'+k),inp=f[k];if(el)el.textContent=msg||'';
+    if(inp){if(msg)inp.setAttribute('aria-invalid','true');else inp.removeAttribute('aria-invalid');}};
+  const novoId=()=>{try{return 'lead_'+crypto.randomUUID()}catch(e){return 'lead_'+Date.now().toString(36)+Math.random().toString(36).slice(2,10)}};
+  const valorDe=p=>{const i=document.querySelector('#sim input[name=tipo][value="'+p+'"]');return i?(parseFloat(i.dataset.v)||0):0;};   // preço vem do próprio simulador: um lugar só
+
+  function validar(){
+    const e={},nome=limpa(f.nome.value),tipo=limpa(f.tipo.value);
+    if(nome.length<2||nome.length>80||!LETRAS.test(nome))e.nome='Informe seu nome.';
+    if(!celularOk(f.fone.value))e.fone=MSG_FONE;
+    if(tipo.length<2||tipo.length>60)e.tipo='Conte o tipo de negócio, ex.: clínica ou escritório.';
+    if(!f.aceite.checked)e.aceite='Marque para continuar.';
+    const ks=['nome','fone','tipo','aceite'];
+    ks.forEach(k=>erro(k,e[k]));
+    const p=ks.find(k=>e[k]);
+    if(p){f[p].focus();return null;}
+    return {nome:nome,tipo:tipo,whatsapp:nacional(f.fone.value),plano:f.plano.value};
+  }
+
+  function mensagem(d){
+    const l=[ctx.intro||'Olá! Vim pelo site da Aura.','Nome: '+d.nome,'Negócio: '+d.tipo];
+    if(ctx.linhas&&ctx.linhas.length){
+      if(d.plano!==ctx.plano)l.push('Plano de interesse: '+d.plano);
+      ctx.linhas.forEach(x=>l.push(x));
+    }else l.push('Plano: '+d.plano);
+    return M.textoComOrigem(l.join('\n'));
+  }
+
+  async function enviar(corpo){
+    for(let t=0;t<2;t++){
+      const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),8000);
+      try{
+        const r=await fetch('/api/lead',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(corpo),signal:ctl.signal});
+        clearTimeout(timer);
+        let j=null;try{j=await r.json()}catch(e){}
+        if(r.ok&&j&&j.ok)return {ok:true,j:j};
+        if(r.status===400)return {ok:false,invalido:true,j:j};
+        if(r.status<500)return {ok:false,j:j};          // 403, 415, 429...: repetir não adianta
+      }catch(e){clearTimeout(timer);}
+      if(t===0)await new Promise(r=>setTimeout(r,700));  // rede ou erro 5xx: tenta mais uma vez
+    }
+    return {ok:false};
+  }
+
+  function mostrarFallback(){
+    clearTimeout(timerFb);
+    $('lf-fb').hidden=false;
+    okP.textContent=recebido?'Seus dados já chegaram até nós.':'';
+  }
+  function abrirWa(texto){
+    const enc=encodeURIComponent(texto);
+    const wa='https://wa.me/'+NUM+'?text='+enc;
+    $('lf-api').href='https://api.whatsapp.com/send?phone='+NUM+'&text='+enc;
+    saiu=false;clearTimeout(timerFb);
+    setTimeout(()=>{      // 0,4 s: tempo para o Lead sair para o Meta antes de o app tirar o navegador da tela
+      timerFb=setTimeout(()=>{if(!saiu)mostrarFallback();},2000);   // app não abriu em 2 s
+      if(pre&&!pre.closed){try{pre.location.href=wa;return;}catch(e){}}
+      if(M.toque&&!emApp){location.href=wa;return;}
+      M.abrirOriginal(wa,'_blank','noopener');
+    },400);
+  }
+
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();if(enviando)return;
+    const d=validar();if(!d)return;
+    enviando=true;go.disabled=true;goT.textContent='Enviando…';$('lf-e-geral').textContent='';
+    /* computador: abre a aba do WhatsApp já no clique (o navegador bloqueia janela aberta depois de uma espera) */
+    pre=null;
+    if(!M.toque&&!emApp){try{pre=M.abrirOriginal('about:blank','_blank');if(pre)pre.opener=null;}catch(x){}}
+    const eventId=novoId(),valor=valorDe(d.plano);
+    const r=await enviar({nome:d.nome,whatsapp:d.whatsapp,tipo:d.tipo,plano:d.plano,aceite:true,fonte:ctx.fonte||'Contato',valor:valor,
+      event_id:eventId,origem:M.origem,utm:M.utm(),fbclid:M.fbclid(),fbp:M.fbp(),fbc:M.fbc(),
+      pagina:location.href.split('#')[0],website:f.bot.value});
+    if(r.invalido){      // a função recusou: volta para o formulário com os avisos
+      try{if(pre)pre.close();}catch(x){}
+      pre=null;enviando=false;go.disabled=false;goT.textContent=GO_T;
+      const er=(r.j&&r.j.erros)||{};
+      if(er.nome)erro('nome',er.nome);if(er.whatsapp)erro('fone',er.whatsapp);if(er.tipo)erro('tipo',er.tipo);if(er.aceite)erro('aceite',er.aceite);
+      if(er.plano)$('lf-e-geral').textContent=er.plano;
+      return;
+    }
+    recebido=!!r.ok;
+    if(recebido)M.lead((r.j&&r.j.event_id)||eventId,ctx.fonte||'Contato',valor);   // Lead só depois que a função aceitou
+    vForm.hidden=true;vOk.hidden=false;
+    $('lf-ok-t').textContent=recebido?'Recebemos!':'Vamos conversar';
+    okP.innerHTML=OK_P;$('lf-fb').hidden=true;
+    $('lf-ok-t').focus();
+    enviando=false;
+    abrirWa(mensagem(d));
+  });
+
+  $('lf-copy').addEventListener('click',async()=>{
+    const b=$('lf-copy');let ok=false;
+    try{await navigator.clipboard.writeText(FONE);ok=true;}
+    catch(e){try{const t=document.createElement('textarea');t.value=FONE;t.setAttribute('readonly','');t.style.cssText='position:fixed;opacity:0';
+      document.body.appendChild(t);t.select();ok=document.execCommand('copy');t.remove();}catch(x){}}
+    b.textContent=ok?'Copiado':'Selecione e copie';
+    setTimeout(()=>{b.textContent='Copiar número';},2500);
+  });
+
+  /* o app abriu = a página ficou oculta; se a pessoa voltar, mostra as opções de novo */
+  document.addEventListener('visibilitychange',()=>{
+    if(vOk.hidden)return;
+    if(document.hidden)saiu=true;else if(saiu)mostrarFallback();
+  });
+  addEventListener('pagehide',()=>{saiu=true;});
+
+  f.fone.addEventListener('input',()=>{f.fone.value=mascara(f.fone.value);if(f.fone.hasAttribute('aria-invalid')&&celularOk(f.fone.value))erro('fone','');});
+  f.fone.addEventListener('blur',()=>{if(f.fone.value&&!celularOk(f.fone.value))erro('fone',MSG_FONE);});
+  f.nome.addEventListener('input',()=>erro('nome',''));
+  f.tipo.addEventListener('input',()=>erro('tipo',''));
+  f.aceite.addEventListener('change',()=>erro('aceite',''));
+  const sim=$('sim');if(sim)sim.addEventListener('change',e=>{if(e.target&&e.target.name==='tipo')planoSim=e.target.value;});
+
+  function fechar(){if(enviando)return;clearTimeout(timerFb);dlg.close();}
+  $('lf-x').addEventListener('click',fechar);
+  dlg.addEventListener('click',e=>{if(e.target===dlg)fechar();});           // clique no fundo escuro
+  dlg.addEventListener('cancel',e=>{if(enviando)e.preventDefault();});      // Esc fecha (menos durante o envio)
+  dlg.addEventListener('close',()=>document.documentElement.classList.remove('fx-lock'));
+
+  window.AuraLead={abrir:function(c){
+    ctx=c||{};enviando=false;recebido=false;pre=null;saiu=false;clearTimeout(timerFb);
+    vOk.hidden=true;vForm.hidden=false;$('lf-fb').hidden=true;go.disabled=false;goT.textContent=GO_T;$('lf-e-geral').textContent='';
+    ['nome','fone','tipo','aceite'].forEach(k=>erro(k,''));
+    f.plano.value=PLANOS.indexOf(ctx.plano)>-1?ctx.plano:(planoSim||'Ainda não sei');
+    if(ctx.tipo&&!f.tipo.value)f.tipo.value=ctx.tipo;
+    if(!dlg.open){try{dlg.showModal();}catch(e){dlg.setAttribute('open','');}}
+    document.documentElement.classList.add('fx-lock');
+    (M.toque?$('lf-t'):f.nome).focus();
+  }};
 })();
 </script>
 <script>
@@ -842,6 +1117,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   $('sv-go').addEventListener('click',()=>{
     const sg=SEG[S.seg];
     window.__svPrevia=['Prévia montada: '+[S.nome||null,sg.label,'estilo '+STY[S.estilo].nome].filter(Boolean).join(' · ')];
+    window.__svSeg=sg.label;
   });
 })();
 </script>

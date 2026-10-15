@@ -1,0 +1,14 @@
+{
+  "name": "site-aura-estudio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site estático da Aura (sitecomaura.com) com a função serverless /api/lead.",
+  "type": "module",
+  "engines": { "node": "22.x" },
+  "scripts": {
+    "test": "node --test tests/"
+  },
+  "dependencies": {
+    "@vercel/blob": "2.8.2"
+  }
+}
