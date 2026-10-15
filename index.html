@@ -28,11 +28,11 @@ src="https://www.facebook.com/tr?id=1435927114558830&ev=PageView&noscript=1"
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Aura — sites para consultores e negócios que vendem confiança</title>
-<meta name="description" content="Sites para negócios que vendem pelo WhatsApp. Página única a partir de R$&nbsp;650, no ar em 3 dias úteis, com domínio e hospedagem no 1º ano.">
+<meta name="description" content="Sites para negócios que vendem pelo WhatsApp. Página única a partir de R$&nbsp;650, no ar em 3 dias úteis depois da conversa, com domínio e hospedagem no 1º ano.">
 <meta name="theme-color" content="#15120e">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Aura — sites que fazem você ser escolhido antes da primeira conversa">
-<meta property="og:description" content="Seu cliente pesquisa no Google e chama no WhatsApp. Site no ar em 3 dias úteis, a partir de R$&nbsp;650.">
+<meta property="og:title" content="Aura: seu cliente pesquisa no Google e chama no WhatsApp">
+<meta property="og:description" content="Site no ar em 3 dias úteis depois da conversa, a partir de R$&nbsp;650. Você aprova a prévia antes de ir ao ar.">
 <meta property="og:image" content="img/og.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-10 -10 120 120'%3E%3Crect x='-10' y='-10' width='120' height='120' rx='28' fill='%2315120e'/%3E%3Cpath fill='%23f3efe4' fill-rule='evenodd' d='M49.4 6.2 L71.5 45.5 L84.7 45.5 L76.2 52.3 L99.1 93.4 L79.1 93.4 L62.6 64.5 L15.5 93.4 L0.9 93.4 Z M49.4 40.2 L56.2 52.6 L35.7 67.5 Z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +44,7 @@ src="https://www.facebook.com/tr?id=1435927114558830&ev=PageView&noscript=1"
 /* Mesmo sistema visual do agenciaaura.online: escuro quente + papel, bronze/dourado,
    Fraunces nos títulos (uma palavra em itálico dourado) e Geist no texto. */
 :root{
-  --paper:#f7f4ee; --paper2:#efe9dc; --white:#fffdf9; --ink:#171310; --ink2:#4c463b; --ink3:#8c8677; --line:rgba(23,19,16,.11); --line2:rgba(23,19,16,.2);
+  --paper:#f7f4ee; --paper2:#efe9dc; --white:#fffdf9; --ink:#171310; --ink2:#4c463b; --ink3:#6f695b; --line:rgba(23,19,16,.11); --line2:rgba(23,19,16,.2);
   --bronze:#8a6a3f; --gold:#cba86a; --gold-light:#e4cd9d;
   --dark:#15120e; --dark2:#1e1a15; --on-dark:#f3efe4; --on-dark2:#b8b0a0; --on-dark-line:rgba(243,239,228,.12);
   --green:#3f7a52; --red:#b3413c;
@@ -67,7 +67,7 @@ p{margin:0;text-wrap:pretty}
 .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
 section{padding-block:var(--pad);position:relative}
 .dark{background:var(--dark);color:var(--on-dark)}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
 .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;border:1px solid var(--line2);font-size:.82rem;color:var(--ink2)}
 .pill::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--bronze)}
 .dark .pill{border-color:var(--on-dark-line);color:var(--on-dark2);background:rgba(21,18,14,.4)}
@@ -117,8 +117,8 @@ section{padding-block:var(--pad);position:relative}
 .pf-in{display:flex;flex-wrap:wrap;align-items:center;gap:16px 40px}
 .pf-t{flex:0 1 17rem;color:var(--on-dark2);font-size:.92rem;line-height:1.45}
 .pf-t b{display:block;font-family:var(--serif);font-weight:400;font-size:1.3rem;line-height:1.2;color:var(--on-dark);letter-spacing:-.01em}
-.pf-sites{display:flex;flex-wrap:wrap;gap:12px;flex:1 1 28rem}
-.pf-site{position:relative;display:flex;align-items:center;gap:14px;flex:1 1 17rem;min-height:76px;padding:8px 18px 8px 8px;border-radius:var(--r-md);background:var(--dark2);box-shadow:0 0 0 1px var(--on-dark-line);transition:box-shadow .25s,background .25s,transform .1s}
+.pf-sites{display:flex;flex-wrap:wrap;gap:12px;flex:1 1 28rem;min-width:0}
+.pf-site{position:relative;display:flex;align-items:center;gap:14px;flex:1 1 17rem;min-width:0;min-height:76px;padding:8px 18px 8px 8px;border-radius:var(--r-md);background:var(--dark2);box-shadow:0 0 0 1px var(--on-dark-line);transition:box-shadow .25s,background .25s,transform .1s}
 .pf-site:hover{background:#26211a;box-shadow:0 0 0 1px rgba(203,168,106,.5)}
 .pf-site:active{transform:scale(.98)}
 .pf-site img{flex:none;width:96px;height:60px;border-radius:9px;object-fit:cover;object-position:top}
@@ -166,13 +166,13 @@ section{padding-block:var(--pad);position:relative}
 .work:hover{transform:translateY(-4px);box-shadow:0 0 0 1px var(--line2),0 30px 50px -30px rgba(23,19,16,.35)}
 .work figure{position:relative;margin:0;aspect-ratio:16/10;overflow:hidden;background:var(--paper2)}
 .work img{width:100%;height:100%;object-fit:cover;object-position:top}
-.work-tag{position:absolute;top:10px;left:10px;display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:.76rem;font-weight:600;line-height:1.2}
+.work-tag{position:absolute;bottom:10px;left:10px;display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:.76rem;font-weight:600;line-height:1.2}
 .work-tag::before{content:'';width:7px;height:7px;border-radius:50%;background:#58c47a}
 .work-tag--c{background:var(--paper);color:var(--ink);box-shadow:0 0 0 1px var(--line2)}
 .work-tag--c::before{background:var(--gold)}
 .work-t{padding:18px 20px 20px;display:flex;flex-direction:column;gap:4px;flex:1}
 .work-t p{color:var(--ink3);font-size:.88rem}
-.work-go{margin-top:10px;font-size:.88rem;font-weight:500;color:var(--bronze)}
+.work-go{margin-top:auto;padding-top:10px;font-size:.88rem;font-weight:500;color:var(--bronze)}
 @media(max-width:1100px){.works{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:559px){
   .works{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gut);gap:14px;margin-inline:calc(var(--gut)*-1);padding:2px var(--gut) 14px;scrollbar-width:none}
@@ -189,7 +189,7 @@ section{padding-block:var(--pad);position:relative}
 .plan:has(input:checked) .plan-for,.plan:has(input:checked) .plan-time,.plan:has(input:checked) li,.plan:has(input:checked) .plan-top small,.plan:has(input:checked) .plan-price small{color:var(--on-dark2)}
 .plan:has(input:checked) b{color:var(--on-dark)}
 .plan:has(input:checked) .plan-time{border-color:var(--on-dark-line)}
-.plan:has(input:focus-visible){outline:2px solid var(--gold);outline-offset:3px}
+.plan:has(input:focus-visible){outline:2px solid var(--bronze);outline-offset:3px}
 .plan-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 10px;padding-right:28px}
 .plan-top b{font-family:var(--serif);font-size:1.45rem;font-weight:400}.plan-top small{font-size:.8rem;color:var(--ink3)}
 .plan::after{content:'';position:absolute;top:32px;right:28px;width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--ink3);transition:all .2s}
@@ -240,15 +240,15 @@ section{padding-block:var(--pad);position:relative}
 @media(max-width:1000px){.plans{grid-template-columns:1fr}.more-in{grid-template-columns:1fr}.sum{position:static}}
 @media(max-width:520px){.price-bar,.more summary,.more-in{padding-inline:20px}.opt{flex-wrap:wrap}.opt small{order:3;flex-basis:100%;padding-left:32px}.opt.is-incl{flex-wrap:nowrap}.opt.is-incl small{order:0;flex-basis:auto}.price-go,.price-go .btn{width:100%}}
 
-/* preço riscado, soma "separados" e nota */
-.plan-price s{font-family:var(--sans);font-size:.3em;font-weight:400;letter-spacing:0;margin-right:10px;color:var(--ink3);vertical-align:.9em;text-decoration-thickness:1px}
+/* preço riscado e notas dos planos */
+.plan-price s{font-family:var(--sans);font-size:max(14px,.3em);font-weight:400;letter-spacing:0;margin-right:10px;color:var(--ink3);vertical-align:.9em;text-decoration-thickness:1px}
 .plan:has(input:checked) .plan-price s{color:var(--on-dark2)}
-.plan-sep{margin-top:-6px;font-size:.84rem;line-height:1.4;color:var(--bronze);font-weight:500}
-.plan-sep small{display:block;margin-top:2px;font-size:.78rem;font-weight:400;color:var(--ink2)}
-.plan:has(input:checked) .plan-sep{color:var(--gold-light)}
-.plan:has(input:checked) .plan-sep small{color:var(--on-dark2)}
+.plan-sep{font-size:.9rem;line-height:1.5;color:var(--ink2)}
+.plan:has(input:checked) .plan-sep{color:var(--on-dark2)}
 .plans-note{margin-top:14px;font-size:.84rem;line-height:1.5;color:var(--ink3);max-width:62rem}
 /* faq */
+.fx-acc-item:not(.is-open) .fx-acc-a{visibility:hidden;transition:max-height .45s var(--fx-ease),visibility 0s linear .45s}
+.fx-acc-a a{display:inline-flex;align-items:center;min-height:44px;color:var(--bronze);text-decoration:underline;text-underline-offset:3px}
 .faq{border-top:1px solid var(--line)}
 .faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px clamp(32px,6vw,90px);align-items:start}
 .fx-acc-item{border-bottom:1px solid var(--line)}.fx-acc-item:first-child{border-top:1px solid var(--line)}
@@ -286,15 +286,16 @@ section{padding-block:var(--pad);position:relative}
 .field input,.field select{width:100%;background:var(--paper);border:0;border-radius:var(--r-sm);box-shadow:inset 0 0 0 1px var(--line);padding:0 14px;min-height:50px;outline:0;transition:box-shadow .2s}
 .field input:focus,.field select:focus{box-shadow:inset 0 0 0 1.5px var(--bronze)}
 .field select{-webkit-appearance:none;appearance:none;cursor:pointer;padding-right:44px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6a3f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px}
-.field select:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.field select:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
 .field ::placeholder{color:var(--ink3)}
-.sv-styles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sv-styles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+@media(max-width:340px){.sv-styles{grid-template-columns:minmax(0,1fr)}}
 .sv-styles label{position:relative;cursor:pointer}
 .sv-styles input{position:absolute;opacity:0;width:1px;height:1px}
 .sv-style{display:flex;align-items:center;gap:12px;min-height:60px;padding:8px 12px 8px 8px;border-radius:var(--r-sm);box-shadow:inset 0 0 0 1px var(--line2);transition:box-shadow .2s,background .2s}
 .sv-styles label:hover .sv-style{box-shadow:inset 0 0 0 1px var(--ink2)}
 .sv-styles input:checked+.sv-style{background:rgba(203,168,106,.12);box-shadow:inset 0 0 0 2px var(--bronze)}
-.sv-styles input:focus-visible+.sv-style{outline:2px solid var(--gold);outline-offset:2px}
+.sv-styles input:focus-visible+.sv-style{outline:2px solid var(--bronze);outline-offset:2px}
 .sv-sw{flex:none;position:relative;display:grid;place-items:center;width:44px;height:44px;border-radius:8px;background:var(--b);color:var(--t);font-family:var(--f);font-weight:var(--w,400);font-size:1.15rem;line-height:1;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(23,19,16,.12)}
 .sv-sw::after{content:'';position:absolute;left:6px;right:6px;bottom:6px;height:4px;border-radius:2px;background:var(--a)}
 .sv-sw i{font-style:normal;margin-bottom:5px}
@@ -448,7 +449,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wrap">
       <span class="pill" data-reveal>Sites para consultores, clínicas, escritórios e negócios locais</span>
       <h1 data-split>Seu cliente pesquisa no Google e <em>chama no WhatsApp.</em></h1>
-      <p class="lead" data-reveal style="--d:.3s">Site no ar em 3 dias úteis, a partir de R$&nbsp;650. Você aprova a prévia antes de ir ao ar.</p>
+      <p class="lead" data-reveal style="--d:.3s">Site no ar em 3 dias úteis depois da conversa, a partir de R$&nbsp;650. Você aprova a prévia antes de ir ao ar.</p>
       <div class="hero-cta" data-reveal style="--d:.4s">
         <a class="btn" href="#investimento">Ver planos e preços
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -504,7 +505,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ol class="steps" data-stagger="0.1">
         <li class="step"><span class="step-n" aria-hidden="true">1</span><h3>Conversa de 20 minutos</h3><p>Você conta o que o seu negócio faz e quem você quer atender. É a base do visual e, no Site + Google, dos textos.</p></li>
         <li class="step"><span class="step-n" aria-hidden="true">2</span><h3>Prévia para aprovar</h3><p>Você vê o site pronto antes de ir ao ar e pede os ajustes: 2 rodadas na Página única e 3 no Site + Google.</p></li>
-        <li class="step"><span class="step-n" aria-hidden="true">3</span><h3>No ar</h3><p>Com a sua aprovação, publicamos no seu domínio. Página única em 3 dias úteis; Site + Google em 5 a 7 dias úteis.</p></li>
+        <li class="step"><span class="step-n" aria-hidden="true">3</span><h3>No ar</h3><p>Com a sua aprovação, publicamos no seu domínio. Página única em 3 dias úteis depois da conversa; Site + Google em 5 a 7 dias úteis.</p></li>
       </ol>
     </div>
   </section>
@@ -527,28 +528,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="sr-only" id="flt-n" role="status" aria-live="polite"></p>
       <div class="works" id="works">
         <a class="work" href="https://esconsultoria.com" target="_blank" rel="noopener" data-nicho="servicos" data-mostruario="eduardo-stephano" data-tipo="no_ar">
-          <figure><img src="img/trabalhos/eduardo-stephano.webp" width="704" height="440" loading="lazy" decoding="async" alt="Site do consultor Eduardo Stephano"><span class="work-tag">no ar</span></figure>
+          <figure><img src="img/trabalhos/eduardo-stephano.webp" srcset="img/trabalhos/eduardo-stephano.webp 1x, img/trabalhos/eduardo-stephano-2x.webp 2x" width="704" height="440" loading="lazy" decoding="async" alt="Site do consultor Eduardo Stephano"><span class="work-tag">no ar</span></figure>
           <div class="work-t"><h3>Eduardo Stephano</h3><p>Consultoria em segurança de alimentos</p><span class="work-go">Ver site no ar →</span><span class="sr-only">(abre em nova aba)</span></div></a>
         <a class="work" href="https://lfesquadriasferroeaco.online" target="_blank" rel="noopener" data-nicho="obras" data-mostruario="lf-esquadrias" data-tipo="no_ar">
-          <figure><img src="img/trabalhos/lf-esquadrias.webp" width="704" height="440" loading="lazy" decoding="async" alt="Site da LF Esquadrias"><span class="work-tag">no ar</span></figure>
+          <figure><img src="img/trabalhos/lf-esquadrias.webp" srcset="img/trabalhos/lf-esquadrias.webp 1x, img/trabalhos/lf-esquadrias-2x.webp 2x" width="704" height="440" loading="lazy" decoding="async" alt="Site da LF Esquadrias"><span class="work-tag">no ar</span></figure>
           <div class="work-t"><h3>LF Esquadrias</h3><p>Esquadrias e vidros · Uberlândia</p><span class="work-go">Ver site no ar →</span><span class="sr-only">(abre em nova aba)</span></div></a>
         <a class="work" href="mostruario/taco-e-navalha/" target="_blank" rel="noopener" data-nicho="beleza" data-mostruario="taco-e-navalha" data-tipo="conceito">
-          <figure><img src="img/trabalhos/taco-e-navalha.webp" width="704" height="440" loading="lazy" decoding="async" alt="Projeto conceito da barbearia Taco e Navalha"><span class="work-tag work-tag--c">projeto conceito</span></figure>
+          <figure><img src="img/trabalhos/taco-e-navalha.webp" srcset="img/trabalhos/taco-e-navalha.webp 1x, img/trabalhos/taco-e-navalha-2x.webp 2x" width="704" height="440" loading="lazy" decoding="async" alt="Projeto conceito da barbearia Taco e Navalha"><span class="work-tag work-tag--c">projeto conceito</span></figure>
           <div class="work-t"><h3>Taco e Navalha</h3><p>Barbearia</p><span class="work-go">Abrir projeto conceito →</span><span class="sr-only">(abre em nova aba)</span></div></a>
         <a class="work" href="mostruario/pizzaria-dona-zelia/" target="_blank" rel="noopener" data-nicho="comida" data-mostruario="pizzaria-dona-zelia" data-tipo="conceito">
-          <figure><img src="img/trabalhos/pizzaria-dona-zelia.webp" width="704" height="440" loading="lazy" decoding="async" alt="Projeto conceito da Pizzaria Dona Zélia"><span class="work-tag work-tag--c">projeto conceito</span></figure>
+          <figure><img src="img/trabalhos/pizzaria-dona-zelia.webp" srcset="img/trabalhos/pizzaria-dona-zelia.webp 1x, img/trabalhos/pizzaria-dona-zelia-2x.webp 2x" width="704" height="440" loading="lazy" decoding="async" alt="Projeto conceito da Pizzaria Dona Zélia"><span class="work-tag work-tag--c">projeto conceito</span></figure>
           <div class="work-t"><h3>Pizzaria Dona Zélia</h3><p>Pizzaria e esfiharia</p><span class="work-go">Abrir projeto conceito →</span><span class="sr-only">(abre em nova aba)</span></div></a>
         <a class="work" href="mostruario/piloto-77-oficina-de-motos/" target="_blank" rel="noopener" data-nicho="obras" data-mostruario="piloto-77-oficina-de-motos" data-tipo="conceito">
-          <figure><img src="img/trabalhos/piloto-77-oficina-de-motos.webp" width="704" height="440" loading="lazy" decoding="async" alt="Projeto conceito da oficina de motos Piloto 77"><span class="work-tag work-tag--c">projeto conceito</span></figure>
+          <figure><img src="img/trabalhos/piloto-77-oficina-de-motos.webp" srcset="img/trabalhos/piloto-77-oficina-de-motos.webp 1x, img/trabalhos/piloto-77-oficina-de-motos-2x.webp 2x" width="704" height="440" loading="lazy" decoding="async" alt="Projeto conceito da oficina de motos Piloto 77"><span class="work-tag work-tag--c">projeto conceito</span></figure>
           <div class="work-t"><h3>Piloto 77</h3><p>Oficina de motos</p><span class="work-go">Abrir projeto conceito →</span><span class="sr-only">(abre em nova aba)</span></div></a>
         <a class="work" href="mostruario/estudio-lumiar/" target="_blank" rel="noopener" data-nicho="servicos" data-mostruario="estudio-lumiar" data-tipo="conceito">
-          <figure><img src="img/trabalhos/estudio-lumiar.webp" width="704" height="440" loading="lazy" decoding="async" alt="Projeto conceito do Estúdio Lumiar"><span class="work-tag work-tag--c">projeto conceito</span></figure>
+          <figure><img src="img/trabalhos/estudio-lumiar.webp" srcset="img/trabalhos/estudio-lumiar.webp 1x, img/trabalhos/estudio-lumiar-2x.webp 2x" width="704" height="440" loading="lazy" decoding="async" alt="Projeto conceito do Estúdio Lumiar"><span class="work-tag work-tag--c">projeto conceito</span></figure>
           <div class="work-t"><h3>Estúdio Lumiar</h3><p>Estúdio de fotografia</p><span class="work-go">Abrir projeto conceito →</span><span class="sr-only">(abre em nova aba)</span></div></a>
         <a class="work" href="mostruario/otica-claridade/" target="_blank" rel="noopener" data-nicho="saude" data-mostruario="otica-claridade" data-tipo="conceito">
-          <figure><img src="img/trabalhos/otica-claridade.webp" width="704" height="440" loading="lazy" decoding="async" alt="Projeto conceito da Ótica Claridade"><span class="work-tag work-tag--c">projeto conceito</span></figure>
+          <figure><img src="img/trabalhos/otica-claridade.webp" srcset="img/trabalhos/otica-claridade.webp 1x, img/trabalhos/otica-claridade-2x.webp 2x" width="704" height="440" loading="lazy" decoding="async" alt="Projeto conceito da Ótica Claridade"><span class="work-tag work-tag--c">projeto conceito</span></figure>
           <div class="work-t"><h3>Ótica Claridade</h3><p>Ótica</p><span class="work-go">Abrir projeto conceito →</span><span class="sr-only">(abre em nova aba)</span></div></a>
         <a class="work" href="mostruario/pelucia-spa-pet/" target="_blank" rel="noopener" data-nicho="beleza" data-mostruario="pelucia-spa-pet" data-tipo="conceito">
-          <figure><img src="img/trabalhos/pelucia-spa-pet.webp" width="704" height="440" loading="lazy" decoding="async" alt="Projeto conceito do Pelúcia Spa Pet"><span class="work-tag work-tag--c">projeto conceito</span></figure>
+          <figure><img src="img/trabalhos/pelucia-spa-pet.webp" srcset="img/trabalhos/pelucia-spa-pet.webp 1x, img/trabalhos/pelucia-spa-pet-2x.webp 2x" width="704" height="440" loading="lazy" decoding="async" alt="Projeto conceito do Pelúcia Spa Pet"><span class="work-tag work-tag--c">projeto conceito</span></figure>
           <div class="work-t"><h3>Pelúcia Spa Pet</h3><p>Banho e tosa</p><span class="work-go">Abrir projeto conceito →</span><span class="sr-only">(abre em nova aba)</span></div></a>
       </div>
     </div>
@@ -620,7 +621,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="sv-cta">
           <a class="btn sv-go" id="sv-go" href="#investimento">
-            Quero um site assim · ver valores<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            Ver valores do meu site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <p class="sv-note">É só uma prévia. O seu site final é feito do zero, com as suas fotos e textos.</p>
         </div>
       </div>
@@ -638,7 +639,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <fieldset class="plans" aria-label="Escolha o plano">
           <label class="plan">
             <input type="radio" name="tipo" value="Página única" data-v="650" data-v-de="1200" data-m="80" data-prazo="3 dias úteis" data-lvl="1" checked>
-            <span class="plan-top"><b>Página única</b><small>Landing page</small></span>
+            <span class="plan-top"><b>Página única</b><small>1 página</small></span>
             <span class="plan-for">Ideal para quem está começando ou quer um cartão de visitas forte na internet.</span>
             <span class="plan-price"><s><span class="sr-only">de </span>R$&nbsp;1.200</s><span class="sr-only"> por </span><small>R$</small>650</span>
             <span class="plan-time">No ar em <b>3 dias úteis</b> · manutenção opcional R$&nbsp;80/mês</span>
@@ -650,42 +651,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
           </label>
           <label class="plan plan--hot">
-            <input type="radio" name="tipo" value="Site + Google" data-v="1500" data-v-de="3400" data-m="150" data-disc="20" data-prazo="5 a 7 dias úteis" data-lvl="2">
+            <input type="radio" name="tipo" value="Site + Google" data-v="1500" data-v-de="2800" data-m="150" data-disc="20" data-prazo="5 a 7 dias úteis" data-lvl="2">
             <span class="plan-badge">Recomendado</span>
             <span class="plan-top"><b>Site + Google</b><small>Até 5 páginas</small></span>
             <span class="plan-for">Para consultores, clínicas e escritórios que precisam passar autoridade e explicar cada serviço.</span>
-            <span class="plan-price"><s><span class="sr-only">de </span>R$&nbsp;3.400</s><span class="sr-only"> por </span><small>R$</small>1.500</span>
+            <span class="plan-price"><s><span class="sr-only">de </span>R$&nbsp;2.800</s><span class="sr-only"> por </span><small>R$</small>1.500</span>
             <span class="plan-time">No ar em <b>5 a 7 dias úteis</b> · manutenção opcional R$&nbsp;150/mês</span>
             <ul>
               <li><span><b>Até 5 páginas</b>: início, sobre, serviços, depoimentos e contato</span></li>
               <li><span><b>Textos escritos por nós</b> a partir de uma conversa de 20 min</span></li>
-              <li><span><b>Google Meu Negócio configurado</b>: você aparece no Google Maps da sua cidade</span></li>
+              <li><span><b>Google Meu Negócio</b>: perfil criado e configurado no Google Maps</span></li>
               <li><span><b>E-mail profissional</b> com o nome do seu negócio</span></li>
               <li><span><b>3 rodadas de revisão</b></span></li>
-              <li class="deal"><span><b>20% de desconto</b> em logo, versão em inglês e página a mais</span></li>
             </ul>
           </label>
           <label class="plan">
-            <input type="radio" name="tipo" value="Site + Google + Anúncios" data-v="2500" data-sep="4100" data-m="700" data-gestao="1" data-disc="20" data-prazo="5 a 7 dias úteis" data-prazo-pre="Site no ar em " data-lvl="3">
+            <input type="radio" name="tipo" value="Site + Google + Anúncios" data-v="2500" data-m="700" data-gestao="1" data-disc="20" data-prazo="5 a 7 dias úteis" data-prazo-pre="Site no ar em " data-lvl="3">
             <span class="plan-top"><b>Site + Google + Anúncios</b><small>Com campanha no Meta</small></span>
             <span class="plan-for">Para quem quer o site e também começar a anunciar no Instagram e no Facebook.</span>
             <span class="plan-price"><small>R$</small>2.500</span>
-            <span class="plan-sep">Separados: R$&nbsp;4.100<small>Site + Google (tabela R$&nbsp;3.400) mais o 1º mês de gestão (R$&nbsp;700)</small></span>
-            <span class="plan-time">Site no ar em <b>5 a 7 dias úteis</b> · depois do 1º mês, gestão R$&nbsp;700/mês</span>
+            <span class="plan-sep">Inclui a campanha configurada e o 1º mês de gestão; depois R$&nbsp;700/mês; verba de anúncio à parte.</span>
+            <span class="plan-time">Site no ar em <b>5 a 7 dias úteis</b></span>
             <ul>
               <li><span><b>Tudo do Site + Google</b>: até 5 páginas, textos, Google Meu Negócio e e-mail profissional</span></li>
               <li><span><b>Campanha no Meta configurada</b> para anunciar no Instagram e no Facebook</span></li>
-              <li><span><b>1º mês de gestão incluso</b>; depois, R$&nbsp;700/mês</span></li>
-              <li><span><b>Verba de anúncio à parte</b>, paga por você</span></li>
-              <li class="deal"><span><b>20% de desconto</b> em logo, versão em inglês e página a mais</span></li>
             </ul>
           </label>
         </fieldset>
-        <p class="plans-note">O valor riscado é o preço que este site mostrava antes desta tabela. Precisa de catálogo com muitos produtos ou projetos? O valor é sob consulta.</p>
+        <p class="plans-note">O valor riscado é o preço que este site mostrava antes desta tabela. Nos planos Site + Google e Site + Google + Anúncios, logo, versão em inglês e página a mais têm 20% de desconto. Precisa de catálogo com muitos produtos ou projetos? O valor é sob consulta.</p>
         <div class="price-bar">
           <p><b>Em todos os planos:</b> domínio e hospedagem no 1º ano, cadeado de segurança, site pronto para celular e 30 dias de ajustes grátis.</p>
           <div class="price-go">
-            <div class="total"><span id="sim-lbl">Total para começar</span><b id="sim-total">R$&nbsp;0</b></div>
+            <div class="total"><span id="sim-lbl">Total para começar</span><b id="sim-total">R$&nbsp;650</b></div>
             <button class="btn" type="submit">Pedir pelo WhatsApp
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
@@ -698,7 +695,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <label class="opt" data-lvl-incl="2"><input type="checkbox" name="extra" value="Textos do site" data-v="250">
                 <span class="opt-l"><b>Textos do site</b><span>Conversamos 20 min e escrevemos tudo para você.</span></span><small>+ R$&nbsp;250</small></label>
               <label class="opt" data-lvl-incl="2"><input type="checkbox" name="extra" value="Google Meu Negócio" data-v="150">
-                <span class="opt-l"><b>Google Meu Negócio</b><span>Seu negócio aparecendo no Google Maps.</span></span><small>+ R$&nbsp;150</small></label>
+                <span class="opt-l"><b>Google Meu Negócio</b><span>Perfil criado e configurado no Google Maps.</span></span><small>+ R$&nbsp;150</small></label>
               <label class="opt" data-lvl-incl="2"><input type="checkbox" name="extra" value="E-mail profissional" data-v="100">
                 <span class="opt-l"><b>E-mail profissional</b><span>contato@seunegocio.com.br no seu celular.</span></span><small>+ R$&nbsp;100</small></label>
               <label class="opt" data-discable><input type="checkbox" name="extra" value="Logo" data-v="300">
@@ -718,7 +715,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="sum" aria-live="polite">
               <div class="sum-plan"><b id="s-plan">Página única</b><span id="s-prazo">No ar em 3 dias úteis</span></div>
               <ul class="sum-list" id="s-list"></ul>
-              <div class="sum-row"><span id="sim-once-l">Projeto (pago uma vez)</span><span id="sim-once">R$&nbsp;0</span></div>
+              <div class="sum-row"><span id="sim-once-l">Projeto (pago uma vez)</span><span id="sim-once">R$&nbsp;650</span></div>
               <div class="sum-row" id="sim-mrow" hidden><span id="sim-mrow-l">Manutenção</span><span id="sim-month">R$&nbsp;0/mês</span></div>
               <div class="sum-calc" id="s-calc"></div>
             </div>
@@ -740,15 +737,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="fx-acc-item"><button class="fx-acc-q">Em quanto tempo o site fica pronto?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>A página única fica pronta em 3 dias úteis depois da conversa. O Site + Google leva de 5 a 7 dias úteis. O prazo depende de você mandar logo e informações a tempo.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">De onde vocês são?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
-          <div class="fx-acc-a"><p>A Aura é de Cotia, SP. Quem atende você são o Nicolas e o Rafão, os sócios. Veja o nosso Instagram: <a href="https://instagram.com/dgt.aura" target="_blank" rel="noopener">@dgt.aura</a>.</p></div></div>
+          <div class="fx-acc-a"><p>A Aura é de Cotia, SP. Quem atende você são o Nicolas e o Rafão, os sócios. Veja o nosso Instagram: <a href="https://instagram.com/dgt.aura" target="_blank" rel="noopener" aria-label="Instagram da Aura, @dgt.aura">@dgt.aura</a>.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">Já tenho Instagram ou agenda online. Preciso de site?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
-          <div class="fx-acc-a"><p>O Instagram e a agenda continuam como estão. Quem pesquisa o seu negócio no Google precisa de um endereço para clicar: o site é esse endereço, mostra o que você faz e leva a pessoa até o seu Instagram, a sua agenda ou o seu WhatsApp.</p></div></div>
+          <div class="fx-acc-a"><p>O Instagram, a agenda, o cardápio e o catálogo continuam. O site é o endereço que leva quem pesquisa no Google até eles. A prévia que a gente monta usa só dados públicos do seu negócio.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">Já tenho site. Vocês aproveitam o que existe?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>Sim. Mantemos seu domínio, aproveitamos textos e fotos que funcionam e redirecionamos as páginas antigas para o endereço novo.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">E se eu não gostar?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>Você vê a prévia antes de o site ir ao ar e pede os ajustes: 2 rodadas na Página única e 3 no Site + Google. Depois de publicado, ainda tem 30 dias de ajustes grátis. Nós não prometemos resultado de vendas: o site é a sua vitrine, e o resultado depende do seu negócio.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">Vocês fazem o site sem eu pedir?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
-          <div class="fx-acc-a"><p>Nada vai ao ar sem a sua aprovação. Às vezes montamos uma demonstração para você ver como o seu site ficaria. O link é só para você e a demonstração sai do ar quando você pedir.</p></div></div>
+          <div class="fx-acc-a"><p>O site definitivo só vai ao ar no seu domínio com a sua aprovação. Antes, às vezes montamos uma prévia com dados públicos do seu negócio (Google Maps), num link só seu e fora do Google. Se não quiser, avise e tiramos do ar.</p></div></div>
         <div class="fx-acc-item"><button class="fx-acc-q">O site fica em meu nome?<span class="fx-acc-plus" aria-hidden="true">+</span></button>
           <div class="fx-acc-a"><p>Sim. O domínio é registrado em seu nome e você recebe todos os arquivos do site.</p></div></div>
       </div>
@@ -845,7 +842,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       n1:'Seguir com a gestão',d1:'Seguimos com a gestão da campanha no Meta por R$\u00a0700 por mês. A verba de anúncio é à parte, paga por você.',
       mrow:'Gestão (do 2º mês em diante)',rot:'Gestão depois do 1º mês'}
   };
-  let shown=0,raf;
+  let shown=parseInt((out.textContent||'').replace(/\D/g,''),10)||0,raf;   /* o HTML já traz o total do plano marcado */
   function animate(to){cancelAnimationFrame(raf);const from=shown,t0=performance.now(),dur=reduced?0:600;
     out.classList.add('bump');
     (function step(now){const k=dur?Math.min(1,(now-t0)/dur):1,e=1-Math.pow(1-k,3);shown=Math.round(from+(to-from)*e);out.textContent=brl(shown);

@@ -1,31 +1,36 @@
 Verificação de dado real nos 6 sites do mostruário (tarefas G4 e E5 do PLANO_FUNIL.md)
-Data: 2026-10-15, feita no commit final do branch ciclo2/fase-g
+Data: 2026-10-15, refeita depois da rodada de correções dos revisores (commit final do branch ciclo2/fase-g)
 
 1. Termos reais dos 6 leads
-   Pastas: mostruario/ (html, css, js), index.html, docs/, img/trabalhos/
+   Pastas: mostruario/ (html, css, js), index.html, README.md, tests/, docs/, img/trabalhos/
    Termos: 111 lidos do banco no momento da execução (nome, telefone, whatsapp, endereço, bairro e instagram dos 6 leads, em variantes com e sem acento e formatos de telefone),
    mais marcas, nomes de pessoas, ruas, bairros e perfis que apareciam nas origens. A lista não é gravada aqui porque é o próprio dado real que não pode estar no site público (o repositório é público).
    Comando: grep -rniIFf <lista de termos> <pasta>
    Saída:
-   mostruario/    -> 0 linhas (vazia)
-   index.html     -> 0 linhas (vazia)
-   docs/          -> 0 linhas (vazia)
+   mostruario/ -> 0 linhas (vazia)
+   index.html -> 0 linhas (vazia)
+   README.md -> 0 linhas (vazia)
+   tests/ -> 0 linhas (vazia)
+   docs/ -> 0 linhas (vazia)
    img/trabalhos/ -> 0 linhas (vazia)
 
 2. Conferências de formato (mostruario/)
-   Números de WhatsApp em links wa.me:
-       44 wa.me/5511900000000
+   Links de contato: href só aponta para âncora vazia
+     href com número, tel: ou mapa real: 0
+     âncoras usadas:
+          6 href="#mapa"
+          6 href="#tel"
+         45 href="#wa.me"
    Telefones escritos no texto:
        13 (11) 90000-0000
-   Links tel: distintos:
-        6 tel:+5511900000000
    iframe (mapa real): 0
-   noindex: 0
+   noindex: 0 (os conceitos ficam indexáveis de propósito)
    Links para instagram.com ou facebook.com: 0
    Endereços (só o fictício):
        14 Rua Exemplo, 100
-   Páginas com o aviso 'Projeto conceito feito pela Aura. Negócio fictício.': 6 de 6
+   'sala 3' ou 'sobreloja': 0
+   Páginas com o aviso do rodapé: 6 de 6; com a faixa do topo: 6 de 6; com "(projeto conceito)" no título: 6 de 6
 
 3. Peso
-   mostruario/: 3624 KB em disco, 3518 KB de arquivos (limite 25 MB)
-   img/trabalhos/ (8 capas e 2 miniaturas WebP): 296 KB; a maior capa tem 47 KB (limite 120 KB)
+   mostruario/: 3624 KB em disco, 3515 KB de arquivos (limite 25 MB)
+   img/trabalhos/ (8 capas 1x e 2x, mais 2 miniaturas, WebP): 1032 KB; a maior capa tem 111 KB (limite 120 KB)

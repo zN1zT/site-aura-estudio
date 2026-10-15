@@ -1,10 +1,11 @@
 /* Projeto conceito (mostruário da Aura): aviso no rodapé, mapa ilustrativo e aviso ao tocar em contato.
    Compartilhado pelos sites de /mostruario/<slug>/. Herda fonte e cor de cada site. */
-.cn-aviso{display:block;flex:1 1 100%;width:100%;margin:22px 0 0;padding-top:14px;border-top:1px solid color-mix(in srgb,currentColor 22%,transparent);font-size:.8125rem;line-height:1.5;font-weight:400;letter-spacing:0;text-transform:none;text-align:left;opacity:.85}
+.cn-aviso{display:block;flex:1 1 100%;width:100%;margin:22px 0 0;padding-top:14px;border-top:1px solid color-mix(in srgb,currentColor 22%,transparent);font-size:.8125rem;line-height:1.5;font-weight:400;letter-spacing:0;text-transform:none;text-align:left}
 .cn-aviso a{display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:underline;text-underline-offset:3px;margin-left:6px;white-space:nowrap}
 .foot-links a,.loc-info dd a{display:inline-flex;align-items:center;min-height:44px}
 .logo{min-height:44px}
-.map,.where-map,.c-map{position:relative;min-height:320px}
+.map,.where-map,.c-map{position:relative;min-height:320px;min-width:0;max-width:100%}
+@media(max-width:700px){.map{width:100%;aspect-ratio:auto}}
 .cn-map{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-start;background:rgba(127,127,127,.16);color:inherit;overflow:hidden}
 .cn-map svg{position:absolute;inset:0;width:100%;height:100%;color:currentColor;opacity:.5}
 .cn-map span{position:relative;margin:16px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.92);color:#171310;font-size:.8125rem;line-height:1.3;font-weight:500;letter-spacing:0;text-transform:none}
@@ -18,3 +19,10 @@
 .cn-btns button{background:transparent;color:#171310}
 .cn-btns a:active,.cn-btns button:active{transform:scale(.97)}
 .cn-btns a:focus-visible,.cn-btns button:focus-visible{outline:2px solid #8a6a3f;outline-offset:3px}
+
+/* faixa fixa no topo: avisa que o negócio é fictício; empurra a página e o menu fixo 26 px */
+.cn-faixa{position:fixed;top:0;left:0;right:0;z-index:9998;height:26px;display:flex;align-items:center;justify-content:center;padding:0 12px;background:#171310;color:#f3efe4;font-size:12px;line-height:1;font-weight:500;letter-spacing:.02em;text-transform:none;text-align:center;white-space:nowrap}
+body{padding-top:26px}
+.nav{margin-top:26px}
+/* alvos de toque de 44 px nos contatos e links dos conceitos */
+dd a,address a,.info a,.c-list a,.where-list a,.foot a{display:inline-flex;align-items:center;min-height:44px}

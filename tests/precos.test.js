@@ -24,7 +24,6 @@ test('simulador: data-v, data-m, data-prazo e preço riscado batem com precos.js
     assert.equal(+attrs.m, p.mensal, p.nome + ' data-m');
     assert.equal(attrs.prazo, p.prazo, p.nome + ' prazo');
     if (p.preco_de) assert.equal(+attrs['v-de'], p.preco_de, p.nome + ' data-v-de');
-    if (p.separados) assert.equal(+attrs.sep, p.separados, p.nome + ' data-sep');
     assert.equal(attrs.gestao === '1', p.mensal_tipo === 'gestao', p.nome + ' gestão');
   }
 });
@@ -37,19 +36,18 @@ test('texto visível dos planos mostra o mesmo preço (e o riscado e o "separado
     const texto = preco[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
     assert.ok(texto.includes('R$ ' + brl(p.preco)) || texto.replace(/\s/g, '').includes('R$' + brl(p.preco)), p.nome + ' mostra ' + brl(p.preco) + ' (' + texto + ')');
     if (p.preco_de) assert.ok(texto.includes('R$ ' + brl(p.preco_de)), p.nome + ' mostra o riscado ' + brl(p.preco_de));
-    if (p.separados) assert.ok(corpo.includes('Separados: R$ ' + brl(p.separados)), p.nome + ' mostra "Separados"');
   }
 });
 
-test('"separados" = Site + Google de tabela + 1º mês de gestão (sem inventar preço de configuração)', () => {
-  const c = precos.conta_separados;
+test('sem "separados" (a configuração da campanha não tem preço fixado) e o riscado é o preço cobrado até 15/10', () => {
+  assert.ok(!/separados/i.test(html), 'sobrou "separados" no HTML');
+  assert.ok(!/data-sep/.test(html), 'sobrou data-sep');
+  assert.ok(!/separados|conta_separados/i.test(JSON.stringify(precos)), 'sobrou "separados" no precos.json');
   const sg = precos.planos.find((p) => p.id === 'site_google');
-  const ads = precos.planos.find((p) => p.id === 'site_google_anuncios');
-  assert.equal(c.site_google_tabela, sg.preco_de);
-  assert.equal(c.primeiro_mes_gestao, ads.mensal);
-  assert.equal(c.total, c.site_google_tabela + c.primeiro_mes_gestao);
-  assert.equal(ads.separados, c.total);
-  assert.ok(ads.preco < ads.separados);
+  const pagina = precos.planos.find((p) => p.id === 'pagina');
+  assert.equal(pagina.preco_de, 1200);
+  assert.equal(sg.preco_de, 2800);
+  assert.ok(html.includes('Inclui a campanha configurada e o 1º mês de gestão; depois R$ 700/mês; verba de anúncio à parte.'));
 });
 
 test('extras do simulador batem com precos.json', () => {
@@ -68,6 +66,8 @@ test('o formulário de lead lista e a função aceita o nome de cada plano; nada
     assert.ok(html.includes("'" + p.nome + "'"), 'lista PLANOS do formulário sem ' + p.nome);
   }
   assert.ok(!/31\/10|data-launch|preço de lançamento/i.test(html), 'sobrou o selo/contador de lançamento');
+  const total = html.match(/<b id="sim-total">([^<]+)<\/b>/);
+  assert.equal(total && total[1], 'R$ ' + brl(precos.planos[0].preco), '#sim-total deve nascer com o preço do plano marcado, sem depender de JS');
   assert.ok(!/Catálogo/.test(html.replace(/<!--[\s\S]*?-->/g, '').match(/<fieldset class="plans"[\s\S]*?<\/fieldset>/)[0]), 'Catálogo voltou para os planos');
 });
 
@@ -85,4 +85,21 @@ test('mostruário: 8 cards (2 no ar + 6 conceito), cada conceito abre uma pasta 
   }
   assert.ok(html.includes("dl('mostruario_abriu'"), 'evento mostruario_abriu não está ligado');
   assert.ok(html.includes("track('ViewContent',{content_name:'Investimento'})"), 'ViewContent de #investimento sumiu');
+});
+
+test('conceitos: aviso no topo, "(projeto conceito)" no título, links sem número, mapa, endereço ou noindex', async () => {
+  const { readFileSync, existsSync } = await import('node:fs');
+  const slugs = ['taco-e-navalha', 'pizzaria-dona-zelia', 'piloto-77-oficina-de-motos', 'estudio-lumiar', 'otica-claridade', 'pelucia-spa-pet'];
+  for (const s of slugs) {
+    const h = readFileSync(new URL('../mostruario/' + s + '/index.html', import.meta.url), 'utf8');
+    assert.match(h, /<title>[^<]*\(projeto conceito\)[^<]*<\/title>/, s + ' título');
+    assert.ok(h.includes('class="cn-faixa"'), s + ' faixa do topo');
+    assert.ok(h.includes('Projeto conceito feito pela Aura. Negócio fictício.'), s + ' aviso do rodapé');
+    assert.ok(!/href="(https?:\/\/wa\.me|tel:|https?:\/\/www\.google\.com\/maps)/.test(h), s + ' tem link real de contato ou mapa');
+    assert.ok(!/<iframe|noindex/i.test(h), s + ' tem iframe ou noindex');
+    assert.ok(!/sala 3|sobreloja/.test(h), s + ' resto de endereço');
+  }
+  for (const f of ['eduardo-stephano', 'lf-esquadrias', ...slugs]) {
+    assert.ok(existsSync(new URL('../img/trabalhos/' + f + '-2x.webp', import.meta.url)), 'falta a capa 2x de ' + f);
+  }
 });

@@ -95,16 +95,16 @@ a chamada à API de Conversões tem limite de 1,5 s e nunca segura a resposta; o
 
 ## Preços (um lugar só: `precos.json`)
 
-A tabela do site (3 planos, extras, "separados") está em `precos.json`. O `index.html` repete os valores nos `data-*` do simulador e no texto dos planos, e o painel (`CATALOGO_PADRAO`) deve copiar o mesmo arquivo.
-`tests/precos.test.js` falha se o HTML ficar diferente do JSON. Para mudar um preço: edite `precos.json`, depois o `index.html` (data-v, data-v-de, data-m, data-sep, texto do plano, FAQ, hero e "Em números") e rode `npm test`.
-O "separados" do plano 3 é a soma de itens com preço publicado (Site + Google de tabela R$ 3.400 mais o 1º mês de gestão R$ 700); a configuração da campanha não tem preço e não entra. A conta está em `docs/PLANO_FUNIL.md`, D18, e em `docs/site/FONTES.md` do painel.
+A tabela do site (3 planos e extras) está em `precos.json`. O `index.html` repete os valores nos `data-*` do simulador e no texto dos planos, e o painel (`CATALOGO_PADRAO`) deve copiar o mesmo arquivo.
+`tests/precos.test.js` falha se o HTML ficar diferente do JSON. Para mudar um preço: edite `precos.json`, depois o `index.html` (data-v, data-v-de, data-m, texto do plano, FAQ, hero e "Em números") e rode `npm test`.
+O valor riscado de cada plano é o preço que o site cobrava até 15/10 (R$ 1.200 na Página única, R$ 2.800 no Site + Google). O plano 3 não tem preço riscado nem "separados": a configuração da campanha ainda não tem preço fixado, então ele só diz o que inclui. `precos.json` não é carregado pelo site e fica fora do deploy (`.vercelignore`).
 Não há selo de "preço de lançamento": se um dia houver prazo, ele tem que ser verdadeiro e vir do `precos.json`.
 
 ## Mostruário (`/mostruario/<slug>/`)
 
 Seis projetos conceito, feitos a partir de demos da prospecção com **tudo que é do negócio real trocado** (nome, endereço, telefone, Instagram, mapa, avaliações, pessoas). Cada pasta tem `index.html` e `img/`; os estilos, o `fx.js` e o aviso de contato vêm de `assets/` e de `mostruario/conceito.css` e `conceito.js`.
 
-- Toda página diz "Projeto conceito feito pela Aura. Negócio fictício." no rodapé. Toque em WhatsApp, telefone, mapa ou envio de formulário abre um aviso com o caminho para o plano da Aura (nenhum contato é real: 11 90000-0000).
+- Toda página tem uma faixa no topo ("Projeto conceito da Aura · negócio fictício"), "(projeto conceito)" no título e o aviso "Projeto conceito feito pela Aura. Negócio fictício." no rodapé. Os links de WhatsApp, telefone e mapa são âncoras vazias (`#wa.me`, `#tel`, `#mapa`; o `qa.mjs` só conta o ponto de contato se o href tiver `wa.me`): tocar neles ou enviar um formulário abre um aviso com o caminho para o plano da Aura. Nenhum contato é real (o texto mostra 11 90000-0000).
 - Não carregam Pixel nem GTM: um conceito nunca dispara `Lead` ou `Contact`.
 - Para trocar ou acrescentar um: crie a pasta, rode `node ~/.claude/skills/site-studio/scripts/qa.mjs mostruario/<slug>/index.html qa/mostruario/<slug>` (sem FALHAS), faça a capa (WebP até 120 KB, 704 x 440) em `img/trabalhos/<slug>.webp`, e inclua o card em `#trabalhos`. `tests/precos.test.js` confere que os 6 cards apontam para pastas e capas que existem.
 - **Nunca** copie uma demo com dado real. Antes de subir, confira que não sobrou nome, telefone ou endereço do lead (`docs/site/mostruario-grep.txt` mostra como foi feito). O repositório é público.

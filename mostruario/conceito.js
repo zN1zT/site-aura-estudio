@@ -22,7 +22,7 @@
     else dlg.setAttribute('open', '');
   }
   document.addEventListener('click', function (e) {
-    var a = e.target && e.target.closest ? e.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href*="google.com/maps"]') : null;
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="wa.me"],a[href="#tel"],a[href="#mapa"],a[href^="tel:"],a[href*="google.com/maps"]') : null;
     if (!a) return;
     e.preventDefault(); e.stopPropagation(); aviso();
   }, true);

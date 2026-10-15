@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ótica Claridade | Óculos na Zona Oeste de São Paulo</title>
+<title>Ótica Claridade (projeto conceito) | Óculos</title>
 <meta name="description" content="Ótica Claridade, negócio fictício na Zona Oeste de São Paulo: armações de grau, óculos de sol e lentes. Projeto conceito da Aura.">
 <meta name="theme-color" content="#eef1f3">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ótica Claridade | Óculos na Zona Oeste de São Paulo">
+<meta property="og:title" content="Ótica Claridade (projeto conceito) | Óculos">
 <meta property="og:description" content="Armações a partir de R$ 129, óculos de sol e lentes. Projeto conceito feito pela Aura, negócio fictício.">
 <meta property="og:image" content="https://sitecomaura.com/mostruario/otica-claridade/img/og.jpg">
 <meta property="og:url" content="https://sitecomaura.com/mostruario/otica-claridade/">
@@ -255,8 +255,16 @@ footer{background:var(--dark);color:#9fb0bb;padding:0 0 100px;margin-inline:clam
 @media (prefers-contrast:more){:root{--line:rgba(14,27,37,.45)}}
 </style>
 <link rel="stylesheet" href="../conceito.css">
+<style>/* ajustes do conceito: contraste AA e layout */
+:root{--mute:#56636d;--accent-deep:#9c520c}
+.cat h2 em,.quote-l h2 em,.faq h2 em,.hours h2 em{color:var(--accent-deep)}
+.cat-tabs button span{opacity:1}
+.glass{background:rgba(14,27,37,.72)}
+.proof b{letter-spacing:-.03em;word-spacing:.2em}
+</style>
 </head>
 <body>
+<div class="cn-faixa" role="note">Projeto conceito da Aura · negócio fictício</div>
 <div data-progress></div>
 <nav class="nav" data-nav="hide" aria-label="Principal">
   <a href="#topo" class="logo" aria-label="Ótica Claridade, início">
@@ -264,7 +272,7 @@ footer{background:var(--dark);color:#9fb0bb;padding:0 0 100px;margin-inline:clam
   <div class="nav-links" id="menu">
     <a href="#produtos">Graduados, solares e lentes</a><a href="#orcamento">Orçamento</a><a href="#horario">Horário</a><a href="#contato">Onde fica</a>
   </div>
-  <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20%C3%93tica%20Claridade%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Falar no WhatsApp
+  <a class="btn" href="#wa.me" target="_blank" rel="noopener">Falar no WhatsApp
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   <button class="nav-toggle" data-nav-toggle aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path class="l1" d="M4 9h16"/><path class="l2" d="M4 15h16"/></svg></button>
@@ -281,7 +289,7 @@ footer{background:var(--dark);color:#9fb0bb;padding:0 0 100px;margin-inline:clam
       <h1 data-split>Óculos com preço <em>acessível</em> na Zona Oeste.</h1>
       <p>Ótica Claridade: armações de grau, óculos de sol e lentes. Chame no WhatsApp e tire suas dúvidas antes de vir.</p>
       <div class="h2-cta">
-        <a class="btn accent" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20%C3%93tica%20Claridade%20e%20quero%20ver%20arma%C3%A7%C3%B5es." target="_blank" rel="noopener" data-magnetic="0.2">Falar no WhatsApp
+        <a class="btn accent" href="#wa.me" target="_blank" rel="noopener" data-magnetic="0.2">Falar no WhatsApp
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn ghost" href="#horario">Ver horário</a>
       </div>
@@ -307,7 +315,7 @@ footer{background:var(--dark);color:#9fb0bb;padding:0 0 100px;margin-inline:clam
   <div class="wrap">
     <div class="cat-head">
       <div><p class="eyebrow">O que você encontra</p><h2 data-split>Três jeitos de <em>enxergar melhor.</em></h2></div>
-      <a class="btn ghost" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Quero%20saber%20o%20que%20voc%C3%AAs%20t%C3%AAm%20dispon%C3%ADvel." target="_blank" rel="noopener">Perguntar pelo WhatsApp</a>
+      <a class="btn ghost" href="#wa.me" target="_blank" rel="noopener">Perguntar pelo WhatsApp</a>
     </div>
     <div class="cat-grid" data-tabs>
       <div class="cat-tabs" role="tablist" aria-label="Categorias">
@@ -319,17 +327,17 @@ footer{background:var(--dark);color:#9fb0bb;padding:0 0 100px;margin-inline:clam
         <article class="panel" data-tab-item="grau">
           <picture><source srcset="img/graduados.webp" type="image/webp"><img src="img/graduados.webp" width="900" height="675" loading="lazy" decoding="async" alt="Armação de óculos de grau com aro metálico e topo marrom, sobre um livro branco"></picture>
           <div><div><h3>Armações de grau</h3><p>Escolha a armação e conte da sua receita pelo WhatsApp. As armações começam em R$ 129.</p></div>
-            <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Quero%20ver%20arma%C3%A7%C3%B5es%20de%20grau." target="_blank" rel="noopener">Quero ver armações<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+            <a class="btn" href="#wa.me" target="_blank" rel="noopener">Quero ver armações<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
         </article>
         <article class="panel" data-tab-item="sol">
           <picture><source srcset="img/solares.webp" type="image/webp"><img src="img/solares.webp" width="900" height="675" loading="lazy" decoding="async" alt="Prateleiras com vários óculos de sol em fileiras"></picture>
           <div><div><h3>Óculos de sol</h3><p>Modelos solares para provar na loja. Pergunte pelos que estão disponíveis agora.</p></div>
-            <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Quero%20ver%20%C3%B3culos%20de%20sol." target="_blank" rel="noopener">Quero ver os solares<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+            <a class="btn" href="#wa.me" target="_blank" rel="noopener">Quero ver os solares<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
         </article>
         <article class="panel" data-tab-item="lente">
           <picture><source srcset="img/lentes.webp" type="image/webp"><img src="img/lentes.webp" width="900" height="675" loading="lazy" decoding="async" alt="Mãos seguram uma armação diante de uma tabela de letras, que fica nítida pela lente"></picture>
           <div><div><h3>Lentes</h3><p>A ótica tem laboratório próprio. Pergunte pelas opções de lentes para a sua receita.</p></div>
-            <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Quero%20saber%20sobre%20lentes." target="_blank" rel="noopener">Perguntar sobre lentes<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+            <a class="btn" href="#wa.me" target="_blank" rel="noopener">Perguntar sobre lentes<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
         </article>
       </div>
     </div>
@@ -342,7 +350,7 @@ footer{background:var(--dark);color:#9fb0bb;padding:0 0 100px;margin-inline:clam
       <p class="eyebrow">Arraste a linha</p>
       <h2 data-split>Do borrão<br>ao <em>nítido.</em></h2>
       <p>Se as letras já saem do foco, vale conversar. Chame no WhatsApp e combine a sua ida à loja.</p>
-      <div class="h2-cta" style="margin-top:28px"><a class="btn light" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Quero%20combinar%20uma%20ida%20%C3%A0%20loja." target="_blank" rel="noopener">Combinar minha ida
+      <div class="h2-cta" style="margin-top:28px"><a class="btn light" href="#wa.me" target="_blank" rel="noopener">Combinar minha ida
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
     <div class="cmp-r">
@@ -367,7 +375,7 @@ footer{background:var(--dark);color:#9fb0bb;padding:0 0 100px;margin-inline:clam
       <figure data-reveal="clip"><picture><source srcset="img/pilha.webp" type="image/webp"><img src="img/pilha.webp" width="1100" height="733" loading="lazy" decoding="async" alt="Vista de cima de muitas armações de óculos organizadas em fileiras"></picture><figcaption>Imagem ilustrativa</figcaption></figure>
     </div>
     <div class="quote-r" data-reveal="left">
-      <form class="form" data-wa="5511900000000" data-wa-intro="Olá! Vim pelo site da Ótica Claridade e gostaria de um orçamento.">
+      <form class="form" data-wa="0" data-wa-intro="Olá! Vim pelo site da Ótica Claridade e gostaria de um orçamento.">
         <h3>Peça pelo WhatsApp</h3>
         <label class="field"><span>Seu nome</span><input name="nome" data-label="Nome" autocomplete="given-name" placeholder="Como posso te chamar"></label>
         <div class="row2">
@@ -430,15 +438,15 @@ footer{background:var(--dark);color:#9fb0bb;padding:0 0 100px;margin-inline:clam
     <div class="contact-grid">
       <div class="c-info">
         <dl>
-          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20%C3%93tica%20Claridade." target="_blank" rel="noopener">(11) 90000-0000</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="#wa.me" target="_blank" rel="noopener">(11) 90000-0000</a></dd></div>
           <div><dt>Endereço</dt><dd>Rua Exemplo, 100<br>Zona Oeste<br>São Paulo - SP</dd></div>
           <div><dt>Horário</dt><dd>Seg a sex, 9h às 18h<br>Sábado, 9h às 14h</dd></div>
         </dl>
         <div class="c-actions">
-          <a class="btn accent" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20%C3%93tica%20Claridade%20e%20quero%20falar%20com%20voc%C3%AAs." target="_blank" rel="noopener">Chamar no WhatsApp
+          <a class="btn accent" href="#wa.me" target="_blank" rel="noopener">Chamar no WhatsApp
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn ghost on-dark" href="tel:+5511900000000">Ligar</a>
-          <a class="btn ghost on-dark" href="https://www.google.com/maps" target="_blank" rel="noopener">Como chegar</a>
+          <a class="btn ghost on-dark" href="#tel">Ligar</a>
+          <a class="btn ghost on-dark" href="#mapa" target="_blank" rel="noopener">Como chegar</a>
         </div>
       </div>
       <div class="c-map"><div class="cn-map" role="img" aria-label="Mapa ilustrativo: aqui entra o mapa do endereço do seu negócio"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M-10 70 L410 96 M-10 160 L410 138 M-10 236 L410 258 M84 -10 L112 310 M206 -10 L192 310 M318 -10 L338 310 M-10 14 L150 310 M250 -10 L410 190"/><circle cx="206" cy="148" r="22" fill="currentColor" fill-opacity=".18"/><circle cx="206" cy="148" r="8" fill="currentColor"/></svg><span>Mapa ilustrativo</span></div></div>
@@ -454,7 +462,7 @@ footer{background:var(--dark);color:#9fb0bb;padding:0 0 100px;margin-inline:clam
   </div></div>
 </footer>
 
-<a class="wa" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20%C3%93tica%20Claridade." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+<a class="wa" href="#wa.me" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
   <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.3 1.3-1.9 1.3-.5 0-1.1.2-3.6-.8-3-1.2-5-4.3-5.1-4.5-.2-.2-1.3-1.7-1.3-3.2S6.5 6.8 6.8 6.5c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.5c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.2.1.8-.1 1.4z"/></svg></a>
 
 <script src="../../assets/fx.js" defer></script>

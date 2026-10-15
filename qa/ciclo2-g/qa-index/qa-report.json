@@ -1,12 +1,12 @@
 {
  "url": "file:///private/tmp/claude-501/-Users-znizt-Library-Application-Support-Claude-scratch-workspaces-869e7afb-9dd1-4551-aee1-a75dd4914a8a-a79eed6a-8982-4a2c-a2cd-4fda10a255da-scratch-2026-10-13-f9bb71/449353c0-8afd-4e70-89e2-242f0a52978f/scratchpad/site-g/index.html",
- "when": "2026-10-15T06:57:20.171Z",
+ "when": "2026-10-15T07:48:08.219Z",
  "desktop": {
   "audit": {
    "emoji": [],
    "overflowX": 0,
    "fonts": {
-    "Geist": 285,
+    "Geist": 276,
     "Fraunces": 88
    },
    "genericFonts": [],
@@ -44,12 +44,12 @@
     "www.googletagmanager.com/gtm.js?id=GTM-THT3FH7R",
     "file:///private/tmp/claude-501/-Users-znizt-Library-Application-Suppor"
    ],
-   "weightKB": 847
+   "weightKB": 872
   },
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 7330,
+  "height": 7287,
   "shots": 9
  },
  "mobile": {
@@ -57,7 +57,7 @@
    "emoji": [],
    "overflowX": 0,
    "fonts": {
-    "Geist": 285,
+    "Geist": 276,
     "Fraunces": 88
    },
    "genericFonts": [],
@@ -98,13 +98,13 @@
     "file:///private/tmp/claude-501/-Users-znizt-Library-Application-Suppor"
    ],
    "weightKB": 257,
-   "smallTargets": 2,
+   "smallTargets": 1,
    "tinyText": 0
   },
   "errors": [],
   "failed": [],
   "thirdParty": [],
-  "height": 9966,
+  "height": 9849,
   "shots": 13
  },
  "result": [
@@ -174,7 +174,7 @@
   ],
   [
    "OK   ",
-   "alvos de toque pequenos no mobile: 2"
+   "alvos de toque pequenos no mobile: 1"
   ],
   [
    "OK   ",
@@ -186,7 +186,7 @@
   ],
   [
    "OK   ",
-   "peso carregado (desktop, rolando tudo): 847 KB"
+   "peso carregado (desktop, rolando tudo): 872 KB"
   ]
  ]
 }
