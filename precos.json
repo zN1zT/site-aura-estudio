@@ -1,0 +1,74 @@
+{
+  "atualizado_em": "2026-10-15",
+  "fonte": "Tabela de preços do sitecomaura.com (Fase G, decisões D12 e D18 de docs/PLANO_FUNIL.md). index.html repete estes valores nos data-* do simulador e no texto dos planos; tests/precos.test.js confere os dois.",
+  "planos": [
+    {
+      "id": "pagina",
+      "nome": "Página única",
+      "preco": 650,
+      "preco_de": 1200,
+      "mensal": 80,
+      "mensal_tipo": "manutencao",
+      "prazo": "3 dias úteis"
+    },
+    {
+      "id": "site_google",
+      "nome": "Site + Google",
+      "preco": 1500,
+      "preco_de": 3400,
+      "mensal": 150,
+      "mensal_tipo": "manutencao",
+      "prazo": "5 a 7 dias úteis"
+    },
+    {
+      "id": "site_google_anuncios",
+      "nome": "Site + Google + Anúncios",
+      "preco": 2500,
+      "separados": 4100,
+      "mensal": 700,
+      "mensal_tipo": "gestao",
+      "primeiro_mes_incluso": true,
+      "prazo": "5 a 7 dias úteis"
+    }
+  ],
+  "extras": [
+    {
+      "id": "textos",
+      "nome": "Textos do site",
+      "preco": 250
+    },
+    {
+      "id": "gmn",
+      "nome": "Google Meu Negócio",
+      "preco": 150
+    },
+    {
+      "id": "email",
+      "nome": "E-mail profissional",
+      "preco": 100
+    },
+    {
+      "id": "logo",
+      "nome": "Criação de logo",
+      "preco": 300,
+      "valor_html": "Logo"
+    },
+    {
+      "id": "pagina_extra",
+      "nome": "Página a mais",
+      "preco": 200,
+      "valor_html": "Página extra"
+    },
+    {
+      "id": "ingles",
+      "nome": "Versão em inglês",
+      "preco": 300
+    }
+  ],
+  "conta_separados": {
+    "site_google_tabela": 3400,
+    "primeiro_mes_gestao": 700,
+    "total": 4100,
+    "nota": "Soma de itens com preço publicado. A configuração da campanha não tem preço de tabela e não entra na soma."
+  }
+}

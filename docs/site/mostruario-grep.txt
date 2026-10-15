@@ -1,0 +1,27 @@
+Verificação de dado real nos 6 sites do mostruário (tarefas G4 e E5 do PLANO_FUNIL.md)
+Data: 2026-10-15
+
+1. Termos reais dos 6 leads
+   Pastas: mostruario/ (html, css, js), index.html, docs/, img/trabalhos/
+   Termos: 111, lidos do banco no momento da execução (nome, telefone, whatsapp, endereço, bairro e instagram dos 6 leads, em variantes com e sem acento e formatos de telefone),
+   mais marcas, nomes de pessoas, ruas, bairros e perfis que apareciam nas origens. A lista não é gravada aqui porque é o próprio dado real que não pode estar no site público.
+   Comando: grep -rniIFf <lista de termos> <pasta>
+   Saída:
+   (vazia: 0 linhas)
+
+2. Conferências de formato (mostruario/)
+   Números de WhatsApp em links wa.me:
+       44 wa.me/5511900000000
+   Telefones escritos no texto:
+       13 (11) 90000-0000
+   Links tel: distintos:
+        6 tel:+5511900000000
+   iframe (mapa real): 0
+   noindex: 0
+   Links para instagram.com ou facebook.com: 0
+   Endereços: só 'Rua Exemplo, 100' e zona genérica:
+       14 Rua Exemplo, 100
+   Páginas com o aviso 'Projeto conceito feito pela Aura. Negócio fictício.':        6 de 6
+
+3. Peso
+   mostruario/: 5416 KB (limite 25 MB)

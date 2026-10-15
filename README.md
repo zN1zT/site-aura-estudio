@@ -24,6 +24,8 @@ Não há etapa de build: o `package.json` só declara a dependência da função
 | `Contact` | clicou em qualquer link `wa.me` ou no botão flutuante | `index.html` |
 | `Lead` | a função aceitou o formulário | navegador (`eventID`) **e** API de Conversões (`event_id` igual): o Meta deduplica |
 
+Para o GTM, o clique num card da seção Trabalhos empurra `mostruario_abriu` no `dataLayer` (campos `mostruario_slug`, `mostruario_tipo` = `no_ar` ou `conceito`, `mostruario_nicho`). Não vai para o Meta.
+
 O `Lead` leva `content_name` (de onde veio), `value` (preço do plano escolhido, lido do próprio simulador) e `currency: BRL`.
 
 ### Variáveis de ambiente (Vercel, projeto `site-aura-estudio`)
@@ -73,7 +75,7 @@ O token vai no corpo do POST, não na URL. IP não é enviado nem gravado. Se o 
 ```
 
 - Valida: nome 2 a 80 caracteres; celular BR (11 dígitos, DDD válido, 9 na frente); tipo 2 a 60; plano na lista fechada
-  (`Ainda não sei`, `Página única`, `Site institucional`, `Catálogo ou portfólio`); `aceite` igual a `true`.
+  (`Ainda não sei`, `Página única`, `Site + Google`, `Site + Google + Anúncios`; `Site institucional` e `Catálogo ou portfólio` seguem aceitos por causa de abas abertas antes da nova tabela); `aceite` igual a `true`.
 - Inválido: `400` com `{ ok:false, erros:{campo:mensagem} }`. Mais de 10 pedidos por minuto por IP: `429`.
 - Válido: grava `leads/AAAA-MM-DD/<timestamp>-<id>.json` (dia em horário de Brasília) e responde
   `{ ok:true, id, event_id, capi }`, com `capi` = `enviado`, `sem token` ou `falhou`.
@@ -90,6 +92,27 @@ curl -H "Authorization: Bearer $SITE_LEADS_TOKEN" "https://sitecomaura.com/api/l
 
 Segurança do POST: só aceita `application/json`; recusa `Origin` de outro site (`localhost` só vale fora de produção);
 a chamada à API de Conversões tem limite de 1,5 s e nunca segura a resposta; o lead é gravado antes.
+
+## Preços (um lugar só: `precos.json`)
+
+A tabela do site (3 planos, extras, "separados") está em `precos.json`. O `index.html` repete os valores nos `data-*` do simulador e no texto dos planos, e o painel (`CATALOGO_PADRAO`) deve copiar o mesmo arquivo.
+`tests/precos.test.js` falha se o HTML ficar diferente do JSON. Para mudar um preço: edite `precos.json`, depois o `index.html` (data-v, data-v-de, data-m, data-sep, texto do plano, FAQ, hero e "Em números") e rode `npm test`.
+O "separados" do plano 3 é a soma de itens com preço publicado (Site + Google de tabela R$ 3.400 mais o 1º mês de gestão R$ 700); a configuração da campanha não tem preço e não entra. A conta está em `docs/PLANO_FUNIL.md`, D18, e em `docs/site/FONTES.md` do painel.
+Não há selo de "preço de lançamento": se um dia houver prazo, ele tem que ser verdadeiro e vir do `precos.json`.
+
+## Mostruário (`/mostruario/<slug>/`)
+
+Seis projetos conceito, feitos a partir de demos da prospecção com **tudo que é do negócio real trocado** (nome, endereço, telefone, Instagram, mapa, avaliações, pessoas). Cada pasta tem `index.html` e `img/`; os estilos, o `fx.js` e o aviso de contato vêm de `assets/` e de `mostruario/conceito.css` e `conceito.js`.
+
+- Toda página diz "Projeto conceito feito pela Aura. Negócio fictício." no rodapé. Toque em WhatsApp, telefone, mapa ou envio de formulário abre um aviso com o caminho para o plano da Aura (nenhum contato é real: 11 90000-0000).
+- Não carregam Pixel nem GTM: um conceito nunca dispara `Lead` ou `Contact`.
+- Para trocar ou acrescentar um: crie a pasta, rode `node ~/.claude/skills/site-studio/scripts/qa.mjs mostruario/<slug>/index.html qa/mostruario/<slug>` (sem FALHAS), faça a capa (WebP até 120 KB, 704 x 440) em `img/trabalhos/<slug>.webp`, e inclua o card em `#trabalhos`. `tests/precos.test.js` confere que os 6 cards apontam para pastas e capas que existem.
+- **Nunca** copie uma demo com dado real. Antes de subir, confira que não sobrou nome, telefone ou endereço do lead (`docs/site/mostruario-grep.txt` mostra como foi feito). O repositório é público.
+
+## Prova real (faixa "sites no ar", resultados e depoimentos)
+
+A faixa abaixo do hero mostra só os sites que já estão públicos (Eduardo e LF). O bloco de **resultados** e **depoimentos** está comentado no `index.html` (procure "RESULTADOS E DEPOIMENTOS"), com `[COLCHETES]` no lugar dos dados e o CSS pronto (`.pf-res`, `.depo`).
+Só descomente com o print do ok do cliente em `docs/site/autorizacoes/` (no repositório do painel) e a linha dele marcada como "ok recebido" em `docs/site/FONTES.md`. Sem os dois, nada de número, nome, logo ou frase de cliente.
 
 ## Privacidade
 
