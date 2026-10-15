@@ -5,8 +5,9 @@ import { createHash, timingSafeEqual } from 'node:crypto';
 export const PIXEL_ID = '1435927114558830';
 export const CAPI_VERSAO = 'v21.0';
 
-/* lista fechada: os nomes são os mesmos dos planos do simulador (index.html, input[name=tipo]) */
-export const PLANOS = ['Ainda não sei', 'Página única', 'Site institucional', 'Catálogo ou portfólio'];
+/* lista fechada: os nomes são os mesmos dos planos do simulador (index.html, input[name=tipo]; precos.json).
+   "Site institucional" e "Catálogo ou portfólio" são dos planos antigos: seguem aceitos para abas abertas antes da nova tabela. */
+export const PLANOS = ['Ainda não sei', 'Página única', 'Site + Google', 'Site + Google + Anúncios', 'Site institucional', 'Catálogo ou portfólio'];
 export const FONTES = ['Simulador de preco', 'Contato', 'Botao flutuante'];
 
 /* DDDs em uso no Brasil */

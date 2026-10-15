@@ -1,0 +1,67 @@
+{
+  "atualizado_em": "2026-10-15",
+  "fonte": "Tabela de preços do sitecomaura.com (Fase G, decisões D12 e D18 de docs/PLANO_FUNIL.md). O riscado de cada plano é o preço que o site cobrava até 15/10 (R$ 1.200 e R$ 2.800). index.html repete estes valores nos data-* do simulador e no texto dos planos; tests/precos.test.js confere os dois. Este arquivo não é carregado pelo site (fica fora do deploy, ver .vercelignore).",
+  "planos": [
+    {
+      "id": "pagina",
+      "nome": "Página única",
+      "preco": 650,
+      "preco_de": 1200,
+      "mensal": 80,
+      "mensal_tipo": "manutencao",
+      "prazo": "3 dias úteis"
+    },
+    {
+      "id": "site_google",
+      "nome": "Site + Google",
+      "preco": 1500,
+      "preco_de": 2800,
+      "mensal": 150,
+      "mensal_tipo": "manutencao",
+      "prazo": "5 a 7 dias úteis"
+    },
+    {
+      "id": "site_google_anuncios",
+      "nome": "Site + Google + Anúncios",
+      "preco": 2500,
+      "mensal": 700,
+      "mensal_tipo": "gestao",
+      "primeiro_mes_incluso": true,
+      "prazo": "5 a 7 dias úteis"
+    }
+  ],
+  "extras": [
+    {
+      "id": "textos",
+      "nome": "Textos do site",
+      "preco": 250
+    },
+    {
+      "id": "gmn",
+      "nome": "Google Meu Negócio",
+      "preco": 150
+    },
+    {
+      "id": "email",
+      "nome": "E-mail profissional",
+      "preco": 100
+    },
+    {
+      "id": "logo",
+      "nome": "Criação de logo",
+      "preco": 300,
+      "valor_html": "Logo"
+    },
+    {
+      "id": "pagina_extra",
+      "nome": "Página a mais",
+      "preco": 200,
+      "valor_html": "Página extra"
+    },
+    {
+      "id": "ingles",
+      "nome": "Versão em inglês",
+      "preco": 300
+    }
+  ]
+}

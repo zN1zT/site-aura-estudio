@@ -1,0 +1,186 @@
+{
+ "url": "file:///private/tmp/claude-501/-Users-znizt-Library-Application-Support-Claude-scratch-workspaces-869e7afb-9dd1-4551-aee1-a75dd4914a8a-a79eed6a-8982-4a2c-a2cd-4fda10a255da-scratch-2026-10-13-f9bb71/449353c0-8afd-4e70-89e2-242f0a52978f/scratchpad/site-g/mostruario/piloto-77-oficina-de-motos/index.html",
+ "when": "2026-10-15T07:37:21.938Z",
+ "desktop": {
+  "audit": {
+   "emoji": [],
+   "overflowX": 0,
+   "fonts": {
+    "Anton": 45,
+    "Barlow": 43
+   },
+   "genericFonts": [],
+   "images": 4,
+   "imgNoAlt": [],
+   "imgBroken": [],
+   "imgHuge": [],
+   "lorem": false,
+   "placeholders": [],
+   "hiddenPlaceholders": [],
+   "waLinks": 6,
+   "waFloat": true,
+   "h1": 1,
+   "headingSkips": 0,
+   "revealStuck": 0,
+   "noName": 0,
+   "meta": {
+    "lang": "pt-BR",
+    "title": "Piloto 77 (projeto conceito) | Oficina de motos",
+    "titleLen": 47,
+    "description": true,
+    "ogImage": true,
+    "viewport": true,
+    "favicon": true
+   },
+   "interactive": [
+    "[data-tabs]",
+    "form[data-wa]"
+   ],
+   "tracking": [],
+   "sections": 4,
+   "scripts": [
+    "file:///private/tmp/claude-501/-Users-znizt-Library-Application-Suppor",
+    "file:///private/tmp/claude-501/-Users-znizt-Library-Application-Suppor"
+   ],
+   "weightKB": 351
+  },
+  "errors": [],
+  "failed": [],
+  "thirdParty": [],
+  "height": 5166,
+  "shots": 7
+ },
+ "mobile": {
+  "audit": {
+   "emoji": [],
+   "overflowX": 0,
+   "fonts": {
+    "Anton": 48,
+    "Barlow": 40
+   },
+   "genericFonts": [],
+   "images": 4,
+   "imgNoAlt": [],
+   "imgBroken": [],
+   "imgHuge": [],
+   "lorem": false,
+   "placeholders": [],
+   "hiddenPlaceholders": [],
+   "waLinks": 6,
+   "waFloat": true,
+   "h1": 1,
+   "headingSkips": 0,
+   "revealStuck": 0,
+   "noName": 0,
+   "meta": {
+    "lang": "pt-BR",
+    "title": "Piloto 77 (projeto conceito) | Oficina de motos",
+    "titleLen": 47,
+    "description": true,
+    "ogImage": true,
+    "viewport": true,
+    "favicon": true
+   },
+   "interactive": [
+    "[data-tabs]",
+    "form[data-wa]"
+   ],
+   "tracking": [],
+   "sections": 4,
+   "scripts": [
+    "file:///private/tmp/claude-501/-Users-znizt-Library-Application-Suppor",
+    "file:///private/tmp/claude-501/-Users-znizt-Library-Application-Suppor"
+   ],
+   "weightKB": 13,
+   "smallTargets": 0,
+   "tinyText": 0
+  },
+  "errors": [],
+  "failed": [],
+  "thirdParty": [],
+  "height": 5109,
+  "shots": 7
+ },
+ "result": [
+  [
+   "OK   ",
+   "emoji: nenhum"
+  ],
+  [
+   "OK   ",
+   "estouro horizontal: desktop 0px, mobile 0px"
+  ],
+  [
+   "OK   ",
+   "fontes genéricas em texto: nenhuma  | usadas: Anton, Barlow"
+  ],
+  [
+   "OK   ",
+   "imagens quebradas: 0 "
+  ],
+  [
+   "OK   ",
+   "imagens sem alt: 0"
+  ],
+  [
+   "OK   ",
+   "imagens pesadas demais p/ o tamanho exibido: nenhuma"
+  ],
+  [
+   "OK   ",
+   "lorem ipsum: não"
+  ],
+  [
+   "OK   ",
+   "erros de JS: nenhum"
+  ],
+  [
+   "OK   ",
+   "requisições falhas: nenhuma"
+  ],
+  [
+   "OK   ",
+   "animações de entrada travadas: desktop 0, mobile 0"
+  ],
+  [
+   "OK   ",
+   "h1 na página: 1"
+  ],
+  [
+   "OK   ",
+   "pulos de nível de título: 0"
+  ],
+  [
+   "OK   ",
+   "links/botões sem nome acessível: 0"
+  ],
+  [
+   "OK   ",
+   "WhatsApp: 6 pontos de contato, flutuante sim"
+  ],
+  [
+   "OK   ",
+   "módulos interativos: [data-tabs], form[data-wa]"
+  ],
+  [
+   "OK   ",
+   "meta: lang=pt-BR desc=true og=true favicon=true título=47 car."
+  ],
+  [
+   "OK   ",
+   "alvos de toque pequenos no mobile: 0"
+  ],
+  [
+   "OK   ",
+   "textos menores que 11,5px no mobile: 0"
+  ],
+  [
+   "OK   ",
+   "títulos grandes com espaçamento entre letras positivo (devia ser negativo): nenhum"
+  ],
+  [
+   "OK   ",
+   "peso carregado (desktop, rolando tudo): 351 KB"
+  ]
+ ]
+}

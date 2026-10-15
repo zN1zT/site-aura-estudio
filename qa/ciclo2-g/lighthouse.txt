@@ -1,0 +1,23 @@
+Lighthouse 12.8.2, mobile (emulação padrão: Moto G, 4G lenta, CPU 4x), só desempenho, 15/10/2026, servidor local com cabeçalho UTF-8.
+A nota oscila de 5 a 10 pontos entre execuções (o simulado depende do tempo de resposta do Google Fonts, do GTM e do Pixel); por isso cada página tem 2 execuções.
+Medido de novo depois da rodada de correções dos revisores (faixa no topo dos conceitos, contraste, capas 2x, links "#").
+
+index.html (branch ciclo2/fase-g)
+  #1 79 | FCP 2,1 s | LCP 5,1 s | TBT 70 ms | CLS 0
+  #2 76 | FCP 2,1 s | LCP 6,2 s | TBT 30 ms | CLS 0
+index.html de origin/main (antes da fase G, mesma máquina): 61, 70 e 69 (CLS 0,043)
+
+Mostruário (2 execuções cada)
+  taco-e-navalha              92 e 94
+  pizzaria-dona-zelia         90 e 96
+  piloto-77-oficina-de-motos  94 e 95
+  estudio-lumiar              88 e 98
+  otica-claridade             93 e 93
+  pelucia-spa-pet             92 e 95
+Os 6 ficam acima de 90 em pelo menos uma execução; 5 de 6 em todas.
+
+O que segura o index abaixo de 90 (não é da fase G): Meta Pixel e GTM mandam cerca de 380 KB de script de terceiros que a medição de anúncios exige;
+o CSS do Google Fonts bloqueia a primeira pintura; o elemento do LCP é a imagem do hero, que entra com animação.
+Fora da simulação o LCP medido é de 0,5 s. Caminhos para chegar a 90, a decidir com o Nicolas: hospedar as fontes no próprio site e carregar o GTM depois da primeira interação.
+
+O que foi feito nos sites do mostruário para a nota: fotos em WebP e hero de 250 a 440 KB reduzido para até 150 KB, fonte do título pré-carregada no Taco e no Piloto (CLS de 0,26 para 0).

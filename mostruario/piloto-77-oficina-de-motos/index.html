@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Piloto 77 (projeto conceito) | Oficina de motos</title>
+<meta name="description" content="Piloto 77, oficina de motos fictícia na Zona Leste de São Paulo. Revisão, freios, suspensão e parte elétrica. Projeto conceito da Aura.">
+<meta name="theme-color" content="#120a05">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Piloto 77 (projeto conceito) | Oficina de motos">
+<meta property="og:description" content="Revisão, freios, suspensão e parte elétrica para moto de rua. Projeto conceito feito pela Aura, negócio fictício.">
+<meta property="og:image" content="https://sitecomaura.com/mostruario/piloto-77-oficina-de-motos/img/og.jpg">
+<meta property="og:url" content="https://sitecomaura.com/mostruario/piloto-77-oficina-de-motos/">
+<link rel="canonical" href="https://sitecomaura.com/mostruario/piloto-77-oficina-de-motos/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ff6a13'/%3E%3Ctext x='32' y='46' font-family='Impact,Arial Black' font-size='38' text-anchor='middle' fill='%23120a05'%3E77%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/anton/v27/1Ptgg87LROyAm3Kz-C8CSKlv.woff2">
+<link rel="stylesheet" href="../../assets/fx.css">
+<style>
+:root{
+  --bg:#120a05; --surface:#1c120b; --cream:#f1ead9; --ink:#f1ead9; --ink-2:#c9bfa9; --mute:#8d8372; --line:rgba(241,234,217,.18);
+  --o:#ff6a13; --o-d:#d9530a; --black:#120a05;
+  --f-display:'Anton',sans-serif; --f-text:'Barlow',sans-serif;
+  --t-hero:clamp(3.6rem,1.6rem + 11.2vw,12.4rem); --t-h2:clamp(2.6rem,1.4rem + 5.6vw,6.4rem); --t-h3:clamp(1.5rem,1.1rem + 1.4vw,2.4rem);
+  --t-body:clamp(1.02rem,.96rem + .28vw,1.15rem);
+  --pad:clamp(80px,11vw,160px); --wrap:1280px; --gut:clamp(18px,4vw,44px);
+  --fx-accent:var(--o);
+  --chain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='24' viewBox='0 0 56 24'%3E%3Crect x='3' y='5' width='28' height='14' rx='7' fill='none' stroke='%23ff6a13' stroke-width='4'/%3E%3Crect x='25' y='5' width='28' height='14' rx='7' fill='none' stroke='%23ff6a13' stroke-width='4' opacity='.55'/%3E%3C/svg%3E");
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-text);font-size:var(--t-body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,svg,iframe{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+h2 .fx-line{padding-top:.1em;margin-top:-.1em}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;text-transform:uppercase;line-height:.9;letter-spacing:-.005em;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
+section{padding-block:var(--pad);position:relative}
+:focus-visible{outline:3px solid var(--o);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.label{font-family:var(--f-text);font-weight:700;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;color:var(--o)}
+.chain{height:24px;background:var(--chain) 0 0/56px 24px repeat-x}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:transform .45s var(--fx-ease),background .3s}
+.nav.is-scrolled{background:rgba(18,10,5,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.nav.is-open{backdrop-filter:none;-webkit-backdrop-filter:none;transform:none;background:var(--bg)}
+.nav-in{max-width:calc(var(--wrap) + 2 * var(--gut));margin-inline:auto;padding:12px var(--gut);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--f-display);text-transform:uppercase;font-size:1.5rem;letter-spacing:.01em;line-height:1}
+.logo b{display:grid;place-items:center;height:36px;padding:0 9px;background:var(--o);color:var(--black);font-weight:400;clip-path:polygon(0 0,100% 0,100% 70%,85% 100%,0 100%)}
+.nav-links{display:flex;gap:30px;font-weight:600;font-size:.88rem;letter-spacing:.14em;text-transform:uppercase}
+.nav-links a{padding:12px 0;position:relative}
+.nav-links a::after{content:'';position:absolute;left:0;right:0;bottom:6px;height:3px;background:var(--o);transform:scaleX(0);transform-origin:0 50%;transition:transform .3s var(--fx-ease)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-toggle{display:none;width:44px;height:44px;border:2px solid var(--ink);background:transparent;place-items:center;cursor:pointer}
+.nav-toggle path{transition:transform .35s var(--fx-ease);transform-origin:12px 12px}
+.nav.is-open .nav-toggle .l1{transform:translateY(3px) rotate(45deg)}
+.nav.is-open .nav-toggle .l2{transform:translateY(-3px) rotate(-45deg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:0 28px 0 24px;border:0;cursor:pointer;background:var(--o);color:var(--black);font-weight:700;font-size:.92rem;letter-spacing:.12em;text-transform:uppercase;clip-path:polygon(0 0,100% 0,100% 68%,calc(100% - 14px) 100%,0 100%);transition:background .2s,color .2s}
+.btn:hover{background:var(--cream)}
+.btn:active{transform:scale(.97);transition:transform .1s}
+.btn.alt{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink);clip-path:none}
+.btn.alt:hover{background:var(--ink);color:var(--black)}
+.btn svg{width:18px;height:18px}
+@media(max-width:900px){
+  .nav-links{position:fixed;inset:0;flex-direction:column;justify-content:center;align-items:flex-start;gap:4px;padding:0 var(--gut);font-family:var(--f-display);font-size:3.2rem;font-weight:400;letter-spacing:0;background:var(--bg);opacity:0;pointer-events:none;transition:opacity .3s}
+  .nav-links a{padding:8px 0}
+  .nav.is-open .nav-links{opacity:1;pointer-events:auto}
+  .nav-toggle{display:grid;position:relative;z-index:2}
+  .nav .btn{display:none}
+}
+
+/* hero H4 */
+.hero{position:relative;min-height:100svh;padding:0;display:grid;align-items:end;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-1}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:60% 55%}
+@media(min-width:901px){.hero-bg img{width:78%;margin-left:22%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 35%);mask-image:linear-gradient(90deg,transparent,#000 35%)}}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,10,5,.35) 0%,rgba(18,10,5,.05) 30%,rgba(18,10,5,.55) 62%,var(--bg) 100%)}
+.hero-in{padding:clamp(110px,14vw,170px) var(--gut) clamp(60px,8vw,110px);max-width:calc(var(--wrap) + 2 * var(--gut));margin-inline:auto;width:100%}
+.hero-title{font-size:var(--t-hero);line-height:.84;color:var(--cream);transform:rotate(-4deg);transform-origin:0 100%;width:118%;margin-left:-2%;text-shadow:0 6px 40px rgba(18,10,5,.45)}
+.hero-title span{display:block}
+.hero-title .o{color:var(--o)}
+.hero-sub{margin-top:clamp(30px,4vw,56px);display:flex;flex-wrap:wrap;gap:24px 48px;align-items:flex-end;justify-content:space-between}
+.hero-sub p{max-width:42ch;font-size:clamp(1.1rem,1rem + .5vw,1.35rem);font-weight:500;color:var(--cream)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+.stamp{position:absolute;right:var(--gut);top:clamp(110px,15vw,170px);--stamp:clamp(110px,14vw,170px);color:var(--cream);z-index:2}
+.stamp b{font-family:var(--f-display);font-weight:400;font-size:clamp(1.8rem,1rem + 2.4vw,3rem);color:var(--o);letter-spacing:.02em}
+@media(max-width:900px){.hero-title{width:112%;transform:rotate(-3deg)}.stamp{display:none}}
+
+/* faixa */
+.strip{background:var(--o);color:var(--black);padding:0;overflow:hidden;border-block:3px solid var(--black)}
+.strip-t{display:flex;align-items:center;gap:clamp(20px,3vw,40px);font-family:var(--f-display);font-size:clamp(1.8rem,1.2rem + 2.6vw,3.6rem);text-transform:uppercase;white-space:nowrap;padding:14px clamp(20px,3vw,40px) 14px 0;line-height:1}
+.strip-t i{width:16px;height:16px;border:4px solid var(--black);border-radius:50%;display:block;flex:none}
+
+/* serviços */
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px 50px;margin-bottom:clamp(30px,5vw,60px)}
+.sec-head h2{font-size:var(--t-h2);max-width:12ch}
+.sec-head h2 em{font-style:normal;color:var(--o)}
+.tabs-bar{display:flex;gap:10px;flex-wrap:wrap}
+.tabs-bar button{min-height:52px;padding:0 26px;border:2px solid var(--ink);background:transparent;font-family:var(--f-display);font-size:1.5rem;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.tabs-bar button:hover{background:rgba(241,234,217,.1)}
+.tabs-bar button.is-active{background:var(--o);border-color:var(--o);color:var(--black)}
+.svc{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,64px);align-items:start}
+.svc-list{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.svc-list li{display:flex;align-items:center;gap:22px;padding:20px 0;border-bottom:1px solid var(--line);font-family:var(--f-display);font-size:var(--t-h3);text-transform:uppercase;line-height:1;letter-spacing:.005em;transition:padding .35s var(--fx-ease),color .2s}
+.svc-list li::before{content:'';flex:none;width:44px;height:20px;background:var(--chain) center/44px 20px no-repeat}
+.svc-list li:hover{padding-left:16px;color:var(--o)}
+.svc-list li small{display:block;font-family:var(--f-text);font-size:1rem;color:var(--ink-2);text-transform:none;letter-spacing:0;line-height:1.4;margin-top:6px;font-weight:400}
+.svc-fig{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;clip-path:polygon(0 0,100% 0,100% calc(100% - 28px),calc(100% - 28px) 100%,0 100%)}
+.svc-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media(max-width:900px){.svc{grid-template-columns:1fr}.svc-fig{aspect-ratio:4/3;order:-1}}
+
+/* agende */
+.book{background:var(--cream);color:var(--black)}
+.book .label{color:var(--o-d)}
+.book-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(28px,5vw,80px);align-items:center}
+.book h2{font-size:var(--t-h2);margin-top:16px}
+.book h2 em{font-style:normal;color:var(--o-d)}
+.book .lead{margin-top:22px;max-width:42ch;font-weight:500;color:#3b2f24}
+.book .chain{margin-top:30px;width:min(360px,70%);filter:none}
+.form{background:var(--black);color:var(--ink);padding:clamp(22px,3vw,40px);display:grid;gap:22px;clip-path:polygon(0 0,100% 0,100% calc(100% - 30px),calc(100% - 30px) 100%,0 100%)}
+.form .lab{font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--o);margin-bottom:10px;display:block}
+.field{display:grid}
+.field select,.field input{background:var(--surface);border:2px solid transparent;border-bottom:2px solid var(--ink);border-radius:0;padding:0 16px;min-height:54px;outline:none;font-weight:500}
+.field select:focus,.field input:focus{border-color:var(--o)}
+.field select option{background:var(--surface);color:var(--ink)}
+.form .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form .send{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;justify-content:space-between;padding-bottom:18px}
+.form .send p{font-size:.88rem;color:var(--ink-2);max-width:26ch}
+@media(max-width:900px){.book-grid{grid-template-columns:1fr}.form .two{grid-template-columns:1fr}}
+
+/* prova */
+.proof-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(24px,5vw,80px);align-items:center}
+.proof-num{font-family:var(--f-display);font-size:clamp(9rem,4rem + 20vw,22rem);line-height:.78;color:var(--o);letter-spacing:-.02em}
+.proof-num small{font-family:var(--f-text);font-weight:700;font-size:.12em;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);display:block;line-height:1.5;margin-top:1.2em}
+.proof-txt{display:grid;gap:22px}
+.proof-txt h2{font-size:var(--t-h2)}
+.proof-txt p{color:var(--ink-2);max-width:46ch;font-size:1.15rem}
+.proof-fig{margin:0;position:relative;aspect-ratio:16/9;overflow:hidden}
+.proof-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media(max-width:900px){.proof-grid{grid-template-columns:1fr}.proof-num{font-size:clamp(8rem,44vw,14rem)}}
+
+/* onde */
+.where{background:var(--surface);border-top:3px solid var(--o)}
+.where-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(24px,4vw,60px);align-items:stretch}
+.where-info{display:flex;flex-direction:column;gap:26px}
+.where-info h2{font-size:var(--t-h2)}
+.where-info address{font-style:normal;font-size:1.25rem;line-height:1.45;color:var(--ink-2)}
+.where-info address b{display:block;color:var(--ink);font-size:1.5rem;font-weight:700}
+.where-list{margin:0;display:grid;border-top:2px solid var(--ink)}
+.where-list div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.where-list dt{font-weight:700;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--o)}
+.where-list dd{margin:0;text-align:right;font-weight:600}
+.where-list a{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+.where-map{position:relative;min-height:440px;clip-path:polygon(0 0,100% 0,100% 100%,28px 100%,0 calc(100% - 28px))}
+.where-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) invert(.9) contrast(.9) sepia(.4) hue-rotate(-10deg)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+@media(max-width:900px){.where-grid{grid-template-columns:1fr}.where-map{min-height:320px}}
+
+footer{padding:30px 0 100px;background:var(--black);color:var(--ink-2);font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 30px}
+
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 0 0 3px var(--black),0 10px 30px rgba(0,0,0,.5)}
+.wa svg{width:30px;height:30px}
+</style>
+<link rel="stylesheet" href="../conceito.css">
+<style>/* ajustes do conceito: contraste AA e layout */
+:root{--o-d:#a03c00}
+</style>
+</head>
+<body>
+<div class="cn-faixa" role="note">Projeto conceito da Aura · negócio fictício</div>
+<div data-progress></div>
+<nav class="nav" data-nav="hide" aria-label="Principal">
+  <div class="nav-in">
+    <a href="#topo" class="logo" aria-label="Piloto 77 Oficina de Motos, início"><b>77</b>Piloto</a>
+    <div class="nav-links" id="menu">
+      <a href="#servicos">Oficina e peças</a><a href="#agende">Agende</a><a href="#onde">Onde estamos</a>
+    </div>
+    <a class="btn" href="#wa.me" target="_blank" rel="noopener">Agendar revisão</a>
+    <button class="nav-toggle" data-nav-toggle aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path class="l1" d="M4 9h16"/><path class="l2" d="M4 15h16"/></svg></button>
+  </div>
+</nav>
+
+<main id="topo">
+  <header class="hero">
+    <div class="hero-bg"><img src="img/hero.webp" width="1900" height="1069" alt="Scooter laranja estacionada na calçada de uma rua com pedras" fetchpriority="high"></div>
+    <div class="stamp" data-stamp="Revisão • Freios • Elétrica • Peças • "><b>77</b></div>
+    <div class="hero-in">
+      <h1 class="hero-title" data-reveal="fade"><span>Oficina</span><span class="o">de motos</span><span>na Zona Leste</span></h1>
+      <div class="hero-sub">
+        <p data-reveal>Revisão, freios, suspensão e parte elétrica para moto de rua, com peças e acessórios no balcão.</p>
+        <div class="hero-cta" data-reveal style="--d:.1s">
+          <a class="btn" href="#wa.me" target="_blank" rel="noopener" data-magnetic="0.25">Agendar revisão no WhatsApp
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn alt" href="#tel">(11) 90000-0000</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="strip" data-marquee="80" aria-hidden="true">
+    <div class="fx-marquee-in"><div class="strip-t"><span>Revisão</span><i></i><span>Freios</span><i></i><span>Suspensão</span><i></i><span>Elétrica</span><i></i><span>Pneus</span><i></i><span>Peças</span><i></i><span>Acessórios</span><i></i></div></div>
+  </div>
+
+  <section id="servicos">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 data-split>O que tem na <em>oficina.</em></h2>
+      </div>
+      <div class="svc" data-tabs>
+        <div>
+          <div class="tabs-bar" role="tablist" aria-label="Oficina ou peças" style="margin-bottom:26px">
+            <button data-tab="oficina" class="is-active">Oficina</button>
+            <button data-tab="pecas">Peças</button>
+          </div>
+          <ul class="svc-list" data-tab-item="oficina">
+            <li><div>Revisão por quilometragem<small>Do óleo ao freio, numa visita só.</small></div></li>
+            <li><div>Freios e pastilhas</div></li>
+            <li><div>Suspensão e retentores</div></li>
+            <li><div>Parte elétrica e bateria</div></li>
+            <li><div>Troca de pneus e câmaras</div></li>
+          </ul>
+          <ul class="svc-list" data-tab-item="pecas" hidden>
+            <li><div>Corrente e coroa</div></li>
+            <li><div>Pastilhas e lonas de freio</div></li>
+            <li><div>Óleo e filtros</div></li>
+            <li><div>Capacetes e luvas</div></li>
+            <li><div>Retrovisores e manoplas</div></li>
+          </ul>
+        </div>
+        <figure class="svc-fig" data-reveal="clip">
+          <img src="img/oficina.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Mecânico agachado trabalhando em uma moto em oficina, com ferramentas no chão" data-tab-item="oficina">
+          <img src="img/corrente.webp" width="1000" height="1250" loading="lazy" decoding="async" alt="Corrente e coroa da roda traseira de uma moto, em close" data-tab-item="pecas" hidden>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="chain" aria-hidden="true"></div>
+
+  <section id="agende" class="book">
+    <div class="wrap book-grid">
+      <div>
+        <p class="label">Agende</p>
+        <h2 data-split>Sua revisão em <em>poucos toques.</em></h2>
+        <p class="lead" data-reveal>Escolha o serviço, diga qual é a moto e envie. A mensagem chega pronta no WhatsApp do Piloto 77, e você combina o dia.</p>
+        <div class="chain" aria-hidden="true"></div>
+      </div>
+      <form class="form" data-wa="0" data-wa-intro="Olá! Vim pelo site do Piloto 77 e quero agendar um serviço.">
+        <div class="field"><label class="lab" for="servico">Serviço</label>
+          <select id="servico" name="servico" data-label="Serviço" required>
+            <option value="">Escolha o serviço</option>
+            <option>Revisão por quilometragem</option>
+            <option>Freios e pastilhas</option>
+            <option>Suspensão e retentores</option>
+            <option>Parte elétrica e bateria</option>
+            <option>Troca de pneus</option>
+            <option>Peças e acessórios</option>
+            <option>Outro serviço</option>
+          </select></div>
+        <div class="two">
+          <div class="field"><label class="lab" for="moto">Moto ou scooter</label><input id="moto" name="moto" data-label="Moto" placeholder="Ex.: moto de rua 160 cc" autocomplete="off" required></div>
+          <div class="field"><label class="lab" for="ano">Ano</label><input id="ano" name="ano" data-label="Ano" placeholder="Ex.: 2020" inputmode="numeric" autocomplete="off"></div>
+        </div>
+        <div class="field"><label class="lab" for="obs">O que está acontecendo</label><input id="obs" name="obs" data-label="Observação" placeholder="Ex.: barulho ao acelerar" autocomplete="off"></div>
+        <div class="send"><p>Abre o WhatsApp com a mensagem pronta.</p><button class="btn" type="submit">Enviar no WhatsApp</button></div>
+      </form>
+    </div>
+  </section>
+
+  <section id="prova">
+    <div class="wrap proof-grid">
+      <div class="proof-num" aria-label="5 serviços de oficina"><span data-count="5">0</span><small>serviços de oficina<br>na mesma casa</small></div>
+      <div class="proof-txt" data-reveal>
+        <h2>Zona Leste de São Paulo.</h2>
+        <p>O Piloto 77 é uma oficina mecânica para motos de rua, com balcão de peças e acessórios.</p>
+        <figure class="proof-fig"><img src="img/ferr.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Parede de oficina com ferramentas e adesivos pendurados" style="object-position:50% 40%"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="onde" class="where">
+    <div class="wrap where-grid">
+      <div class="where-info" data-reveal>
+        <p class="label">Onde estamos</p>
+        <h2>Rua Exemplo, 100.</h2>
+        <address><b>Zona Leste</b>São Paulo, SP</address>
+        <dl class="where-list">
+          <div><dt>WhatsApp</dt><dd><a href="#wa.me" target="_blank" rel="noopener">(11) 90000-0000</a></dd></div>
+          <div><dt>Horário</dt><dd>Confirme pelo WhatsApp</dd></div>
+        </dl>
+        <div class="cta-row">
+          <a class="btn" href="#wa.me" target="_blank" rel="noopener">Agendar revisão</a>
+          <a class="btn alt" href="#mapa" target="_blank" rel="noopener">Traçar rota</a>
+        </div>
+      </div>
+      <div class="where-map" data-reveal="scale"><div class="cn-map" role="img" aria-label="Mapa ilustrativo: aqui entra o mapa do endereço do seu negócio"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M-10 70 L410 96 M-10 160 L410 138 M-10 236 L410 258 M84 -10 L112 310 M206 -10 L192 310 M318 -10 L338 310 M-10 14 L150 310 M250 -10 L410 190"/><circle cx="206" cy="148" r="22" fill="currentColor" fill-opacity=".18"/><circle cx="206" cy="148" r="8" fill="currentColor"/></svg><span>Mapa ilustrativo</span></div></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot"><span>Piloto 77 Oficina de Motos / Zona Leste, São Paulo / <span data-year></span></span><span>Imagens ilustrativas</span><span class="cn-aviso">Projeto conceito feito pela Aura. Negócio fictício.<a href="../../?utm_source=mostruario&amp;utm_medium=conceito&amp;utm_campaign=piloto-77-oficina-de-motos#investimento">Quero um site assim</a></span></div>
+</footer>
+
+<a class="wa" href="#wa.me" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.3 1.3-1.9 1.3-.5 0-1.1.2-3.6-.8-3-1.2-5-4.3-5.1-4.5-.2-.2-1.3-1.7-1.3-3.2S6.5 6.8 6.8 6.5c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.5c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.2.1.8-.1 1.4z"/></svg></a>
+
+<script src="../../assets/fx.js" defer></script>
+<script src="../conceito.js" defer></script>
+</body>
+</html>

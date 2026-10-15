@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Taco e Navalha (projeto conceito) | Barbearia</title>
+<meta name="description" content="Taco e Navalha, barbearia fictícia na Zona Leste de São Paulo, com mesa de sinuca. Corte, barba, sobrancelha e química. Projeto conceito da Aura.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Taco e Navalha (projeto conceito) | Barbearia">
+<meta property="og:description" content="Corte, barba, sobrancelha e química, com mesa de sinuca. Projeto conceito feito pela Aura, negócio fictício.">
+<meta property="og:image" content="https://sitecomaura.com/mostruario/taco-e-navalha/img/og.jpg">
+<meta property="og:url" content="https://sitecomaura.com/mostruario/taco-e-navalha/">
+<link rel="canonical" href="https://sitecomaura.com/mostruario/taco-e-navalha/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ccircle cx='32' cy='32' r='24' fill='%23f7d117'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%23fff'/%3E%3Ctext x='32' y='38' font-family='Impact,Arial Narrow,sans-serif' font-size='17' font-weight='700' text-anchor='middle' fill='%230a0a0a'%3E8%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400;62..125,800&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/archivo/v25/k3kQo8UDI-1M0wlSfdnoLmvDIaI.woff2">
+<link rel="stylesheet" href="../../assets/fx.css">
+<style>
+:root{
+  --bg:#ffffff; --surface:#f2f2ee; --ink:#0a0a0a; --ink-2:#3b3b3b; --mute:#7a7a7a; --line:#0a0a0a;
+  --accent:#f7d117; --dark:#0a0a0a; --on-dark:#ffffff;
+  --f-display:'Archivo',sans-serif; --f-text:'Archivo',sans-serif;
+  --t-h2:clamp(2.6rem,1rem + 7vw,7rem); --t-h3:clamp(1.3rem,1rem + 1vw,1.8rem);
+  --t-body:clamp(1rem,.95rem + .25vw,1.125rem);
+  --r:0px; --pad:clamp(80px,11vw,160px); --wrap:1400px; --gut:clamp(16px,3vw,36px);
+  --fx-accent:var(--ink);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-text);font-size:var(--t-body);line-height:1.5;font-weight:400;font-stretch:100%;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,svg,iframe{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:800;font-stretch:62%;text-transform:uppercase;line-height:.88;letter-spacing:-.025em;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+[data-split] .fx-line{padding-top:.2em;margin-top:-.2em}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
+section{padding-block:var(--pad)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lbl{font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-stretch:100%}
+
+/* bola de sinuca: objeto-assinatura */
+.ball{--c:var(--accent);display:inline-grid;place-items:center;width:var(--s,44px);height:var(--s,44px);border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.55) 0 8%,transparent 22%),var(--c);position:relative;flex:none;font-weight:800;font-stretch:100%;font-size:calc(var(--s,44px) * .36);color:#0a0a0a;box-shadow:inset 0 -6px 10px rgba(0,0,0,.18)}
+.ball::before{content:'';position:absolute;width:58%;height:58%;border-radius:50%;background:#fff;z-index:0}
+.ball b{position:relative;z-index:1;font-weight:800;line-height:1}
+.ball.s::after{content:'';position:absolute;left:0;right:0;top:22%;bottom:22%;background:var(--c);z-index:0;opacity:0}
+.c1{--c:#f7d117}.c2{--c:#1c4fd6}.c3{--c:#e0281c}.c4{--c:#5b2a86}.c5{--c:#f27a1a}.c6{--c:#12804a}.c7{--c:#7a1b1b}.c8{--c:#0a0a0a}
+.c8 b{color:#0a0a0a}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 var(--gut);height:62px;background:var(--bg);border-bottom:2px solid var(--ink)}
+.nav.is-open{transform:none}
+.logo{font-weight:800;font-stretch:62%;text-transform:uppercase;letter-spacing:-.01em;font-size:1.5rem;display:flex;align-items:center;gap:10px}
+.nav-links{display:flex;gap:30px;font-weight:800;font-stretch:100%;font-size:.8rem;text-transform:uppercase;letter-spacing:.12em}
+.nav-links a:hover{text-decoration:underline;text-underline-offset:6px}
+.nav-toggle{display:none;width:44px;height:44px;border:2px solid var(--ink);background:var(--bg)}
+.nav-toggle path{transition:transform .35s cubic-bezier(.16,1,.3,1);transform-origin:12px 12px}
+.nav.is-open .nav-toggle .l1{transform:translateY(3px) rotate(45deg)}
+.nav.is-open .nav-toggle .l2{transform:translateY(-3px) rotate(-45deg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 26px;border:2px solid var(--ink);background:var(--accent);color:var(--ink);font-weight:800;font-stretch:100%;font-size:.84rem;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;transition:background .15s,color .15s,transform .1s}
+.btn:hover{background:var(--ink);color:var(--accent)}
+.btn:active{transform:scale(.97)}
+.btn.k{background:var(--ink);color:#fff}
+.btn.k:hover{background:var(--accent);color:var(--ink)}
+.btn.sm{min-height:44px;padding:0 18px}
+.btn svg{width:18px;height:18px}
+@media(max-width:860px){
+  .nav-links{position:fixed;inset:62px 0 0;flex-direction:column;justify-content:center;align-items:flex-start;gap:20px;padding:0 var(--gut);font-size:2.4rem;font-weight:800;font-stretch:62%;letter-spacing:-.02em;background:var(--bg);opacity:0;pointer-events:none;transition:opacity .3s}
+  .nav.is-open .nav-links{opacity:1;pointer-events:auto}
+  .nav-toggle{display:grid;place-items:center;position:relative;z-index:2}
+  .nav>.btn{display:none}
+}
+
+/* hero */
+.hero{padding:62px 0 0;position:relative;border-bottom:2px solid var(--ink)}
+.hero-bar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding:14px 0;border-bottom:2px solid var(--ink)}
+.hero-title{font-size:min(17.3vw,247px);line-height:.8;letter-spacing:-.035em;white-space:nowrap;margin:clamp(14px,2.4vw,34px) 0 clamp(14px,2vw,30px);padding-top:.04em}
+.hero-title span{color:var(--ink);-webkit-text-stroke:0}
+.hero-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gut);border-top:2px solid var(--ink);padding-top:clamp(18px,2.4vw,32px);padding-bottom:clamp(30px,4vw,60px)}
+.hero-copy{grid-column:1 / span 6;display:grid;gap:26px;align-content:start}
+.hero .statement{font-size:clamp(2.2rem,1rem + 3.6vw,4.6rem);line-height:.9}
+.hero p.sub{max-width:44ch;font-size:1.15rem;color:var(--ink-2)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero-ph{grid-column:8 / span 5;position:relative;aspect-ratio:4/4.6;background:var(--ink);overflow:hidden}
+.hero-ph img{width:100%;height:100%;object-fit:cover}
+.hero-ph .ball{position:absolute;left:14px;bottom:14px;--s:64px}
+.hero-ph .cap{position:absolute;right:14px;top:14px;background:var(--accent);padding:6px 10px}
+@media(max-width:900px){
+  .hero-copy,.hero-ph{grid-column:1 / -1}
+  .hero-ph{aspect-ratio:4/4.2}
+}
+/* grade visível */
+.hero::before{content:'';position:absolute;inset:62px var(--gut) 0;max-width:calc(var(--wrap) - 2*var(--gut));margin-inline:auto;background:repeating-linear-gradient(90deg,rgba(10,10,10,.07) 0 1px,transparent 1px calc(100%/12));pointer-events:none}
+@media(min-width:1500px){.hero::before{inset-inline:calc(50% - (var(--wrap) / 2) + var(--gut))}}
+
+/* faixa */
+.strip{background:var(--accent);border-bottom:2px solid var(--ink);overflow:hidden}
+.strip [data-marquee]{padding:12px 0}
+.strip span{font-weight:800;font-stretch:62%;text-transform:uppercase;font-size:clamp(1.8rem,1rem + 3vw,3.6rem);letter-spacing:-.02em;padding-right:30px;white-space:nowrap;display:inline-flex;align-items:center;gap:30px}
+.strip span::after{content:'';width:.5em;height:.5em;border-radius:50%;background:var(--ink)}
+
+/* seções */
+.head{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gut);align-items:end;margin-bottom:clamp(30px,4vw,56px)}
+.head .num{grid-column:1 / span 1}
+.head h2{grid-column:2 / span 7;font-size:var(--t-h2)}
+.head p{grid-column:10 / span 3;color:var(--ink-2)}
+@media(max-width:900px){.head h2{grid-column:2 / -1}.head p{grid-column:1 / -1}}
+
+/* serviços */
+.tabs{display:flex;flex-wrap:wrap;gap:0;border:2px solid var(--ink);width:max-content;max-width:100%;margin-bottom:26px}
+.tabs button{min-height:46px;padding:0 20px;background:var(--bg);border:0;border-right:2px solid var(--ink);font-weight:800;font-stretch:100%;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;cursor:pointer}
+.tabs button:last-child{border-right:0}
+.tabs button.is-active{background:var(--ink);color:var(--accent)}
+.rows{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:56px 1fr 90px 110px 92px;gap:18px;align-items:center;padding:14px 0;border-bottom:1px solid var(--ink)}
+.row[hidden]{display:none!important}
+.row h3{font-size:clamp(1.5rem,1.1rem + 1.2vw,2.3rem);line-height:.95}
+.row .t{font-size:.85rem;color:var(--mute);font-weight:800;font-stretch:100%;text-transform:uppercase;letter-spacing:.08em}
+.row .p{font-weight:800;font-stretch:62%;font-size:clamp(1.5rem,1.1rem + 1vw,2.1rem);text-align:right;white-space:nowrap}
+.row a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:2px solid var(--ink);font-weight:800;font-stretch:100%;font-size:.74rem;text-transform:uppercase;letter-spacing:.1em}
+.row a:hover{background:var(--accent)}
+@media(max-width:760px){.row{grid-template-columns:44px 1fr auto;gap:12px}.row .t{display:none}.row a{grid-column:2 / -1;justify-self:start;padding:0 18px}}
+.fine{margin-top:20px;font-size:.85rem;color:var(--mute);max-width:70ch}
+
+/* simulador */
+.sim{background:var(--ink);color:#fff}
+.sim .head p{color:#c9c9c9}
+.sim-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--gut);align-items:start}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.opt{position:relative;display:flex;align-items:center;gap:14px;min-height:64px;padding:12px 16px;border:2px solid #fff;cursor:pointer;user-select:none}
+.opt input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.opt .ball{--s:34px}
+.opt span.n{flex:1;font-weight:800;font-stretch:62%;text-transform:uppercase;font-size:1.35rem;line-height:1;letter-spacing:-.01em}
+.opt span.pr{font-weight:800;font-stretch:100%;font-size:.82rem}
+.opt:has(input:checked){background:var(--accent);color:var(--ink);border-color:var(--accent)}
+.opt:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:3px}
+.total{border:2px solid #fff;padding:clamp(20px,3vw,36px);display:grid;gap:14px;position:sticky;top:84px}
+.total .big{font-weight:800;font-stretch:62%;font-size:clamp(3.6rem,2rem + 5vw,6.4rem);line-height:.85;letter-spacing:-.03em;color:var(--accent)}
+.total ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;color:#d6d6d6;font-size:.95rem;min-height:1.5em}
+.total .meta{font-weight:800;font-stretch:100%;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+.total .fine{color:#a8a8a8;margin-top:0}
+@media(max-width:900px){.sim-grid{grid-template-columns:1fr}.total{position:static}.opts{grid-template-columns:1fr}}
+
+/* galeria */
+.gal{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gut);align-items:end}
+.gal a{display:block;position:relative;overflow:hidden;background:var(--ink);border:2px solid var(--ink)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.gal a:hover img{transform:scale(1.04)}
+.gal a:nth-child(1){grid-column:1 / span 4;aspect-ratio:4/5}
+.gal a:nth-child(2){grid-column:5 / span 8;aspect-ratio:16/10}
+.gal a:nth-child(3){grid-column:1 / span 8;aspect-ratio:16/10}
+.gal a:nth-child(4){grid-column:9 / span 4;aspect-ratio:4/5}
+@media(max-width:760px){.gal a:nth-child(n){grid-column:1 / -1;aspect-ratio:4/3}}
+.gal-tx{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gut);margin-top:clamp(30px,4vw,56px)}
+.gal-tx h3{grid-column:1 / span 7;font-size:clamp(2.2rem,1rem + 4vw,5rem)}
+.gal-tx p{grid-column:9 / span 4;color:var(--ink-2)}
+@media(max-width:900px){.gal-tx h3,.gal-tx p{grid-column:1 / -1}}
+
+/* local */
+.loc{border-top:2px solid var(--ink);background:var(--surface)}
+.loc-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gut)}
+.loc-info{grid-column:1 / span 5;display:grid;gap:22px;align-content:start}
+.loc-info h2{font-size:var(--t-h2)}
+.loc dl{margin:0;display:grid;gap:0;border-top:2px solid var(--ink)}
+.loc dl div{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--ink)}
+.loc dt{font-weight:800;font-stretch:100%;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;padding-top:4px}
+.loc dd{margin:0}
+.loc .btns{display:flex;flex-wrap:wrap;gap:12px}
+.map{grid-column:7 / span 6;min-height:480px;border:2px solid var(--ink);background:#ddd}
+.map iframe{width:100%;height:100%;min-height:480px;border:0;filter:grayscale(1) contrast(1.1)}
+@media(max-width:900px){.loc-info,.map{grid-column:1 / -1}}
+
+footer{background:var(--ink);color:#fff;padding:48px 0 110px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:end}
+footer .big{font-weight:800;font-stretch:62%;text-transform:uppercase;font-size:clamp(2.2rem,1rem + 4vw,4.4rem);line-height:.85;letter-spacing:-.03em}
+footer small{display:block;color:#a8a8a8;margin-top:10px;max-width:56ch}
+footer a:hover{color:var(--accent)}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap;font-weight:800;font-stretch:100%;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em}
+.wa{position:fixed;right:16px;bottom:16px;z-index:60;width:60px;height:60px;background:#25d366;display:grid;place-items:center;border:2px solid var(--ink)}
+.wa svg{width:30px;height:30px}
+</style>
+<link rel="stylesheet" href="../conceito.css">
+<style>/* ajustes do conceito: contraste AA e layout */
+:root{--mute:#666}
+.hero-title{font-size:min(15.4vw,220px)}
+</style>
+</head>
+<body>
+<div class="cn-faixa" role="note">Projeto conceito da Aura · negócio fictício</div>
+<div data-progress></div>
+<nav class="nav" data-nav="hide" aria-label="Principal">
+  <a href="#topo" class="logo" aria-label="Taco e Navalha, início"><span class="ball c8" style="--s:30px"><b>8</b></span>Taco e Navalha</a>
+  <div class="nav-links" id="menu">
+    <a href="#servicos">Serviços</a><a href="#combo">Monte o combo</a><a href="#casa">A casa</a><a href="#local">Como chegar</a>
+  </div>
+  <a class="btn sm" href="#wa.me" target="_blank" rel="noopener">Agendar</a>
+  <button class="nav-toggle" data-nav-toggle aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path class="l1" d="M4 9h16"/><path class="l2" d="M4 15h16"/></svg></button>
+</nav>
+
+<main id="topo">
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-bar lbl"><span>Barbearia</span><span>Zona Leste, São Paulo</span><span>Rua Exemplo, 100</span></div>
+    <h1 class="hero-title">Taco e navalha</h1>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h2 class="statement" data-split>Corte, barba e sobrancelha. <span style="background:var(--accent);padding:0 .12em">Com sinuca.</span></h2>
+        <p class="sub" data-reveal>Barbearia na Zona Leste com mesa de sinuca e cerveja gelada para a espera. Escolha o serviço, veja o valor e marque pelo WhatsApp.</p>
+        <div class="hero-cta" data-reveal style="--d:.1s">
+          <a class="btn" href="#wa.me" target="_blank" rel="noopener" data-magnetic="0.2">Agendar no WhatsApp
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn k" href="#servicos">Ver serviços e valores</a>
+        </div>
+      </div>
+      <div class="hero-ph" data-reveal="clip">
+        <img src="img/cut.webp" width="1000" height="1250" alt="Barbeiro finalizando um corte de cabelo degradê em cliente" fetchpriority="high">
+        <span class="ball c1"><b>1</b></span>
+        <span class="cap lbl">Corte</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="strip" aria-hidden="true"><div data-marquee="80"><div class="fx-marquee-in"><span>Corte</span><span>Barba</span><span>Sobrancelha</span><span>Luzes</span><span>Platinado</span><span>Progressiva</span><span>Sinuca</span><span>Corte</span><span>Barba</span><span>Sobrancelha</span><span>Luzes</span><span>Platinado</span><span>Progressiva</span><span>Sinuca</span></div></div></div>
+
+<section id="servicos">
+  <div class="wrap">
+    <div class="head">
+      <span class="ball c2 num" style="--s:56px"><b>2</b></span>
+      <h2 data-split>Serviços e valores</h2>
+      <p data-reveal>Valores de exemplo para o projeto conceito. Escolha um e peça direto.</p>
+    </div>
+    <div data-tabs>
+      <div class="tabs" role="tablist" aria-label="Tipos de serviço">
+        <button type="button" data-tab="all" class="is-active">Todos</button>
+        <button type="button" data-tab="corte">Corte e barba</button>
+        <button type="button" data-tab="quimica">Química</button>
+        <button type="button" data-tab="rapido">Acabamento</button>
+      </div>
+      <ul class="rows" id="lista"></ul>
+    </div>
+    <p class="fine">Valores fictícios, só para mostrar como a tabela de preços funciona no site.</p>
+  </div>
+</section>
+
+<section class="sim" id="combo">
+  <div class="wrap">
+    <div class="head">
+      <span class="ball c3 num" style="--s:56px"><b>3</b></span>
+      <h2 data-split>Monte seu combo</h2>
+      <p data-reveal>Marque o que você quer fazer. A soma aparece na hora e o pedido vai pronto para o WhatsApp.</p>
+    </div>
+    <div class="sim-grid">
+      <div class="opts" id="opts" data-stagger="0.04"></div>
+      <div class="total" aria-live="polite">
+        <span class="lbl">Soma dos itens</span>
+        <span class="big" id="tot">R$ 0</span>
+        <span class="meta" id="tempo">Tempo estimado: 0 min</span>
+        <ul id="resumo"><li>Nenhum item marcado.</li></ul>
+        <a class="btn" id="pedir" href="#" target="_blank" rel="noopener">Pedir pelo WhatsApp
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p class="fine">Soma simples dos itens. Os combos da casa podem sair mais em conta: confirme no WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="casa">
+  <div class="wrap">
+    <div class="head">
+      <span class="ball c4 num" style="--s:56px"><b>4</b></span>
+      <h2 data-split>A casa</h2>
+      <p data-reveal>Três barbeiros na casa. Atendimento de terça a sábado.</p>
+    </div>
+    <div class="gal" data-lightbox data-stagger="0.1">
+      <a href="img/tatt.jpg" data-caption="Corte e acabamento na navalha" data-reveal><img src="img/tatt.webp" width="1000" height="1250" alt="Barbeiro riscando o contorno do cabelo de um cliente tatuado" loading="lazy" decoding="async"></a>
+      <a href="img/mesa.jpg" data-caption="Mesa de sinuca" data-reveal><img src="img/mesa.webp" width="1400" height="933" alt="Pessoa jogando sinuca em mesa de feltro" loading="lazy" decoding="async"></a>
+      <a href="img/bolas.jpg" data-caption="Bolas de sinuca" data-reveal><img src="img/bolas.webp" width="1400" height="933" alt="Bolas de sinuca sobre o feltro, em close" loading="lazy" decoding="async"></a>
+      <a href="img/cut.jpg" data-caption="Degradê" data-reveal><img src="img/cut.webp" width="1000" height="1250" alt="Corte degradê sendo finalizado" loading="lazy" decoding="async"></a>
+    </div>
+    <div class="gal-tx">
+      <h3 data-split>Espere jogando.</h3>
+      <p data-reveal>A barbearia tem mesa de sinuca e cerveja gelada. Chegou antes da vez, pega o taco. Imagens ilustrativas.</p>
+    </div>
+  </div>
+</section>
+
+<section class="loc" id="local">
+  <div class="wrap loc-grid">
+    <div class="loc-info">
+      <h2 data-split>Rua Exemplo, 100</h2>
+      <dl>
+        <div><dt>Bairro</dt><dd>Zona Leste, São Paulo</dd></div>
+        <div><dt>Atendimento</dt><dd>Terça a sábado. Horários exatos no WhatsApp.</dd></div>
+        <div><dt>WhatsApp</dt><dd><a href="#wa.me" target="_blank" rel="noopener">(11) 90000-0000</a></dd></div>
+      </dl>
+      <div class="btns">
+        <a class="btn" href="#mapa" target="_blank" rel="noopener">Traçar rota</a>
+        <a class="btn k" href="#tel">Ligar</a>
+      </div>
+    </div>
+    <div class="map" data-reveal="scale"><div class="cn-map" role="img" aria-label="Mapa ilustrativo: aqui entra o mapa do endereço do seu negócio"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M-10 70 L410 96 M-10 160 L410 138 M-10 236 L410 258 M84 -10 L112 310 M206 -10 L192 310 M318 -10 L338 310 M-10 14 L150 310 M250 -10 L410 190"/><circle cx="206" cy="148" r="22" fill="currentColor" fill-opacity=".18"/><circle cx="206" cy="148" r="8" fill="currentColor"/></svg><span>Mapa ilustrativo</span></div></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><p class="big">Taco e<br>Navalha</p><small>Barbearia fictícia na Zona Leste, São Paulo. Imagens ilustrativas. <span data-year></span></small></div>
+    <div class="foot-links"><a href="#servicos">Serviços</a><a href="#combo">Combo</a><a href="#local">Como chegar</a></div><p class="cn-aviso">Projeto conceito feito pela Aura. Negócio fictício.<a href="../../?utm_source=mostruario&amp;utm_medium=conceito&amp;utm_campaign=taco-e-navalha#investimento">Quero um site assim</a></p>
+  </div>
+</footer>
+
+<a class="wa" href="#wa.me" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.3 1.3-1.9 1.3-.5 0-1.1.2-3.6-.8-3-1.2-5-4.3-5.1-4.5-.2-.2-1.3-1.7-1.3-3.2S6.5 6.8 6.8 6.5c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.5c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.2.1.8-.1 1.4z"/></svg></a>
+
+<script>
+/* serviços, valores e tempos de exemplo */
+(function(){
+  var WA='5511900000000',cols=['c1','c2','c3','c4','c5','c6','c7'];
+  var S=[
+    ['corte','Corte',55,60],['corte','Corte + barba',95,90],['corte','Corte + sobrancelha',75,90],['corte','Corte + barba + sobrancelha',115,120],
+    ['corte','Barba',40,30],['corte','Acabamento + barba',65,60],['corte','Barba + sobrancelha',65,60],
+    ['rapido','Sobrancelha',20,30],['rapido','Acabamento (pezinho)',20,30],['rapido','Penteado',20,30],
+    ['quimica','Luzes',110,120],['quimica','Luzes + corte',160,150],['quimica','Platinado global',170,180],['quimica','Platinado global + corte',230,240],['quimica','Platinado global + barba + corte',270,180],
+    ['quimica','Alisamento',55,60],['quimica','Progressiva',95,210],['quimica','Corte + progressiva',null,120],['quimica','Corte + barba + progressiva',null,150]
+  ];
+  var brl=function(n){return 'R$ '+n.toLocaleString('pt-BR')};
+  var ul=document.getElementById('lista'),h='';
+  S.forEach(function(s,i){
+    var msg=encodeURIComponent('Olá! Vi o site da Taco e Navalha e quero agendar: '+s[1]+'.');
+    h+='<li class="row" data-tab-item="'+s[0]+'"><span class="ball '+cols[i%7]+'" style="--s:40px"><b>'+(i+1)+'</b></span><h3>'+s[1]+'</h3><span class="t">'+s[3]+' min</span><span class="p">'+(s[2]?brl(s[2]):'Sob consulta')+'</span><a href="#wa.me" target="_blank" rel="noopener" aria-label="Pedir '+s[1]+' pelo WhatsApp">Pedir</a></li>';
+  });
+  ul.innerHTML=h;
+
+  /* simulador: só serviços avulsos */
+  var A=[['Corte',55,60],['Barba',40,30],['Sobrancelha',20,30],['Acabamento (pezinho)',20,30],['Penteado',20,30],['Luzes',110,120],['Platinado global',170,180],['Alisamento',55,60],['Progressiva',95,210]];
+  var o=document.getElementById('opts'),oh='';
+  A.forEach(function(a,i){oh+='<label class="opt" data-reveal><input type="checkbox" value="'+i+'"><span class="ball '+cols[i%7]+'"><b>'+(i+1)+'</b></span><span class="n">'+a[0]+'</span><span class="pr">'+brl(a[1])+'</span></label>'});
+  o.innerHTML=oh;
+  var tot=document.getElementById('tot'),tp=document.getElementById('tempo'),rs=document.getElementById('resumo'),pd=document.getElementById('pedir');
+  function upd(){
+    var sel=[].slice.call(o.querySelectorAll('input:checked')).map(function(i){return A[+i.value]});
+    var v=sel.reduce(function(s,a){return s+a[1]},0),t=sel.reduce(function(s,a){return s+a[2]},0);
+    tot.textContent=brl(v);
+    tp.textContent='Tempo estimado: '+(t>=60?Math.floor(t/60)+' h'+(t%60?' '+(t%60)+' min':''):t+' min');
+    rs.innerHTML=sel.length?sel.map(function(a){return '<li>'+a[0]+'</li>'}).join(''):'<li>Nenhum item marcado.</li>';
+    var txt=sel.length?'Olá! Montei meu combo no site da Taco e Navalha: '+sel.map(function(a){return a[0]}).join(', ')+'. Soma: '+brl(v)+'. Quando tem horário?':'Olá! Vim pelo site da Taco e Navalha e quero agendar um horário.';
+    pd.href='#wa.me';
+  }
+  o.addEventListener('change',upd);upd();
+})();
+</script>
+<script src="../../assets/fx.js" defer></script>
+<script src="../conceito.js" defer></script>
+</body>
+</html>
